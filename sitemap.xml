@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://www.codeinsideout.com/</loc>
+         <loc>https://robobe.github.io/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/blog/</loc>
+         <loc>https://robobe.github.io/blog/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/blog/video/examples/</loc>
+         <loc>https://robobe.github.io/blog/video/examples/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/blog/video/ffmpeg/</loc>
+         <loc>https://robobe.github.io/blog/video/ffmpeg/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/blog/video/gstreamer/</loc>
+         <loc>https://robobe.github.io/blog/video/gstreamer/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/projects/</loc>
+         <loc>https://robobe.github.io/projects/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.codeinsideout.com/tags/</loc>
+         <loc>https://robobe.github.io/tags/</loc>
          <lastmod>2022-03-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
