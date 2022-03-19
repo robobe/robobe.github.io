@@ -3,7 +3,7 @@
 # vuquangtrong.github.io (aka codeinsideout.com)
 #
 site_name: Code Inside Robots
-site_url: https://www.codeinsideout.com/ # must have the trailing slash
+site_url: https://robobe.github.io/
 site_description: Guides, notes and useful stuff for learning embedded systems.
 
 #
@@ -174,19 +174,14 @@ extra:
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
   
-  disqus: "vuquangtrong-github-io"
+  disqus: ""
   
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/vuquangtrong
-      name: vuquangtrong
-    - icon: fontawesome/brands/facebook-f
-      link: https://facebook.com/trongvq
-      name: trongvq
-    - icon: fontawesome/brands/linkedin-in
-      link: https://www.linkedin.com/in/vqtrong
-      name: vqtrong
+      link: https://github.com/robobe
+      name: robobe
+    
   generator: false # hide the line "Made with Material for MkDocs"
 
 #
