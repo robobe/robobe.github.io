@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://robobe.github.iomkdo/</loc>
+         <loc>https://robobe.github.io/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/</loc>
+         <loc>https://robobe.github.io/blog/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/ROS2/colcon/</loc>
+         <loc>https://robobe.github.io/blog/ROS2/colcon/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/video/examples/</loc>
+         <loc>https://robobe.github.io/blog/video/examples/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/video/ffmpeg/</loc>
+         <loc>https://robobe.github.io/blog/video/ffmpeg/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/video/gstreamer/</loc>
+         <loc>https://robobe.github.io/blog/video/gstreamer/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/blog/vscode/</loc>
+         <loc>https://robobe.github.io/blog/vscode/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/projects/</loc>
+         <loc>https://robobe.github.io/projects/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.iomkdo/tags/</loc>
+         <loc>https://robobe.github.io/tags/</loc>
          <lastmod>2022-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
