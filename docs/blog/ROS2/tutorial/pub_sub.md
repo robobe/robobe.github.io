@@ -236,3 +236,4 @@ ros2 topic pub -1 /minimal std_msgs/msg/String "{data: 'hello'}"
 # References
 - [package.xml specification](https://ros.org/reps/rep-0149.html)
 - [ros2 topic Command Line Tool – Debug ROS2 Topics From the Terminal](https://roboticsbackend.com/ros2-topic-cmd-line-tool-debug-ros2-topics-from-the-terminal/)
+- [Create a Basic Publisher and Subscriber (Python) | ROS2 Foxy](https://automaticaddison.com/create-a-basic-publisher-and-subscriber-python-ros2-foxy/)
