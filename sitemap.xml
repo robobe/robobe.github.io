@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/</loc>
+         <lastmod>2022-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/pub_sub/</loc>
          <lastmod>2022-04-06</lastmod>
          <changefreq>daily</changefreq>

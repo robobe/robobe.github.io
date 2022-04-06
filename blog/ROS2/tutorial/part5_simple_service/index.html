@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Gstreamer">
+        <meta name="description" content="Basic ROS2 Service">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/video/gstreamer/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
-    <title>Gstreamer - Robots Inside</title>
+    <title>Part5 - Simple Service - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.644de097.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -88,19 +88,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Gstreamer - Robots Inside" />
-    <meta property="og:description" content="Gstreamer - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/video/gstreamer/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/video/gstreamer/gstreamer.png" />
+    <meta property="og:title" content="Part5 - Simple Service - Robots Inside" />
+    <meta property="og:description" content="Basic ROS2 Service - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gstreamer - Robots Inside" />
-    <meta name="twitter:description" content="Gstreamer - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/video/gstreamer/gstreamer.png" />
+    <meta name="twitter:title" content="Part5 - Simple Service - Robots Inside" />
+    <meta name="twitter:description" content="Basic ROS2 Service - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/../ros2.png" />
 
   </head>
   
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rtsp-client" class="md-skip">
+        <a href="#service" class="md-skip">
           Skip to content
         </a>
       
@@ -134,7 +134,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gstreamer
+              Part5 - Simple Service
             
           </span>
         </div>
@@ -222,7 +222,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -255,7 +255,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -271,7 +271,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -300,7 +300,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -361,7 +361,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -382,12 +382,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -433,7 +435,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
         </div>
       
@@ -457,12 +459,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
       
       
       
@@ -497,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -511,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -523,11 +527,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part5 - Simple Service
       </a>
+      
     </li>
   
 
@@ -539,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -553,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/py_node_with_param/" class="md-nav__link">
+      <a href="../py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -579,14 +593,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -634,7 +646,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -677,7 +689,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -701,14 +713,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
       
       
       
@@ -721,8 +731,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Gstreamer</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -785,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -840,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -854,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -868,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -914,7 +924,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
         </div>
       
@@ -958,7 +968,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -2838,7 +2848,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -2852,7 +2862,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2866,7 +2876,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2880,7 +2890,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -2894,7 +2904,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2908,7 +2918,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2922,7 +2932,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2936,7 +2946,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2950,7 +2960,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2964,7 +2974,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -2978,7 +2988,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2992,7 +3002,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -3006,7 +3016,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3020,7 +3030,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3034,7 +3044,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3048,7 +3058,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3062,7 +3072,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3076,7 +3086,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -3090,7 +3100,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3104,7 +3114,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3132,28 +3142,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rtsp-client" class="md-nav__link">
-    rtsp client
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send-and-play" class="md-nav__link">
-    Send and play
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -3203,13 +3193,13 @@
 <div class="cover">
     
     
-        <h1> Gstreamer </h1>
+        <h1> Part5 - Simple Service </h1>
     
 
     
     
         <p class="post-description">
-            Gstreamer
+            Basic ROS2 Service
         </p>
     
 
@@ -3219,15 +3209,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#video">
+                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
                             <span class="tag-name">
-                                #video &nbsp;
+                                #ros2 &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#gstreamer">
+                        <a class="tag" href="https://robobe.github.io/tags/#service">
                             <span class="tag-name">
-                                #gstreamer &nbsp;
+                                #service &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#101">
+                            <span class="tag-name">
+                                #101 &nbsp;
                             </span>
                         </a>
                     
@@ -3294,28 +3290,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rtsp-client" class="md-nav__link">
-    rtsp client
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send-and-play" class="md-nav__link">
-    Send and play
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -3323,32 +3299,7 @@
 
 
     
-    <h2 id="rtsp-client">rtsp client<a class="headerlink" href="#rtsp-client" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">ffprob</span><pre><span></span><code><span class="n">ffprobe</span><span class="w"> </span><span class="nl">rtsp</span><span class="p">:</span><span class="c1">//wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4</span>
-
-<span class="cp"># ffprobe</span>
-<span class="n">ffprobe</span><span class="w"> </span><span class="o">&lt;</span><span class="n">rtsp</span><span class="w"> </span><span class="n">url</span><span class="o">&gt;</span><span class="w"></span>
-<span class="cp"># Result</span>
-<span class="n">Stream</span><span class="w"> </span><span class="err">#</span><span class="mi">0</span><span class="o">:</span><span class="mi">0</span><span class="o">:</span><span class="w"> </span><span class="nl">Audio</span><span class="p">:</span><span class="w"> </span><span class="n">aac</span><span class="w"> </span><span class="p">(</span><span class="n">LC</span><span class="p">),</span><span class="w"> </span><span class="mi">12000</span><span class="w"> </span><span class="n">Hz</span><span class="p">,</span><span class="w"> </span><span class="n">stereo</span><span class="p">,</span><span class="w"> </span><span class="n">fltp</span><span class="w"></span>
-<span class="n">Stream</span><span class="w"> </span><span class="err">#</span><span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="nl">Video</span><span class="p">:</span><span class="w"> </span><span class="n">h264</span><span class="w"> </span><span class="p">(</span><span class="n">High</span><span class="p">),</span><span class="w"> </span><span class="n">yuv420p</span><span class="p">(</span><span class="n">progressive</span><span class="p">),</span><span class="w"> </span><span class="mi">240</span><span class="n">x160</span><span class="w"> </span><span class="p">[</span><span class="n">SAR</span><span class="w"> </span><span class="mi">32</span><span class="o">:</span><span class="mi">27</span><span class="w"> </span><span class="n">DAR</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">9</span><span class="p">],</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="n">fps</span><span class="p">,</span><span class="w"> </span><span class="mf">24.08</span><span class="w"> </span><span class="n">tbr</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="n">k</span><span class="w"> </span><span class="n">tbn</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="w"> </span><span class="n">tbc</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><span class="filename">pipe</span><pre><span></span><code><span class="c1"># </span>
-
-gst-launch-1.0 rtspsrc <span class="nv">location</span><span class="o">=</span>rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4 <span class="nv">latency</span><span class="o">=</span><span class="m">100</span> <span class="se">\</span>
-! queue <span class="se">\</span>
-! rtph264depay <span class="se">\</span>
-! h264parse <span class="se">\</span>
-! avdec_h264 <span class="se">\</span>
-! videoconvert <span class="se">\</span>
-! videoscale ! video/x-raw,width<span class="o">=</span><span class="m">640</span>,height<span class="o">=</span><span class="m">480</span> <span class="se">\</span>
-! autovideosink
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>gst-launch-1.0 rtspsrc location=rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4  latency=0 buffer-mode=auto \
-! decodebin \
-! autovideosink sync=false
-</code></pre></div>
-<h2 id="send-and-play">Send and play<a class="headerlink" href="#send-and-play" title="Permanent link">#</a></h2>
-<p>pppppppppppppppp</p>
+    <h1 id="service">Service<a class="headerlink" href="#service" title="Permanent link">#</a></h1>
 
 
             </article>
@@ -3367,7 +3318,7 @@ gst-launch-1.0 rtspsrc <span class="nv">location</span><span class="o">=</span>r
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ffmpeg/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FFMpeg" rel="prev">
+        <a href="../launch_with_arguments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part4 - Launch with arguments" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3376,20 +3327,20 @@ gst-launch-1.0 rtspsrc <span class="nv">location</span><span class="o">=</span>r
               <span class="md-footer__direction">
                 Previous
               </span>
-              FFMpeg
+              Part4 - Launch with arguments
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../vscode/todo/" class="md-footer__link md-footer__link--next" aria-label="Next: todo.txt" rel="next">
+        <a href="../pub_sub/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Simple PUB / SUB" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              todo.txt
+              Part1 - Simple PUB / SUB
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3424,20 +3375,20 @@ gst-launch-1.0 rtspsrc <span class="nv">location</span><span class="o">=</span>r
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c44cc438.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
