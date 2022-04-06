@@ -8,18 +8,12 @@
 
 
 
-    
 
 
 
 
 
 
-    
-
-
-
-    
 
 
 
@@ -31,17 +25,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Command line tool to build sets of software packages">
+        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/colcon/">
+        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part3_run_qemu/">
       
       <link rel="icon" href="../../../favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
-    <title>Colcon build system - Robots Inside</title>
+    <title>Part3 run qemu - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
@@ -88,19 +82,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Colcon build system - Robots Inside" />
-    <meta property="og:description" content="Command line tool to build sets of software packages - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/colcon/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/colcon/colcon.png" />
+    <meta property="og:title" content="Part3 run qemu - Robots Inside" />
+    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part3_run_qemu/" />
+    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Colcon build system - Robots Inside" />
-    <meta name="twitter:description" content="Command line tool to build sets of software packages - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/colcon/colcon.png" />
+    <meta name="twitter:title" content="Part3 run qemu - Robots Inside" />
+    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
 
   </head>
   
@@ -118,11 +112,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#colcon" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -153,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Colcon build system
+              Part3 run qemu
             
           </span>
         </div>
@@ -382,14 +371,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -416,14 +403,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
       
       
       
@@ -436,8 +421,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Colcon</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../ROS2/colcon/">Colcon</a>
           
         </div>
       
@@ -499,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -513,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -527,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -541,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/py_node_with_param/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -788,12 +773,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
@@ -824,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -838,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -850,11 +837,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part3 run qemu
       </a>
+      
     </li>
   
 
@@ -966,9 +961,31 @@
 
                 
                 
-                    <br>
-                    <br>
-                    <div class="tag-cloud-nav">
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                
+
+                
+                
+                    <div class="tag-cloud-toc">
                         
 
 
@@ -2434,7 +2451,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -2448,7 +2465,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2462,7 +2479,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2476,7 +2493,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -2490,7 +2507,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2504,7 +2521,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2518,7 +2535,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2532,7 +2549,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2546,7 +2563,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -2560,7 +2577,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2574,7 +2591,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2588,7 +2605,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2602,7 +2619,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2616,7 +2633,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2630,7 +2647,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2644,7 +2661,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2672,7 +2689,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2681,94 +2698,6 @@
     
 </div>
                     </div>
-                
-            </div>
-        </div>
-    </div>
-
-
-
-    
-
-    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-        <div class="md-sidebar__scrollwrap">
-            <div class="md-sidebar__inner">
-                
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#colcon" class="md-nav__link">
-    Colcon
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-tools" class="md-nav__link">
-    Build tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-system" class="md-nav__link">
-    Build system
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generator" class="md-nav__link">
-    Generator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#meta-build" class="md-nav__link">
-    Meta build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                
-
-                
                 
             </div>
         </div>
@@ -2813,35 +2742,15 @@
 <div class="cover">
     
     
-        <h1> Colcon build system </h1>
+        <h1> Part3 run qemu </h1>
     
 
     
-    
-        <p class="post-description">
-            Command line tool to build sets of software packages
-        </p>
     
 
     
         <div class="page-extra row">
             <div class="col">
-            
-                <p class="page-tags">
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
-                            <span class="tag-name">
-                                #ros2 &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#colcon">
-                            <span class="tag-name">
-                                #colcon &nbsp;
-                            </span>
-                        </a>
-                    
-                </p>
             
             
             </div>
@@ -2905,110 +2814,13 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#colcon" class="md-nav__link">
-    Colcon
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-tools" class="md-nav__link">
-    Build tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-system" class="md-nav__link">
-    Build system
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generator" class="md-nav__link">
-    Generator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#meta-build" class="md-nav__link">
-    Meta build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
 </div>
 
 
 
     
-    <h2 id="colcon">Colcon<a class="headerlink" href="#colcon" title="Permanent link">#</a></h2>
-<p>colcon is a command line tool to improve the workflow of building, testing and using multiple software packages. It automates the process, handles the ordering and sets up the environment to use the packages.</p>
-<h2 id="build-tools">Build tools<a class="headerlink" href="#build-tools" title="Permanent link">#</a></h2>
-<p>Build tools are programs that automate the creation of executable applications from source code
-- Compiling
-- Linking
-- Packaging</p>
-<h2 id="build-system">Build system<a class="headerlink" href="#build-system" title="Permanent link">#</a></h2>
-<ul>
-<li>Repeatable: ensure that that the project is built exactly the same way every time it builds</li>
-<li>Reproducible: easily recreate (reproduce) the steps that are required to perform a build</li>
-<li>Standard ensure that all of your projects follow the same steps and implement best practices</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>Make</li>
-<li>Ninja</li>
-</ul>
-</div>
-<h2 id="generator">Generator<a class="headerlink" href="#generator" title="Permanent link">#</a></h2>
-<ul>
-<li>CMake: create build system for specific O.S or system</li>
-</ul>
-<h2 id="meta-build">Meta build<a class="headerlink" href="#meta-build" title="Permanent link">#</a></h2>
-<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>sudo apt install python3-colcon-common-extensions
-</code></pre></div>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<p><strong>In the root of the workspace</strong> run <code>colcon build</code></p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon">ROS2 foxy Using colcon to build packages</a></li>
-</ul>
+    
 
 
             </article>
@@ -3027,7 +2839,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recent posts" rel="prev">
+        <a href="../part2_hello_poky/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - Yocto tutorial" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3036,20 +2848,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Recent posts
+              Part2 - Yocto tutorial
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tutorial/launch_hello/" class="md-footer__link md-footer__link--next" aria-label="Next: Part2 - Launch file" rel="next">
+        <a href="../../../projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Projects" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part2 - Launch file
+              Projects
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/yocto/part3_run_qemu/</loc>
+         <lastmod>2022-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/projects/</loc>
          <lastmod>2022-04-06</lastmod>
          <changefreq>daily</changefreq>
