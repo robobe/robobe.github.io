@@ -25,8 +25,10 @@ Build tools are programs that automate the creation of executable applications f
 !!! Note
     - Make
     - Ninja
+  
 ## Generator
-- CMake
+- CMake: create build system for specific O.S or system
+
 ## Meta build
 
 

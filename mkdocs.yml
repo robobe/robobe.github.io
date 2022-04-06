@@ -1,5 +1,5 @@
 site_name: Robots Inside 
-site_url: https://robobe.github.io
+site_url: https://robobe.github.io 
 site_description: Guides, notes and useful stuff for learning robotics systems.
 
 #
@@ -154,32 +154,6 @@ markdown_extensions:
 
 #
 # Extras
-#
-extra:
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/
-  analytics:
-    provider: google
-    property: UA-42618265-2 # or G-XXXXXXXXXX
-  
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#cookie-consent
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
-  
-  disqus: ""
-  
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer
-  social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/robobe
-      name: robobe
-    
-  generator: false # hide the line "Made with Material for MkDocs"
-
 #
 # Custom styles and scripts
 #
