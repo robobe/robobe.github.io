@@ -148,8 +148,8 @@ markdown_extensions:
   # Extra extensions
   #
   # - markdown_captions # add caption to figures
-  - customblocks # use ::: to create a new <div>
-  - cell_row_span # merge cells in a table
+  # - customblocks # use ::: to create a new <div>
+  # - cell_row_span # merge cells in a table
   # - kbdextension # syntax [[ctrl]][[c]] does not look clear in MD document
 
 #
