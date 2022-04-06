@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Write simple ROS2 python package with publisher subscriber and usage ROS2 CLI tools">
+        <meta name="description" content="todo action in plain txt">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/pub_sub/">
+        <link rel="canonical" href="https://robobe.github.io/blog/vscode/todo/">
       
-      <link rel="icon" href="../../../../favicon.png">
+      <link rel="icon" href="../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part1 - Simple PUB / SUB - Robots Inside</title>
+    <title>todo.txt - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part1 - Simple PUB / SUB - Robots Inside" />
-    <meta property="og:description" content="Write simple ROS2 python package with publisher subscriber and usage ROS2 CLI tools - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/pub_sub/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/pub_sub/ros2.png" />
+    <meta property="og:title" content="todo.txt - Robots Inside" />
+    <meta property="og:description" content="todo action in plain txt - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/vscode/todo/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/vscode/todo/todotxt.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part1 - Simple PUB / SUB - Robots Inside" />
-    <meta name="twitter:description" content="Write simple ROS2 python package with publisher subscriber and usage ROS2 CLI tools - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/pub_sub/ros2.png" />
+    <meta name="twitter:title" content="todo.txt - Robots Inside" />
+    <meta name="twitter:description" content="todo action in plain txt - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/vscode/todo/todotxt.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#publisher" class="md-skip">
+        <a href="#vscode-ext" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part1 - Simple PUB / SUB
+              todo.txt
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../projects/" class="md-tabs__link">
+      <a href="../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../tags/" class="md-tabs__link">
+      <a href="../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -351,7 +351,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../">Blog</a>
+          <a href="../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -372,14 +372,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -425,7 +423,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../colcon/">Colcon</a>
+          <a href="../../ROS2/colcon/">Colcon</a>
           
         </div>
       
@@ -449,14 +447,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
       
       
       
@@ -489,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../launch_hello/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -503,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../launch_with_arguments/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -515,106 +511,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part1 - Simple PUB / SUB
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#node-source-code" class="md-nav__link">
-    node source code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setuppy" class="md-nav__link">
-    setup.py
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packagexml" class="md-nav__link">
-    package.xml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-and-run" class="md-nav__link">
-    build and run
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-    <nav class="md-nav" aria-label="cli">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ros2-topic" class="md-nav__link">
-    ros2 topic
-  </a>
-  
-    <nav class="md-nav" aria-label="ros2 topic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#topic-verbose-info" class="md-nav__link">
-    topic verbose info
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -626,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../py_node_with_param/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -705,7 +606,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/examples/">Examples</a>
+          <a href="../../video/examples/">Examples</a>
           
         </div>
       
@@ -748,7 +649,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -791,7 +692,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/gstreamer/">Gstreamer</a>
+          <a href="../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -822,12 +723,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -852,11 +755,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../vscode/todo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          todo.txt
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         todo.txt
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vscode-ext" class="md-nav__link">
+    VSCode ext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -907,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -921,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -967,7 +914,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../projects/">Projects</a>
+          <a href="../../../projects/">Projects</a>
           
         </div>
       
@@ -1011,7 +958,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../tags/">Tags</a>
+          <a href="../../../tags/">Tags</a>
           
         </div>
       
@@ -2515,7 +2462,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2529,7 +2476,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2543,7 +2490,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -2557,7 +2504,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2571,7 +2518,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2585,7 +2532,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2599,7 +2546,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2613,7 +2560,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -2627,7 +2574,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2641,7 +2588,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2655,7 +2602,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2669,7 +2616,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2683,7 +2630,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2697,7 +2644,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2711,7 +2658,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2725,7 +2672,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2739,7 +2686,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2767,8 +2714,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2777,63 +2722,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#node-source-code" class="md-nav__link">
-    node source code
+  <a href="#vscode-ext" class="md-nav__link">
+    VSCode ext
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setuppy" class="md-nav__link">
-    setup.py
+  <a href="#references" class="md-nav__link">
+    References
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packagexml" class="md-nav__link">
-    package.xml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-and-run" class="md-nav__link">
-    build and run
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-    <nav class="md-nav" aria-label="cli">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ros2-topic" class="md-nav__link">
-    ros2 topic
-  </a>
-  
-    <nav class="md-nav" aria-label="ros2 topic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#topic-verbose-info" class="md-nav__link">
-    topic verbose info
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2887,13 +2785,13 @@
 <div class="cover">
     
     
-        <h1> Part1 - Simple PUB / SUB </h1>
+        <h1> todo.txt </h1>
     
 
     
     
         <p class="post-description">
-            Write simple ROS2 python package with publisher subscriber and usage ROS2 CLI tools
+            todo action in plain txt
         </p>
     
 
@@ -2903,27 +2801,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
+                        <a class="tag" href="https://robobe.github.io/tags/#vscode">
                             <span class="tag-name">
-                                #ros2 &nbsp;
+                                #vscode &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#pub">
+                        <a class="tag" href="https://robobe.github.io/tags/#todo">
                             <span class="tag-name">
-                                #pub &nbsp;
+                                #todo &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#sub">
+                        <a class="tag" href="https://robobe.github.io/tags/#vscode-ext">
                             <span class="tag-name">
-                                #sub &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#101">
-                            <span class="tag-name">
-                                #101 &nbsp;
+                                #vscode-ext &nbsp;
                             </span>
                         </a>
                     
@@ -2990,8 +2882,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3000,63 +2890,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#node-source-code" class="md-nav__link">
-    node source code
+  <a href="#vscode-ext" class="md-nav__link">
+    VSCode ext
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setuppy" class="md-nav__link">
-    setup.py
+  <a href="#references" class="md-nav__link">
+    References
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packagexml" class="md-nav__link">
-    package.xml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-and-run" class="md-nav__link">
-    build and run
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-    <nav class="md-nav" aria-label="cli">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ros2-topic" class="md-nav__link">
-    ros2 topic
-  </a>
-  
-    <nav class="md-nav" aria-label="ros2 topic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#topic-verbose-info" class="md-nav__link">
-    topic verbose info
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3068,198 +2911,36 @@
 
 
     
-    <h1 id="publisher">Publisher<a class="headerlink" href="#publisher" title="Permanent link">#</a></h1>
-<h2 id="node-source-code">node source code<a class="headerlink" href="#node-source-code" title="Permanent link">#</a></h2>
-<details><summary>Node source code</summary>
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">rclpy</span>
-<span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
-
-<span class="k">class</span> <span class="nc">MinimalPublisher</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;minimal_publisher&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">publisher_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_publisher</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="s2">&quot;minimal&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-        <span class="n">timer_period</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># seconds</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="n">timer_period</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer_callback</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="nf">timer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
-        <span class="n">msg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pub simple: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">publisher_</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Publishing: &quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">minimal_publisher</span> <span class="o">=</span> <span class="n">MinimalPublisher</span><span class="p">()</span>
-    <span class="c1"># Spin the node so the callback function is called.</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">minimal_publisher</span><span class="p">)</span>
-    <span class="n">minimal_publisher</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-</details>
-
-<h2 id="setuppy">setup.py<a class="headerlink" href="#setuppy" title="Permanent link">#</a></h2>
-<ul>
-<li>Add entry point <code>&lt;node name&gt;.&lt;module name&gt;:&lt;entry func&gt;</code></li>
+    <ul>
+<li>Priority: <code>(A)</code> capital letter first in line</li>
+<li>Project: <code>+project</code> anywhere in line non-whitespace</li>
+<li>Context: <code>@context</code> anywhere in line non-whitespace</li>
+<li>tag: <code>key:value</code></li>
+<li><code>x</code> as first character mark task completion</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;simple_pub = basic.simple_pub:main&quot;</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
-</code></pre></div>
+<figure>
+<p><img align="left" alt="" height="200px" src="description.svg" width="800px" />
+  </p>
+<figcaption>github todo primer</figcaption>
+</figure>
 <hr />
-<h2 id="packagexml">package.xml<a class="headerlink" href="#packagexml" title="Permanent link">#</a></h2>
+<h2 id="vscode-ext">VSCode ext<a class="headerlink" href="#vscode-ext" title="Permanent link">#</a></h2>
+<p><img align="left" alt="" height="64px" src="2022-03-25-09-00-49.png" width="64px" /></p>
 <ul>
-<li>Add this lines before <code>&lt;export&gt;</code> tag</li>
+<li>Commands and decorators for managing todo.txt files</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=davraamides.todotxt-mode">marketplace</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>  <span class="nt">&lt;exec_depend&gt;</span>rclpy<span class="nt">&lt;/exec_depend&gt;</span>
-  <span class="nt">&lt;exec_depend&gt;</span>std_msgs<span class="nt">&lt;/exec_depend&gt;</span>
-</code></pre></div>
+<p><img alt="" src="2022-03-25-09-09-07.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>exec_depend</code> Declares a rosdep key or ROS package name that this package needs at execution-time</p>
+<p>ctrl+shift+x: Toggle completion</p>
 </div>
-<hr />
-<h2 id="build-and-run">build and run<a class="headerlink" href="#build-and-run" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">Build</span><pre><span></span><code>colcon build --symlink-install --packages-select basic
-</code></pre></div>
-<div class="highlight"><span class="filename">Source it</span><pre><span></span><code><span class="nb">source</span> install/setup.bash
-</code></pre></div>
-<div class="highlight"><span class="filename">Run</span><pre><span></span><code>ros2 run basic simple_pub
-</code></pre></div>
-<div class="highlight"><span class="filename">output</span><pre><span></span><code><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649181441</span>.732282742<span class="o">]</span> <span class="o">[</span>minimal_publisher<span class="o">]</span>: Publishing: <span class="s2">&quot;pub simple: 0&quot;</span>
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649181442</span>.713229723<span class="o">]</span> <span class="o">[</span>minimal_publisher<span class="o">]</span>: Publishing: <span class="s2">&quot;pub simple: 1&quot;</span>
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649181443</span>.713351778<span class="o">]</span> <span class="o">[</span>minimal_publisher<span class="o">]</span>: Publishing: <span class="s2">&quot;pub simple: 2&quot;</span>
-</code></pre></div>
-<hr />
-<h2 id="cli">cli<a class="headerlink" href="#cli" title="Permanent link">#</a></h2>
-<h3 id="ros2-topic">ros2 topic<a class="headerlink" href="#ros2-topic" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># list</span>
-ros2 topic list
-<span class="c1">#result</span>
-/parameter_events
-/rosout
-/minimal
-
-<span class="c1"># info</span>
-ros2 topic info /minimal
-<span class="c1"># Result</span>
-Type: std_msgs/msg/String
-Publisher count: <span class="m">1</span>
-Subscription count: <span class="m">0</span>
-
-<span class="c1"># Echo</span>
-ros2 topic <span class="nb">echo</span> /minimal
-<span class="c1"># Result</span>
-data: <span class="s1">&#39;pub simple: 110&#39;</span>
----
-data: <span class="s1">&#39;pub simple: 111&#39;</span>
----
-</code></pre></div>
-<h4 id="topic-verbose-info">topic verbose info<a class="headerlink" href="#topic-verbose-info" title="Permanent link">#</a></h4>
-<div class="highlight"><span class="filename">verbose info</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>ros2 topic info -v /minimal
-<span class="linenos" data-linenos=" 2 "></span><span class="c1"># Result</span>
-<span class="linenos" data-linenos=" 3 "></span>Type: std_msgs/msg/String
-<span class="linenos" data-linenos=" 4 "></span>
-<span class="linenos" data-linenos=" 5 "></span>Publisher count: <span class="m">1</span>
-<span class="linenos" data-linenos=" 6 "></span>
-<span class="linenos" data-linenos=" 7 "></span>Node name: minimal_publisher
-<span class="linenos" data-linenos=" 8 "></span>Node namespace: /
-<span class="linenos" data-linenos=" 9 "></span>Topic type: std_msgs/msg/String
-<span class="linenos" data-linenos="10 "></span>Endpoint type: PUBLISHER
-<span class="hll"><span class="linenos" data-linenos="11 "></span>GID: <span class="m">01</span>.0f.d1.c7.10.ba.23.e1.01.00.00.00.00.00.11.03.00.00.00.00.00.00.00.00
-</span><span class="hll"><span class="linenos" data-linenos="12 "></span>QoS profile:
-</span><span class="hll"><span class="linenos" data-linenos="13 "></span>  Reliability: RMW_QOS_POLICY_RELIABILITY_RELIABLE
-</span><span class="linenos" data-linenos="14 "></span>  Durability: RMW_QOS_POLICY_DURABILITY_VOLATILE
-<span class="linenos" data-linenos="15 "></span>  Lifespan: <span class="m">2147483651294967295</span> nanoseconds
-<span class="linenos" data-linenos="16 "></span>  Deadline: <span class="m">2147483651294967295</span> nanoseconds
-<span class="linenos" data-linenos="17 "></span>  Liveliness: RMW_QOS_POLICY_LIVELINESS_AUTOMATIC
-<span class="linenos" data-linenos="18 "></span>  Liveliness lease duration: <span class="m">2147483651294967295</span> nanoseconds
-<span class="linenos" data-linenos="19 "></span>
-<span class="linenos" data-linenos="20 "></span>Subscription count: <span class="m">0</span>
-</code></pre></div>
-<hr />
-<h1 id="subscriber">Subscriber<a class="headerlink" href="#subscriber" title="Permanent link">#</a></h1>
-<h2 id="node-source-code_1">node source code<a class="headerlink" href="#node-source-code_1" title="Permanent link">#</a></h2>
-<details><summary>MinimalSubscriber Node source code</summary>
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">rclpy</span>
-<span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
-
-
-<span class="k">class</span> <span class="nc">MinimalSubscriber</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;minimal_subscriber&quot;</span><span class="p">)</span>
-
-        <span class="c1"># The node subscribes to messages of type std_msgs/String,</span>
-        <span class="c1"># over a topic named: /minimal</span>
-        <span class="c1"># The callback function is called as soon as a message is received.</span>
-        <span class="c1"># The maximum number of queued messages is 10.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-            <span class="n">String</span><span class="p">,</span> <span class="s2">&quot;minimal&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sub_callback</span><span class="p">,</span> <span class="mi">10</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__sub_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I heard: </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">minimal_subscriber</span> <span class="o">=</span> <span class="n">MinimalSubscriber</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">minimal_subscriber</span><span class="p">)</span>
-    <span class="n">minimal_subscriber</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-</details>
-
-<h2 id="setuppy_1">setup.py<a class="headerlink" href="#setuppy_1" title="Permanent link">#</a></h2>
-<ul>
-<li>Add entry point</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;simple_sub = basic.simple_sub:main&quot;</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="build-and-run_1">build and run<a class="headerlink" href="#build-and-run_1" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">Build</span><pre><span></span><code>colcon build --symlink-install --packages-select basic
-</code></pre></div>
-<hr />
-<h2 id="cli_1">cli<a class="headerlink" href="#cli_1" title="Permanent link">#</a></h2>
-<ul>
-<li>Run subscriber node</li>
-</ul>
-<div class="highlight"><span class="filename">Terminal1</span><pre><span></span><code>ros2 run basic simple_sub
-<span class="c1"># Result after pub from terminal 2</span>
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649213924</span>.055190916<span class="o">]</span> <span class="o">[</span>minimal_subscriber<span class="o">]</span>: I heard: hello
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649213925</span>.036938799<span class="o">]</span> <span class="o">[</span>minimal_subscriber<span class="o">]</span>: I heard: hello
-</code></pre></div>
-<div class="highlight"><span class="filename">Terminal2</span><pre><span></span><code><span class="c1"># pub message</span>
-ros2 topic pub /minimal std_msgs/msg/String <span class="s2">&quot;{data: &#39;hello&#39;}&quot;</span>
-
-<span class="c1"># pub only one message</span>
-ros2 topic pub -1 /minimal std_msgs/msg/String <span class="s2">&quot;{data: &#39;hello&#39;}&quot;</span>
-</code></pre></div>
 <hr />
 <h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h1>
 <ul>
-<li><a href="https://ros.org/reps/rep-0149.html">package.xml specification</a></li>
-<li><a href="https://roboticsbackend.com/ros2-topic-cmd-line-tool-debug-ros2-topics-from-the-terminal/">ros2 topic Command Line Tool – Debug ROS2 Topics From the Terminal</a></li>
-<li><a href="https://automaticaddison.com/create-a-basic-publisher-and-subscriber-python-ros2-foxy/">Create a Basic Publisher and Subscriber (Python) | ROS2 Foxy</a></li>
+<li><a href="http://todotxt.org/">todotxt</a></li>
+<li><a href="https://github.com/todotxt/todo.txt">todo spec</a></li>
+<li><a href="[todotxt-mode](https://marketplace.visualstudio.com/items?itemName=davraamides.todotxt-mode)">vscode todotxt-mode</a></li>
 </ul>
 
 
@@ -3279,7 +2960,7 @@ ros2 topic pub -1 /minimal std_msgs/msg/String <span class="s2">&quot;{data: &#3
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../launch_with_arguments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part4 - Launch with arguments" rel="prev">
+        <a href="../../video/gstreamer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gstreamer" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3288,20 +2969,20 @@ ros2 topic pub -1 /minimal std_msgs/msg/String <span class="s2">&quot;{data: &#3
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part4 - Launch with arguments
+              Gstreamer
             </div>
           </div>
         </a>
       
       
         
-        <a href="../py_node_with_param/" class="md-footer__link md-footer__link--next" aria-label="Next: Part3 - Simple python Node with parameter" rel="next">
+        <a href="../../yocto/part1_hello_yocto/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Yocto tutorial" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part3 - Simple python Node with parameter
+              Part1 - Yocto tutorial
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3331,20 +3012,20 @@ ros2 topic pub -1 /minimal std_msgs/msg/String <span class="s2">&quot;{data: &#3
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../../assets/mathjax.js"></script>
+        <script src="../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../assets/view-bigimg.js"></script>
+        <script src="../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../../assets/extra.js"></script>
+        <script src="../../../assets/extra.js"></script>
       
     
   </body>
