@@ -21,7 +21,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/</loc>
+         <lastmod>2022-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/pub_sub/</loc>
+         <lastmod>2022-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/tutorial/py_node_with_param/</loc>
          <lastmod>2022-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>

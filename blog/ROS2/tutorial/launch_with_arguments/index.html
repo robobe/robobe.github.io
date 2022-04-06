@@ -8,12 +8,18 @@
 
 
 
+    
 
 
 
 
 
 
+    
+
+
+
+    
 
 
 
@@ -25,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
+        <meta name="description" content="Launch file with arguments and config">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/">
       
-      <link rel="icon" href="favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Home - Robots Inside</title>
+    <title>Part4 - Launch with arguments - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -60,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Home - Robots Inside" />
-    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/" />
-    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
+    <meta property="og:title" content="Part4 - Launch with arguments - Robots Inside" />
+    <meta property="og:description" content="Launch file with arguments and config - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Home - Robots Inside" />
-    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
+    <meta name="twitter:title" content="Part4 - Launch with arguments - Robots Inside" />
+    <meta name="twitter:description" content="Launch file with arguments and config - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/../ros2.png" />
 
   </head>
   
@@ -104,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robots-inside" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -137,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Part4 - Launch with arguments
             
           </span>
         </div>
@@ -203,12 +209,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -217,13 +221,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="blog/" class="md-tabs__link">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -239,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -255,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -273,10 +279,8 @@
           
     
     
-        
-    
 
-    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
         <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
                 
@@ -286,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -303,59 +307,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blog" class="md-nav__link">
-     Blog
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projects" class="md-nav__link">
-     Projects
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -366,12 +322,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -391,7 +349,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -412,12 +370,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -463,7 +423,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
         </div>
       
@@ -487,12 +447,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
       
       
       
@@ -525,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -537,11 +499,102 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part4 - Launch with arguments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part4 - Launch with arguments
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-launch-with-arguments" class="md-nav__link">
+    demo: launch with arguments
+  </a>
+  
+    <nav class="md-nav" aria-label="demo: launch with arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
+    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
+# result
+[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [simple_param-1]: process started with pid [94001]
+[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
+[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -553,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -567,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/py_node_with_param/" class="md-nav__link">
+      <a href="../py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -646,7 +699,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -689,7 +742,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -732,7 +785,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -782,7 +835,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/vscode/">Vscode</a>
+          <a href="../../../vscode/">Vscode</a>
           
         </div>
       
@@ -833,7 +886,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
         </div>
       
@@ -877,7 +930,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -1985,7 +2038,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -1999,7 +2052,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2013,7 +2066,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2027,7 +2080,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -2041,7 +2094,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2055,7 +2108,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2069,7 +2122,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2083,7 +2136,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2111,7 +2164,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -2139,7 +2192,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2153,7 +2206,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2167,7 +2220,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2181,7 +2234,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -2198,1303 +2251,91 @@
 
 
     
-        
-    
 
     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
         <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
                 
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-launch-with-arguments" class="md-nav__link">
+    demo: launch with arguments
+  </a>
+  
+    <nav class="md-nav" aria-label="demo: launch with arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
+    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
+# result
+[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [simple_param-1]: process started with pid [94001]
+[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
+[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
 
                 
-                
-                    <div class="tag-cloud-toc">
-                        
-
-
-
-
-
-  
-
-  
-
-  
-    
-    
-      
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-
-  
-
-
-<style>
-    .tag-cloud {
-        margin-top:0;
-        margin-bottom: 0.5em;
-    }
-    .tag-cloud-content {
-        padding: 0 0.6rem;
-    }
-</style>
-
-<p class="md-nav tag-cloud">
-  <label class="md-nav__title">Tag cloud</label>
-</p>
-<div class="tag-cloud-content">
-    
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#ros2">
-                <span class="tag-name" style="
-                    
-                        font-size:1.0rem;
-                    
-                    color:DarkSlateGray;
-                ">ros2&nbsp;
-                </span>
-                <!--<sup class="tag-count">5</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#colcon">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkBlue;
-                ">colcon&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#launch">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkTurquoise;
-                ">launch&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#101">
-                <span class="tag-name" style="
-                    
-                        font-size:0.9rem;
-                    
-                    color:DarkMagenta;
-                ">101&nbsp;
-                </span>
-                <!--<sup class="tag-count">4</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#param">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkRed;
-                ">param&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#parameter">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkBlue;
-                ">parameter&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#pub">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkGreen;
-                ">pub&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#sub">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkTurquoise;
-                ">sub&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#video">
-                <span class="tag-name" style="
-                    
-                        font-size:0.8rem;
-                    
-                    color:DarkGreen;
-                ">video&nbsp;
-                </span>
-                <!--<sup class="tag-count">3</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#ffmpeg">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkSlateBlue;
-                ">ffmpeg&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#gstreamer">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkSlateGray;
-                ">gstreamer&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#cheat-sheet">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkRed;
-                ">cheat-sheet&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#sdp">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkSlateGray;
-                ">sdp&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#vscode">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkSlateBlue;
-                ">vscode&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#todo">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkTurquoise;
-                ">todo&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-    
-</div>
-                    </div>
                 
             </div>
         </div>
@@ -3539,15 +2380,53 @@
 <div class="cover">
     
     
-        <h1> Home </h1>
+        <h1> Part4 - Launch with arguments </h1>
     
 
     
+    
+        <p class="post-description">
+            Launch file with arguments and config
+        </p>
     
 
     
         <div class="page-extra row">
             <div class="col">
+            
+                <p class="page-tags">
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
+                            <span class="tag-name">
+                                #ros2 &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#param">
+                            <span class="tag-name">
+                                #param &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#parameter">
+                            <span class="tag-name">
+                                #parameter &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#launch">
+                            <span class="tag-name">
+                                #launch &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#101">
+                            <span class="tag-name">
+                                #101 &nbsp;
+                            </span>
+                        </a>
+                    
+                </p>
             
             
             </div>
@@ -3610,8 +2489,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3620,15 +2497,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#blog" class="md-nav__link">
-     Blog
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-launch-with-arguments" class="md-nav__link">
+    demo: launch with arguments
+  </a>
+  
+    <nav class="md-nav" aria-label="demo: launch with arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
+    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
+# result
+[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [simple_param-1]: process started with pid [94001]
+[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
+[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
+
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#projects" class="md-nav__link">
-     Projects
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -3641,51 +2565,82 @@
 
 
     
-    <style>
-    .md-typeset .cover {
-        display: none;
-    }
-    .md-typeset .cover + hr {
-        display: none;
-    }
-    .md-typeset h1,
-    .md-typeset h2 {
-        color: orangered;
-    }
-    .md-typeset .cards .card {
-        border-radius: 1em;
-        padding: 1em;
-    }
-    .md-typeset .cards .col:first-of-type {
-        margin-left: -1em;
-    }
-    .md-typeset .cards .col:last-of-type {
-        margin-right: -1em;
-    }
-    .md-typeset .cards .card h2 {
-        margin-top: 0;
-    }
-</style>
+    <h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>LaunchConfiguration</strong> is local to the launch file and scoped.</li>
+<li><strong>DeclareLaunchArgument</strong> allows you to expose the argument outside of your launch file. Allowing them to be listed, set, or marked as required when a user launches it from the command line (using ros2 launch) or when including it from another launch file (using IncludeLaunchDescription).</li>
+</ul>
+<div class="highlight"><span class="filename">basic_demo_args.launch.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">launch</span>
 
-<h1 id="robots-inside">Robots Inside<a class="headerlink" href="#robots-inside" title="Permanent link">#</a></h1>
-<p>First steps in robotics Systems.<br />
-From hardware to applications. Step by step.</p>
-<div class="row cards">
-<div class="col">
-<div class="card">
-<h2 id="blog"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12z"/></svg></span> Blog<a class="headerlink" href="#blog" title="Permanent link">#</a></h2>
-<p>Each post is what I&rsquo;ve learned, and I wrote them down to share. Hope you&rsquo;ll find something interesting there.</p>
-<p><a class="md-button" href="blog/">Read news</a></p>
+<span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">launch</span><span class="o">.</span><span class="n">LaunchDescription</span><span class="p">([</span>
+        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s1">&#39;hello world&#39;</span><span class="p">),</span>
+        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">),</span>
+        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">)),</span>
+        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">)),</span>
+    <span class="p">])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ros2 launch basic demo_args.launch.py other:<span class="o">=</span><span class="s2">&quot;other message&quot;</span>
+<span class="c1"># Result</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: All log files can be found below /home/user/.ros/log/2022-04-06-11-27-22-383934-lap2-90291
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: Default logging verbosity is <span class="nb">set</span> to INFO
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch.user<span class="o">]</span>: hello world
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch.user<span class="o">]</span>: other message
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>other</code> argument is mandatory because has no <code>default value</code></p>
 </div>
-</div>
-<div class="col">
-<div class="card">
-<h2 id="projects"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Projects<a class="headerlink" href="#projects" title="Permanent link">#</a></h2>
-<p>A list of my projects which are done for learning and practicing in free time.</p>
-<p><a class="md-button" href="projects/">See projects</a></p>
-</div>
-</div>
-</div>
+<h4 id="cli">cli<a class="headerlink" href="#cli" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>ros2 launch -s basic demo_args.launch.py
+<span class="c1"># Result</span>
+Arguments <span class="o">(</span>pass arguments as <span class="s1">&#39;&lt;name&gt;:=&lt;value&gt;&#39;</span><span class="o">)</span>:
+
+    <span class="s1">&#39;msg&#39;</span>:
+        no description given
+        <span class="o">(</span>default: <span class="s1">&#39;hello world&#39;</span><span class="o">)</span>
+
+    <span class="s1">&#39;other&#39;</span>:
+        no description given
+</code></pre></div>
+<h2 id="demo-launch-with-arguments">demo: launch with arguments<a class="headerlink" href="#demo-launch-with-arguments" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">simple_param_args.launch.py</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">DeclareLaunchArgument</span><span class="p">,</span> <span class="n">LogInfo</span>
+<span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">launch.substitutions</span> <span class="kn">import</span> <span class="n">LaunchConfiguration</span>
+</span><span class="linenos" data-linenos=" 4 "></span><span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">ld</span> <span class="o">=</span> <span class="n">LaunchDescription</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">my_str_arg</span> <span class="o">=</span> <span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s2">&quot;my_str&quot;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">my_str</span> <span class="o">=</span> <span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;my_str&quot;</span><span class="p">)</span>    
+<span class="linenos" data-linenos="11 "></span>    <span class="n">node</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simple_params&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="n">package</span> <span class="o">=</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span>        <span class="n">executable</span> <span class="o">=</span> <span class="s1">&#39;simple_param&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="16 "></span>            <span class="p">{</span><span class="s2">&quot;my_str&quot;</span><span class="p">:</span> <span class="n">my_str</span><span class="p">},</span>
+<span class="linenos" data-linenos="17 "></span>            <span class="p">{</span><span class="s2">&quot;my_int&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
+<span class="linenos" data-linenos="18 "></span>            <span class="p">{</span><span class="s2">&quot;my_double_array&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]}</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="p">]</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="p">)</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">my_str_arg</span><span class="p">)</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="k">return</span> <span class="n">ld</span>
+</code></pre></div>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
+<h2 id="ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100"><div class="highlight"><pre><span></span><code><span class="hll"><span class="linenos" data-linenos="1 "></span>ros2 launch basic simple_param_args.launch.py my_str:<span class="o">=</span>worlddddddddddddd
+</span><span class="linenos" data-linenos="2 "></span><span class="c1"># result</span>
+<span class="linenos" data-linenos="3 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
+<span class="linenos" data-linenos="4 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: Default logging verbosity is <span class="nb">set</span> to INFO
+<span class="linenos" data-linenos="5 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>simple_param-1<span class="o">]</span>: process started with pid <span class="o">[</span><span class="m">94001</span><span class="o">]</span>
+<span class="hll"><span class="linenos" data-linenos="6 "></span><span class="o">[</span>simple_param-1<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649243402</span>.580006387<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: Hello worlddddddddddddd! with int data: <span class="m">1000</span>
+</span><span class="linenos" data-linenos="7 "></span><span class="o">[</span>simple_param-1<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649243402</span>.580249948<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: array<span class="o">(</span><span class="s1">&#39;d&#39;</span>, <span class="o">[</span><span class="m">1</span>.0, <span class="m">10</span>.0<span class="o">])</span>
+</code></pre></div><a class="headerlink" href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" title="Permanent link">#</a></h2>
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://answers.ros.org/question/322874/ros2-what-is-different-between-declarelaunchargument-and-launchconfiguration/">what is different between DeclareLaunchArgument and LaunchConfiguration</a></li>
+</ul>
 
 
             </article>
@@ -3703,15 +2658,30 @@ From hardware to applications. Step by step.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../launch_hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - Launch file" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Part2 - Launch file
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Recent posts" rel="next">
+        <a href="../pub_sub/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Simple PUB / SUB" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Recent posts
+              Part1 - Simple PUB / SUB
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3741,20 +2711,20 @@ From hardware to applications. Step by step.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
