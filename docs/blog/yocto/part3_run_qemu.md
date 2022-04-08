@@ -9,6 +9,13 @@ tags:
     - 101
 ---
 
-aaaaaaaaaaaaaaaa
-aaaaaaaaaaaa
-bbbbbbbbbbbbbbb
+```bash
+runqemu tmp/deploy/images/qemux86-64/core-image-minimal-qemux86-64-20220406114623.qemuboot.conf
+```
+
+```bash
+runqemu tmp/deploy/images/qemux86-64/core-image-minimal-qemux86-64-20220406114623.qemuboot.conf nographic
+```
+
+!!! Note
+    quit `QEMU` nographic mode by press `ctrl-a` then `x`
