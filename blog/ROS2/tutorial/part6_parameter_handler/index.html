@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Build custom linux image with yocto">
+        <meta name="description" content="ROS2 parameters handler">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part2_hello_poky/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/part6_parameter_handler/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
-    <title>Part2 - Yocto tutorial - Robots Inside</title>
+    <title>Part6 - Simple parameter handler - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.644de097.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part2 - Yocto tutorial - Robots Inside" />
-    <meta property="og:description" content="Build custom linux image with yocto - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part2_hello_poky/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/yocto/part2_hello_poky/../images/yocto.png" />
+    <meta property="og:title" content="Part6 - Simple parameter handler - Robots Inside" />
+    <meta property="og:description" content="ROS2 parameters handler - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/part6_parameter_handler/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/part6_parameter_handler/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part2 - Yocto tutorial - Robots Inside" />
-    <meta name="twitter:description" content="Build custom linux image with yocto - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/yocto/part2_hello_poky/../images/yocto.png" />
+    <meta name="twitter:title" content="Part6 - Simple parameter handler - Robots Inside" />
+    <meta name="twitter:description" content="ROS2 parameters handler - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/part6_parameter_handler/../ros2.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#init-environment" class="md-skip">
+        <a href="#run" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part2 - Yocto tutorial
+              Part6 - Simple parameter handler
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -351,7 +351,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -372,12 +372,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -423,7 +425,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
         </div>
       
@@ -447,12 +449,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
       
       
       
@@ -489,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -503,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -517,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -529,11 +533,75 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part6 - Simple parameter handler
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part6 - Simple parameter handler
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get--set" class="md-nav__link">
+    get / set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dump--load" class="md-nav__link">
+    Dump / Load
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -545,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -559,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/py_node_with_param/" class="md-nav__link">
+      <a href="../py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -638,7 +706,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -681,7 +749,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -724,7 +792,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -787,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -806,14 +874,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
       
       
       
@@ -844,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -856,69 +922,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part2 - Yocto tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#init-environment" class="md-nav__link">
-    init environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-connectivity-using-google" class="md-nav__link">
-    check connectivity using google
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skip-connectivity-checks" class="md-nav__link">
-    skip connectivity checks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -930,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -976,7 +984,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
         </div>
       
@@ -1020,7 +1028,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -3129,7 +3137,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -3143,7 +3151,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3157,7 +3165,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -3171,7 +3179,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -3185,7 +3193,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -3199,7 +3207,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -3213,7 +3221,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3227,7 +3235,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3241,7 +3249,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3255,7 +3263,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3269,7 +3277,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -3283,7 +3291,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -3297,7 +3305,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -3311,7 +3319,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3325,7 +3333,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3339,7 +3347,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3353,7 +3361,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3367,7 +3375,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3381,7 +3389,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -3395,7 +3403,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3409,7 +3417,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -3445,29 +3453,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#init-environment" class="md-nav__link">
-    init environment
+  <a href="#run" class="md-nav__link">
+    Run
   </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get--set" class="md-nav__link">
+    get / set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-connectivity-using-google" class="md-nav__link">
-    check connectivity using google
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skip-connectivity-checks" class="md-nav__link">
-    skip connectivity checks
+  <a href="#dump--load" class="md-nav__link">
+    Dump / Load
   </a>
   
 </li>
@@ -3522,13 +3536,13 @@
 <div class="cover">
     
     
-        <h1> Part2 - Yocto tutorial </h1>
+        <h1> Part6 - Simple parameter handler </h1>
     
 
     
     
         <p class="post-description">
-            Build custom linux image with yocto
+            ROS2 parameters handler
         </p>
     
 
@@ -3538,15 +3552,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#yocto">
+                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
                             <span class="tag-name">
-                                #yocto &nbsp;
+                                #ros2 &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#poky">
+                        <a class="tag" href="https://robobe.github.io/tags/#parameters">
                             <span class="tag-name">
-                                #poky &nbsp;
+                                #parameters &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#param">
+                            <span class="tag-name">
+                                #param &nbsp;
                             </span>
                         </a>
                     
@@ -3627,29 +3647,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#init-environment" class="md-nav__link">
-    init environment
+  <a href="#run" class="md-nav__link">
+    Run
   </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get--set" class="md-nav__link">
+    get / set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-connectivity-using-google" class="md-nav__link">
-    check connectivity using google
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skip-connectivity-checks" class="md-nav__link">
-    skip connectivity checks
+  <a href="#dump--load" class="md-nav__link">
+    Dump / Load
   </a>
   
 </li>
@@ -3662,29 +3688,72 @@
 
 
     
-    <h2 id="init-environment">init environment<a class="headerlink" href="#init-environment" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># from poky folder</span>
-<span class="nb">source</span> oe-init-build-env &lt;location of build folder&gt;
+    <h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h2>
+<h3 id="list">List<a class="headerlink" href="#list" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ros2 param list
+/simple_params:
+  my_double_array
+  my_int
+  my_str
+  use_sim_time
 </code></pre></div>
-<p>create folder and files under chosen <code>build</code> location</p>
-<p>local.conf
-bblayers.conf</p>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h2>
-<p>Building custom linux distribution</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># bitbake &lt;image name&gt;</span>
-bitbake core-image-minimal
+<h3 id="get--set">get / set<a class="headerlink" href="#get--set" title="Permanent link">#</a></h3>
+<div class="highlight"><span class="filename">get</span><pre><span></span><code><span class="c1"># my_str</span>
+ros2 param get /simple_params my_str
+Parameter not set.
+
+<span class="c1"># my_int</span>
+ros2 param get /simple_params my_int
+Integer value is: <span class="m">10</span>
 </code></pre></div>
-<div class="admonition fix">
-<p class="admonition-title">Fix</p>
-<p>If bitbake failed to resolve URI<br />
-set CONNECTIVITY_CHECK_URIS field in <code>conf/local.conf</code></p>
-<p>```bash title=&rdquo;so 52395512&rdquo;</p>
-<h1 id="check-connectivity-using-google">check connectivity using google<a class="headerlink" href="#check-connectivity-using-google" title="Permanent link">#</a></h1>
+<div class="highlight"><span class="filename">set</span><pre><span></span><code><span class="c1"># my_int</span>
+ros2 param <span class="nb">set</span> /simple_params my_int <span class="m">20</span>
+<span class="c1"># result</span>
+Set parameter successful
+
+<span class="c1"># output log from node callback param function (name, value, type)</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395615</span>.004278881<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: my_int
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395615</span>.004490765<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: <span class="m">20</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395615</span>.004679396<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: Type.INTEGER
+
+<span class="c1"># my_str</span>
+ros2 param <span class="nb">set</span> /simple_params my_str <span class="s2">&quot;world world&quot;</span>
+<span class="c1"># result</span>
+Set parameter successful
+
+<span class="c1"># output log from node callback param function (name, value, type)</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395751</span>.117007430<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: my_str
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395751</span>.117735309<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: world world
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649395751</span>.118404909<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: Type.STRING
+
+<span class="c1"># my_double_array</span>
+ros2 param <span class="nb">set</span> /simple_params my_double_array <span class="s2">&quot;[1.0, 2.0, 3.0]&quot;</span>
+<span class="c1"># result</span>
+Set parameter successful
+
+<span class="c1"># output log from node callback param function (name, value, type)</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649396032</span>.647319212<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: my_double_array
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649396032</span>.648079309<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: array<span class="o">(</span><span class="s1">&#39;d&#39;</span>, <span class="o">[</span><span class="m">1</span>.0, <span class="m">2</span>.0, <span class="m">3</span>.0<span class="o">])</span>
+<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649396032</span>.648748882<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: Type.DOUBLE_ARRAY
+</code></pre></div>
+<h2 id="dump--load">Dump / Load<a class="headerlink" href="#dump--load" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">dump</span><pre><span></span><code><span class="c1">#ros2 param dump /simple_params --output-dir /tmp</span>
+<span class="c1"># ros2 param dump /simple_params --print</span>
+ros2 param dump /simple_params
+<span class="c1"># Result</span>
+Saving to:  ./simple_params.yaml
+</code></pre></div>
+<div class="highlight"><span class="filename">load</span><pre><span></span><code>ros2 param load /simple_params simple_params.yaml
+<span class="c1"># Result </span>
+Set parameter my_double_array successful
+Set parameter my_int successful
+Set parameter my_str successful
+Set parameter use_sim_time successful
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>ros2 param load</code> run the same <code>param callback</code> function like <code>param set</code></p>
 </div>
-<p>CONNECTIVITY_CHECK_URIS = &ldquo;https://www.google.com/&rdquo;</p>
-<h1 id="skip-connectivity-checks">skip connectivity checks<a class="headerlink" href="#skip-connectivity-checks" title="Permanent link">#</a></h1>
-<p>CONNECTIVITY_CHECK_URIS = &ldquo;&rdquo;
-    ```</p>
 
 
             </article>
@@ -3703,7 +3772,7 @@ set CONNECTIVITY_CHECK_URIS field in <code>conf/local.conf</code></p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part1_hello_yocto/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part1 - Yocto tutorial" rel="prev">
+        <a href="../part5_simple_service/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part5 - Simple Service" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3712,20 +3781,20 @@ set CONNECTIVITY_CHECK_URIS field in <code>conf/local.conf</code></p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part1 - Yocto tutorial
+              Part5 - Simple Service
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part3_run_qemu/" class="md-footer__link md-footer__link--next" aria-label="Next: Part3 - Yocto tutorial" rel="next">
+        <a href="../pub_sub/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Simple PUB / SUB" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part3 - Yocto tutorial
+              Part1 - Simple PUB / SUB
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3755,20 +3824,20 @@ set CONNECTIVITY_CHECK_URIS field in <code>conf/local.conf</code></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c44cc438.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
