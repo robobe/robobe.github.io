@@ -156,44 +156,11 @@ markdown_extensions:
   # Extra extensions
   #
   # - markdown_captions # add caption to figures
-  - customblocks # use ::: to create a new <div>
+  # - customblocks # use ::: to create a new <div>
   # - cell_row_span # merge cells in a table
 
 
-#
-# Extras
-#
-extra:
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/
-  analytics:
-    provider: google
-    property: UA-42618265-2 # or G-XXXXXXXXXX
-  
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#cookie-consent
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
-  
-  disqus: "vuquangtrong-github-io"
-  
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer
-  social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/vuquangtrong
-      name: vuquangtrong
-    - icon: fontawesome/brands/facebook-f
-      link: https://facebook.com/trongvq
-      name: trongvq
-    - icon: fontawesome/brands/linkedin-in
-      link: https://www.linkedin.com/in/vqtrong
-      name: vqtrong
-  generator: false # hide the line "Made with Material for MkDocs"
 
-#
 # Custom styles and scripts
 #
 extra_css:
