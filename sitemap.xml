@@ -2,92 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://robobe.github.io/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/colcon/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/launch_hello/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/part5_simple_service/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/part6_parameter_handler/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/tutorial/part7_custom_msgs/</loc>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/pub_sub/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorial/py_node_with_param/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/video/examples/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/video/ffmpeg/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/video/gstreamer/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/todo/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part1_hello_yocto/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part2_hello_poky/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part3_run_qemu/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/yocto/part4_add_ssh/</loc>
+         <lastmod>2022-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/yocto/part5-terminology/</loc>
+         <lastmod>2022-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/yocto/part6-tips/</loc>
+         <lastmod>2022-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/yocto/part7-operators/</loc>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/tags/</loc>
-         <lastmod>2022-04-08</lastmod>
+         <lastmod>2022-04-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
