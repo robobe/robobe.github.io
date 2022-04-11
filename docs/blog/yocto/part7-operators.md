@@ -1,5 +1,5 @@
 ---
-title: Part6 - Operators
+title: Part7 - Operators
 description: Variables
 date: "2022-04-11"
 banner: ../images/yocto.png
