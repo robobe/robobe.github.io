@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Run custom image with QEMU">
+        <meta name="description" content="Raspberry Pi yocto image">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part3_run_qemu/">
+        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part8-custom_layer/">
       
       <link rel="icon" href="../../../favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
-    <title>Part3 - Yocto tutorial - Robots Inside</title>
+    <title>Part8 - Custom layer - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.644de097.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part3 - Yocto tutorial - Robots Inside" />
-    <meta property="og:description" content="Run custom image with QEMU - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part3_run_qemu/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/yocto/part3_run_qemu/../images/yocto.png" />
+    <meta property="og:title" content="Part8 - Custom layer - Robots Inside" />
+    <meta property="og:description" content="Raspberry Pi yocto image - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part8-custom_layer/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/yocto/part8-custom_layer/../images/yocto-plus-raspberry-pi.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part3 - Yocto tutorial - Robots Inside" />
-    <meta name="twitter:description" content="Run custom image with QEMU - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/yocto/part3_run_qemu/../images/yocto.png" />
+    <meta name="twitter:title" content="Part8 - Custom layer - Robots Inside" />
+    <meta name="twitter:description" content="Raspberry Pi yocto image - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/yocto/part8-custom_layer/../images/yocto-plus-raspberry-pi.png" />
 
   </head>
   
@@ -108,6 +108,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#custom-layer" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -138,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part3 - Yocto tutorial
+              Part8 - Custom layer
             
           </span>
         </div>
@@ -893,19 +898,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
-      
     </li>
   
 
@@ -971,11 +968,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../part8-custom_layer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part8 - Custom layer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part8 - Custom layer
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-layer-to-project" class="md-nav__link">
+    Add layer to project
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1101,31 +1139,9 @@
 
                 
                 
-            </div>
-        </div>
-    </div>
-
-
-
-    
-
-    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-        <div class="md-sidebar__scrollwrap">
-            <div class="md-sidebar__inner">
-                
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                
-
-                
-                
-                    <div class="tag-cloud-toc">
+                    <br>
+                    <br>
+                    <div class="tag-cloud-nav">
                         
 
 
@@ -4631,7 +4647,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -4645,7 +4661,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4659,7 +4675,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -4673,7 +4689,7 @@
                     
                         font-size:1.9000000000000001rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">14</sup>-->
@@ -4687,7 +4703,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -4701,7 +4717,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -4715,7 +4731,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4729,7 +4745,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4743,7 +4759,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -4757,7 +4773,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4771,7 +4787,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4785,7 +4801,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4799,7 +4815,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -4827,7 +4843,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -4841,7 +4857,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4869,7 +4885,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4897,7 +4913,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4911,7 +4927,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -4925,7 +4941,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4939,7 +4955,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -4953,7 +4969,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -4962,6 +4978,47 @@
     
 </div>
                     </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-layer-to-project" class="md-nav__link">
+    Add layer to project
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
+
+                
                 
             </div>
         </div>
@@ -5006,13 +5063,13 @@
 <div class="cover">
     
     
-        <h1> Part3 - Yocto tutorial </h1>
+        <h1> Part8 - Custom layer </h1>
     
 
     
     
         <p class="post-description">
-            Run custom image with QEMU
+            Raspberry Pi yocto image
         </p>
     
 
@@ -5028,15 +5085,9 @@
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#qemu">
+                        <a class="tag" href="https://robobe.github.io/tags/#custom">
                             <span class="tag-name">
-                                #qemu &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#101">
-                            <span class="tag-name">
-                                #101 &nbsp;
+                                #custom &nbsp;
                             </span>
                         </a>
                     
@@ -5103,6 +5154,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-layer-to-project" class="md-nav__link">
+    Add layer to project
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
 </div>
@@ -5110,14 +5178,117 @@
 
 
     
-    <div class="highlight"><pre><span></span><code>runqemu tmp/deploy/images/qemux86-64/core-image-minimal-qemux86-64-20220406114623.qemuboot.conf
+    <h1 id="custom-layer">Custom layer<a class="headerlink" href="#custom-layer" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>bitbake-layers create-layer &lt;layer name&gt;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>runqemu tmp/deploy/images/qemux86-64/core-image-minimal-qemux86-64-20220406114623.qemuboot.conf nographic
+<div class="highlight"><pre><span></span><code>tree meta-mylayer
+/home/user/yocto/meta-mylayer/
+├── conf
+│   └── layer.conf
+├── COPYING.MIT
+├── README
+└── recipes-example
+    └── example
+        └── example_0.1.bb
+</code></pre></div>
+<h2 id="add-layer-to-project">Add layer to project<a class="headerlink" href="#add-layer-to-project" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add</span>
+bitbake-layers add-layer ~/yocto/meta-mylayer/
+
+<span class="c1"># Show</span>
+bitbake-layers show-layers
+NOTE: Starting bitbake server...
+layer                 path                                      <span class="nv">priority</span>
+<span class="o">==========================================================================</span>
+meta                  /home/user/yocto/poky/meta                <span class="m">5</span>
+meta-poky             /home/user/yocto/poky/meta-poky           <span class="m">5</span>
+meta-yocto-bsp        /home/user/yocto/poky/meta-yocto-bsp      <span class="m">5</span>
+meta-mylayer          /home/user/yocto/meta-mylayer             <span class="m">6</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>quit <code>QEMU</code> nographic mode by press <code>ctrl-a</code> then <code>x</code></p>
+<p><strong>Priority</strong>: This is the value used by BitBake to decide which recipe to use and the order in which the .bbappend files should be joined. It means that if two layers include the same recipe (.bb) file, the one with the higher priority is used.</p>
 </div>
+<h1 id="add-custom-recipe">Add custom recipe<a class="headerlink" href="#add-custom-recipe" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>meta-mylayer/
+├── conf
+│   └── layer.conf
+├── COPYING.MIT
+├── README
+├── recipes-example
+│   └── example
+│       └── example_0.1.bb
+└── recipes-hello
+    └── hello
+        ├── files
+        │   └── hello.c
+        └── hello_1.0.bb
+</code></pre></div>
+<h2 id="files">files<a class="headerlink" href="#files" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">recipes-hello.bb</span><pre><span></span><code><span class="nv">DESCRIPTION</span> <span class="o">=</span> <span class="s2">&quot;Hello-my first recipe&quot;</span>
+<span class="nv">SECTION</span> <span class="o">=</span> <span class="s2">&quot;Mywork&quot;</span>
+<span class="nv">LICENSE</span><span class="o">=</span><span class="s2">&quot;CLOSED&quot;</span>
+<span class="nv">LIC_FILES_CHKSUM</span> <span class="o">=</span> <span class="s2">&quot;file://</span><span class="si">${</span><span class="nv">COMMON_LICENSE_DIR</span><span class="si">}</span><span class="s2">/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302&quot;</span>
+<span class="nv">SRC_URI</span> <span class="o">=</span> <span class="s2">&quot;file://hello.c&quot;</span>
+<span class="nv">S</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">WORKDIR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">TARGET_CC_ARCH</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">LDFLAGS</span><span class="si">}</span><span class="s2">&quot;</span>
+
+do_compile<span class="o">()</span> <span class="o">{</span>
+         <span class="si">${</span><span class="nv">CC</span><span class="si">}</span> hello.c -o hello
+<span class="o">}</span>
+
+do_install<span class="o">()</span> <span class="o">{</span>
+         install -d <span class="si">${</span><span class="nv">D</span><span class="si">}${</span><span class="nv">bindir</span><span class="si">}</span>
+         install -m <span class="m">0755</span> hello <span class="si">${</span><span class="nv">D</span><span class="si">}${</span><span class="nv">bindir</span><span class="si">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="variables">variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h3>
+<p>meta/conf/bitbake.conf</p>
+<div class="highlight"><pre><span></span><code>export exec_prefix = &quot;/usr&quot;
+export bindir = &quot;${exec_prefix}/bin&quot;
+
+TMPDIR ?= &quot;${TOPDIR}/tmp&quot;
+WORKDIR = &quot;${TMPDIR}/work/${MULTIMACH_TARGET_SYS}/${PF}&quot;
+D = &quot;${WORKDIR}/image&quot;
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># TOPDIR</span>
+bitbake -e <span class="p">|</span> grep ^TOPDIR<span class="o">=</span>
+<span class="nv">TOPDIR</span><span class="o">=</span><span class="s2">&quot;/home/user/yocto/poky/build&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">hello.c</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello yocto</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<div class="highlight"><span class="filename">conf/local.conf</span><pre><span></span><code><span class="nv">CORE_IMAGE_EXTRA_INSTALL</span> <span class="o">+=</span> <span class="s2">&quot;dropbear \</span>
+<span class="s2">    python3 \</span>
+<span class="s2">    hello \</span>
+<span class="s2">&quot;</span>
+</code></pre></div>
+<hr />
+<h1 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>bitbake core-image-minimal
+</code></pre></div>
+<hr />
+<h1 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run qemu</span>
+runqemu qemux86-64 nographic
+<span class="c1"># login</span>
+$ ls -l /usr/bin/hello 
+-rwxr-xr-x    <span class="m">1</span> root     root         <span class="m">14376</span> Mar  <span class="m">9</span>  <span class="m">2018</span> /usr/bin/hello
+
+<span class="c1"># run program</span>
+$ hello
+Hello yocto
+</code></pre></div>
+<hr />
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://medium.com/@lokeshsharma596/yocto-lab-02-creating-custom-layer-and-writing-recipe-for-hello-world-f4438311bbfc">Yocto : Lab 02_Creating Custom layer and writing Recipe for Hello world</a></li>
+</ul>
 
 
             </article>
@@ -5136,7 +5307,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part2_hello_poky/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - Yocto tutorial" rel="prev">
+        <a href="../part7-operators/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part7 - Operators" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5145,20 +5316,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part2 - Yocto tutorial
+              Part7 - Operators
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part4_add_ssh/" class="md-footer__link md-footer__link--next" aria-label="Next: Part4 - Yocto tutorial" rel="next">
+        <a href="../yocto-rpi-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Yocto RPI part 1" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part4 - Yocto tutorial
+              Yocto RPI part 1
             </div>
           </div>
           <div class="md-footer__button md-icon">
