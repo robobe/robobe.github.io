@@ -1,6 +1,6 @@
 ---
 title: Part3 - Simple python Node with parameter
-description: Basic ROS2 node with parameter
+description: Basic ROS2 node with parameter, declare, read with type, set from command line or using yaml file, get and set from command line or gui
 date: "2022-04-05"
 banner: ../ros2.png
 tags:
@@ -74,7 +74,7 @@ ros2 param list
 
 ```
 
-### Run with yaml file
+### YAML file
 ```yaml  title="simple.yaml" linenums="1" hl_lines="2"
 simple_params:
   ros__parameters:
@@ -155,6 +155,25 @@ def generate_launch_description():
     ld.add_action(node)
     return ld
 ```
+
+# Update parameter
+## cli
+
+## gui
+
+```bash title="install"
+sudo apt install ros-foxy-rqt-reconfigure
+```
+
+### usage
+
+```
+ros2 run rqt_reconfigure rqt_reconfigure
+```
+
+!!! warning
+    Hit refresh if node not in list
+
 
 ---
 

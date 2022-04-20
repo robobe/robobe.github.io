@@ -1,5 +1,5 @@
 site_name: Robots Inside 
-site_url: https://robobe.github.io 
+site_url: https://robobe.github.io/
 site_description: Guides, notes and useful stuff for learning robotics systems.
 
 #
@@ -59,7 +59,7 @@ theme:
 #
 plugins:
   - search # must be included at the first place
-  # - awesome-pages:
+  - awesome-pages:
       # collapse_single_pages: true # replaced by navigation.indexes
   # - section-index # must be after awesome-pages, replaced by navigation.indexes
   # - git-revision-date-localized:
@@ -148,7 +148,7 @@ markdown_extensions:
   # Extra extensions
   #
   # - markdown_captions # add caption to figures
-  # - customblocks # use ::: to create a new <div>
+  - customblocks # use ::: to create a new <div>
   # - cell_row_span # merge cells in a table
   # - kbdextension # syntax [[ctrl]][[c]] does not look clear in MD document
 
