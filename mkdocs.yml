@@ -1,5 +1,5 @@
 site_name: Robots Inside 
-site_url: https://robobe.github.io/
+site_url: https://robobe.github.io/ # must have the trailing slash
 site_description: Guides, notes and useful stuff for learning robotics systems.
 
 #
@@ -69,11 +69,17 @@ plugins:
   # - encryptcontent:
   #       hljs: false
   #       arithmatex: false
+  #       mermaid2: false
   #       password_button: true
   #       remember_password: true
   #       default_expire_dalay: 24
-  #       # reload_scripts:
+        # reload_scripts:
             # - "./assets/extra.js"
+  # - exclude:
+  #       glob:
+  #         - '*/exclude/*'
+  #       regex:
+  #         - '.*\[exclude\].*'
   # - pdf-with-js:
         # enable: false # should enable only when need PDF files
         # add_download_button: false
@@ -150,11 +156,9 @@ markdown_extensions:
   # - markdown_captions # add caption to figures
   - customblocks # use ::: to create a new <div>
   # - cell_row_span # merge cells in a table
-  # - kbdextension # syntax [[ctrl]][[c]] does not look clear in MD document
 
-#
-# Extras
-#
+
+
 # Custom styles and scripts
 #
 extra_css:
