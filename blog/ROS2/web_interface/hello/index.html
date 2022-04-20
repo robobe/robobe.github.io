@@ -8,12 +8,18 @@
 
 
 
+    
 
 
 
 
 
 
+    
+
+
+
+    
 
 
 
@@ -25,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
+        <meta name="description" content="ROS2 Web interface">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/hello/">
       
-      <link rel="icon" href="favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Home - Robots Inside</title>
+    <title>Part1 - Web interfcae - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -60,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Home - Robots Inside" />
-    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/" />
-    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
+    <meta property="og:title" content="Part1 - Web interfcae - Robots Inside" />
+    <meta property="og:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/hello/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Home - Robots Inside" />
-    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
+    <meta name="twitter:title" content="Part1 - Web interfcae - Robots Inside" />
+    <meta name="twitter:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
 
   </head>
   
@@ -104,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robots-inside" class="md-skip">
+        <a href="#rosbridge" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -137,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Part1 - Web interfcae
             
           </span>
         </div>
@@ -203,12 +209,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -217,13 +221,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="blog/" class="md-tabs__link">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -239,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -255,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -273,10 +279,8 @@
           
     
     
-        
-    
 
-    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
         <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
                 
@@ -286,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -303,59 +307,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blog" class="md-nav__link">
-     Blog
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projects" class="md-nav__link">
-     Projects
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -366,12 +322,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -395,7 +353,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -416,12 +374,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -469,7 +429,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
         </div>
       
@@ -537,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -551,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -565,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -579,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../../tutorial/launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -593,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -607,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -621,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -640,12 +600,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
       
       
       
@@ -670,11 +632,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="blog/ROS2/web_interface/hello/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part1 - Web interfcae
       </a>
+      
     </li>
   
 
@@ -730,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -802,7 +774,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -845,7 +817,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -888,7 +860,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="blog/video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -953,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/vscode/extensions/" class="md-nav__link">
+      <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -967,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -1034,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -1048,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -1062,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -1076,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part4_add_ssh/" class="md-nav__link">
+      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -1090,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part5-terminology/" class="md-nav__link">
+      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -1104,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part6-tips/" class="md-nav__link">
+      <a href="../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -1118,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part7-operators/" class="md-nav__link">
+      <a href="../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -1132,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/part8-custom_layer/" class="md-nav__link">
+      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -1146,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/yocto/yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -1192,7 +1164,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
         </div>
       
@@ -1236,7 +1208,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -5766,7 +5738,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -5780,7 +5752,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5794,7 +5766,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -5808,7 +5780,7 @@
                     
                         font-size:1.9000000000000001rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">14</sup>-->
@@ -5822,7 +5794,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -5836,7 +5808,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -5850,7 +5822,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5864,7 +5836,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5878,7 +5850,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -5892,7 +5864,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5906,7 +5878,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5934,7 +5906,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5948,7 +5920,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5962,7 +5934,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -5976,7 +5948,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -5990,7 +5962,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6004,7 +5976,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -6018,7 +5990,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6032,7 +6004,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6046,7 +6018,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6060,7 +6032,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6074,7 +6046,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6088,7 +6060,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6102,7 +6074,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6116,7 +6088,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -6130,7 +6102,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6144,7 +6116,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6158,7 +6130,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6175,4921 +6147,24 @@
 
 
     
-        
-    
 
     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
         <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
                 
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                
 
                 
-                
-                    <div class="tag-cloud-toc">
-                        
-
-
-
-
-
-  
-
-  
-
-  
-    
-    
-      
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-
-  
-
-
-<style>
-    .tag-cloud {
-        margin-top:0;
-        margin-bottom: 0.5em;
-    }
-    .tag-cloud-content {
-        padding: 0 0.6rem;
-    }
-</style>
-
-<p class="md-nav tag-cloud">
-  <label class="md-nav__title">Tag cloud</label>
-</p>
-<div class="tag-cloud-content">
-    
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#ros2">
-                <span class="tag-name" style="
-                    
-                        font-size:1.4rem;
-                    
-                    color:DarkRed;
-                ">ros2&nbsp;
-                </span>
-                <!--<sup class="tag-count">9</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#colcon">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkBlue;
-                ">colcon&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#launch">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkCyan;
-                ">launch&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#101">
-                <span class="tag-name" style="
-                    
-                        font-size:1.9000000000000001rem;
-                    
-                    color:DarkGoldenrod;
-                ">101&nbsp;
-                </span>
-                <!--<sup class="tag-count">14</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#param">
-                <span class="tag-name" style="
-                    
-                        font-size:0.8rem;
-                    
-                    color:DarkCyan;
-                ">param&nbsp;
-                </span>
-                <!--<sup class="tag-count">3</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#parameter">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkTurquoise;
-                ">parameter&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#service">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkSlateBlue;
-                ">service&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#parameters">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkOrchid;
-                ">parameters&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#custom">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkOliveGreen;
-                ">custom&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#msgs">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkOrchid;
-                ">msgs&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#pub">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkGoldenrod;
-                ">pub&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#sub">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkGreen;
-                ">sub&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#web">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkSlateGray;
-                ">web&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#rosbridge">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkOliveGreen;
-                ">rosbridge&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#mkdocs">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkTurquoise;
-                ">mkdocs&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#plugins">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkOrchid;
-                ">plugins&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#extensions">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkCyan;
-                ">extensions&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#video">
-                <span class="tag-name" style="
-                    
-                        font-size:0.8rem;
-                    
-                    color:DarkTurquoise;
-                ">video&nbsp;
-                </span>
-                <!--<sup class="tag-count">3</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#ffmpeg">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkRed;
-                ">ffmpeg&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#gstreamer">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkRed;
-                ">gstreamer&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#cheat-sheet">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkBlue;
-                ">cheat-sheet&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#sdp">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkOrchid;
-                ">sdp&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#vscode">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkOliveGreen;
-                ">vscode&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#todo">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkOliveGreen;
-                ">todo&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#vscode-ext">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkViolet;
-                ">vscode-ext&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#yocto">
-                <span class="tag-name" style="
-                    
-                        font-size:1.4rem;
-                    
-                    color:DarkGreen;
-                ">yocto&nbsp;
-                </span>
-                <!--<sup class="tag-count">9</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#poky">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkSlateBlue;
-                ">poky&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#qemu">
-                <span class="tag-name" style="
-                    
-                        font-size:0.7rem;
-                    
-                    color:DarkSlateGray;
-                ">qemu&nbsp;
-                </span>
-                <!--<sup class="tag-count">2</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#rpi">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkViolet;
-                ">rpi&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-    
-</div>
-                    </div>
                 
             </div>
         </div>
@@ -11134,15 +6209,41 @@
 <div class="cover">
     
     
-        <h1> Home </h1>
+        <h1> Part1 - Web interfcae </h1>
     
 
     
+    
+        <p class="post-description">
+            ROS2 Web interface
+        </p>
     
 
     
         <div class="page-extra row">
             <div class="col">
+            
+                <p class="page-tags">
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
+                            <span class="tag-name">
+                                #ros2 &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#web">
+                            <span class="tag-name">
+                                #web &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#rosbridge">
+                            <span class="tag-name">
+                                #rosbridge &nbsp;
+                            </span>
+                        </a>
+                    
+                </p>
             
             
             </div>
@@ -11208,79 +6309,62 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#blog" class="md-nav__link">
-     Blog
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projects" class="md-nav__link">
-     Projects
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
 </div>
 
 
 
     
-    <style>
-    .md-typeset .cover {
-        display: none;
-    }
-    .md-typeset .cover + hr {
-        display: none;
-    }
-    .md-typeset h1,
-    .md-typeset h2 {
-        color: orangered;
-    }
-    .md-typeset .cards .card {
-        border-radius: 1em;
-        padding: 1em;
-    }
-    .md-typeset .cards .col:first-of-type {
-        margin-left: -1em;
-    }
-    .md-typeset .cards .col:last-of-type {
-        margin-right: -1em;
-    }
-    .md-typeset .cards .card h2 {
-        margin-top: 0;
-    }
-</style>
+    <h1 id="rosbridge">Rosbridge<a class="headerlink" href="#rosbridge" title="Permanent link">#</a></h1>
+<p>Rosbridge provides a JSON API to ROS functionality for non-ROS programs</p>
+<div class="highlight"><span class="filename">install</span><pre><span></span><code>sudo apt-get install ros-foxy-rosbridge-suite
+</code></pre></div>
+<hr />
+<h1 id="roslibjs">roslibjs<a class="headerlink" href="#roslibjs" title="Permanent link">#</a></h1>
+<p>roslibjs is the core JavaScript library for interacting with ROS from the browser. It uses WebSockets to connect with rosbridge and provides publishing, subscribing, service calls, actionlib, TF, URDF parsing, and other essential ROS functionality</p>
+<div class="highlight"><span class="filename">basic connection</span><pre><span></span><code><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span> <span class="o">/&gt;</span>
 
-<h1 id="robots-inside">Robots Inside<a class="headerlink" href="#robots-inside" title="Permanent link">#</a></h1>
-<p>First steps in robotics Systems.<br />
-From hardware to applications. Step by step.</p>
-<div class="row cards">
-<div class="col">
-<div class="card">
-<h2 id="blog"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12z"/></svg></span> Blog<a class="headerlink" href="#blog" title="Permanent link">#</a></h2>
-<p>Each post is what I&rsquo;ve learned, and I wrote them down to share. Hope you&rsquo;ll find something interesting there.</p>
-<p><a class="md-button" href="blog/">Read news</a></p>
-</div>
-</div>
-<div class="col">
-<div class="card">
-<h2 id="projects"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Projects<a class="headerlink" href="#projects" title="Permanent link">#</a></h2>
-<p>A list of my projects which are done for learning and practicing in free time.</p>
-<p><a class="md-button" href="projects/">See projects</a></p>
-</div>
-</div>
-</div>
+  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://static.robotwebtools.org/roslibjs/current/roslib.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+
+  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+    <span class="kd">var</span> <span class="nx">ros</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ROSLIB</span><span class="p">.</span><span class="nx">Ros</span><span class="p">({</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:9090&#39;</span>
+    <span class="p">});</span>
+
+    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Connected&quot;</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Error&quot;</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Closed&quot;</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="o">&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="err">/head&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Simple</span> <span class="nx">ROS</span> <span class="nx">User</span> <span class="nx">Interface</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Connection</span> <span class="nx">status</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;&lt;/p&gt;</span>
+<span class="o">&lt;</span><span class="err">/body&gt;</span>
+<span class="o">&lt;</span><span class="err">/html&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">terminal1</span><pre><span></span><code><span class="c1"># run bridge</span>
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+</code></pre></div>
+<hr />
+<hr />
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="http://wiki.ros.org/roslibjs">roslibjs</a></li>
+<li><a href="http://robotwebtools.org/">Robot Web Tools</a></li>
+<li><a href="https://github.com/RobotWebTools/rosbridge_suite">rosbridge_suite</a></li>
+<li><a href="https://msadowski.github.io/ros-web-tutorial-pt1/">ROS web tutorial part 1 - rosbridge server and roslibjs</a></li>
+</ul>
 
 
             </article>
@@ -11298,15 +6382,30 @@ From hardware to applications. Step by step.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../../tutorial/part7_custom_msgs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part7 - Custom msgs and srvs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Part7 - Custom msgs and srvs
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Recent posts" rel="next">
+        <a href="../../../mkdocs/plugins/" class="md-footer__link md-footer__link--next" aria-label="Next: mkdocs plugins" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Recent posts
+              mkdocs plugins
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -11336,20 +6435,20 @@ From hardware to applications. Step by step.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
