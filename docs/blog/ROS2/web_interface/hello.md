@@ -9,17 +9,32 @@ tags:
     - rosbridge
 ---
 
-# Rosbridge
+## Rosbridge
 Rosbridge provides a JSON API to ROS functionality for non-ROS programs
+
+[rosbridge_suite](https://github.com/RobotWebTools/rosbridge_suite)
+
+
 
 ```bash title="install"
 sudo apt-get install ros-foxy-rosbridge-suite
 ```
 
+### Run
+Open websocket on port 9090 as default
+
+```bash title="run bridge"
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+```
+
 ---
 
-# roslibjs
-roslibjs is the core JavaScript library for interacting with ROS from the browser. It uses WebSockets to connect with rosbridge and provides publishing, subscribing, service calls, actionlib, TF, URDF parsing, and other essential ROS functionality
+## roslibjs
+roslibjs is the core JavaScript library for interacting with ROS from the browser.  
+It uses WebSockets to connect with rosbridge and provides publishing, subscribing, service calls, actionlib, TF, URDF parsing, and other essential ROS functionality
+
+### Run
+Demo web page using `roslibjs` library
 
 ```js title="basic connection"
 <html>
@@ -54,10 +69,7 @@ roslibjs is the core JavaScript library for interacting with ROS from the browse
 </html>
 ```
 
-```bash title="terminal1"
-# run bridge
-ros2 launch rosbridge_server rosbridge_websocket_launch.xml
-```
+
 
 ---
 

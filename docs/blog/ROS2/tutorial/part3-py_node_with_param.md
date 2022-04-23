@@ -10,7 +10,11 @@ tags:
     - 101
 ---
 
-## node source code
+- Declare parameter
+- Init
+- Init with launch
+  
+## Code example
 
 <details><summary>source code</summary>
     ```python
@@ -156,23 +160,7 @@ def generate_launch_description():
     return ld
 ```
 
-# Update parameter
-## cli
 
-## gui
-
-```bash title="install"
-sudo apt install ros-foxy-rqt-reconfigure
-```
-
-### usage
-
-```
-ros2 run rqt_reconfigure rqt_reconfigure
-```
-
-!!! warning
-    Hit refresh if node not in list
 
 
 ---
