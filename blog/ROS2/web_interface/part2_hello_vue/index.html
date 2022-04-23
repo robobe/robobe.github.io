@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Terminology -> metadata, recipe, configuration, class, layer">
+        <meta name="description" content="learn basic vue javascript frame work for using roslibjs more convenient">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part5-terminology/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/part2_hello_vue/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part5 - Yocto terminology - Robots Inside</title>
+    <title>Part2 - hello vue - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part5 - Yocto terminology - Robots Inside" />
-    <meta property="og:description" content="Terminology -> metadata, recipe, configuration, class, layer - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part5-terminology/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/yocto/part5-terminology/../images/yocto.png" />
+    <meta property="og:title" content="Part2 - hello vue - Robots Inside" />
+    <meta property="og:description" content="learn basic vue javascript frame work for using roslibjs more convenient - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/part2_hello_vue/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/part2_hello_vue/../images/vue.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part5 - Yocto terminology - Robots Inside" />
-    <meta name="twitter:description" content="Terminology -> metadata, recipe, configuration, class, layer - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/yocto/part5-terminology/../images/yocto.png" />
+    <meta name="twitter:title" content="Part2 - hello vue - Robots Inside" />
+    <meta name="twitter:description" content="learn basic vue javascript frame work for using roslibjs more convenient - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/part2_hello_vue/../images/vue.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recipe" class="md-skip">
+        <a href="#hello" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part5 - Yocto terminology
+              Part2 - hello vue
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -353,7 +353,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -374,12 +374,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -427,7 +429,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
         </div>
       
@@ -495,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -509,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -523,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -537,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../../tutorial/launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -551,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -565,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -579,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -598,12 +600,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
       
       
       
@@ -636,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -648,11 +652,69 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part2 - hello vue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part2 - hello vue
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello" class="md-nav__link">
+    hello
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -664,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -678,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -736,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -808,7 +870,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -851,7 +913,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -894,7 +956,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -959,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/extensions/" class="md-nav__link">
+      <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -973,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -992,14 +1054,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
       
       
@@ -1042,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -1056,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -1070,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -1084,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part4_add_ssh/" class="md-nav__link">
+      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -1096,21 +1156,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
-      
     </li>
   
 
@@ -1122,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part6-tips/" class="md-nav__link">
+      <a href="../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -1136,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part7-operators/" class="md-nav__link">
+      <a href="../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -1150,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part8-custom_layer/" class="md-nav__link">
+      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -1164,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -1210,7 +1260,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
         </div>
       
@@ -1254,7 +1304,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -6574,7 +6624,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6588,7 +6638,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6602,7 +6652,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -6616,7 +6666,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -6630,7 +6680,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6644,7 +6694,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6658,7 +6708,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6672,7 +6722,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6686,7 +6736,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6700,7 +6750,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6728,7 +6778,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6742,7 +6792,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6756,7 +6806,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -6770,7 +6820,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6784,7 +6834,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6798,7 +6848,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6812,7 +6862,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6826,7 +6876,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -6840,7 +6890,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6854,7 +6904,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6882,7 +6932,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6896,7 +6946,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6910,7 +6960,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6924,7 +6974,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6938,7 +6988,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -6952,7 +7002,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -6966,7 +7016,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -6980,7 +7030,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7008,8 +7058,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello" class="md-nav__link">
+    hello
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                 
@@ -7059,13 +7143,13 @@
 <div class="cover">
     
     
-        <h1> Part5 - Yocto terminology </h1>
+        <h1> Part2 - hello vue </h1>
     
 
     
     
         <p class="post-description">
-            Terminology -> metadata, recipe, configuration, class, layer
+            learn basic vue javascript frame work for using roslibjs more convenient
         </p>
     
 
@@ -7075,9 +7159,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#yocto">
+                        <a class="tag" href="https://robobe.github.io/tags/#vue">
                             <span class="tag-name">
-                                #yocto &nbsp;
+                                #vue &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#web">
+                            <span class="tag-name">
+                                #web &nbsp;
                             </span>
                         </a>
                     
@@ -7150,8 +7240,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello" class="md-nav__link">
+    hello
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
 </div>
@@ -7159,92 +7283,123 @@
 
 
     
-    <h1 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h1>
-<p>A recipe is a set of instructions that is read and processed by the bitbake (file with <code>.bb</code> extension)</p>
-<p>A recipe describes:<br />
-- Where to fetch source code<br />
-- Which patch to apply<br />
-- Configuration options<br />
-- Compile options<br />
-- Install<br />
-- License  </p>
-<hr />
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h1>
-<p>Tell the build system what to build and put into the image (file with <code>.conf</code> extension)</p>
-<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">#</a></h2>
+    <p>Vue.js is an open-source MVVM framework</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Install <a href="https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode">HTML Preview</a><br />
+and change it&rsquo;s security permission to view vue html pages<br />
+<img alt="" src="../images/html_preview_security.png" /></p>
+</div>
+<h2 id="hello">hello<a class="headerlink" href="#hello" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;imports&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;vue&quot;</span><span class="o">:</span> <span class="s2">&quot;https://unpkg.com/vue@3/dist/vue.esm-browser.js&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>{{ message }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+
+    <span class="nx">createApp</span><span class="p">({</span>
+        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Hello Vue3!&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">#</a></h2>
+<p>The variables in Vue.js are JavaScript style variables<br />
+and support all the standard types that are available in vanilla JavaScript. </p>
+<p>These types include:</p>
 <ul>
-<li>Machine configuration option</li>
-<li>Distribution option</li>
-<li>Compiler tuning options</li>
-<li>General Common configuration options</li>
-<li>User options (local.conf)</li>
+<li>String - Stores strings</li>
+<li>Number - Stores integers, floating point, and exponential notations</li>
+<li>Boolean - Stores ‘true’ or ‘false’</li>
+<li>Null - Represents null value</li>
+<li>Object - Stores a dictionary</li>
+<li>Array - Stores a list of variables</li>
 </ul>
-<h3 id="example-machine-config">Example machine config<a class="headerlink" href="#example-machine-config" title="Permanent link">#</a></h3>
-<p>User <code>local.conf</code> we set the machine for example <code>MACHINE ??= "qemux86-64"</code></p>
-<p>This setting tell the system to load machine configuration option <code>meta/conf/machine/qemux86-64.conf</code></p>
-<hr />
-<h1 id="class">Class<a class="headerlink" href="#class" title="Permanent link">#</a></h1>
-<p>Class files are used to share common functionality across recipes (file with <code>.bbclsss</code> extension)</p>
+<div class="highlight"><span class="filename">data</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;imports&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;vue&quot;</span><span class="o">:</span> <span class="s2">&quot;https://unpkg.com/vue@3/dist/vue.esm-browser.js&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>string: {{ name }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>number: {{ count }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>bool: {{ visible }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>array: {{ todos[1] }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>null: {{ error }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>object: {{ object.foo }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+
+    <span class="nx">createApp</span><span class="p">({</span>
+        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span>                    <span class="c1">//string</span>
+                <span class="nx">count</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>                       <span class="c1">//number</span>
+                <span class="nx">visible</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>                 <span class="c1">//boolean</span>
+                <span class="nx">todos</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;task1&#39;</span><span class="p">,</span> <span class="s1">&#39;task2&#39;</span><span class="p">],</span>      <span class="c1">//array</span>
+                <span class="nx">error</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>                     <span class="c1">//null</span>
+                <span class="nx">object</span><span class="o">:</span> <span class="p">{</span>                       <span class="c1">//object</span>
+                    <span class="nx">foo</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">#</a></h2>
+<p>The methods property in the Vue instance contains the definitions of all the functions that the Vue instance can perform.<br />
+Function cat called by specific event or where needed</p>
+<div class="highlight"><span class="filename">method</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;imports&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;vue&quot;</span><span class="o">:</span> <span class="s2">&quot;https://unpkg.com/vue@3/dist/vue.esm-browser.js&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>{{get_name()}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+
+    <span class="nx">createApp</span><span class="p">({</span>
+        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">greeting</span><span class="o">:</span> <span class="s1">&#39;Hello world&#39;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">get_name</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+                    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">greeting</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>classes useally locate in <code>classes</code> directory inside the <code>meta*</code> directory</p>
+<p>using <code>this</code> to refer <code>data</code> variables</p>
 </div>
-<h2 id="usage-from-recipe">usage from recipe<a class="headerlink" href="#usage-from-recipe" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>inherit classname
-</code></pre></div>
 <hr />
-<h1 id="layers">Layers<a class="headerlink" href="#layers" title="Permanent link">#</a></h1>
-<p>A collection of related recipes.<br />
-layer isolate meta data according to functionality
-recipes are folders under layer folder</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>name convention for layer <code>meta-layername</code></p>
-</div>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>meta-poky</td>
-<td>Distro metadata</td>
-</tr>
-<tr>
-<td>meta-yocto-bsp</td>
-<td>BSP metadata</td>
-</tr>
-</tbody>
-</table>
-<p><code>BBLAYERS</code> variable present in <code>build/conf/bblayers.conf</code></p>
-<div class="highlight"><span class="filename">show layers</span><pre><span></span><code>bitbake-layers show-layers
-</code></pre></div>
-<h2 id="find-a-layer">Find a layer<a class="headerlink" href="#find-a-layer" title="Permanent link">#</a></h2>
-<p><a href="https://layers.openembedded.org/layerindex/branch/master/layers/">OpenEmbedded Layer Index</a></p>
-<figure>
-<p><img alt="" src="../images/2022-04-11-14-45-23.png" />
-  </p>
-<figcaption>raspberrypi</figcaption>
-</figure>
-<figure>
-<p><img alt="" src="../images/2022-04-11-14-49-17.png" />
-  </p>
-<figcaption>ros2 layers</figcaption>
-</figure>
-<hr />
-<h1 id="image">Image<a class="headerlink" href="#image" title="Permanent link">#</a></h1>
-<p>An image is the top level recipe<br />
-image define how the root filesystem is built , with what packages.</p>
-<div class="highlight"><span class="filename">list all images</span><pre><span></span><code>ls meta*/recipes*/images/*.bb
-</code></pre></div>
-<hr />
-<h1 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">#</a></h1>
-<p>A package is a binary file with name <em>.deb, </em>.rpm
-Packages are produces by recipe
-A signal recipe produces many packages. all recipe packages describe is <code>PACKAGES</code> variable</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://vuejs.org/guide/quick-start.html">vue3</a></li>
+</ul>
 
 
             </article>
@@ -7263,7 +7418,7 @@ A signal recipe produces many packages. all recipe packages describe is <code>PA
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part4_add_ssh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part4 - Yocto tutorial" rel="prev">
+        <a href="../hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part1 - Web interfcae" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -7272,20 +7427,20 @@ A signal recipe produces many packages. all recipe packages describe is <code>PA
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part4 - Yocto tutorial
+              Part1 - Web interfcae
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part6-tips/" class="md-footer__link md-footer__link--next" aria-label="Next: Part6 - Tips" rel="next">
+        <a href="../part3_vue_handling/" class="md-footer__link md-footer__link--next" aria-label="Next: Part3 - vue user handling" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part6 - Tips
+              Part3 - vue user handling
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -7315,20 +7470,20 @@ A signal recipe produces many packages. all recipe packages describe is <code>PA
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
