@@ -14,7 +14,7 @@ Vue.js is an open-source MVVM framework
 !!! Note
     Install [HTML Preview](https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode)  
     and change it's security permission to view vue html pages  
-    ![](../images/html_preview_security.png)
+    ![](images/html_preview_security.png)
 
 
 ## hello 
