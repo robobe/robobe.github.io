@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="learn basic vue user handling">
+        <meta name="description" content="tc - Adding Latency and Limiting Bandwidth">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/">
+        <link rel="canonical" href="https://robobe.github.io/blog/networking/tc/adding_latency_and_limiting_bandwidth/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part3 - vue user handling - Robots Inside</title>
+    <title>Adding Latency and Limiting Bandwidth - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta property="og:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta property="og:title" content="Adding Latency and Limiting Bandwidth - Robots Inside" />
+    <meta property="og:description" content="tc - Adding Latency and Limiting Bandwidth - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/networking/tc/adding_latency_and_limiting_bandwidth/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/networking/tc/adding_latency_and_limiting_bandwidth/images/linux.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta name="twitter:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta name="twitter:title" content="Adding Latency and Limiting Bandwidth - Robots Inside" />
+    <meta name="twitter:description" content="tc - Adding Latency and Limiting Bandwidth - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/networking/tc/adding_latency_and_limiting_bandwidth/images/linux.jpg" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-struct" class="md-skip">
+        <a href="#reference" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part3 - vue user handling
+              Adding Latency and Limiting Bandwidth
             
           </span>
         </div>
@@ -376,14 +376,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -431,7 +429,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../colcon/">Colcon</a>
+          <a href="../../../ROS2/colcon/">Colcon</a>
           
         </div>
       
@@ -499,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -513,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -527,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -541,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/launch_with_arguments/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -555,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -569,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -583,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -602,14 +600,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
       
       
       
@@ -642,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -656,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -668,68 +664,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part3 - vue user handling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -741,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -818,12 +757,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -848,12 +789,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" checked>
       
       
       
@@ -878,11 +821,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Adding Latency and Limiting Bandwidth
       </a>
+      
     </li>
   
 
@@ -7241,7 +7194,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -7255,7 +7208,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7269,7 +7222,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7283,7 +7236,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -7297,7 +7250,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7325,7 +7278,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7339,7 +7292,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7353,7 +7306,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7367,7 +7320,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7381,7 +7334,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7395,7 +7348,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7409,7 +7362,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7423,7 +7376,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7437,7 +7390,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7451,7 +7404,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7465,7 +7418,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7479,7 +7432,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7493,7 +7446,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7507,7 +7460,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7521,7 +7474,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7535,7 +7488,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7549,7 +7502,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7563,7 +7516,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7591,7 +7544,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7605,7 +7558,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7619,7 +7572,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7633,7 +7586,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7647,7 +7600,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7661,7 +7614,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -7675,7 +7628,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7689,7 +7642,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7703,7 +7656,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7731,41 +7684,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -7815,13 +7735,13 @@
 <div class="cover">
     
     
-        <h1> Part3 - vue user handling </h1>
+        <h1> Adding Latency and Limiting Bandwidth </h1>
     
 
     
     
         <p class="post-description">
-            learn basic vue user handling
+            tc - Adding Latency and Limiting Bandwidth
         </p>
     
 
@@ -7831,21 +7751,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#vue">
+                        <a class="tag" href="https://robobe.github.io/tags/#tc">
                             <span class="tag-name">
-                                #vue &nbsp;
+                                #tc &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#binding">
+                        <a class="tag" href="https://robobe.github.io/tags/#networking">
                             <span class="tag-name">
-                                #binding &nbsp;
+                                #networking &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#101">
+                        <a class="tag" href="https://robobe.github.io/tags/#linux">
                             <span class="tag-name">
-                                #101 &nbsp;
+                                #linux &nbsp;
                             </span>
                         </a>
                     
@@ -7912,41 +7832,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -7954,82 +7841,45 @@
 
 
     
-    <ul>
-<li>live server</li>
-<li>vetur</li>
-<li>material icon theme</li>
-</ul>
-<h2 id="basic-struct">Basic struct<a class="headerlink" href="#basic-struct" title="Permanent link">#</a></h2>
-<ul>
-<li>index.html: contain vue root element</li>
-<li>app.js: create app and mount to the root element</li>
-</ul>
-<div class="highlight"><span class="filename">index.html</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>vue<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue@3.0.2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="cm">&lt;!--template--&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <p>HTB help you to control the use of the outbound bandwidth on a given link</p>
+<div class="highlight"><pre><span></span><code>ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=67.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=115 time=67.6 ms
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">INTERFACE</span><span class="o">=</span>wlo1
+<span class="nv">IP</span><span class="o">=</span><span class="m">8</span>.8.8.8/32
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+sudo tc qdisc add dev <span class="nv">$INTERFACE</span> root handle <span class="m">1</span>:0 htb default <span class="m">10</span>
+<span class="c1"># class</span>
+sudo tc class add dev <span class="nv">$INTERFACE</span> parent <span class="m">1</span>:0 classid <span class="m">1</span>:10 htb rate 1024mbit
+<span class="c1"># latency</span>
+sudo tc qdisc add dev <span class="nv">$INTERFACE</span> parent <span class="m">1</span>:10 handle <span class="m">10</span>:0 netem delay 200ms
+
+<span class="c1"># filter</span>
+sudo tc filter add dev <span class="nv">$INTERFACE</span> protocol ip parent <span class="m">1</span>:0 prio <span class="m">1</span> u32 match ip dst <span class="nv">$IP</span> flowid <span class="m">1</span>:10
 </code></pre></div>
-<div class="highlight"><span class="filename">app.js</span><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span>    
-            <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">result</span><pre><span></span><code><span class="c1"># ping 8.8.8.8</span>
+ping <span class="m">8</span>.8.8.8
+PING <span class="m">8</span>.8.8.8 <span class="o">(</span><span class="m">8</span>.8.8.8<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+<span class="m">64</span> bytes from <span class="m">8</span>.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">115</span> <span class="nv">time</span><span class="o">=</span><span class="m">267</span> ms
+<span class="m">64</span> bytes from <span class="m">8</span>.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">115</span> <span class="nv">time</span><span class="o">=</span><span class="m">267</span> ms
+<span class="m">64</span> bytes from <span class="m">8</span>.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">115</span> <span class="nv">time</span><span class="o">=</span><span class="m">268</span> ms
+
+<span class="c1"># ping google.com</span>
+<span class="c1"># resolve domain with dig `dig google.com`</span>
+ping <span class="m">142</span>.250.186.46
+PING <span class="m">142</span>.250.186.46 <span class="o">(</span><span class="m">142</span>.250.186.46<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+<span class="m">64</span> bytes from <span class="m">142</span>.250.186.46: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">114</span> <span class="nv">time</span><span class="o">=</span><span class="m">84</span>.4 ms
+<span class="m">64</span> bytes from <span class="m">142</span>.250.186.46: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">114</span> <span class="nv">time</span><span class="o">=</span><span class="m">80</span>.7 ms
+<span class="m">64</span> bytes from <span class="m">142</span>.250.186.46: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">114</span> <span class="nv">time</span><span class="o">=</span><span class="m">82</span>.6 ms
 </code></pre></div>
-<hr />
-<h2 id="bind-and-event">Bind and event<a class="headerlink" href="#bind-and-event" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">vue div</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;counter++&quot;</span><span class="p">&gt;</span>inc<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter--&quot;</span><span class="p">&gt;</span>dec<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter=0&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><span class="filename">remove</span><pre><span></span><code>sudo tc qdisc del dev <span class="nv">$INTERFACE</span> root
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>@</code> is a shorthand for <code>v-on</code><br />
-<code>v-on:click</code> is <code>@click</code></p>
-</div>
-<h3 id="methods-property">methods property<a class="headerlink" href="#methods-property" title="Permanent link">#</a></h3>
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
 <ul>
-<li>Add <code>methods</code> property to vue app</li>
+<li><a href="http://blog.tinola.com/?e=22">Adding Latency and Limiting Bandwidth</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;reset&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;preset(10)&quot;</span><span class="p">&gt;</span>preset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span><span class="p">,</span>
-                <span class="nx">counter</span><span class="o">:</span> <span class="mf">0</span>
-            <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">reset</span><span class="p">(){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="mf">0</span>
-        <span class="p">},</span>
-        <span class="nx">preset</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="nx">value</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div>
 
 
             </article>
@@ -8048,7 +7898,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part2_hello_vue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - hello vue" rel="prev">
+        <a href="../../../mkdocs/plugins/" class="md-footer__link md-footer__link--prev" aria-label="Previous: mkdocs plugins" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -8057,20 +7907,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part2 - hello vue
+              mkdocs plugins
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part5_roslib_vue/" class="md-footer__link md-footer__link--next" aria-label="Next: Part5 - ROS Web interface with vue" rel="next">
+        <a href="../../../video/examples/" class="md-footer__link md-footer__link--next" aria-label="Next: FFMpeg and Gstreamer Examples" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part5 - ROS Web interface with vue
+              FFMpeg and Gstreamer Examples
             </div>
           </div>
           <div class="md-footer__button md-icon">
