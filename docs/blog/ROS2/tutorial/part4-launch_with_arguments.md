@@ -11,8 +11,6 @@ tags:
     - 101
 ---
 
-## 
-
 - **LaunchConfiguration** is local to the launch file and scoped.
 - **DeclareLaunchArgument** allows you to expose the argument outside of your launch file. Allowing them to be listed, set, or marked as required when a user launches it from the command line (using ros2 launch) or when including it from another launch file (using IncludeLaunchDescription).
 
@@ -40,7 +38,7 @@ ros2 launch basic demo_args.launch.py other:="other message"
 !!! Warning
     `other` argument is mandatory because has no `default value`
 
-#### cli
+### Run launch
 ```bash
 ros2 launch -s basic demo_args.launch.py
 # Result
@@ -54,7 +52,8 @@ Arguments (pass arguments as '<name>:=<value>'):
         no description given
 ```
 
-## demo: launch with arguments
+### Demo
+launch with arguments
 
 ```python title="simple_param_args.launch.py" linenums="1" hl_lines="3"
 
@@ -83,7 +82,10 @@ def generate_launch_description():
     return ld
 ```
 
-### Usage
+---
+
+#### Run and output
+Show launch file output
 ```bash linenums="1" hl_lines="1 6"
 ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
 # result
@@ -92,9 +94,8 @@ ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
 [INFO] [simple_param-1]: process started with pid [94001]
 [simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
 [simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array('d', [1.0, 10.0])
-
 ```
 ---
 
-# References
+## References
 - [what is different between DeclareLaunchArgument and LaunchConfiguration](https://answers.ros.org/question/322874/ros2-what-is-different-between-declarelaunchargument-and-launchconfiguration/)
