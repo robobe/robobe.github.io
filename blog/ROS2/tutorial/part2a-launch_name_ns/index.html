@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Launch file with arguments and config">
+        <meta name="description" content="Basic ROS2 launch file , control node name and namespace">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/part2a-launch_name_ns/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part4 - Launch with arguments - Robots Inside</title>
+    <title>Part2a - Launch file part II - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part4 - Launch with arguments - Robots Inside" />
-    <meta property="og:description" content="Launch file with arguments and config - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/../ros2.png" />
+    <meta property="og:title" content="Part2a - Launch file part II - Robots Inside" />
+    <meta property="og:description" content="Basic ROS2 launch file , control node name and namespace - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/part2a-launch_name_ns/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/part2a-launch_name_ns/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part4 - Launch with arguments - Robots Inside" />
-    <meta name="twitter:description" content="Launch file with arguments and config - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/launch_with_arguments/../ros2.png" />
+    <meta name="twitter:title" content="Part2a - Launch file part II - Robots Inside" />
+    <meta name="twitter:description" content="Basic ROS2 launch file , control node name and namespace - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/part2a-launch_name_ns/../ros2.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#launch-source-code" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part4 - Launch with arguments
+              Part2a - Launch file part II
             
           </span>
         </div>
@@ -350,6 +350,8 @@
         
           
         
+          
+        
       
       
         
@@ -481,6 +483,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_2_2">
@@ -527,20 +533,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../part3-py_node_with_param/" class="md-nav__link">
-        Part3 - Simple python Node with parameter
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -551,12 +543,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part4 - Launch with arguments
+          Part2a - Launch file part II
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Part4 - Launch with arguments
+        Part2a - Launch file part II
       </a>
       
         
@@ -573,63 +565,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#launch-source-code" class="md-nav__link">
+    launch source code
   </a>
-  
-    <nav class="md-nav" aria-label="">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-launch-with-arguments" class="md-nav__link">
-    demo: launch with arguments
-  </a>
-  
-    <nav class="md-nav" aria-label="demo: launch with arguments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    launch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-list" class="md-nav__link">
+    node list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-list" class="md-nav__link">
+    topic list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rqt_graph" class="md-nav__link">
+    rqt_graph
+  </a>
+  
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
-    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
-# result
-[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [simple_param-1]: process started with pid [94001]
-[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
-[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
-
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
   
 </li>
       
@@ -637,6 +616,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part3-py_node_with_param/" class="md-nav__link">
+        Part3 - Simple python Node with parameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part4-launch_with_arguments/" class="md-nav__link">
+        Part4 - Launch with arguments
+      </a>
     </li>
   
 
@@ -678,6 +685,20 @@
     <li class="md-nav__item">
       <a href="../part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part8_qos/" class="md-nav__link">
+        Part8 - QoS
       </a>
     </li>
   
@@ -816,14 +837,44 @@
       
       
         <label class="md-nav__link" for="__nav_2_3">
-          Mkdocs
+          Control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Mkdocs" data-md-level="2">
+      <nav class="md-nav" aria-label="Control" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
-          Mkdocs
+          Control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1">
+          Pid
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pid" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Pid
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -833,9 +884,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mkdocs/plugins/" class="md-nav__link">
-        mkdocs plugins
+      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
+        Hello PID
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -864,15 +922,82 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_4">
+          Mkdocs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mkdocs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Mkdocs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
+        mkdocs plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mkdocs/tips/" class="md-nav__link">
+        mkdocs tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
           Networking
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Networking" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
+        <label class="md-nav__title" for="__nav_2_5">
           <span class="md-nav__icon md-icon"></span>
           Networking
         </label>
@@ -887,7 +1012,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
       
       
       
@@ -896,13 +1021,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_4_1">
+        <label class="md-nav__link" for="__nav_2_5_1">
           Tc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tc" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_4_1">
+        <label class="md-nav__title" for="__nav_2_5_1">
           <span class="md-nav__icon md-icon"></span>
           Tc
         </label>
@@ -945,7 +1070,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
       
       
@@ -958,13 +1083,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_6">
           Video
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Video" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_6">
           <span class="md-nav__icon md-icon"></span>
           Video
         </label>
@@ -979,7 +1104,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_1" type="checkbox" id="__nav_2_6_1" >
       
       
       
@@ -998,7 +1123,7 @@
         </div>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_1">
+        <label class="md-nav__title" for="__nav_2_6_1">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -1022,7 +1147,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
       
       
       
@@ -1041,7 +1166,7 @@
         </div>
       
       <nav class="md-nav" aria-label="Ffmpeg" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_2">
+        <label class="md-nav__title" for="__nav_2_6_2">
           <span class="md-nav__icon md-icon"></span>
           Ffmpeg
         </label>
@@ -1065,7 +1190,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" type="checkbox" id="__nav_2_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
       
       
       
@@ -1084,7 +1209,7 @@
         </div>
       
       <nav class="md-nav" aria-label="Gstreamer" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_3">
+        <label class="md-nav__title" for="__nav_2_6_3">
           <span class="md-nav__icon md-icon"></span>
           Gstreamer
         </label>
@@ -1115,7 +1240,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
@@ -1124,15 +1249,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Vscode
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Vscode" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Vscode
         </label>
@@ -1146,6 +1273,20 @@
     <li class="md-nav__item">
       <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vscode/tips/" class="md-nav__link">
+        VSCode tips
       </a>
     </li>
   
@@ -1182,7 +1323,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
@@ -1207,13 +1348,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Yocto
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Yocto" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Yocto
         </label>
@@ -1589,6 +1730,86 @@
         
           
           
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -1622,37 +1843,6 @@
         
         
           
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
         
       
     
@@ -1798,6 +1988,37 @@
         
           
           
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -2323,56 +2544,9 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
             
             
-          
-        
-          
           
         
           
@@ -2447,9 +2621,6 @@
           
           
         
-          
-          
-        
         
         
       
@@ -2458,117 +2629,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -2650,20 +2710,9 @@
           
           
         
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
         
         
+          
         
       
     
@@ -2686,192 +2735,6 @@
             
             
             
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
@@ -2958,15 +2821,6 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
         
         
       
@@ -2975,142 +2829,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -3161,80 +2879,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -3339,6 +2983,569 @@
           
           
         
+        
+        
+          
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
           
         
@@ -3416,12 +3623,6 @@
           
           
         
-          
-          
-        
-          
-          
-        
         
         
           
@@ -3444,11 +3645,9 @@
         
           
           
-        
-          
-          
-        
-          
+            
+            
+            
           
         
           
@@ -3497,8 +3696,6 @@
           
         
         
-        
-          
         
       
     
@@ -3569,15 +3766,6 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
         
         
           
@@ -3649,15 +3837,6 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
         
         
           
@@ -3668,101 +3847,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -3902,109 +3986,6 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
             
             
@@ -4024,18 +4005,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -4187,24 +4156,10 @@
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
         
+        
+          
         
       
     
@@ -4212,114 +4167,6 @@
         
         
         
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -4457,19 +4304,6 @@
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -4494,102 +4328,7 @@
         
         
         
-      
-    
-      
-        
-        
-        
-        
           
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
         
       
     
@@ -4681,17 +4420,101 @@
           
           
         
+        
+        
+          
+        
+      
+    
+      
+        
+        
+        
+        
           
           
         
           
           
-            
-            
-            
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
         
+        
+          
         
       
     
@@ -4978,6 +4801,538 @@
         
           
           
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -5010,6 +5365,57 @@
         
           
           
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
             
             
@@ -5048,6 +5454,27 @@
           
           
         
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
           
         
@@ -5064,6 +5491,46 @@
           
         
           
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
           
         
           
@@ -5202,6 +5669,9 @@
         
           
           
+        
+          
+          
             
             
             
@@ -5284,113 +5754,9 @@
         
           
           
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
             
             
             
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
@@ -5526,12 +5892,12 @@
         
           
           
-            
-            
-            
-          
         
           
+          
+            
+            
+            
           
         
         
@@ -5661,10 +6027,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -5754,6 +6116,8 @@
           
         
         
+        
+          
         
       
     
@@ -5859,25 +6223,6 @@
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
         
           
           
@@ -5888,101 +6233,9 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
         
         
+          
         
       
     
@@ -6011,687 +6264,6 @@
           
         
           
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-  
-
-  
-    
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-        
-        
-      
-    
-      
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
           
         
           
@@ -6887,15 +6459,21 @@
         
           
           
-            
-            
-            
+        
+          
+          
+        
+          
           
         
           
           
         
           
+          
+            
+            
+            
           
         
         
@@ -6933,9 +6511,134 @@
         
           
           
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -7123,6 +6826,136 @@
           
           
         
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
         
         
           
@@ -7133,6 +6966,1658 @@
         
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -7273,12 +8758,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#ros2">
                 <span class="tag-name" style="
                     
-                        font-size:1.5rem;
+                        font-size:1.7000000000000002rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">ros2&nbsp;
                 </span>
-                <!--<sup class="tag-count">10</sup>-->
+                <!--<sup class="tag-count">12</sup>-->
             </a>
         
             
@@ -7289,7 +8774,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7301,12 +8786,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#launch">
                 <span class="tag-name" style="
                     
-                        font-size:0.7rem;
+                        font-size:0.8rem;
                     
                     color:DarkViolet;
                 ">launch&nbsp;
                 </span>
-                <!--<sup class="tag-count">2</sup>-->
+                <!--<sup class="tag-count">3</sup>-->
             </a>
         
             
@@ -7315,12 +8800,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#101">
                 <span class="tag-name" style="
                     
-                        font-size:2.1rem;
+                        font-size:2.4000000000000004rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">101&nbsp;
                 </span>
-                <!--<sup class="tag-count">16</sup>-->
+                <!--<sup class="tag-count">19</sup>-->
             </a>
         
             
@@ -7331,7 +8816,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7345,7 +8830,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7359,7 +8844,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7373,7 +8858,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7387,7 +8872,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7401,8 +8886,22 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkMagenta;
                 ">msgs&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#qos">
+                <span class="tag-name" style="
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkGreen;
+                ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -7415,7 +8914,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7429,7 +8928,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7443,7 +8942,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7457,7 +8956,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7471,7 +8970,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7494,15 +8993,43 @@
             
             
             
-            <a class="tag" href="https://robobe.github.io/tags/#mkdocs">
+            <a class="tag" href="https://robobe.github.io/tags/#control">
                 <span class="tag-name" style="
                     
                         font-size:0.6rem;
                     
+                    color:DarkGreen;
+                ">control&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#pid">
+                <span class="tag-name" style="
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkSlateGray;
+                ">pid&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#mkdocs">
+                <span class="tag-name" style="
+                    
+                        font-size:0.7rem;
+                    
                     color:DarkSlateBlue;
                 ">mkdocs&nbsp;
                 </span>
-                <!--<sup class="tag-count">1</sup>-->
+                <!--<sup class="tag-count">2</sup>-->
             </a>
         
             
@@ -7513,7 +9040,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7527,8 +9054,22 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">extensions&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#tips">
+                <span class="tag-name" style="
+                    
+                        font-size:0.7rem;
+                    
+                    color:DarkSlateGray;
+                ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
             </a>
@@ -7541,7 +9082,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7555,7 +9096,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7569,7 +9110,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7583,7 +9124,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -7597,7 +9138,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7611,7 +9152,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7625,7 +9166,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7639,7 +9180,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7651,12 +9192,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#vscode">
                 <span class="tag-name" style="
                     
-                        font-size:0.7rem;
+                        font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">vscode&nbsp;
                 </span>
-                <!--<sup class="tag-count">2</sup>-->
+                <!--<sup class="tag-count">3</sup>-->
             </a>
         
             
@@ -7667,7 +9208,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7695,7 +9236,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -7709,7 +9250,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7723,7 +9264,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -7737,7 +9278,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -7773,63 +9314,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#launch-source-code" class="md-nav__link">
+    launch source code
   </a>
-  
-    <nav class="md-nav" aria-label="">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-launch-with-arguments" class="md-nav__link">
-    demo: launch with arguments
-  </a>
-  
-    <nav class="md-nav" aria-label="demo: launch with arguments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    launch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-list" class="md-nav__link">
+    node list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-list" class="md-nav__link">
+    topic list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rqt_graph" class="md-nav__link">
+    rqt_graph
+  </a>
+  
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
-    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
-# result
-[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [simple_param-1]: process started with pid [94001]
-[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
-[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
-
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
   
 </li>
       
@@ -7883,13 +9411,13 @@
 <div class="cover">
     
     
-        <h1> Part4 - Launch with arguments </h1>
+        <h1> Part2a - Launch file part II </h1>
     
 
     
     
         <p class="post-description">
-            Launch file with arguments and config
+            Basic ROS2 launch file , control node name and namespace
         </p>
     
 
@@ -7902,18 +9430,6 @@
                         <a class="tag" href="https://robobe.github.io/tags/#ros2">
                             <span class="tag-name">
                                 #ros2 &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#param">
-                            <span class="tag-name">
-                                #param &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#parameter">
-                            <span class="tag-name">
-                                #parameter &nbsp;
                             </span>
                         </a>
                     
@@ -8000,63 +9516,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#launch-source-code" class="md-nav__link">
+    launch source code
   </a>
-  
-    <nav class="md-nav" aria-label="">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    cli
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-launch-with-arguments" class="md-nav__link">
-    demo: launch with arguments
-  </a>
-  
-    <nav class="md-nav" aria-label="demo: launch with arguments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
   
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    launch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-list" class="md-nav__link">
+    node list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-list" class="md-nav__link">
+    topic list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rqt_graph" class="md-nav__link">
+    rqt_graph
+  </a>
+  
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" class="md-nav__link">
-    ros2 launch basic simple_param_args.launch.py my_str:=worlddddddddddddd
-# result
-[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [simple_param-1]: process started with pid [94001]
-[simple_param-1] [INFO] [1649243402.580006387] [simple_params]: Hello worlddddddddddddd! with int data: 1000
-[simple_param-1] [INFO] [1649243402.580249948] [simple_params]: array(&#39;d&#39;, [1.0, 10.0])
-
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
   
 </li>
       
@@ -8068,82 +9571,69 @@
 
 
     
-    <h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+    <h2 id="launch-source-code">launch source code<a class="headerlink" href="#launch-source-code" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">hello.launch.py</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">ld</span> <span class="o">=</span> <span class="n">LaunchDescription</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">talker_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+<span class="hll"><span class="linenos" data-linenos=" 9 "></span>        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;my_ns&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos" data-linenos="10 "></span>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_pub&quot;</span><span class="p">,</span>
+</span><span class="linenos" data-linenos="11 "></span>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;simple_pub&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">)</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">listener_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+<span class="hll"><span class="linenos" data-linenos="16 "></span>        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;my_ns&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos" data-linenos="17 "></span>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_sub&quot;</span><span class="p">,</span>
+</span><span class="linenos" data-linenos="18 "></span>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;simple_sub&quot;</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">)</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">talker_node</span><span class="p">)</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">listener_node</span><span class="p">)</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span>    <span class="k">return</span> <span class="n">ld</span>
+</code></pre></div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>LaunchConfiguration</strong> is local to the launch file and scoped.</li>
-<li><strong>DeclareLaunchArgument</strong> allows you to expose the argument outside of your launch file. Allowing them to be listed, set, or marked as required when a user launches it from the command line (using ros2 launch) or when including it from another launch file (using IncludeLaunchDescription).</li>
+<li>launch</li>
+<li>node list</li>
+<li>topic list</li>
+<li>rqt_graph</li>
 </ul>
-<div class="highlight"><span class="filename">basic_demo_args.launch.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">launch</span>
-
-<span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">launch</span><span class="o">.</span><span class="n">LaunchDescription</span><span class="p">([</span>
-        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s1">&#39;hello world&#39;</span><span class="p">),</span>
-        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">),</span>
-        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">)),</span>
-        <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">)),</span>
-    <span class="p">])</span>
+<h3 id="launch">launch<a class="headerlink" href="#launch" title="Permanent link">#</a></h3>
+<ul>
+<li>log output note ns.node_name</li>
+</ul>
+<div class="highlight"><pre><span></span><code>ros2 launch basic hello.launch.py 
+...
+<span class="o">[</span>simple_pub-1<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1651090792</span>.927189288<span class="o">]</span> <span class="o">[</span>my_ns.my_pub<span class="o">]</span>: Publishing: <span class="s2">&quot;pub simple: 1&quot;</span>
+<span class="o">[</span>simple_sub-2<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1651090792</span>.927732100<span class="o">]</span> <span class="o">[</span>my_ns.my_sub<span class="o">]</span>: I heard: pub simple: <span class="m">1</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>ros2 launch basic demo_args.launch.py other:<span class="o">=</span><span class="s2">&quot;other message&quot;</span>
+<h3 id="node-list">node list<a class="headerlink" href="#node-list" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ros2 node list
 <span class="c1"># Result</span>
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: All log files can be found below /home/user/.ros/log/2022-04-06-11-27-22-383934-lap2-90291
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: Default logging verbosity is <span class="nb">set</span> to INFO
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch.user<span class="o">]</span>: hello world
-<span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch.user<span class="o">]</span>: other message
+/my_ns/my_pub
+/my_ns/my_sub
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><code>other</code> argument is mandatory because has no <code>default value</code></p>
+<h3 id="topic-list">topic list<a class="headerlink" href="#topic-list" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ros2 topic list
+/my_ns/minimal
+/parameter_events
+/rosout
+</code></pre></div>
+<div class="admonition node">
+<p class="admonition-title">Node</p>
+<ul>
+<li><code>/rosout</code>: ??</li>
+<li><code>/parameter_event</code>: ??</li>
+</ul>
 </div>
-<h4 id="cli">cli<a class="headerlink" href="#cli" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>ros2 launch -s basic demo_args.launch.py
-<span class="c1"># Result</span>
-Arguments <span class="o">(</span>pass arguments as <span class="s1">&#39;&lt;name&gt;:=&lt;value&gt;&#39;</span><span class="o">)</span>:
-
-    <span class="s1">&#39;msg&#39;</span>:
-        no description given
-        <span class="o">(</span>default: <span class="s1">&#39;hello world&#39;</span><span class="o">)</span>
-
-    <span class="s1">&#39;other&#39;</span>:
-        no description given
-</code></pre></div>
-<h2 id="demo-launch-with-arguments">demo: launch with arguments<a class="headerlink" href="#demo-launch-with-arguments" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">simple_param_args.launch.py</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">DeclareLaunchArgument</span><span class="p">,</span> <span class="n">LogInfo</span>
-<span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">launch.substitutions</span> <span class="kn">import</span> <span class="n">LaunchConfiguration</span>
-</span><span class="linenos" data-linenos=" 4 "></span><span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="linenos" data-linenos=" 5 "></span>
-<span class="linenos" data-linenos=" 6 "></span><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
-<span class="linenos" data-linenos=" 7 "></span>    <span class="n">ld</span> <span class="o">=</span> <span class="n">LaunchDescription</span><span class="p">()</span>
-<span class="linenos" data-linenos=" 8 "></span>
-<span class="linenos" data-linenos=" 9 "></span>    <span class="n">my_str_arg</span> <span class="o">=</span> <span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s2">&quot;my_str&quot;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
-<span class="linenos" data-linenos="10 "></span>    <span class="n">my_str</span> <span class="o">=</span> <span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;my_str&quot;</span><span class="p">)</span>    
-<span class="linenos" data-linenos="11 "></span>    <span class="n">node</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span>
-<span class="linenos" data-linenos="12 "></span>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simple_params&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="13 "></span>        <span class="n">package</span> <span class="o">=</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span>
-<span class="linenos" data-linenos="14 "></span>        <span class="n">executable</span> <span class="o">=</span> <span class="s1">&#39;simple_param&#39;</span><span class="p">,</span>
-<span class="linenos" data-linenos="15 "></span>        <span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos" data-linenos="16 "></span>            <span class="p">{</span><span class="s2">&quot;my_str&quot;</span><span class="p">:</span> <span class="n">my_str</span><span class="p">},</span>
-<span class="linenos" data-linenos="17 "></span>            <span class="p">{</span><span class="s2">&quot;my_int&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
-<span class="linenos" data-linenos="18 "></span>            <span class="p">{</span><span class="s2">&quot;my_double_array&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]}</span>
-<span class="linenos" data-linenos="19 "></span>        <span class="p">]</span>
-<span class="linenos" data-linenos="20 "></span>    <span class="p">)</span>
-<span class="linenos" data-linenos="21 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">my_str_arg</span><span class="p">)</span>
-<span class="linenos" data-linenos="22 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<span class="linenos" data-linenos="23 "></span>    <span class="k">return</span> <span class="n">ld</span>
-</code></pre></div>
-<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
-<h2 id="ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100"><div class="highlight"><pre><span></span><code><span class="hll"><span class="linenos" data-linenos="1 "></span>ros2 launch basic simple_param_args.launch.py my_str:<span class="o">=</span>worlddddddddddddd
-</span><span class="linenos" data-linenos="2 "></span><span class="c1"># result</span>
-<span class="linenos" data-linenos="3 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: All log files can be found below /home/user/.ros/log/2022-04-06-14-10-00-346206-lap2-93999
-<span class="linenos" data-linenos="4 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>launch<span class="o">]</span>: Default logging verbosity is <span class="nb">set</span> to INFO
-<span class="linenos" data-linenos="5 "></span><span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span>simple_param-1<span class="o">]</span>: process started with pid <span class="o">[</span><span class="m">94001</span><span class="o">]</span>
-<span class="hll"><span class="linenos" data-linenos="6 "></span><span class="o">[</span>simple_param-1<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649243402</span>.580006387<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: Hello worlddddddddddddd! with int data: <span class="m">1000</span>
-</span><span class="linenos" data-linenos="7 "></span><span class="o">[</span>simple_param-1<span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> <span class="o">[</span><span class="m">1649243402</span>.580249948<span class="o">]</span> <span class="o">[</span>simple_params<span class="o">]</span>: array<span class="o">(</span><span class="s1">&#39;d&#39;</span>, <span class="o">[</span><span class="m">1</span>.0, <span class="m">10</span>.0<span class="o">])</span>
-</code></pre></div><a class="headerlink" href="#ros2-launch-basic-simple_param_argslaunchpy-my_strworlddddddddddddd-resultinfo-launch-all-log-files-can-be-found-below-homeuserroslog2022-04-06-14-10-00-346206-lap2-93999info-launch-default-logging-verbosity-is-set-to-infoinfo-simple_param-1-process-started-with-pid-94001simple_param-1-info-1649243402580006387-simple_params-hello-worlddddddddddddd-with-int-data-1000simple_param-1-info-1649243402580249948-simple_params-arrayd-10-100" title="Permanent link">#</a></h2>
-<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h1>
-<ul>
-<li><a href="https://answers.ros.org/question/322874/ros2-what-is-different-between-declarelaunchargument-and-launchconfiguration/">what is different between DeclareLaunchArgument and LaunchConfiguration</a></li>
-</ul>
+<h3 id="rqt_graph">rqt_graph<a class="headerlink" href="#rqt_graph" title="Permanent link">#</a></h3>
+<p><img alt="" src="../images/rqt_graph.png" /></p>
 
 
             </article>
@@ -8162,7 +9652,7 @@ Arguments <span class="o">(</span>pass arguments as <span class="s1">&#39;&lt;na
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part3-py_node_with_param/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part3 - Simple python Node with parameter" rel="prev">
+        <a href="../launch_hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - Launch file" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -8171,20 +9661,20 @@ Arguments <span class="o">(</span>pass arguments as <span class="s1">&#39;&lt;na
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part3 - Simple python Node with parameter
+              Part2 - Launch file
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part5_simple_service/" class="md-footer__link md-footer__link--next" aria-label="Next: Part5 - Simple Service" rel="next">
+        <a href="../part3-py_node_with_param/" class="md-footer__link md-footer__link--next" aria-label="Next: Part3 - Simple python Node with parameter" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part5 - Simple Service
+              Part3 - Simple python Node with parameter
             </div>
           </div>
           <div class="md-footer__button md-icon">

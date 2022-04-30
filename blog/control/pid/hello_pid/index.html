@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ROS2 Web interface">
+        <meta name="description" content="PID control">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/hello/">
+        <link rel="canonical" href="https://robobe.github.io/blog/control/pid/hello_pid/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part1 - Web interfcae - Robots Inside</title>
+    <title>Hello PID - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part1 - Web interfcae - Robots Inside" />
-    <meta property="og:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/hello/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
+    <meta property="og:title" content="Hello PID - Robots Inside" />
+    <meta property="og:description" content="PID control - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/control/pid/hello_pid/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/control/pid/hello_pid/images/linux.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part1 - Web interfcae - Robots Inside" />
-    <meta name="twitter:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
+    <meta name="twitter:title" content="Hello PID - Robots Inside" />
+    <meta name="twitter:description" content="PID control - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/control/pid/hello_pid/images/linux.jpg" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rosbridge" class="md-skip">
+        <a href="#reference" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part1 - Web interfcae
+              Hello PID
             
           </span>
         </div>
@@ -378,14 +378,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -433,7 +431,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../colcon/">Colcon</a>
+          <a href="../../../ROS2/colcon/">Colcon</a>
           
         </div>
       
@@ -505,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -519,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -533,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -547,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -561,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -575,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -589,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -603,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -617,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -636,14 +634,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
       
       
       
@@ -674,88 +670,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part1 - Web interfcae
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
-  </a>
-  
-    <nav class="md-nav" aria-label="Rosbridge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
-  </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -767,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -781,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part3_vue_handling/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -795,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -821,12 +740,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -851,12 +772,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" checked>
       
       
       
@@ -881,11 +804,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Hello PID
       </a>
+      
     </li>
   
 
@@ -8759,7 +8692,7 @@
                     
                         font-size:1.7000000000000002rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">12</sup>-->
@@ -8773,7 +8706,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8801,7 +8734,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -8815,7 +8748,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -8829,7 +8762,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8843,7 +8776,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8857,7 +8790,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkBlue;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8871,7 +8804,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8899,7 +8832,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8913,7 +8846,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8927,7 +8860,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8941,7 +8874,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8955,7 +8888,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8969,7 +8902,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -8983,7 +8916,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8997,7 +8930,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9011,7 +8944,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9025,7 +8958,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9039,7 +8972,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9053,7 +8986,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9067,7 +9000,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9081,7 +9014,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9095,7 +9028,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9109,7 +9042,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9123,7 +9056,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGreen;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -9137,7 +9070,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9151,7 +9084,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9165,7 +9098,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9179,7 +9112,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9193,7 +9126,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -9207,7 +9140,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9221,7 +9154,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9235,7 +9168,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -9249,7 +9182,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9263,7 +9196,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9277,7 +9210,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9305,61 +9238,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
-  </a>
-  
-    <nav class="md-nav" aria-label="Rosbridge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
-  </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -9409,13 +9289,13 @@
 <div class="cover">
     
     
-        <h1> Part1 - Web interfcae </h1>
+        <h1> Hello PID </h1>
     
 
     
     
         <p class="post-description">
-            ROS2 Web interface
+            PID control
         </p>
     
 
@@ -9425,21 +9305,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
+                        <a class="tag" href="https://robobe.github.io/tags/#control">
                             <span class="tag-name">
-                                #ros2 &nbsp;
+                                #control &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#web">
+                        <a class="tag" href="https://robobe.github.io/tags/#pid">
                             <span class="tag-name">
-                                #web &nbsp;
+                                #pid &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#rosbridge">
+                        <a class="tag" href="https://robobe.github.io/tags/#101">
                             <span class="tag-name">
-                                #rosbridge &nbsp;
+                                #101 &nbsp;
                             </span>
                         </a>
                     
@@ -9506,61 +9386,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
-  </a>
-  
-    <nav class="md-nav" aria-label="Rosbridge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
-  </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -9568,60 +9395,9 @@
 
 
     
-    <h2 id="rosbridge">Rosbridge<a class="headerlink" href="#rosbridge" title="Permanent link">#</a></h2>
-<p>Rosbridge provides a JSON API to ROS functionality for non-ROS programs</p>
-<p><a href="https://github.com/RobotWebTools/rosbridge_suite">rosbridge_suite</a></p>
-<div class="highlight"><span class="filename">install</span><pre><span></span><code>sudo apt-get install ros-foxy-rosbridge-suite
-</code></pre></div>
-<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
-<p>Open websocket on port 9090 as default</p>
-<div class="highlight"><span class="filename">run bridge</span><pre><span></span><code>ros2 launch rosbridge_server rosbridge_websocket_launch.xml
-</code></pre></div>
-<hr />
-<h2 id="roslibjs">roslibjs<a class="headerlink" href="#roslibjs" title="Permanent link">#</a></h2>
-<p>roslibjs is the core JavaScript library for interacting with ROS from the browser.<br />
-It uses WebSockets to connect with rosbridge and provides publishing, subscribing, service calls, actionlib, TF, URDF parsing, and other essential ROS functionality</p>
-<h3 id="run_1">Run<a class="headerlink" href="#run_1" title="Permanent link">#</a></h3>
-<p>Demo web page using <code>roslibjs</code> library</p>
-<div class="highlight"><span class="filename">basic connection</span><pre><span></span><code><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span> <span class="o">/&gt;</span>
-
-  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://static.robotwebtools.org/roslibjs/current/roslib.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-
-  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
-    <span class="kd">var</span> <span class="nx">ros</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ROSLIB</span><span class="p">.</span><span class="nx">Ros</span><span class="p">({</span>
-      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:9090&#39;</span>
-    <span class="p">});</span>
-
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Connected&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
-
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Error&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
-
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Closed&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
-  <span class="o">&lt;</span><span class="err">/script&gt;</span>
-<span class="o">&lt;</span><span class="err">/head&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Simple</span> <span class="nx">ROS</span> <span class="nx">User</span> <span class="nx">Interface</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
-  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Connection</span> <span class="nx">status</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;&lt;/p&gt;</span>
-<span class="o">&lt;</span><span class="err">/body&gt;</span>
-<span class="o">&lt;</span><span class="err">/html&gt;</span>
-</code></pre></div>
-<hr />
-<hr />
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+    <h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
 <ul>
-<li><a href="http://wiki.ros.org/roslibjs">roslibjs</a></li>
-<li><a href="http://robotwebtools.org/">Robot Web Tools</a></li>
-<li><a href="https://github.com/RobotWebTools/rosbridge_suite">rosbridge_suite</a></li>
-<li><a href="https://msadowski.github.io/ros-web-tutorial-pt1/">ROS web tutorial part 1 - rosbridge server and roslibjs</a></li>
+<li><a href="https://blog.wesleyac.com/posts/intro-to-control-part-zero-whats-this">Intro to Control Theory</a></li>
 </ul>
 
 
@@ -9641,7 +9417,7 @@ It uses WebSockets to connect with rosbridge and provides publishing, subscribin
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../tutorial/part8_qos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part8 - QoS" rel="prev">
+        <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part5 - ROS Web interface with vue" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -9650,20 +9426,20 @@ It uses WebSockets to connect with rosbridge and provides publishing, subscribin
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part8 - QoS
+              Part5 - ROS Web interface with vue
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part2_hello_vue/" class="md-footer__link md-footer__link--next" aria-label="Next: Part2 - hello vue" rel="next">
+        <a href="../../../mkdocs/plugins/" class="md-footer__link md-footer__link--next" aria-label="Next: mkdocs plugins" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part2 - hello vue
+              mkdocs plugins
             </div>
           </div>
           <div class="md-footer__button md-icon">

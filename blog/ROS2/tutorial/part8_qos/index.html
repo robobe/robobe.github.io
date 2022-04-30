@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ROS2 Web interface">
+        <meta name="description" content="ROS2 QoS allows users to fine-tune the transmission behavior according to their own applications">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/hello/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/part8_qos/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part1 - Web interfcae - Robots Inside</title>
+    <title>Part8 - QoS - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part1 - Web interfcae - Robots Inside" />
-    <meta property="og:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/hello/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
+    <meta property="og:title" content="Part8 - QoS - Robots Inside" />
+    <meta property="og:description" content="ROS2 QoS allows users to fine-tune the transmission behavior according to their own applications - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/part8_qos/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/part8_qos/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part1 - Web interfcae - Robots Inside" />
-    <meta name="twitter:description" content="ROS2 Web interface - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/hello/../images/ros_bridge.png" />
+    <meta name="twitter:title" content="Part8 - QoS - Robots Inside" />
+    <meta name="twitter:description" content="ROS2 QoS allows users to fine-tune the transmission behavior according to their own applications - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/part8_qos/../ros2.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rosbridge" class="md-skip">
+        <a href="#qos" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part1 - Web interfcae
+              Part8 - QoS
             
           </span>
         </div>
@@ -457,12 +457,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
       
       
       
@@ -505,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/pub_sub/" class="md-nav__link">
+      <a href="../pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -519,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/launch_hello/" class="md-nav__link">
+      <a href="../launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -533,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -547,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -561,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -575,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -589,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -603,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -615,11 +617,122 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../tutorial/part8_qos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part8 - QoS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part8 - QoS
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qos" class="md-nav__link">
+    QoS
+  </a>
+  
+    <nav class="md-nav" aria-label="QoS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-data" class="md-nav__link">
+    Sensor data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    Demos
+  </a>
+  
+    <nav class="md-nav" aria-label="Demos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sub-code-pub-cli" class="md-nav__link">
+    sub code pub cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pub-code-sub-cli" class="md-nav__link">
+    pub code sub cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos-compatibility" class="md-nav__link">
+    QoS compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -636,14 +749,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
       
       
       
@@ -674,88 +785,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part1 - Web interfcae
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
-  </a>
-  
-    <nav class="md-nav" aria-label="Rosbridge">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
-  </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -767,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_vue/" class="md-nav__link">
+      <a href="../../web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -781,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part3_vue_handling/" class="md-nav__link">
+      <a href="../../web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -795,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5_roslib_vue/" class="md-nav__link">
+      <a href="../../web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -8759,7 +8793,7 @@
                     
                         font-size:1.7000000000000002rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">12</sup>-->
@@ -8773,7 +8807,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8787,7 +8821,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -8801,7 +8835,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -8815,7 +8849,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -8829,7 +8863,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8843,7 +8877,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8871,7 +8905,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8885,7 +8919,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8899,7 +8933,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8913,7 +8947,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8927,7 +8961,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8941,7 +8975,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8955,7 +8989,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -8969,7 +9003,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -8983,7 +9017,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -8997,7 +9031,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9011,7 +9045,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9025,7 +9059,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9039,7 +9073,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9053,7 +9087,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9067,7 +9101,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9081,7 +9115,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9095,7 +9129,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9109,7 +9143,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9123,7 +9157,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -9137,7 +9171,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9151,7 +9185,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9165,7 +9199,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9179,7 +9213,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9193,7 +9227,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -9207,7 +9241,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9221,7 +9255,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9249,7 +9283,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9263,7 +9297,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -9277,7 +9311,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -9313,17 +9347,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
+  <a href="#qos" class="md-nav__link">
+    QoS
   </a>
   
-    <nav class="md-nav" aria-label="Rosbridge">
+    <nav class="md-nav" aria-label="QoS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
+  <a href="#policy" class="md-nav__link">
+    Policy
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-data" class="md-nav__link">
+    Sensor data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    Demos
+  </a>
+  
+    <nav class="md-nav" aria-label="Demos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sub-code-pub-cli" class="md-nav__link">
+    sub code pub cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pub-code-sub-cli" class="md-nav__link">
+    pub code sub cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -9333,22 +9414,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
+  <a href="#qos-compatibility" class="md-nav__link">
+    QoS compatibility
   </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -9409,13 +9477,13 @@
 <div class="cover">
     
     
-        <h1> Part1 - Web interfcae </h1>
+        <h1> Part8 - QoS </h1>
     
 
     
     
         <p class="post-description">
-            ROS2 Web interface
+            ROS2 QoS allows users to fine-tune the transmission behavior according to their own applications
         </p>
     
 
@@ -9431,15 +9499,15 @@
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#web">
+                        <a class="tag" href="https://robobe.github.io/tags/#qos">
                             <span class="tag-name">
-                                #web &nbsp;
+                                #qos &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#rosbridge">
+                        <a class="tag" href="https://robobe.github.io/tags/#101">
                             <span class="tag-name">
-                                #rosbridge &nbsp;
+                                #101 &nbsp;
                             </span>
                         </a>
                     
@@ -9514,17 +9582,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rosbridge" class="md-nav__link">
-    Rosbridge
+  <a href="#qos" class="md-nav__link">
+    QoS
   </a>
   
-    <nav class="md-nav" aria-label="Rosbridge">
+    <nav class="md-nav" aria-label="QoS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
+  <a href="#policy" class="md-nav__link">
+    Policy
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor-data" class="md-nav__link">
+    Sensor data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    Demos
+  </a>
+  
+    <nav class="md-nav" aria-label="Demos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sub-code-pub-cli" class="md-nav__link">
+    sub code pub cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pub-code-sub-cli" class="md-nav__link">
+    pub code sub cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -9534,22 +9649,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#roslibjs" class="md-nav__link">
-    roslibjs
+  <a href="#qos-compatibility" class="md-nav__link">
+    QoS compatibility
   </a>
-  
-    <nav class="md-nav" aria-label="roslibjs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run_1" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -9568,60 +9670,201 @@
 
 
     
-    <h2 id="rosbridge">Rosbridge<a class="headerlink" href="#rosbridge" title="Permanent link">#</a></h2>
-<p>Rosbridge provides a JSON API to ROS functionality for non-ROS programs</p>
-<p><a href="https://github.com/RobotWebTools/rosbridge_suite">rosbridge_suite</a></p>
-<div class="highlight"><span class="filename">install</span><pre><span></span><code>sudo apt-get install ros-foxy-rosbridge-suite
-</code></pre></div>
-<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
-<p>Open websocket on port 9090 as default</p>
-<div class="highlight"><span class="filename">run bridge</span><pre><span></span><code>ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+    <p>Topics in ROS2 have three dimensions:</p>
+<ul>
+<li><strong>Name</strong>: string</li>
+<li><strong>Type</strong>: msg type like std_msgs/String</li>
+<li><strong>QoS</strong>: Define extra promises about the pub/sub behavior</li>
+</ul>
+<hr />
+<h2 id="qos">QoS<a class="headerlink" href="#qos" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>QoS Policy</strong>: QoS &ldquo;type&rdquo; or &ldquo;setting&rdquo;</li>
+<li><strong>QoS Profile</strong>: A complete group of all policies</li>
+<li><strong>QoS Offer</strong>:</li>
+<li><strong>QoS Request</strong>:</li>
+<li><strong>Compatibility</strong>: </li>
+</ul>
+<div class="highlight"><span class="filename">check topic qos settings</span><pre><span></span><code>ros2 topic info --verbose &lt;/topic name&gt;
 </code></pre></div>
 <hr />
-<h2 id="roslibjs">roslibjs<a class="headerlink" href="#roslibjs" title="Permanent link">#</a></h2>
-<p>roslibjs is the core JavaScript library for interacting with ROS from the browser.<br />
-It uses WebSockets to connect with rosbridge and provides publishing, subscribing, service calls, actionlib, TF, URDF parsing, and other essential ROS functionality</p>
-<h3 id="run_1">Run<a class="headerlink" href="#run_1" title="Permanent link">#</a></h3>
-<p>Demo web page using <code>roslibjs</code> library</p>
-<div class="highlight"><span class="filename">basic connection</span><pre><span></span><code><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span> <span class="o">/&gt;</span>
+<h3 id="policy">Policy<a class="headerlink" href="#policy" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Policy</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>History</td>
+<td><mark>Keep last</mark>: only store up to N samples, configurable via the queue depth option.<br> <mark>Keep all</mark>: store all samples, subject to the configured resource limits of the underlying middleware.</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>Depth of history queue when specifying <strong>Keep last</strong></td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td><mark>Best effort</mark>: attempt to deliver samples, but may lose them if the network is not robust.<br><mark>Reliable</mark>: guarantee that samples are delivered, may retry multiple times.</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td><mark>Transient local</mark>: the publisher becomes responsible for persisting samples for “late-joining” subscribers.<br><mark>Volatile</mark>: no attempt is made to persist samples.</td>
+</tr>
+<tr>
+<td>Deadline</td>
+<td><mark>Duration</mark>: the expected maximum amount of time between subsequent messages being published to a topic</td>
+</tr>
+<tr>
+<td>Lifespan</td>
+<td>how long the sent message can live</td>
+</tr>
+<tr>
+<td>Liveliness</td>
+<td>Liveliness sets the Lease Duration, and the publisher is considered offline after a certain time <br><mark>Automatic</mark><br><mark>Manual by topic</mark></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">#</a></h3>
+<p>A QoS profile defines a set of policies that are expected to go well together for a particular use case.<br />
+for example:</p>
+<ul>
+<li>service_default</li>
+<li>sensor_data</li>
+<li>parameters</li>
+<li>system_default</li>
+</ul>
+<p><a href="https://docs.ros.org/en/foxy/Concepts/About-Quality-of-Service-Settings.html">more info check ROS2 document</a></p>
+<h4 id="sensor-data">Sensor data<a class="headerlink" href="#sensor-data" title="Permanent link">#</a></h4>
+<p>For sensor data, in most cases it’s more important to receive readings in a timely fashion, rather than ensuring that all of them arrive. That is, developers want the latest samples as soon as they are captured, at the expense of maybe losing some. For that reason the sensor data profile uses best effort reliability and a smaller queue size.</p>
+<p>profile define <code>rmw_qos_profile_t</code></p>
+<div class="row cards">
+<div class="col">
+<div class="card">
+<div class="highlight"><span class="filename">sensor_data</span><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">rmw_qos_profile_t</span><span class="w"> </span><span class="n">rmw_qos_profile_sensor_data</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="n">RMW_QOS_POLICY_HISTORY_KEEP_LAST</span><span class="p">,</span><span class="w"></span>
+<span class="mi">5</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_POLICY_DURABILITY_VOLATILE</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_DEADLINE_DEFAULT</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_LIFESPAN_DEFAULT</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_POLICY_LIVELINESS_SYSTEM_DEFAULT</span><span class="p">,</span><span class="w"></span>
+<span class="n">RMW_QOS_LIVELINESS_LEASE_DURATION_DEFAULT</span><span class="p">,</span><span class="w"></span>
+<span class="nb">false</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<div class="col">
+<div class="card">
+<p><strong>fields list</strong></p>
+<ul>
+<li>history</li>
+<li>depth</li>
+<li>reliability</li>
+<li>durability</li>
+<li>deadline</li>
+<li>lifespan</li>
+<li>liveliness</li>
+<li>liveliness_lease_duration</li>
+<li>avoid_ros_namespace_conventions</li>
+</ul>
+<p><a href="https://docs.ros2.org/foxy/api/rmw/structrmw__qos__profile__t.html">doc</a></p>
+</div>
+</div>
+</div>
+<h3 id="demos">Demos<a class="headerlink" href="#demos" title="Permanent link">#</a></h3>
+<h4 id="sub-code-pub-cli">sub code pub cli<a class="headerlink" href="#sub-code-pub-cli" title="Permanent link">#</a></h4>
+<ul>
+<li>Subscriber Node defined with <code>sensor data</code> QoS</li>
+<li>Pub cli to publish message with compatibility QoS</li>
+</ul>
+<div class="highlight"><span class="filename">subscriber</span><pre><span></span><code><span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">rclpy.qos</span> <span class="kn">import</span> <span class="n">qos_profile_sensor_data</span>
+<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
 
-  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://static.robotwebtools.org/roslibjs/current/roslib.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="k">class</span> <span class="nc">MinimalSubQoS</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;minimal_sub_qos&quot;</span><span class="p">)</span>
 
-  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
-    <span class="kd">var</span> <span class="nx">ros</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ROSLIB</span><span class="p">.</span><span class="nx">Ros</span><span class="p">({</span>
-      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;ws://localhost:9090&#39;</span>
-    <span class="p">});</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+            <span class="n">String</span><span class="p">,</span>
+            <span class="s2">&quot;topic&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__cb</span><span class="p">,</span>
+            <span class="n">qos_profile_sensor_data</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sub</span>
 
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Connected&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
+    <span class="k">def</span> <span class="nf">__cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span><span class="n">String</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Error&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
 
-    <span class="nx">ros</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Closed&quot;</span><span class="p">;</span>
-    <span class="p">});</span>
-  <span class="o">&lt;</span><span class="err">/script&gt;</span>
-<span class="o">&lt;</span><span class="err">/head&gt;</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">sub_node</span> <span class="o">=</span> <span class="n">MinimalSubQoS</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">sub_node</span><span class="p">)</span>
+    <span class="n">sub_node</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">pub cli</span><pre><span></span><code>ros2 topic pub -1 --qos-profile sensor_data /topic std_msgs/msg/String <span class="s2">&quot;data: hello&quot;</span>
+</code></pre></div>
+<h4 id="pub-code-sub-cli">pub code sub cli<a class="headerlink" href="#pub-code-sub-cli" title="Permanent link">#</a></h4>
+<div class="highlight"><span class="filename">publisher</span><pre><span></span><code><span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">rclpy.qos</span> <span class="kn">import</span> <span class="n">qos_profile_sensor_data</span>
+<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
 
-<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Simple</span> <span class="nx">ROS</span> <span class="nx">User</span> <span class="nx">Interface</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
-  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Connection</span> <span class="nx">status</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;&lt;/p&gt;</span>
-<span class="o">&lt;</span><span class="err">/body&gt;</span>
-<span class="o">&lt;</span><span class="err">/html&gt;</span>
+<span class="k">class</span> <span class="nc">MinimalPubQos</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;minimal_pub_qos&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_publisher</span><span class="p">(</span>
+            <span class="n">String</span><span class="p">,</span>
+            <span class="s2">&quot;topic&quot;</span><span class="p">,</span>
+            <span class="n">qos_profile_sensor_data</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span>
+            <span class="n">timer_period_sec</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__timer_cb</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__timer_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;Hello QoS </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__counter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">pub_node</span> <span class="o">=</span> <span class="n">MinimalPubQos</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">pub_node</span><span class="p">)</span>
+    <span class="n">pub_node</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">cli echo topic</span><pre><span></span><code><span class="c1"># work</span>
+ros2 topic <span class="nb">echo</span> --qos-profile sensor_data /topic
+
+<span class="c1"># work</span>
+ros2 topic <span class="nb">echo</span>  /topic
+
+<span class="c1"># not work</span>
+ros2 topic <span class="nb">echo</span> --qos-profile services_default /topic
+
+<span class="c1"># work</span>
+ros2 topic <span class="nb">echo</span> --qos-reliability best_effort /topic
 </code></pre></div>
 <hr />
+<h2 id="qos-compatibility">QoS compatibility<a class="headerlink" href="#qos-compatibility" title="Permanent link">#</a></h2>
+<p>In order for Publisher and Subscriber to establish a connection, the QoS set by the two must be compatible. DDS adopts the Request-Offer model. In short, the communication level provided by Publisher must be greater than or equal to that required by Subscriber. For detailed compatibility table, please refer to <a href="https://docs.ros.org/en/foxy/Concepts/About-Quality-of-Service-Settings.html#qos-compatibilities">ROS2 official document</a></p>
 <hr />
 <h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
 <ul>
-<li><a href="http://wiki.ros.org/roslibjs">roslibjs</a></li>
-<li><a href="http://robotwebtools.org/">Robot Web Tools</a></li>
-<li><a href="https://github.com/RobotWebTools/rosbridge_suite">rosbridge_suite</a></li>
-<li><a href="https://msadowski.github.io/ros-web-tutorial-pt1/">ROS web tutorial part 1 - rosbridge server and roslibjs</a></li>
+<li><a href="https://hackmd.io/@st9540808/r1zrNKBWU/%2F%401IzBzEXXRsmj6-nLXZ9opw%2FBkaxoWRiI">Profiling ROS2</a></li>
 </ul>
 
 
@@ -9641,7 +9884,7 @@ It uses WebSockets to connect with rosbridge and provides publishing, subscribin
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../tutorial/part8_qos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part8 - QoS" rel="prev">
+        <a href="../part7_custom_msgs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part7 - Custom msgs and srvs" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -9650,20 +9893,20 @@ It uses WebSockets to connect with rosbridge and provides publishing, subscribin
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part8 - QoS
+              Part7 - Custom msgs and srvs
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part2_hello_vue/" class="md-footer__link md-footer__link--next" aria-label="Next: Part2 - hello vue" rel="next">
+        <a href="../../web_interface/hello/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Web interfcae" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part2 - hello vue
+              Part1 - Web interfcae
             </div>
           </div>
           <div class="md-footer__button md-icon">
