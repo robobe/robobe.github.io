@@ -37,3 +37,12 @@ Add mkdocs text highlight on selection
     }
 }
 ```
+
+---
+
+# XML Region
+```
+<!-- #region -->
+...
+<!-- #endregion -->
+```
