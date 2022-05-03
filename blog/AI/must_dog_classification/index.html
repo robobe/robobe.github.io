@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="learn basic vue user handling">
+        <meta name="description" content="Simple dog classification">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/">
+        <link rel="canonical" href="https://robobe.github.io/blog/AI/must_dog_classification/">
       
-      <link rel="icon" href="../../../../favicon.png">
+      <link rel="icon" href="../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part3 - vue user handling - Robots Inside</title>
+    <title>PyTorch simple classification - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta property="og:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta property="og:title" content="PyTorch simple classification - Robots Inside" />
+    <meta property="og:description" content="Simple dog classification - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/AI/must_dog_classification/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/AI/must_dog_classification/images/pytorch.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta name="twitter:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta name="twitter:title" content="PyTorch simple classification - Robots Inside" />
+    <meta name="twitter:description" content="Simple dog classification - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/AI/must_dog_classification/images/pytorch.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-struct" class="md-skip">
+        <a href="#reference" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part3 - vue user handling
+              PyTorch simple classification
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../projects/" class="md-tabs__link">
+      <a href="../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../tags/" class="md-tabs__link">
+      <a href="../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -359,7 +359,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../">Blog</a>
+          <a href="../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -380,12 +380,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -414,11 +416,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../AI/must_dog_classification/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         PyTorch simple classification
       </a>
+      
     </li>
   
 
@@ -430,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../AI/pc_nvidia_install/" class="md-nav__link">
+      <a href="../pc_nvidia_install/" class="md-nav__link">
         NVIDIA - install on ubuntu 20.04
       </a>
     </li>
@@ -444,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../AI/pytorch_install/" class="md-nav__link">
+      <a href="../pytorch_install/" class="md-nav__link">
         PyTorch install
       </a>
     </li>
@@ -463,14 +475,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -522,7 +532,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../colcon/">Colcon</a>
+          <a href="../../ROS2/colcon/">Colcon</a>
           
             <label for="__nav_2_3_1">
               <span class="md-nav__icon md-icon"></span>
@@ -545,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../ROS2/colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -598,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -612,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../ROS2/gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -679,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -693,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -707,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -721,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -735,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -749,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -763,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -777,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -791,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -810,14 +820,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" >
       
       
       
@@ -850,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello/" class="md-nav__link">
+      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -864,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_vue/" class="md-nav__link">
+      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -876,68 +884,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part3 - vue user handling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -949,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5_roslib_vue/" class="md-nav__link">
+      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -1037,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
+      <a href="../../control/pid/hello_pid/" class="md-nav__link">
         Hello PID
       </a>
     </li>
@@ -1097,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -1111,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mkdocs/tips/" class="md-nav__link">
+      <a href="../../mkdocs/tips/" class="md-nav__link">
         mkdocs tips
       </a>
     </li>
@@ -1192,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+      <a href="../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
         Adding Latency and Limiting Bandwidth
       </a>
     </li>
@@ -1271,7 +1222,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/examples/">Examples</a>
+          <a href="../../video/examples/">Examples</a>
           
         </div>
       
@@ -1314,7 +1265,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -1357,7 +1308,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../video/gstreamer/">Gstreamer</a>
+          <a href="../../video/gstreamer/">Gstreamer</a>
           
         </div>
       
@@ -1424,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vscode/extensions/" class="md-nav__link">
+      <a href="../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -1438,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vscode/tips/" class="md-nav__link">
+      <a href="../../vscode/tips/" class="md-nav__link">
         VSCode tips
       </a>
     </li>
@@ -1452,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vscode/todo/" class="md-nav__link">
+      <a href="../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -1519,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -1533,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -1547,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -1561,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
+      <a href="../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -1575,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
+      <a href="../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -1589,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part6-tips/" class="md-nav__link">
+      <a href="../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -1603,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part7-operators/" class="md-nav__link">
+      <a href="../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -1617,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
+      <a href="../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -1631,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
+      <a href="../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -1681,7 +1632,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../projects/">Projects</a>
+          <a href="../../../projects/">Projects</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1740,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/Nav2/Nav2/" class="md-nav__link">
+      <a href="../../../projects/Nav2/Nav2/" class="md-nav__link">
         Nav2
       </a>
     </li>
@@ -1784,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
+      <a href="../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
         Part1 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -1835,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/Nav2/plugins/plugins/" class="md-nav__link">
+      <a href="../../../projects/Nav2/plugins/plugins/" class="md-nav__link">
         Plugins
       </a>
     </li>
@@ -1886,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/Nav2/tf/tf/" class="md-nav__link">
+      <a href="../../../projects/Nav2/tf/tf/" class="md-nav__link">
         Tf
       </a>
     </li>
@@ -1946,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
+      <a href="../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
         TurtleBot3
       </a>
     </li>
@@ -1990,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
+      <a href="../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
         Turtlebot3 simulation
       </a>
     </li>
@@ -2043,7 +1994,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../tags/">Tags</a>
+          <a href="../../../tags/">Tags</a>
           
         </div>
       
@@ -13067,7 +13018,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13081,7 +13032,7 @@
                     
                         font-size:2.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">21</sup>-->
@@ -13095,7 +13046,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13109,7 +13060,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13123,7 +13074,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13137,7 +13088,7 @@
                     
                         font-size:2.0rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">15</sup>-->
@@ -13151,7 +13102,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13165,7 +13116,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13179,7 +13130,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13193,7 +13144,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -13207,7 +13158,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13221,7 +13172,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13235,7 +13186,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13249,7 +13200,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13263,7 +13214,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13277,7 +13228,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13291,7 +13242,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13305,7 +13256,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13319,7 +13270,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13333,7 +13284,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOliveGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13347,7 +13298,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13375,7 +13326,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13389,7 +13340,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13403,7 +13354,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13417,7 +13368,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13431,7 +13382,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13445,7 +13396,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13459,7 +13410,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13473,7 +13424,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13487,7 +13438,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13501,7 +13452,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13515,7 +13466,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13529,7 +13480,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13543,7 +13494,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13557,7 +13508,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13571,7 +13522,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13585,7 +13536,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13599,7 +13550,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13613,7 +13564,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13627,7 +13578,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13641,7 +13592,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -13655,7 +13606,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13669,7 +13620,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13683,7 +13634,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13697,7 +13648,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13711,7 +13662,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13725,7 +13676,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13767,41 +13718,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -13851,13 +13769,13 @@
 <div class="cover">
     
     
-        <h1> Part3 - vue user handling </h1>
+        <h1> PyTorch simple classification </h1>
     
 
     
     
         <p class="post-description">
-            learn basic vue user handling
+            Simple dog classification
         </p>
     
 
@@ -13867,15 +13785,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#vue">
+                        <a class="tag" href="https://robobe.github.io/tags/#pytorch">
                             <span class="tag-name">
-                                #vue &nbsp;
+                                #pytorch &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#binding">
+                        <a class="tag" href="https://robobe.github.io/tags/#classification">
                             <span class="tag-name">
-                                #binding &nbsp;
+                                #classification &nbsp;
                             </span>
                         </a>
                     
@@ -13948,41 +13866,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -13990,82 +13875,11 @@
 
 
     
-    <ul>
-<li>live server</li>
-<li>vetur</li>
-<li>material icon theme</li>
-</ul>
-<h2 id="basic-struct">Basic struct<a class="headerlink" href="#basic-struct" title="Permanent link">#</a></h2>
+    <h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
 <ul>
-<li>index.html: contain vue root element</li>
-<li>app.js: create app and mount to the root element</li>
+<li><a href="https://learnopencv.com/pytorch-for-beginners-image-classification-using-pre-trained-models/">PyTorch for Beginners: Image Classification using Pre-trained models</a></li>
+<li><a href="https://github.com/spmallick/learnopencv/blob/master/Image-classification-pre-trained-models/Image_Classification_using_pre_trained_models.ipynb">PyTorch for Beginners: Comparison of pre-trained models for Image Classification</a></li>
 </ul>
-<div class="highlight"><span class="filename">index.html</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>vue<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue@3.0.2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="cm">&lt;!--template--&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">app.js</span><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span>    
-            <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="bind-and-event">Bind and event<a class="headerlink" href="#bind-and-event" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">vue div</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;counter++&quot;</span><span class="p">&gt;</span>inc<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter--&quot;</span><span class="p">&gt;</span>dec<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter=0&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>@</code> is a shorthand for <code>v-on</code><br />
-<code>v-on:click</code> is <code>@click</code></p>
-</div>
-<h3 id="methods-property">methods property<a class="headerlink" href="#methods-property" title="Permanent link">#</a></h3>
-<ul>
-<li>Add <code>methods</code> property to vue app</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;reset&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;preset(10)&quot;</span><span class="p">&gt;</span>preset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span><span class="p">,</span>
-                <span class="nx">counter</span><span class="o">:</span> <span class="mf">0</span>
-            <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">reset</span><span class="p">(){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="mf">0</span>
-        <span class="p">},</span>
-        <span class="nx">preset</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="nx">value</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div>
 
 
             </article>
@@ -14084,7 +13898,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part2_hello_vue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - hello vue" rel="prev">
+        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recent posts" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -14093,20 +13907,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part2 - hello vue
+              Recent posts
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part5_roslib_vue/" class="md-footer__link md-footer__link--next" aria-label="Next: Part5 - ROS Web interface with vue" rel="next">
+        <a href="../pc_nvidia_install/" class="md-footer__link md-footer__link--next" aria-label="Next: NVIDIA - install on ubuntu 20.04" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part5 - ROS Web interface with vue
+              NVIDIA - install on ubuntu 20.04
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -14136,20 +13950,20 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../../assets/mathjax.js"></script>
+        <script src="../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../assets/view-bigimg.js"></script>
+        <script src="../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../../assets/extra.js"></script>
+        <script src="../../../assets/extra.js"></script>
       
     
   </body>

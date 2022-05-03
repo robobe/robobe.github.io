@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="learn basic vue user handling">
+        <meta name="description" content="launch gazebo simple example">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/gazebo/01-launch_gazebo/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part3 - vue user handling - Robots Inside</title>
+    <title>Part1 - launch gazebo - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta property="og:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta property="og:title" content="Part1 - launch gazebo - Robots Inside" />
+    <meta property="og:description" content="launch gazebo simple example - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/gazebo/01-launch_gazebo/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/gazebo/01-launch_gazebo/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part3 - vue user handling - Robots Inside" />
-    <meta name="twitter:description" content="learn basic vue user handling - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/web_interface/part3_vue_handling/../images/vue.png" />
+    <meta name="twitter:title" content="Part1 - launch gazebo - Robots Inside" />
+    <meta name="twitter:description" content="launch gazebo simple example - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/gazebo/01-launch_gazebo/../ros2.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-struct" class="md-skip">
+        <a href="#project-tree" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part3 - vue user handling
+              Part1 - launch gazebo
             
           </span>
         </div>
@@ -564,12 +564,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" checked>
       
       
       
@@ -596,11 +598,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../gazebo/01-launch_gazebo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Part1 - launch gazebo
       </a>
+      
     </li>
   
 
@@ -612,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/02-spawn/" class="md-nav__link">
+      <a href="../02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -810,14 +822,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" >
       
       
       
@@ -850,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello/" class="md-nav__link">
+      <a href="../../web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -864,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_vue/" class="md-nav__link">
+      <a href="../../web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -876,68 +886,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part3 - vue user handling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -949,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5_roslib_vue/" class="md-nav__link">
+      <a href="../../web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -13053,7 +13006,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13067,7 +13020,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13081,7 +13034,7 @@
                     
                         font-size:2.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">21</sup>-->
@@ -13095,7 +13048,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13109,7 +13062,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13123,7 +13076,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13165,7 +13118,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13179,7 +13132,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13193,7 +13146,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -13207,7 +13160,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13221,7 +13174,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13249,7 +13202,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13263,7 +13216,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13277,7 +13230,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13291,7 +13244,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13305,7 +13258,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13319,7 +13272,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13333,7 +13286,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13347,7 +13300,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13361,7 +13314,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13389,7 +13342,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13403,7 +13356,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13417,7 +13370,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13431,7 +13384,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13445,7 +13398,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13459,7 +13412,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13473,7 +13426,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13487,7 +13440,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13501,7 +13454,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13515,7 +13468,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13529,7 +13482,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -13543,7 +13496,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13557,7 +13510,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -13571,7 +13524,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13585,7 +13538,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13613,7 +13566,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13627,7 +13580,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13641,7 +13594,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -13655,7 +13608,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13683,7 +13636,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13697,7 +13650,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13711,7 +13664,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13725,7 +13678,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -13767,41 +13720,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -13851,13 +13771,13 @@
 <div class="cover">
     
     
-        <h1> Part3 - vue user handling </h1>
+        <h1> Part1 - launch gazebo </h1>
     
 
     
     
         <p class="post-description">
-            learn basic vue user handling
+            launch gazebo simple example
         </p>
     
 
@@ -13867,15 +13787,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#vue">
+                        <a class="tag" href="https://robobe.github.io/tags/#gazebo">
                             <span class="tag-name">
-                                #vue &nbsp;
+                                #gazebo &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#binding">
+                        <a class="tag" href="https://robobe.github.io/tags/#launch">
                             <span class="tag-name">
-                                #binding &nbsp;
+                                #launch &nbsp;
                             </span>
                         </a>
                     
@@ -13948,41 +13868,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-struct" class="md-nav__link">
-    Basic struct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-and-event" class="md-nav__link">
-    Bind and event
-  </a>
-  
-    <nav class="md-nav" aria-label="Bind and event">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#methods-property" class="md-nav__link">
-    methods property
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -13990,81 +13877,104 @@
 
 
     
-    <ul>
-<li>live server</li>
-<li>vetur</li>
-<li>material icon theme</li>
-</ul>
-<h2 id="basic-struct">Basic struct<a class="headerlink" href="#basic-struct" title="Permanent link">#</a></h2>
-<ul>
-<li>index.html: contain vue root element</li>
-<li>app.js: create app and mount to the root element</li>
-</ul>
-<div class="highlight"><span class="filename">index.html</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>vue<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue@3.0.2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="cm">&lt;!--template--&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+    <h1 id="project-tree">project tree<a class="headerlink" href="#project-tree" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>skbot_description/
+├── CMakeLists.txt
+├── config
+├── launch
+├── meshes
+├── package.xml
+├── sdf
+└── urdf
+  ├── skbot.xacro
+  ├── macros.xacro
+  ├── gazebo.xacro
+  └── materials.xacro
 </code></pre></div>
-<div class="highlight"><span class="filename">app.js</span><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span>    
-            <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>skbot_gazebo/
+├── CMakeLists.txt
+├── include
+├── launch
+├── models
+├── package.xml
+├── src
+└── worlds
+  └── empty.world
 </code></pre></div>
 <hr />
-<h2 id="bind-and-event">Bind and event<a class="headerlink" href="#bind-and-event" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">vue div</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;counter++&quot;</span><span class="p">&gt;</span>inc<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter--&quot;</span><span class="p">&gt;</span>dec<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;counter=0&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<h1 id="gazebo_ros">gazebo_ros<a class="headerlink" href="#gazebo_ros" title="Permanent link">#</a></h1>
+<p>Provides ROS plugins that offer message and service publishers for interfacing with Gazebo through ROS.</p>
+<div class="highlight"><pre><span></span><code>sudo apt install ros-foxy-gazebo-ros
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>@</code> is a shorthand for <code>v-on</code><br />
-<code>v-on:click</code> is <code>@click</code></p>
-</div>
-<h3 id="methods-property">methods property<a class="headerlink" href="#methods-property" title="Permanent link">#</a></h3>
-<ul>
-<li>Add <code>methods</code> property to vue app</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ title }} {{counter}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;reset&quot;</span><span class="p">&gt;</span>reset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;preset(10)&quot;</span><span class="p">&gt;</span>preset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<hr />
+<h2 id="launch-empty-world">launch empty world<a class="headerlink" href="#launch-empty-world" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">empty.world</span><pre><span></span><code><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+<span class="nt">&lt;sdf</span> <span class="na">version=</span><span class="s">&quot;1.6&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;world</span> <span class="na">name=</span><span class="s">&quot;room&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;include&gt;</span>
+    <span class="nt">&lt;uri&gt;</span>model://sun<span class="nt">&lt;/uri&gt;</span>
+  <span class="nt">&lt;/include&gt;</span>
+  <span class="nt">&lt;include&gt;</span>
+    <span class="nt">&lt;uri&gt;</span>model://ground_plane<span class="nt">&lt;/uri&gt;</span>
+  <span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/world&gt;</span>
+<span class="nt">&lt;/sdf&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span> 
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;hello vue&quot;</span><span class="p">,</span>
-                <span class="nx">counter</span><span class="o">:</span> <span class="mf">0</span>
-            <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">reset</span><span class="p">(){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="mf">0</span>
-        <span class="p">},</span>
-        <span class="nx">preset</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">counter</span> <span class="o">=</span> <span class="nx">value</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight"><span class="filename">simple.launch.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
+<span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+<span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">DeclareLaunchArgument</span>
+<span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">IncludeLaunchDescription</span>
+<span class="kn">from</span> <span class="nn">launch.launch_description_sources</span> <span class="kn">import</span> <span class="n">PythonLaunchDescriptionSource</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">package_name</span> <span class="o">=</span> <span class="s2">&quot;skbot_gazebo&quot;</span>
+<span class="n">world_file</span> <span class="o">=</span> <span class="s2">&quot;empty.world&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+
+    <span class="n">ld</span> <span class="o">=</span> <span class="n">LaunchDescription</span><span class="p">()</span>
+
+    <span class="n">pkg_gazebo_ros</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;gazebo_ros&quot;</span><span class="p">)</span>
+    <span class="n">pkg_simulation</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+
+    <span class="c1"># launch Gazebo by including its definition</span>
+    <span class="n">gazebo</span> <span class="o">=</span> <span class="n">IncludeLaunchDescription</span><span class="p">(</span>
+        <span class="n">PythonLaunchDescriptionSource</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_gazebo_ros</span><span class="p">,</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span> <span class="s2">&quot;gazebo.launch.py&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># load the world file</span>
+    <span class="n">world_arg</span> <span class="o">=</span> <span class="n">DeclareLaunchArgument</span><span class="p">(</span>
+        <span class="s2">&quot;world&quot;</span><span class="p">,</span>
+        <span class="n">default_value</span><span class="o">=</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_simulation</span><span class="p">,</span> <span class="s2">&quot;worlds&quot;</span><span class="p">,</span> <span class="n">world_file</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;empty world&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">gazebo</span><span class="p">)</span>
+    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">world_arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ld</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CMakeLists.txt</span><pre><span></span><code><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
+<span class="w">  </span><span class="s">models</span>
+<span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">/</span>
+<span class="p">)</span>
+<span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
+<span class="w">  </span><span class="s">worlds</span>
+<span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">/</span>
+<span class="p">)</span>
+<span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
+<span class="w">  </span><span class="s">media</span>
+<span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">/</span>
+<span class="p">)</span>
+<span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span>
+<span class="w">  </span><span class="s">myPlugin</span>
+<span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="usage">usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ros2 launch skbot_gazebo simple.launch.py
 </code></pre></div>
 
 
@@ -14084,7 +13994,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part2_hello_vue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part2 - hello vue" rel="prev">
+        <a href="../../colcon/colcon_cd/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Colcon_cd" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -14093,20 +14003,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part2 - hello vue
+              Colcon_cd
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part5_roslib_vue/" class="md-footer__link md-footer__link--next" aria-label="Next: Part5 - ROS Web interface with vue" rel="next">
+        <a href="../02-spawn/" class="md-footer__link md-footer__link--next" aria-label="Next: Part2 - spawn" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part5 - ROS Web interface with vue
+              Part2 - spawn
             </div>
           </div>
           <div class="md-footer__button md-icon">
