@@ -69,4 +69,8 @@ if __name__ == "__main__":
 
 ```
 
-d
+---
+
+# Reference
+- [test_executor](https://github.com/ros2/rclpy/blob/foxy/rclpy/test/test_executor.py)
+- [Execution and Callbacks¶](https://docs.ros2.org/foxy/api/rclpy/api/execution_and_callbacks.html)
