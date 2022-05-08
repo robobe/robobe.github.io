@@ -8,12 +8,29 @@ tags:
     - plugins
     - extensions
 ---
+# DrawIO
+![https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio](images/drawio.png){ align=left }
+This unofficial extension integrates Draw.io into VS Code.
+
+just create new file named `my_image.drawio.png` or `my_image.drawio.svg`
+
+[VSCode marketplace](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
+<br>
+<br>
+<br>
+
+---
 
 # PlantUML
+![](images/PlantUML.png){ align=left }
+
 PlantUML is an open-source tool allowing users to create diagrams from a plain text language
 
 [PlantUML in a nutshell](https://plantuml.com/)
-
+<br>
+<br>
+<br>
+<br>
 ```bash title="install"
 java
 graphviz
