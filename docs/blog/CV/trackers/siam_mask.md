@@ -2,7 +2,7 @@
 title: SiamMask
 description: SiamMask
 date: "2022-05-08"
-banner: ../images/vscode.jpeg
+banner: ../images/logo.jpeg
 tags:
     - ai
     - trackers

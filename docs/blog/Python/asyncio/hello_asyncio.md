@@ -2,7 +2,7 @@
 title: python asyncio
 description: hello python asyncio
 date: "2022-05-05"
-banner: ../ros2.png
+banner: ../python.jpeg
 tags:
     - python
     - asyncio

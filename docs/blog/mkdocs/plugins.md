@@ -42,3 +42,21 @@ nav:
 
 ---
 
+# mkdocs-jupyter
+Use Jupyter Notebooks in mkdocs  
+[github](https://github.com/danielfrg/mkdocs-jupyter)
+
+![](images/mkdocs-jupyter.png)
+
+```title="install"
+pip install mkdocs-jupyter
+```
+
+### Usage
+
+```yml title="mkdocs.yml"
+plugins:
+  - mkdocs-jupyter
+```
+
+- The first h1 header (#) in your notebook will be used as the title.
