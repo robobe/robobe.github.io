@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="hello numpy">
+        <meta name="description" content="Basic ROS2 launch file">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/Python/numpy/numpy_reshape/">
+        <link rel="canonical" href="https://robobe.github.io/blog/ROS2/tutorial/package_xml_hello/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>numpy reshape - Robots Inside</title>
+    <title>Package.xml hello - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="numpy reshape - Robots Inside" />
-    <meta property="og:description" content="hello numpy - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/../numpy.png" />
+    <meta property="og:title" content="Package.xml hello - Robots Inside" />
+    <meta property="og:description" content="Basic ROS2 launch file - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/ROS2/tutorial/package_xml_hello/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/ROS2/tutorial/package_xml_hello/../ros2.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="numpy reshape - Robots Inside" />
-    <meta name="twitter:description" content="hello numpy - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/../numpy.png" />
+    <meta name="twitter:title" content="Package.xml hello - Robots Inside" />
+    <meta name="twitter:description" content="Basic ROS2 launch file - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/ROS2/tutorial/package_xml_hello/../ros2.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference" class="md-skip">
+        <a href="#rosdep" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              numpy reshape
+              Package.xml hello
             
           </span>
         </div>
@@ -642,14 +642,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -710,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -761,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -780,14 +778,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" >
       
       
       
@@ -816,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello/" class="md-nav__link">
+      <a href="../../../Python/numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -828,21 +824,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Python/numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
-      
     </li>
   
 
@@ -866,12 +852,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
@@ -923,7 +911,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../ROS2/colcon/">Colcon</a>
+          <a href="../../colcon/">Colcon</a>
           
             <label for="__nav_2_5_1">
               <span class="md-nav__icon md-icon"></span>
@@ -946,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -999,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -1013,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -1032,12 +1020,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" type="checkbox" id="__nav_2_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" type="checkbox" id="__nav_2_5_3" checked>
       
       
       
@@ -1084,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -1098,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -1112,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -1126,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -1140,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -1152,11 +1142,88 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Package.xml hello
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Package.xml hello
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rosdep" class="md-nav__link">
+    rosdep
+  </a>
+  
+    <nav class="md-nav" aria-label="rosdep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+    <nav class="md-nav" aria-label="command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolve" class="md-nav__link">
+    resolve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1168,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -1182,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -1196,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -1210,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
+      <a href="../part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -1224,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/tutorial/part9_executers/" class="md-nav__link">
+      <a href="../part9_executers/" class="md-nav__link">
         Part9 - executers
       </a>
     </li>
@@ -1281,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../../web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -1295,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+      <a href="../../web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -1309,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../../web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -1323,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../../web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -22217,7 +22284,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22231,7 +22298,7 @@
                     
                         font-size:3.0rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">25</sup>-->
@@ -22245,7 +22312,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22259,7 +22326,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22273,7 +22340,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22287,7 +22354,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22315,7 +22382,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22329,7 +22396,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22357,7 +22424,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22371,7 +22438,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22385,7 +22452,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGreen;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22399,7 +22466,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22413,7 +22480,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22427,7 +22494,7 @@
                     
                         font-size:2.2rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">17</sup>-->
@@ -22441,7 +22508,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22455,7 +22522,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22469,7 +22536,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22483,7 +22550,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -22511,7 +22578,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22525,7 +22592,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22539,7 +22606,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22553,7 +22620,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22567,7 +22634,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22595,7 +22662,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22609,7 +22676,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22623,7 +22690,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22637,7 +22704,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22651,7 +22718,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22665,7 +22732,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22679,7 +22746,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22693,7 +22760,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22707,7 +22774,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22721,7 +22788,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22735,7 +22802,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22749,7 +22816,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22777,7 +22844,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22791,7 +22858,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22805,7 +22872,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22819,7 +22886,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22833,7 +22900,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22861,7 +22928,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22875,7 +22942,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22889,7 +22956,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22903,7 +22970,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22931,7 +22998,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22945,7 +23012,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22959,7 +23026,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22973,7 +23040,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22987,7 +23054,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23001,7 +23068,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23029,7 +23096,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23043,7 +23110,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -23057,7 +23124,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23071,7 +23138,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -23085,7 +23152,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23099,7 +23166,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23113,7 +23180,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23155,7 +23222,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23169,7 +23236,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23183,7 +23250,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23211,8 +23278,61 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rosdep" class="md-nav__link">
+    rosdep
+  </a>
+  
+    <nav class="md-nav" aria-label="rosdep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+    <nav class="md-nav" aria-label="command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolve" class="md-nav__link">
+    resolve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                 
@@ -23262,13 +23382,13 @@
 <div class="cover">
     
     
-        <h1> numpy reshape </h1>
+        <h1> Package.xml hello </h1>
     
 
     
     
         <p class="post-description">
-            hello numpy
+            Basic ROS2 launch file
         </p>
     
 
@@ -23278,15 +23398,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#python">
+                        <a class="tag" href="https://robobe.github.io/tags/#ros2">
                             <span class="tag-name">
-                                #python &nbsp;
+                                #ros2 &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#numpy">
+                        <a class="tag" href="https://robobe.github.io/tags/#package.xml">
                             <span class="tag-name">
-                                #numpy &nbsp;
+                                #package.xml &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#101">
+                            <span class="tag-name">
+                                #101 &nbsp;
                             </span>
                         </a>
                     
@@ -23353,8 +23479,61 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rosdep" class="md-nav__link">
+    rosdep
+  </a>
+  
+    <nav class="md-nav" aria-label="rosdep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+    <nav class="md-nav" aria-label="command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolve" class="md-nav__link">
+    resolve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
 </div>
@@ -23362,42 +23541,34 @@
 
 
     
-    <p>The new shape should be compatible with the original shape&rsquo;</p>
-<div class="admonition tips title">
-<p class="admonition-title">Tips</p>
-<p>Set one of the reshape parameters as <code>-1</code><br />
-Allow numpy to figure unknown dimension
-keep the above criteria  </p>
-<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
-<span class="n">s</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">s1</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">12</span><span class="p">,)</span>
-
-<span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">s2</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-
-<span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">s3</span>
-<span class="n">array</span><span class="p">([</span>
-    <span class="p">[[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-    <span class="p">[[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]])</span>
+    <div class="highlight"><span class="filename">package.xml</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;exec_depend&gt;</span>rclpy<span class="nt">&lt;/exec_depend&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;exec_depend&gt;</span>std_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+<span class="hll"><span class="linenos" data-linenos="3 "></span><span class="nt">&lt;depend&gt;</span>example_interfaces<span class="nt">&lt;/depend&gt;</span>
+</span><span class="linenos" data-linenos="4 "></span><span class="nt">&lt;test_depend&gt;</span>ament_copyright<span class="nt">&lt;/test_depend&gt;</span>
+<span class="linenos" data-linenos="5 "></span>...
 </code></pre></div>
-</div>
+<h2 id="rosdep">rosdep<a class="headerlink" href="#rosdep" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">install</span><pre><span></span><code>sudo apt install python3-rosdep
+</code></pre></div>
+<div class="highlight"><span class="filename">init</span><pre><span></span><code>sudo rosdep init
+rosdep update
+</code></pre></div>
+<h3 id="command">command<a class="headerlink" href="#command" title="Permanent link">#</a></h3>
+<h4 id="resolve">resolve<a class="headerlink" href="#resolve" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>rosdep resolve example_interfaces
+<span class="c1">#apt</span>
+ros-foxy-example-interfaces
+</code></pre></div>
+<h4 id="install">install<a class="headerlink" href="#install" title="Permanent link">#</a></h4>
+<div class="highlight"><span class="filename">install package dependencies</span><pre><span></span><code><span class="c1"># from w.s root run</span>
+rosdep install --from-paths src/basic --ignore-src -r -y
+<span class="c1"># Command result</span>
+executing <span class="nb">command</span> <span class="o">[</span>sudo -H apt-get install -y ros-foxy-example-interfaces<span class="o">]</span>
+</code></pre></div>
 <hr />
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<h1 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">#</a></h1>
 <ul>
-<li><a href="https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/">Numpy Tutorial – Your first numpy guide to build python coding foundations</a></li>
+<li><a href="https://ros.org/reps/rep-0149.html">rep-149 Package Manifest Format Three Specification</a></li>
 </ul>
 
 
@@ -23417,7 +23588,7 @@ keep the above criteria  </p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hello" rel="prev">
+        <a href="../part4-launch_with_arguments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part4 - Launch with arguments" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -23426,20 +23597,20 @@ keep the above criteria  </p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Hello
+              Part4 - Launch with arguments
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../ROS2/colcon/" class="md-footer__link md-footer__link--next" aria-label="Next: Colcon build system" rel="next">
+        <a href="../part5_simple_service/" class="md-footer__link md-footer__link--next" aria-label="Next: Part5 - Simple Service" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Colcon build system
+              Part5 - Simple Service
             </div>
           </div>
           <div class="md-footer__button md-icon">

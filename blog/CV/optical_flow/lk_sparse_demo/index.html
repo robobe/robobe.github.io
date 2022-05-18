@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="hello numpy">
+        <meta name="description" content="using Lucas-Kanade sparse optical flow">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/Python/numpy/numpy_reshape/">
+        <link rel="canonical" href="https://robobe.github.io/blog/CV/optical_flow/lk_sparse_demo/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>numpy reshape - Robots Inside</title>
+    <title>opencv lk optical flow demo - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="numpy reshape - Robots Inside" />
-    <meta property="og:description" content="hello numpy - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/../numpy.png" />
+    <meta property="og:title" content="opencv lk optical flow demo - Robots Inside" />
+    <meta property="og:description" content="using Lucas-Kanade sparse optical flow - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/CV/optical_flow/lk_sparse_demo/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/CV/optical_flow/lk_sparse_demo/../images/logo.jpeg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="numpy reshape - Robots Inside" />
-    <meta name="twitter:description" content="hello numpy - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/Python/numpy/numpy_reshape/../numpy.png" />
+    <meta name="twitter:title" content="opencv lk optical flow demo - Robots Inside" />
+    <meta name="twitter:description" content="using Lucas-Kanade sparse optical flow - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/CV/optical_flow/lk_sparse_demo/../images/logo.jpeg" />
 
   </head>
   
@@ -108,11 +108,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#reference" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -143,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              numpy reshape
+              opencv lk optical flow demo
             
           </span>
         </div>
@@ -485,12 +480,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -517,12 +514,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" checked>
       
       
       
@@ -549,11 +548,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         opencv lk optical flow demo
       </a>
+      
     </li>
   
 
@@ -565,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
+      <a href="../open_cv_optical_flow_lk_sparse/" class="md-nav__link">
         opencv lk optical flow
       </a>
     </li>
@@ -616,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/trackers/siam_mask/" class="md-nav__link">
+      <a href="../../trackers/siam_mask/" class="md-nav__link">
         SiamMask
       </a>
     </li>
@@ -642,14 +649,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -710,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -761,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -780,14 +785,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" >
       
       
       
@@ -816,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello/" class="md-nav__link">
+      <a href="../../../Python/numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -828,21 +831,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Python/numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
-      
     </li>
   
 
@@ -2667,9 +2660,31 @@
 
                 
                 
-                    <br>
-                    <br>
-                    <div class="tag-cloud-nav">
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                
+
+                
+                
+                    <div class="tag-cloud-toc">
                         
 
 
@@ -22217,7 +22232,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22231,7 +22246,7 @@
                     
                         font-size:3.0rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">25</sup>-->
@@ -22245,7 +22260,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22259,7 +22274,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22273,7 +22288,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22287,7 +22302,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22301,7 +22316,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22315,7 +22330,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22343,7 +22358,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22357,7 +22372,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22371,7 +22386,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22385,7 +22400,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22399,7 +22414,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22413,7 +22428,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkMagenta;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22427,7 +22442,7 @@
                     
                         font-size:2.2rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">17</sup>-->
@@ -22441,7 +22456,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22455,7 +22470,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22469,7 +22484,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22483,7 +22498,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -22497,7 +22512,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22511,7 +22526,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22525,7 +22540,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22539,7 +22554,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22553,7 +22568,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22567,7 +22582,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22581,7 +22596,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22595,7 +22610,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22609,7 +22624,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22637,7 +22652,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22651,7 +22666,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22665,7 +22680,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22693,7 +22708,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22707,7 +22722,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22735,7 +22750,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22763,7 +22778,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22777,7 +22792,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22791,7 +22806,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22805,7 +22820,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22819,7 +22834,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -22833,7 +22848,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22847,7 +22862,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22861,7 +22876,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22875,7 +22890,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22889,7 +22904,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22903,7 +22918,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -22931,7 +22946,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22945,7 +22960,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22959,7 +22974,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -22973,7 +22988,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -22987,7 +23002,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23015,7 +23030,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -23029,7 +23044,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23043,7 +23058,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -23057,7 +23072,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23085,7 +23100,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23099,7 +23114,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23113,7 +23128,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23127,7 +23142,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23141,7 +23156,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23155,7 +23170,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23169,7 +23184,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -23192,32 +23207,6 @@
     
 </div>
                     </div>
-                
-            </div>
-        </div>
-    </div>
-
-
-
-    
-
-    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-        <div class="md-sidebar__scrollwrap">
-            <div class="md-sidebar__inner">
-                
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                
-
-                
                 
             </div>
         </div>
@@ -23262,13 +23251,13 @@
 <div class="cover">
     
     
-        <h1> numpy reshape </h1>
+        <h1> opencv lk optical flow demo </h1>
     
 
     
     
         <p class="post-description">
-            hello numpy
+            using Lucas-Kanade sparse optical flow
         </p>
     
 
@@ -23278,15 +23267,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#python">
+                        <a class="tag" href="https://robobe.github.io/tags/#optical flow">
                             <span class="tag-name">
-                                #python &nbsp;
+                                #optical flow &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#numpy">
+                        <a class="tag" href="https://robobe.github.io/tags/#of">
                             <span class="tag-name">
-                                #numpy &nbsp;
+                                #of &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#opencv">
+                            <span class="tag-name">
+                                #opencv &nbsp;
                             </span>
                         </a>
                     
@@ -23353,8 +23348,6 @@
   
   
   
-    
-  
   
 </nav>
 </div>
@@ -23362,43 +23355,70 @@
 
 
     
-    <p>The new shape should be compatible with the original shape&rsquo;</p>
-<div class="admonition tips title">
-<p class="admonition-title">Tips</p>
-<p>Set one of the reshape parameters as <code>-1</code><br />
-Allow numpy to figure unknown dimension
-keep the above criteria  </p>
-<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-     <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
-<span class="n">s</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">s1</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">12</span><span class="p">,)</span>
-
-<span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">s2</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-
-<span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">s3</span>
-<span class="n">array</span><span class="p">([</span>
-    <span class="p">[[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">]],</span>
-    <span class="p">[[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-    <span class="p">[[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]])</span>
+    <div class="highlight"><span class="filename">lk_sparse_demo.py</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1"># https://www.bogotobogo.com/python/OpenCV_Python/images/mean_shift_tracking/</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">url</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;slow_traffic_small.mp4&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">font</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1"># params for ShiTomasi corner detection</span>
+<span class="hll"><span class="linenos" data-linenos="10 "></span><span class="n">feature_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="n">maxCorners</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+</span><span class="linenos" data-linenos="11 "></span>                       <span class="n">qualityLevel</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>                       <span class="n">minDistance</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span>                       <span class="n">blockSize</span> <span class="o">=</span> <span class="mi">7</span> <span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="c1"># Parameters for lucas kanade optical flow</span>
+<span class="hll"><span class="linenos" data-linenos="15 "></span><span class="n">lk_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="n">winSize</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+</span><span class="linenos" data-linenos="16 "></span>                  <span class="n">maxLevel</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>                  <span class="n">criteria</span> <span class="o">=</span> <span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_EPS</span> <span class="o">|</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TERM_CRITERIA_COUNT</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">))</span>
+<span class="linenos" data-linenos="18 "></span><span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="linenos" data-linenos="19 "></span><span class="n">ret</span><span class="p">,</span> <span class="n">first_frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos" data-linenos="20 "></span><span class="c1">#roi variable will save xy coordinate of left top corner and bottom right corner point of bounding box</span>
+<span class="linenos" data-linenos="21 "></span><span class="n">roi</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">selectROI</span><span class="p">(</span><span class="s2">&quot;select&quot;</span><span class="p">,</span> <span class="n">first_frame</span><span class="p">)</span>
+<span class="linenos" data-linenos="22 "></span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyWindow</span><span class="p">(</span><span class="s2">&quot;select&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="23 "></span><span class="n">old_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">first_frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">old_gray</span><span class="p">)</span>
+<span class="linenos" data-linenos="26 "></span><span class="n">mask</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">roi</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><span class="nb">int</span><span class="p">(</span><span class="n">roi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">roi</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">roi</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="nb">int</span><span class="p">(</span><span class="n">roi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">roi</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span> <span class="o">=</span> <span class="mi">255</span>
+<span class="hll"><span class="linenos" data-linenos="27 "></span><span class="n">p0</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">goodFeaturesToTrack</span><span class="p">(</span><span class="n">old_gray</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">feature_params</span><span class="p">)</span>
+</span><span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">first_frame</span><span class="p">)</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos" data-linenos="33 "></span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+<span class="linenos" data-linenos="34 "></span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no frame grabbed&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="35 "></span>        <span class="k">break</span>
+<span class="linenos" data-linenos="36 "></span>    <span class="n">gray_frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="hll"><span class="linenos" data-linenos="37 "></span>    <span class="n">p1</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">calcOpticalFlowPyrLK</span><span class="p">(</span><span class="n">old_gray</span><span class="p">,</span> <span class="n">gray_frame</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">lk_params</span><span class="p">)</span>
+</span><span class="linenos" data-linenos="38 "></span>
+<span class="linenos" data-linenos="39 "></span>    <span class="c1"># Select good points</span>
+<span class="linenos" data-linenos="40 "></span>    <span class="k">if</span> <span class="n">p1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos" data-linenos="41 "></span>        <span class="n">good_new</span> <span class="o">=</span> <span class="n">p1</span><span class="p">[</span><span class="n">st</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos" data-linenos="42 "></span>        <span class="n">good_old</span> <span class="o">=</span> <span class="n">p0</span><span class="p">[</span><span class="n">st</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">new</span><span class="p">,</span> <span class="n">old</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">good_new</span><span class="p">,</span> <span class="n">good_old</span><span class="p">)):</span>
+<span class="linenos" data-linenos="45 "></span>            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="linenos" data-linenos="46 "></span>            <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">old</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="linenos" data-linenos="47 "></span>            <span class="c1"># mask not renew each frame, lines draw from the first image </span>
+<span class="linenos" data-linenos="48 "></span>            <span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">)),</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos" data-linenos="49 "></span>            <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos" data-linenos="50 "></span>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="linenos" data-linenos="51 "></span>    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39;good_new: </span><span class="si">{</span><span class="n">good_new</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,(</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">),</span> <span class="n">font</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">LINE_AA</span><span class="p">)</span>
+<span class="linenos" data-linenos="52 "></span>    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39;good_old: </span><span class="si">{</span><span class="n">good_old</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,(</span><span class="mi">10</span><span class="p">,</span><span class="mi">80</span><span class="p">),</span> <span class="n">font</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">LINE_AA</span><span class="p">)</span>
+<span class="linenos" data-linenos="53 "></span>    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;lk&quot;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="linenos" data-linenos="54 "></span>    <span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+<span class="linenos" data-linenos="55 "></span>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+<span class="linenos" data-linenos="56 "></span>        <span class="k">break</span>
+<span class="linenos" data-linenos="57 "></span>
+<span class="linenos" data-linenos="58 "></span>    <span class="c1"># Now update the previous frame and previous points</span>
+<span class="hll"><span class="linenos" data-linenos="59 "></span>    <span class="n">old_gray</span> <span class="o">=</span> <span class="n">gray_frame</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class="hll"><span class="linenos" data-linenos="60 "></span>    <span class="n">p0</span> <span class="o">=</span> <span class="n">good_new</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="linenos" data-linenos="61 "></span>
+<span class="linenos" data-linenos="62 "></span><span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="linenos" data-linenos="63 "></span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </code></pre></div>
-</div>
-<hr />
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
-<ul>
-<li><a href="https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/">Numpy Tutorial – Your first numpy guide to build python coding foundations</a></li>
-</ul>
 
 
             </article>
@@ -23417,7 +23437,7 @@ keep the above criteria  </p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hello" rel="prev">
+        <a href="../../../AI/pytorch_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PyTorch install" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -23426,20 +23446,20 @@ keep the above criteria  </p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Hello
+              PyTorch install
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../ROS2/colcon/" class="md-footer__link md-footer__link--next" aria-label="Next: Colcon build system" rel="next">
+        <a href="../open_cv_optical_flow_lk_sparse/" class="md-footer__link md-footer__link--next" aria-label="Next: opencv lk optical flow" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Colcon build system
+              opencv lk optical flow
             </div>
           </div>
           <div class="md-footer__button md-icon">
