@@ -1,4 +1,4 @@
 ---
 title: Projects
-description: Projects
+description: Projects and courses
 ---
