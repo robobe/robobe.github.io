@@ -45,3 +45,4 @@ The new shape should be compatible with the original shape'
 
 # Reference
 - [Numpy Tutorial – Your first numpy guide to build python coding foundations](https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/)
+- [Python NumPy For Your Grandma](https://www.gormanalysis.com/blog/python-numpy-for-your-grandma-1-1-introduction/)

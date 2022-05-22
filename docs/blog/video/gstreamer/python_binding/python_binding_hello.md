@@ -6,7 +6,7 @@ banner: gstreamer.png
 tags:
     - video
     - gstreamer
-    - python
+    - gi
 ---
 
 # Install

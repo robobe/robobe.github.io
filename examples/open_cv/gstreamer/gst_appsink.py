@@ -1,5 +1,7 @@
 import sys
+import numpy as np
 import traceback
+import time
 import gi
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst, GLib
@@ -7,7 +9,23 @@ from gi.repository import Gst, GLib
 # Initializes Gstreamer, it's variables, paths
 Gst.init(sys.argv)
 
-PIPELINE = "videotestsrc num-buffers=100 ! autovideosink"
+PIPELINE = "videotestsrc num-buffers=100 ! video/x-raw, width=320, height=240 ! queue  ! appsink name=sink sync=true  max-buffers=1 drop=true  emit-signals=true"
+
+def on_new_sample(app_sink):
+    sample = app_sink.emit('pull-sample')
+    caps = sample.get_caps()
+
+    # Extract the width and height info from the sample's caps
+    height = caps.get_structure(0).get_value("height")
+    width = caps.get_structure(0).get_value("width")
+
+    buf = sample.get_buffer()
+    array = np.ndarray((height, width, 3),
+            buffer=buf.extract_dup(0, buf.get_size()), 
+            dtype=np.uint8)
+        
+    return Gst.FlowReturn.OK
+
 
 def on_message(bus: Gst.Bus, message: Gst.Message, loop: GLib.MainLoop):
     mtype = message.type
@@ -35,9 +53,11 @@ pipeline.set_state(Gst.State.PLAYING)
 # Init GObject loop to handle Gstreamer Bus Events
 loop = GLib.MainLoop()
 
-
 # Add handler to specific signal
 bus.connect("message", on_message, loop)
+
+appsink = pipeline.get_by_name("sink")
+handler_id = appsink.connect("new-sample", on_new_sample)
 
 try:
     loop.run()
