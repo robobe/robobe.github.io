@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="install pytorch with cuda support">
+        <meta name="description" content="Gstreamer python binding">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/AI/pytorch_install/">
+        <link rel="canonical" href="https://robobe.github.io/blog/video/gstreamer/python_binding/gst_appsink_demo/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>PyTorch install - Robots Inside</title>
+    <title>Gstreamer python binding appsink pipe - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="PyTorch install - Robots Inside" />
-    <meta property="og:description" content="install pytorch with cuda support - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/AI/pytorch_install/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/AI/pytorch_install/images/pytorch.png" />
+    <meta property="og:title" content="Gstreamer python binding appsink pipe - Robots Inside" />
+    <meta property="og:description" content="Gstreamer python binding - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/video/gstreamer/python_binding/gst_appsink_demo/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/video/gstreamer/python_binding/gst_appsink_demo/../../gstreamer.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PyTorch install - Robots Inside" />
-    <meta name="twitter:description" content="install pytorch with cuda support - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/AI/pytorch_install/images/pytorch.png" />
+    <meta name="twitter:title" content="Gstreamer python binding appsink pipe - Robots Inside" />
+    <meta name="twitter:description" content="Gstreamer python binding - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/video/gstreamer/python_binding/gst_appsink_demo/../../gstreamer.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install" class="md-skip">
+        <a href="#reference" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PyTorch install
+              Gstreamer python binding appsink pipe
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -365,7 +365,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -386,14 +386,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -426,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai_start_here/" class="md-nav__link">
+      <a href="../../../../AI/ai_start_here/" class="md-nav__link">
         AI Start here
       </a>
     </li>
@@ -440,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../must_dog_classification/" class="md-nav__link">
+      <a href="../../../../AI/must_dog_classification/" class="md-nav__link">
         PyTorch simple classification
       </a>
     </li>
@@ -454,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pc_nvidia_install/" class="md-nav__link">
+      <a href="../../../../AI/pc_nvidia_install/" class="md-nav__link">
         NVIDIA - install on ubuntu 20.04
       </a>
     </li>
@@ -466,21 +464,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../AI/pytorch_install/" class="md-nav__link">
         PyTorch install
       </a>
-      
     </li>
   
 
@@ -563,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
+      <a href="../../../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
         opencv lk optical flow demo
       </a>
     </li>
@@ -577,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
+      <a href="../../../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
         opencv lk optical flow
       </a>
     </li>
@@ -628,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/trackers/siam_mask/" class="md-nav__link">
+      <a href="../../../../CV/trackers/siam_mask/" class="md-nav__link">
         SiamMask
       </a>
     </li>
@@ -720,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -771,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -824,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/hello/" class="md-nav__link">
+      <a href="../../../../Python/numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -838,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/numpy_reshape/" class="md-nav__link">
+      <a href="../../../../Python/numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
     </li>
@@ -921,7 +909,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../../../ROS2/colcon/">Colcon</a>
           
             <label for="__nav_2_5_1">
               <span class="md-nav__icon md-icon"></span>
@@ -944,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../../../ROS2/colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -997,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -1011,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../../../ROS2/gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -1082,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -1096,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -1110,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -1124,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -1138,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -1152,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
         Package.xml hello
       </a>
     </li>
@@ -1166,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -1180,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -1194,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -1208,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -1222,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part9_executers/" class="md-nav__link">
+      <a href="../../../../ROS2/tutorial/part9_executers/" class="md-nav__link">
         Part9 - executers
       </a>
     </li>
@@ -1279,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -1293,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+      <a href="../../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -1307,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -1321,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -1411,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
+      <a href="../../../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
         The Kalman Filter
       </a>
     </li>
@@ -1462,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/pid/hello_pid/" class="md-nav__link">
+      <a href="../../../../control/pid/hello_pid/" class="md-nav__link">
         Hello PID
       </a>
     </li>
@@ -1522,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -1536,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/tips/" class="md-nav__link">
+      <a href="../../../../mkdocs/tips/" class="md-nav__link">
         mkdocs tips
       </a>
     </li>
@@ -1617,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+      <a href="../../../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
         Adding Latency and Limiting Bandwidth
       </a>
     </li>
@@ -1675,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/hello_tmux/" class="md-nav__link">
+      <a href="../../../../os/hello_tmux/" class="md-nav__link">
         Tmux and tmuxp
       </a>
     </li>
@@ -1694,12 +1682,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" checked>
       
       
       
@@ -1747,7 +1737,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../examples/">Examples</a>
           
         </div>
       
@@ -1790,7 +1780,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -1814,12 +1804,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_3" type="checkbox" id="__nav_2_10_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_3" type="checkbox" id="__nav_2_10_3" checked>
       
       
       
@@ -1835,7 +1827,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../">Gstreamer</a>
           
             <label for="__nav_2_10_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1856,12 +1848,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_3_2" type="checkbox" id="__nav_2_10_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_3_2" type="checkbox" id="__nav_2_10_3_2" checked>
       
       
       
@@ -1892,11 +1886,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Gstreamer python binding appsink pipe
       </a>
+      
     </li>
   
 
@@ -1908,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
+      <a href="../gst_appsrc_demo/" class="md-nav__link">
         Gstreamer python binding appsrc pipe
       </a>
     </li>
@@ -1922,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
+      <a href="../gst_simple_demo/" class="md-nav__link">
         Gstreamer python binding basic pipe
       </a>
     </li>
@@ -1936,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
+      <a href="../python_binding_hello/" class="md-nav__link">
         Gstreamer python binding
       </a>
     </li>
@@ -2005,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/extensions/" class="md-nav__link">
+      <a href="../../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -2019,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/tips/" class="md-nav__link">
+      <a href="../../../../vscode/tips/" class="md-nav__link">
         VSCode tips
       </a>
     </li>
@@ -2033,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -2100,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -2114,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -2128,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -2142,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part4_add_ssh/" class="md-nav__link">
+      <a href="../../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -2156,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part5-terminology/" class="md-nav__link">
+      <a href="../../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -2170,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part6-tips/" class="md-nav__link">
+      <a href="../../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -2184,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part7-operators/" class="md-nav__link">
+      <a href="../../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -2198,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part8-custom_layer/" class="md-nav__link">
+      <a href="../../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -2212,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -2264,7 +2268,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../../projects/">Projects</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2323,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/Nav2/" class="md-nav__link">
+      <a href="../../../../../projects/Nav2/Nav2/" class="md-nav__link">
         Nav2
       </a>
     </li>
@@ -2367,7 +2371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
+      <a href="../../../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
         Part1 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -2418,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
+      <a href="../../../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
         Part2 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -2469,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/tf/tf/" class="md-nav__link">
+      <a href="../../../../../projects/Nav2/tf/tf/" class="md-nav__link">
         Tf
       </a>
     </li>
@@ -2516,7 +2520,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/Pytorch/">Pytorch</a>
+          <a href="../../../../../projects/Pytorch/">Pytorch</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2569,7 +2573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
+      <a href="../../../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
         Pytorchbasics
       </a>
     </li>
@@ -2629,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
+      <a href="../../../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
         TurtleBot3
       </a>
     </li>
@@ -2673,7 +2677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
+      <a href="../../../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
         Turtlebot3 simulation
       </a>
     </li>
@@ -2726,7 +2730,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../../tags/">Tags</a>
           
         </div>
       
@@ -24050,7 +24054,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24064,7 +24068,7 @@
                     
                         font-size:3.0rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">25</sup>-->
@@ -24078,7 +24082,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -24092,7 +24096,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24106,7 +24110,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24120,7 +24124,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24134,7 +24138,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24148,7 +24152,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24162,7 +24166,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24176,7 +24180,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24190,7 +24194,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24204,7 +24208,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24218,7 +24222,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -24232,7 +24236,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24246,7 +24250,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24260,7 +24264,7 @@
                     
                         font-size:2.2rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">17</sup>-->
@@ -24288,7 +24292,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24302,7 +24306,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -24316,7 +24320,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -24330,7 +24334,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24344,7 +24348,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24372,7 +24376,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24386,7 +24390,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24400,7 +24404,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24414,7 +24418,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24428,7 +24432,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24442,7 +24446,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24456,7 +24460,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24470,7 +24474,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24484,7 +24488,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24512,7 +24516,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24526,7 +24530,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -24540,7 +24544,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24554,7 +24558,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24568,7 +24572,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24582,7 +24586,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24596,7 +24600,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24610,7 +24614,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24624,7 +24628,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24638,7 +24642,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24652,7 +24656,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24666,7 +24670,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24680,7 +24684,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24694,7 +24698,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24722,7 +24726,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24736,7 +24740,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -24750,7 +24754,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24764,7 +24768,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -24778,7 +24782,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24792,7 +24796,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOliveGreen;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24806,7 +24810,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -24820,7 +24824,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -24834,7 +24838,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24848,7 +24852,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24862,7 +24866,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -24876,7 +24880,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24890,7 +24894,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24904,7 +24908,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24918,7 +24922,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -24932,7 +24936,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24946,7 +24950,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24974,7 +24978,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -24988,7 +24992,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -25002,7 +25006,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -25016,7 +25020,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -25030,7 +25034,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -25109,13 +25113,13 @@
 <div class="cover">
     
     
-        <h1> PyTorch install </h1>
+        <h1> Gstreamer python binding appsink pipe </h1>
     
 
     
     
         <p class="post-description">
-            install pytorch with cuda support
+            Gstreamer python binding
         </p>
     
 
@@ -25125,21 +25129,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#pytorch">
+                        <a class="tag" href="https://robobe.github.io/tags/#video">
                             <span class="tag-name">
-                                #pytorch &nbsp;
+                                #video &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#cuda">
+                        <a class="tag" href="https://robobe.github.io/tags/#gstreamer">
                             <span class="tag-name">
-                                #cuda &nbsp;
+                                #gstreamer &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#install">
+                        <a class="tag" href="https://robobe.github.io/tags/#gi">
                             <span class="tag-name">
-                                #install &nbsp;
+                                #gi &nbsp;
                             </span>
                         </a>
                     
@@ -25215,27 +25219,84 @@
 
 
     
-    <h1 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h1>
-<p><a href="https://pytorch.org/get-started/locally/">pytorch.org</a></p>
-<p><img alt="" src="../images/pytorch_install.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>PyTorch wheel came with it&rsquo;s on cuda and cuDNN</p>
-</div>
-<div class="highlight"><span class="filename">check torch installation</span><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span>
-<span class="mf">1.5.1</span><span class="o">+</span><span class="n">cu101</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span>
-<span class="mf">10.1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">current_device</span><span class="p">()</span>
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">()</span>
-<span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
-<span class="mi">7603</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
-<span class="kc">True</span>
+    <div class="highlight"><span class="filename">appsrc demo</span><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">gi</span>
+<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;Gst&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Gst</span><span class="p">,</span> <span class="n">GLib</span>
+
+<span class="c1"># Initializes Gstreamer, it&#39;s variables, paths</span>
+<span class="n">Gst</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+
+<span class="n">PIPELINE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;videotestsrc num-buffers=100 </span><span class="se">\</span>
+<span class="s2">    ! video/x-raw, width=320, height=240 </span><span class="se">\</span>
+<span class="s2">    ! queue  </span><span class="se">\</span>
+<span class="s2">    ! video/x-raw, format=BGR</span>
+<span class="s2">    ! appsink name=sink sync=true  max-buffers=1 drop=true  emit-signals=true&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">on_new_sample</span><span class="p">(</span><span class="n">app_sink</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">app_sink</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;pull-sample&#39;</span><span class="p">)</span>
+    <span class="n">caps</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">get_caps</span><span class="p">()</span>
+
+    <span class="c1"># Extract the width and height info from the sample&#39;s caps</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">caps</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">caps</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">)</span>
+
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">get_buffer</span><span class="p">()</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="n">buffer</span><span class="o">=</span><span class="n">buf</span><span class="o">.</span><span class="n">extract_dup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="o">.</span><span class="n">get_size</span><span class="p">()),</span> 
+            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Gst</span><span class="o">.</span><span class="n">FlowReturn</span><span class="o">.</span><span class="n">OK</span>
+
+
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">bus</span><span class="p">:</span> <span class="n">Gst</span><span class="o">.</span><span class="n">Bus</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Gst</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">loop</span><span class="p">:</span> <span class="n">GLib</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">):</span>
+    <span class="n">mtype</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">type</span>
+    <span class="k">if</span> <span class="n">mtype</span> <span class="o">==</span> <span class="n">Gst</span><span class="o">.</span><span class="n">MessageType</span><span class="o">.</span><span class="n">EOS</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of stream&quot;</span><span class="p">)</span>
+        <span class="n">loop</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">mtype</span> <span class="o">==</span> <span class="n">Gst</span><span class="o">.</span><span class="n">MessageType</span><span class="o">.</span><span class="n">ERROR</span><span class="p">:</span>
+        <span class="n">err</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">parse_error</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
+        <span class="n">loop</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">mtype</span> <span class="o">==</span> <span class="n">Gst</span><span class="o">.</span><span class="n">MessageType</span><span class="o">.</span><span class="n">WARNING</span><span class="p">:</span>
+        <span class="n">err</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">parse_warning</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">parse_launch</span><span class="p">(</span><span class="n">PIPELINE</span><span class="p">)</span>
+<span class="n">bus</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">get_bus</span><span class="p">()</span>
+<span class="c1"># allow bus to emit messages to main thread</span>
+<span class="n">bus</span><span class="o">.</span><span class="n">add_signal_watch</span><span class="p">()</span>
+<span class="c1"># Start pipeline</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">Gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">PLAYING</span><span class="p">)</span>
+<span class="c1"># Init GObject loop to handle Gstreamer Bus Events</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">GLib</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+
+<span class="c1"># Add handler to specific signal</span>
+<span class="n">bus</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="n">on_message</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span>
+
+<span class="n">appsink</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">get_by_name</span><span class="p">(</span><span class="s2">&quot;sink&quot;</span><span class="p">)</span>
+<span class="n">handler_id</span> <span class="o">=</span> <span class="n">appsink</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;new-sample&quot;</span><span class="p">,</span> <span class="n">on_new_sample</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+<span class="c1"># Stop Pipeline</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">Gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">NULL</span><span class="p">)</span>
 </code></pre></div>
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://www.ardusub.com/developers/opencv.html">ardusub Receive and display stream</a></li>
+</ul>
 
 
             </article>
@@ -25254,7 +25315,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pc_nvidia_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NVIDIA - install on ubuntu 20.04" rel="prev">
+        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gstreamer" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -25263,20 +25324,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              NVIDIA - install on ubuntu 20.04
+              Gstreamer
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../CV/optical_flow/lk_sparse_demo/" class="md-footer__link md-footer__link--next" aria-label="Next: opencv lk optical flow demo" rel="next">
+        <a href="../gst_appsrc_demo/" class="md-footer__link md-footer__link--next" aria-label="Next: Gstreamer python binding appsrc pipe" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              opencv lk optical flow demo
+              Gstreamer python binding appsrc pipe
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -25306,20 +25367,20 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../../assets/extra.js"></script>
       
     
   </body>
