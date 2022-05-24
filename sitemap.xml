@@ -76,6 +76,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/Python/project_template/project_unittest/</loc>
+         <lastmod>2022-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/Python/project_template/venv_pip_and_requirements/</loc>
+         <lastmod>2022-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/ROS2/colcon/</loc>
          <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
@@ -177,6 +187,11 @@
     </url>
     <url>
          <loc>https://robobe.github.io/blog/control/pid/hello_pid/</loc>
+         <lastmod>2022-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/embedded/jetson/nano/</loc>
          <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -342,6 +357,16 @@
     </url>
     <url>
          <loc>https://robobe.github.io/projects/TurtleBot3/Simulation/simulation/</loc>
+         <lastmod>2022-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/projects/udacity_Introduction_to_Computer_Vision/test/</loc>
+         <lastmod>2022-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/</loc>
          <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
