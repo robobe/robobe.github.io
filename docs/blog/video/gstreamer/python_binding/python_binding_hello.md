@@ -15,8 +15,8 @@ Gstreamer python bindings implement by `PyGObject`
 !!! Note
     PyGObject is a Python package which provides bindings for GObject based libraries such as GTK, GStreamer and many more.
 
-```bash title="install" linenums="1" hl_lines="3 8"
-# Install only mark library
+```bash title="install" linenums="1" hl_lines="3 4 9"
+# Install mark library installed other dependencies
 sudo apt install \
 libgirepository1.0-dev \
 libcairo2-dev \

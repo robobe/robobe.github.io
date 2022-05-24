@@ -12,5 +12,5 @@ tags:
 ![](./images/pipe.png)
 
 ```python title="basic gst binding"
---8<-- "/home/user/projects/blog/examples/open_cv/gstreamer/gst_hello.py"
+--8<-- "/home/user/projects/blog/examples/gstreamer/gst_hello.py"
 ```

@@ -9,7 +9,11 @@ from gi.repository import Gst, GLib
 # Initializes Gstreamer, it's variables, paths
 Gst.init(sys.argv)
 
-PIPELINE = "videotestsrc num-buffers=100 ! video/x-raw, width=320, height=240 ! queue  ! appsink name=sink sync=true  max-buffers=1 drop=true  emit-signals=true"
+PIPELINE = """videotestsrc num-buffers=100 \
+    ! video/x-raw, width=320, height=240 \
+    ! queue  \
+    ! video/x-raw, format=BGR
+    ! appsink name=sink sync=true  max-buffers=1 drop=true  emit-signals=true"""
 
 def on_new_sample(app_sink):
     sample = app_sink.emit('pull-sample')
@@ -23,7 +27,7 @@ def on_new_sample(app_sink):
     array = np.ndarray((height, width, 3),
             buffer=buf.extract_dup(0, buf.get_size()), 
             dtype=np.uint8)
-        
+    print(array.shape)
     return Gst.FlowReturn.OK
 
 

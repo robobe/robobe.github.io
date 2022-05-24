@@ -11,5 +11,5 @@ tags:
 
 
 ```python title="appsrc demo"
---8<-- "/home/user/projects/blog/examples/open_cv/gstreamer/gst_appsrc.py"
+--8<-- "/home/user/projects/blog/examples/gstreamer/gst_appsrc.py"
 ```
