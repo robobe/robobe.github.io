@@ -19,6 +19,10 @@ reboot
 !!! Tip
     set `/etc/apt/sources.list` to `us.archive.ubuntu.com`
 
+
+---
+
+## Check after install
 ```
 nvidia-smi
 
@@ -44,6 +48,17 @@ nvidia-smi
 +-----------------------------------------------------------------------------+
 
 ```
+
+!!! Warning
+    After Kernel/OS update the driver stop working sometimes  
+    Reinstall the driver solve the problem
+
+    ```bash
+    # 510 - driver version
+    sudo apt install --reinstall nvidia-driver-510
+    sudo apt install --reinstall nvidia-dkms-510
+    ```
+---
 
 # cuda toolkit
 [Nvidia install page](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local)
