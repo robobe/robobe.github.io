@@ -2,13 +2,25 @@
 title: Python project template
 description: Python project template
 date: "2022-24-05"
-banner: iamges/python.png
+banner: images/python.png
 tags:
     - python
     - project
 ---
+This post explain project structure and how to create github template repository
 
-[template github](https://github.com/robobe/py_template)
+Other post show how to config virtual environment install package unittest and tools usage
+
+- part 1: this post
+- part 2: [venv and pip](venv_pip_and_requirements)
+- part 3: [unitest using pytest](project_unittest)
+- Tools:
+    * part 4: [pylint](pylint)
+
+
+
+
+
 
 ## project tree
 ```
@@ -20,6 +32,7 @@ py_template/
 ├── pyproject.toml
 ├── py_template
 ├── README.md
+├── .pylintrc
 ├── setup.cfg
 ├── setup.py
 ├── tests
@@ -32,6 +45,7 @@ py_template/
 | file name  | description  |
 |---|---|
 | Makefile  | automate validation and running tests  |
+| .pylintrc | pylint rules |
 
 ---
 
@@ -39,14 +53,12 @@ py_template/
 Set project as a Template
 ![](images/github_template.png)
 
----
+
+[my python projct template on github](https://github.com/robobe/py_template)
 
 
 ---
-## Tools
-### black
 
----![](2022-05-24-14-43-36.png)
 
 # Reference
 - [template example](https://github.com/overfitted-cat/from-pybase)

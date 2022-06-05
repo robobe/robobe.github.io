@@ -12,17 +12,21 @@ Build OpenCV on x64 ubuntu machine
 
 ## Prepared
 - Using cmake GUI
+  
 ```bash
 sudo apt install cmake-qt-gui
 ```
 
 ### Download source
-```
+
+```bash
 wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip
 ```
+
 ---
 
 ## build process
+
 - set all option
 - run configure 
 - run generate
@@ -99,6 +103,7 @@ BUILD_opencv_world:BOOL=1
 CUDA_FAST_MATH:BOOL=1
 
 ```
+
 ---
 
 

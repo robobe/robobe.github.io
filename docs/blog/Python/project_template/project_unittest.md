@@ -1,5 +1,5 @@
 ---
-title: Python project template 
+title: Python project template - unittest
 description: tests using pytest
 date: "2022-24-05"
 banner: images/python.png

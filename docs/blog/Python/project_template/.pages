@@ -1,0 +1,9 @@
+order: desc
+nav:
+    - index.md
+    - venv_pip_and_requirements.md
+    - project_unittest.md
+    - Tools:
+      - pylint.md
+      - mypy.md
+      - black.md
