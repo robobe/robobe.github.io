@@ -31,23 +31,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="todo action in plain txt">
+        <meta name="description" content="Detect link MTU by send udp big packets">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/vscode/todo/">
+        <link rel="canonical" href="https://robobe.github.io/blog/networking/udp/big_packet_and_mtu/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>todo.txt - Robots Inside</title>
+    <title>udp big packet and MTU - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +66,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="todo.txt - Robots Inside" />
-    <meta property="og:description" content="todo action in plain txt - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/vscode/todo/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/vscode/todo/todotxt.png" />
+    <meta property="og:title" content="udp big packet and MTU - Robots Inside" />
+    <meta property="og:description" content="Detect link MTU by send udp big packets - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/networking/udp/big_packet_and_mtu/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/networking/udp/big_packet_and_mtu/../images/network.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="todo.txt - Robots Inside" />
-    <meta name="twitter:description" content="todo action in plain txt - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/vscode/todo/todotxt.png" />
+    <meta name="twitter:title" content="udp big packet and MTU - Robots Inside" />
+    <meta name="twitter:description" content="Detect link MTU by send udp big packets - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/networking/udp/big_packet_and_mtu/../images/network.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vscode-ext" class="md-skip">
+        <a href="#code-demo" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              todo.txt
+              udp big packet and MTU
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +290,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -369,7 +369,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -430,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/ai_start_here/" class="md-nav__link">
+      <a href="../../../AI/ai_start_here/" class="md-nav__link">
         AI Start here
       </a>
     </li>
@@ -444,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/must_dog_classification/" class="md-nav__link">
+      <a href="../../../AI/must_dog_classification/" class="md-nav__link">
         PyTorch simple classification
       </a>
     </li>
@@ -458,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pc_nvidia_install/" class="md-nav__link">
+      <a href="../../../AI/pc_nvidia_install/" class="md-nav__link">
         NVIDIA - install on ubuntu 20.04
       </a>
     </li>
@@ -472,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pytorch_install/" class="md-nav__link">
+      <a href="../../../AI/pytorch_install/" class="md-nav__link">
         PyTorch install
       </a>
     </li>
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
+      <a href="../../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
         YOLOv5
       </a>
     </li>
@@ -610,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/matching/orb_matcher/" class="md-nav__link">
+      <a href="../../../CV/matching/orb_matcher/" class="md-nav__link">
         opencv feature matching
       </a>
     </li>
@@ -661,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/opencv/build_with_cuda_support/" class="md-nav__link">
+      <a href="../../../CV/opencv/build_with_cuda_support/" class="md-nav__link">
         Build OpenCV with CUDA
       </a>
     </li>
@@ -714,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
         opencv lk optical flow demo
       </a>
     </li>
@@ -728,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
         opencv lk optical flow
       </a>
     </li>
@@ -779,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/trackers/siam_mask/" class="md-nav__link">
+      <a href="../../../CV/trackers/siam_mask/" class="md-nav__link">
         SiamMask
       </a>
     </li>
@@ -892,7 +892,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/Tools/Youtube_download/">Youtube download</a>
+          <a href="../../../Misl/Tools/Youtube_download/">Youtube download</a>
           
         </div>
       
@@ -955,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/cmake/cmake_hello/" class="md-nav__link">
+      <a href="../../../Misl/cmake/cmake_hello/" class="md-nav__link">
         cmake 101
       </a>
     </li>
@@ -1008,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
         Install docker with nvidia support
       </a>
     </li>
@@ -1022,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_vscode/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_vscode/" class="md-nav__link">
         Docker VSCode integration
       </a>
     </li>
@@ -1073,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/github/github_pro_tips/" class="md-nav__link">
+      <a href="../../../Misl/github/github_pro_tips/" class="md-nav__link">
         github pro tips
       </a>
     </li>
@@ -1124,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/os/create_bootable_disk/" class="md-nav__link">
+      <a href="../../../Misl/os/create_bootable_disk/" class="md-nav__link">
         Create os USB bootable disk
       </a>
     </li>
@@ -1220,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/future_demo/" class="md-nav__link">
+      <a href="../../../Python/asyncio/future_demo/" class="md-nav__link">
         future demo
       </a>
     </li>
@@ -1234,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -1285,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -1338,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/hello/" class="md-nav__link">
+      <a href="../../../Python/numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -1352,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/numpy_reshape/" class="md-nav__link">
+      <a href="../../../Python/numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
     </li>
@@ -1396,7 +1396,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/project_template/">Project template</a>
+          <a href="../../../Python/project_template/">Project template</a>
           
             <label for="__nav_2_5_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1419,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
+      <a href="../../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
         Python project template - venv
       </a>
     </li>
@@ -1433,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/project_unittest/" class="md-nav__link">
+      <a href="../../../Python/project_template/project_unittest/" class="md-nav__link">
         Python project template - unittest
       </a>
     </li>
@@ -1481,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/pylint/" class="md-nav__link">
+      <a href="../../../Python/project_template/pylint/" class="md-nav__link">
         Python project template - pylint
       </a>
     </li>
@@ -1495,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/mypy/" class="md-nav__link">
+      <a href="../../../Python/project_template/mypy/" class="md-nav__link">
         Mypy
       </a>
     </li>
@@ -1509,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/black/" class="md-nav__link">
+      <a href="../../../Python/project_template/black/" class="md-nav__link">
         Black
       </a>
     </li>
@@ -1599,7 +1599,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../../ROS2/colcon/">Colcon</a>
           
             <label for="__nav_2_6_1">
               <span class="md-nav__icon md-icon"></span>
@@ -1622,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../../ROS2/colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -1675,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -1689,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -1760,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -1774,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -1788,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -1802,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -1816,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -1830,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
         Package.xml hello
       </a>
     </li>
@@ -1844,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -1858,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -1872,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -1886,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -1900,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part9_executers/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part9_executers/" class="md-nav__link">
         Part9 - executers
       </a>
     </li>
@@ -1957,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -1971,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -1985,7 +1985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -1999,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -2089,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
+      <a href="../../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
         The Kalman Filter
       </a>
     </li>
@@ -2140,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/pid/hello_pid/" class="md-nav__link">
+      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
         Hello PID
       </a>
     </li>
@@ -2230,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
+      <a href="../../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
         cross compiler hello
       </a>
     </li>
@@ -2298,7 +2298,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../embedded/jetson/nano/">Nano</a>
+          <a href="../../../embedded/jetson/nano/">Nano</a>
           
         </div>
       
@@ -2370,7 +2370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -2384,7 +2384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/tips/" class="md-nav__link">
+      <a href="../../../mkdocs/tips/" class="md-nav__link">
         mkdocs tips
       </a>
     </li>
@@ -2403,12 +2403,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" checked>
       
       
       
@@ -2467,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+      <a href="../../tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
         Adding Latency and Limiting Bandwidth
       </a>
     </li>
@@ -2486,12 +2488,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_2" type="checkbox" id="__nav_2_10_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_2" type="checkbox" id="__nav_2_10_2" checked>
       
       
       
@@ -2516,11 +2520,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../networking/udp/big_packet_and_mtu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          udp big packet and MTU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         udp big packet and MTU
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-demo" class="md-nav__link">
+    Code demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-test-123" class="md-nav__link">
+    Test 1: Test 123
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-send-udp-packet-less-then-mtu" class="md-nav__link">
+    Test 2: send udp packet less then MTU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-3-send-udp-packet-bigger-then-mtu" class="md-nav__link">
+    Test 3: send udp packet bigger then MTU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2576,7 +2651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/hello_tmux/" class="md-nav__link">
+      <a href="../../../os/hello_tmux/" class="md-nav__link">
         Tmux and tmuxp
       </a>
     </li>
@@ -2648,7 +2723,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -2691,7 +2766,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -2736,7 +2811,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
             <label for="__nav_2_12_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2795,7 +2870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
         Gstreamer python binding appsink pipe
       </a>
     </li>
@@ -2809,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
         Gstreamer python binding appsrc pipe
       </a>
     </li>
@@ -2823,7 +2898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
         Gstreamer python binding basic pipe
       </a>
     </li>
@@ -2837,7 +2912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
         Gstreamer python binding
       </a>
     </li>
@@ -2870,14 +2945,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
       
       
       
@@ -2908,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../extensions/" class="md-nav__link">
+      <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -2922,7 +2995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tips/" class="md-nav__link">
+      <a href="../../../vscode/tips/" class="md-nav__link">
         VSCode tips
       </a>
     </li>
@@ -2934,55 +3007,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          todo.txt
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vscode-ext" class="md-nav__link">
-    VSCode ext
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3047,7 +3076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -3061,7 +3090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -3075,7 +3104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -3089,7 +3118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part4_add_ssh/" class="md-nav__link">
+      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -3103,7 +3132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part5-terminology/" class="md-nav__link">
+      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -3117,7 +3146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part6-tips/" class="md-nav__link">
+      <a href="../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -3131,7 +3160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part7-operators/" class="md-nav__link">
+      <a href="../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -3145,7 +3174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part8-custom_layer/" class="md-nav__link">
+      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -3159,7 +3188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -3215,7 +3244,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3268,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
+      <a href="../../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
         CAP_5415
       </a>
     </li>
@@ -3325,7 +3354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/Nav2/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/Nav2/" class="md-nav__link">
         Nav2
       </a>
     </li>
@@ -3369,7 +3398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
         Part1 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -3420,7 +3449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
         Part2 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -3471,7 +3500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/tf/tf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/tf/tf/" class="md-nav__link">
         Tf
       </a>
     </li>
@@ -3518,7 +3547,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/Pytorch/">Pytorch</a>
+          <a href="../../../../projects/Pytorch/">Pytorch</a>
           
             <label for="__nav_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -3571,7 +3600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
+      <a href="../../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
         Pytorchbasics
       </a>
     </li>
@@ -3631,7 +3660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
         TurtleBot3
       </a>
     </li>
@@ -3675,7 +3704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
         Turtlebot3 simulation
       </a>
     </li>
@@ -3735,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
         Test
       </a>
     </li>
@@ -3779,7 +3808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -3832,7 +3861,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -38149,7 +38178,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38163,7 +38192,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -38177,7 +38206,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -38191,7 +38220,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38205,7 +38234,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -38219,7 +38248,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -38247,7 +38276,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38261,7 +38290,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38275,7 +38304,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38289,7 +38318,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -38303,7 +38332,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38317,7 +38346,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38331,7 +38360,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38345,7 +38374,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkMagenta;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38359,7 +38388,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38373,7 +38402,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38401,7 +38430,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOliveGreen;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38429,7 +38458,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -38457,7 +38486,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">boot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38471,7 +38500,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -38485,7 +38514,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38499,7 +38528,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38513,7 +38542,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38527,7 +38556,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -38555,7 +38584,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38569,7 +38598,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38583,7 +38612,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38597,7 +38626,7 @@
                     
                         font-size:2.2rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">17</sup>-->
@@ -38611,7 +38640,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38625,7 +38654,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38653,7 +38682,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -38667,7 +38696,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38681,7 +38710,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38695,7 +38724,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -38709,7 +38738,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38723,7 +38752,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38737,7 +38766,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38751,7 +38780,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38765,7 +38794,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38779,7 +38808,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38793,7 +38822,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38807,7 +38836,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38821,7 +38850,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38835,7 +38864,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38891,7 +38920,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38905,7 +38934,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38919,7 +38948,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38933,7 +38962,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38947,7 +38976,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38961,7 +38990,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -38975,7 +39004,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -38989,7 +39018,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39003,7 +39032,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39017,7 +39046,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39031,7 +39060,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39045,7 +39074,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39059,7 +39088,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39073,7 +39102,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39101,7 +39130,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39115,7 +39144,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39129,7 +39158,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -39143,7 +39172,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39157,7 +39186,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -39171,7 +39200,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39185,7 +39214,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39199,7 +39228,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -39213,7 +39242,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39227,7 +39256,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39241,7 +39270,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -39255,7 +39284,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39269,7 +39298,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39283,7 +39312,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39297,7 +39326,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39311,7 +39340,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39325,7 +39354,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -39339,7 +39368,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39353,7 +39382,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39367,7 +39396,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39381,7 +39410,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39395,7 +39424,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39409,7 +39438,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39423,7 +39452,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -39473,16 +39502,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vscode-ext" class="md-nav__link">
-    VSCode ext
+  <a href="#code-demo" class="md-nav__link">
+    Code demo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#test" class="md-nav__link">
+    Test
   </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-test-123" class="md-nav__link">
+    Test 1: Test 123
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-send-udp-packet-less-then-mtu" class="md-nav__link">
+    Test 2: send udp packet less then MTU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-3-send-udp-packet-bigger-then-mtu" class="md-nav__link">
+    Test 3: send udp packet bigger then MTU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -39536,13 +39592,13 @@
 <div class="cover">
     
     
-        <h1> todo.txt </h1>
+        <h1> udp big packet and MTU </h1>
     
 
     
     
         <p class="post-description">
-            todo action in plain txt
+            Detect link MTU by send udp big packets
         </p>
     
 
@@ -39552,21 +39608,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#vscode">
+                        <a class="tag" href="https://robobe.github.io/tags/#udp">
                             <span class="tag-name">
-                                #vscode &nbsp;
+                                #udp &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#todo">
+                        <a class="tag" href="https://robobe.github.io/tags/#mtu">
                             <span class="tag-name">
-                                #todo &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#vscode-ext">
-                            <span class="tag-name">
-                                #vscode-ext &nbsp;
+                                #mtu &nbsp;
                             </span>
                         </a>
                     
@@ -39641,16 +39691,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vscode-ext" class="md-nav__link">
-    VSCode ext
+  <a href="#code-demo" class="md-nav__link">
+    Code demo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#test" class="md-nav__link">
+    Test
   </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-test-123" class="md-nav__link">
+    Test 1: Test 123
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-send-udp-packet-less-then-mtu" class="md-nav__link">
+    Test 2: send udp packet less then MTU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-3-send-udp-packet-bigger-then-mtu" class="md-nav__link">
+    Test 3: send udp packet bigger then MTU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -39662,37 +39739,60 @@
 
 
     
-    <ul>
-<li>Priority: <code>(A)</code> capital letter first in line</li>
-<li>Project: <code>+project</code> anywhere in line non-whitespace</li>
-<li>Context: <code>@context</code> anywhere in line non-whitespace</li>
-<li>tag: <code>key:value</code></li>
-<li><code>x</code> as first character mark task completion</li>
-</ul>
-<figure>
-<p><img align="left" alt="" height="200px" src="description.svg" width="800px" />
-  </p>
-<figcaption>github todo primer</figcaption>
-</figure>
-<hr />
-<h2 id="vscode-ext">VSCode ext<a class="headerlink" href="#vscode-ext" title="Permanent link">#</a></h2>
-<p><img align="left" alt="" height="64px" src="2022-03-25-09-00-49.png" width="64px" /></p>
+    <h2 id="code-demo">Code demo<a class="headerlink" href="#code-demo" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">udp</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos="1 "></span><span class="o">--</span><span class="mi">8</span><span class="o">&lt;--</span> <span class="n">examples</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">networking</span><span class="o">/</span><span class="n">udp</span><span class="o">/</span><span class="n">big_Sender</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div>
+<h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h2>
 <ul>
-<li>Commands and decorators for managing todo.txt files</li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=davraamides.todotxt-mode">marketplace</a></li>
+<li>Create ubuntu docker image with tcpdump and netcat</li>
 </ul>
-<p><img alt="" src="2022-03-25-09-09-07.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>ctrl+shift+x: Toggle completion</p>
-</div>
-<hr />
-<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>FROM ubuntu:20.04
+RUN apt-get update &amp;&amp; apt-get install --no-install-recommends --yes \
+    tcpdump \
+    net-tools \ 
+    netcat
+CMD [&quot;/bin/sh&quot;]
+</code></pre></div>
+<h3 id="test-1-test-123">Test 1: Test 123<a class="headerlink" href="#test-1-test-123" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="http://todotxt.org/">todotxt</a></li>
-<li><a href="https://github.com/todotxt/todo.txt">todo spec</a></li>
-<li><a href="[todotxt-mode](https://marketplace.visualstudio.com/items?itemName=davraamides.todotxt-mode)">vscode todotxt-mode</a></li>
+<li>Run docker image</li>
+<li>Run tcpdump and sniff for <code>icmp</code></li>
+<li>Send ping from host machine</li>
 </ul>
+<div class="highlight"><pre><span></span><code>tcpdump -n -i eth0 icmp
+</code></pre></div>
+<h3 id="test-2-send-udp-packet-less-then-mtu">Test 2: send udp packet less then MTU<a class="headerlink" href="#test-2-send-udp-packet-less-then-mtu" title="Permanent link">#</a></h3>
+<div class="highlight"><span class="filename">docker shell1</span><pre><span></span><code>tcpdump -n -i eth0 udp and port 1060 or icmp
+</code></pre></div>
+<div class="highlight"><span class="filename">docker shell2</span><pre><span></span><code>nc -ul 1060
+</code></pre></div>
+<h3 id="test-3-send-udp-packet-bigger-then-mtu">Test 3: send udp packet bigger then MTU<a class="headerlink" href="#test-3-send-udp-packet-bigger-then-mtu" title="Permanent link">#</a></h3>
+<ul>
+<li>Run tcpdump and nc like in <strong>Test 2</strong></li>
+<li>send with <code>sock.setsockopt(socket.IPPROTO_IP, IN.IP_MTU_DISCOVER, IN.IP_PMTUDISC_DO)</code></li>
+<li>comment the above line</li>
+</ul>
+<div class="highlight"><span class="filename">with IP_PMTUDISC_DO</span><pre><span></span><code>python examples/python/networking/udp/big_Sender.py
+<span class="c1"># result</span>
+<span class="o">[</span>Errno <span class="m">90</span><span class="o">]</span> Message too long
+Alas, the datagram did not make it
+Actual MTU: <span class="m">1500</span>
+
+<span class="c1"># packet not send at all</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">without setsockopt</span><pre><span></span><code>python examples/python/networking/udp/big_Sender.py
+<span class="c1"># Host Result</span>
+The big datagram was sent!
+<span class="c1"># shell 1: tcpdump</span>
+<span class="m">19</span>:11:06.400842 IP <span class="m">172</span>.17.0.1.47327 &gt; <span class="m">172</span>.17.0.2.1060: UDP, bad length <span class="m">1500</span> &gt; <span class="m">1472</span>
+
+<span class="c1"># shell 2: nc</span>
+show <span class="m">1500</span> char of <span class="s1">&#39;#&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>19:14:46.502573 IP 172.17.0.2.1060 &gt; 172.17.0.1.48321: UDP, length 1
+19:14:46.502686 IP 172.17.0.1 &gt; 172.17.0.2: ICMP 172.17.0.1 udp port 48321 unreachable, length 37
+19:14:51.960248 IP 172.17.0.1.58025 &gt; 172.17.0.2.1060: UDP, bad length 1500 &gt; 1472
+</code></pre></div>
 
 
             </article>
@@ -39711,7 +39811,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tips/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VSCode tips" rel="prev">
+        <a href="../../tc/adding_latency_and_limiting_bandwidth/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adding Latency and Limiting Bandwidth" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -39720,20 +39820,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              VSCode tips
+              Adding Latency and Limiting Bandwidth
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../yocto/part1_hello_yocto/" class="md-footer__link md-footer__link--next" aria-label="Next: Part1 - Yocto tutorial" rel="next">
+        <a href="../../../os/hello_tmux/" class="md-footer__link md-footer__link--next" aria-label="Next: Tmux and tmuxp" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part1 - Yocto tutorial
+              Tmux and tmuxp
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -39763,20 +39863,20 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
