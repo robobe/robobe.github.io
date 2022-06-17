@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="prop" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="prop1" value="0.1" />
+
+    <data>${prop1}</data>
+</robot>

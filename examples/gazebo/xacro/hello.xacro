@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="var" default="1"/>
+
+    <data>$(arg var)</data>
+</robot>

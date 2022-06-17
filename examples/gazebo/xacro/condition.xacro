@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="condition" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="check" value="2" />
+    <xacro:if value="${check == 1}">
+        code for create A 
+    </xacro:if>
+    <!-- run if condition not true -->
+    <xacro:unless value="${check == 1}">
+        code for create B 
+    </xacro:unless>
+</robot>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="macro" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="default_origin" params="x y z">
+        <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+    </xacro:macro>
+    <xacro:default_origin x="1" y="2" z="3"/>
+</robot>

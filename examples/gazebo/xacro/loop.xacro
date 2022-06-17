@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="loop" xmlns:xacro="http://www.ros.org/wiki/xacro">
+        <xacro:property name="items" value="${[1,2,3,4,5]}" />
+
+        <xacro:macro name="loop" params="items:=^">
+                <xacro:if value="${items}">
+                        <!-- pop first item from list -->
+                        <xacro:property name="item" value="${items.pop(0)}"/>
+
+                        <item>${item}</item>
+
+                        <!-- recursively call myself -->
+                        <xacro:loop/>
+                </xacro:if>
+        </xacro:macro>
+        <xacro:loop items="${items}" />
+</robot>
