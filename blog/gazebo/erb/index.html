@@ -8,12 +8,12 @@
 
 
 
-
-
-
-
-
     
+
+
+
+
+
 
 
 
@@ -29,17 +29,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
+        <meta name="description" content="using erb templating in gazebo">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/os/hello_tmux/">
+        <link rel="canonical" href="https://robobe.github.io/blog/gazebo/erb/">
       
       <link rel="icon" href="../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Tmux and tmuxp - Robots Inside</title>
+    <title>erb - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -76,19 +76,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tmux and tmuxp - Robots Inside" />
-    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/os/hello_tmux/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/os/hello_tmux/../ros2.png" />
+    <meta property="og:title" content="erb - Robots Inside" />
+    <meta property="og:description" content="using erb templating in gazebo - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/gazebo/erb/" />
+    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tmux and tmuxp - Robots Inside" />
-    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/os/hello_tmux/../ros2.png" />
+    <meta name="twitter:title" content="erb - Robots Inside" />
+    <meta name="twitter:description" content="using erb templating in gazebo - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
 
   </head>
   
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#config" class="md-skip">
+        <a href="#generate-sdf-from-erb-template" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tmux and tmuxp
+              erb
             
           </span>
         </div>
@@ -2470,12 +2470,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" checked>
       
       
       
@@ -2502,11 +2504,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../gazebo/erb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          erb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         erb
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generate-sdf-from-erb-template" class="md-nav__link">
+    Generate SDF from ERB template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-cmake" class="md-nav__link">
+    using cmake
+  </a>
+  
+    <nav class="md-nav" aria-label="using cmake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    demos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmakelists" class="md-nav__link">
+    CMakeLists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2537,7 +2610,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gazebo/xacro/">Xacro</a>
+          <a href="../xacro/">Xacro</a>
           
             <label for="__nav_2_9_2">
               <span class="md-nav__icon md-icon"></span>
@@ -2560,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/xacro/build_check_view/" class="md-nav__link">
+      <a href="../xacro/build_check_view/" class="md-nav__link">
         xacro build check and view
       </a>
     </li>
@@ -2794,14 +2867,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" >
       
       
       
@@ -2826,55 +2897,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tmux and tmuxp
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../os/hello_tmux/" class="md-nav__link">
         Tmux and tmuxp
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    usage
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -44361,7 +44388,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44375,7 +44402,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -44403,7 +44430,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44417,7 +44444,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -44431,7 +44458,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -44445,7 +44472,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44459,7 +44486,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44473,7 +44500,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44487,7 +44514,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44501,7 +44528,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44515,7 +44542,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44529,7 +44556,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44557,7 +44584,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44571,7 +44598,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44585,7 +44612,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44599,7 +44626,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44613,7 +44640,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44627,7 +44654,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44641,7 +44668,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44655,7 +44682,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44669,7 +44696,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44683,7 +44710,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44697,7 +44724,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44725,7 +44752,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -44739,7 +44766,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">disk image&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44753,7 +44780,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">boot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44767,7 +44794,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -44781,7 +44808,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44795,7 +44822,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44809,7 +44836,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44823,7 +44850,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -44837,7 +44864,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -44851,7 +44878,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44865,7 +44892,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44879,7 +44906,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44893,7 +44920,7 @@
                     
                         font-size:2.2rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">17</sup>-->
@@ -44907,7 +44934,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44921,7 +44948,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44935,7 +44962,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -44949,7 +44976,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -44963,7 +44990,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44977,7 +45004,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -44991,7 +45018,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -45005,7 +45032,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45019,7 +45046,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45033,7 +45060,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45047,7 +45074,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45061,7 +45088,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45075,7 +45102,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45117,7 +45144,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45131,7 +45158,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45159,7 +45186,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -45173,7 +45200,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45187,7 +45214,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45201,7 +45228,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45215,7 +45242,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45229,7 +45256,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45243,7 +45270,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45257,7 +45284,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45271,7 +45298,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45285,7 +45312,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45299,7 +45326,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45313,7 +45340,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45327,7 +45354,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45341,7 +45368,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45355,7 +45382,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45369,7 +45396,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45383,7 +45410,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45397,7 +45424,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45411,7 +45438,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkBlue;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45425,7 +45452,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45439,7 +45466,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45453,7 +45480,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -45467,7 +45494,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45481,7 +45508,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -45495,7 +45522,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45509,7 +45536,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45523,7 +45550,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -45537,7 +45564,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45551,7 +45578,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45565,7 +45592,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -45579,7 +45606,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45593,7 +45620,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45607,7 +45634,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45621,7 +45648,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45635,7 +45662,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45649,7 +45676,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45663,7 +45690,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45705,7 +45732,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45719,7 +45746,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45733,7 +45760,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45747,7 +45774,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45761,7 +45788,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45775,7 +45802,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45811,16 +45838,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    config
+  <a href="#generate-sdf-from-erb-template" class="md-nav__link">
+    Generate SDF from ERB template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    usage
+  <a href="#using-cmake" class="md-nav__link">
+    using cmake
   </a>
+  
+    <nav class="md-nav" aria-label="using cmake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    demos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmakelists" class="md-nav__link">
+    CMakeLists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -45874,10 +45928,14 @@
 <div class="cover">
     
     
-        <h1> Tmux and tmuxp </h1>
+        <h1> erb </h1>
     
 
     
+    
+        <p class="post-description">
+            using erb templating in gazebo
+        </p>
     
 
     
@@ -45886,21 +45944,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#tmux">
+                        <a class="tag" href="https://robobe.github.io/tags/#erb">
                             <span class="tag-name">
-                                #tmux &nbsp;
+                                #erb &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#tmuxp">
+                        <a class="tag" href="https://robobe.github.io/tags/#gazebo">
                             <span class="tag-name">
-                                #tmuxp &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#101">
-                            <span class="tag-name">
-                                #101 &nbsp;
+                                #gazebo &nbsp;
                             </span>
                         </a>
                     
@@ -45975,16 +46027,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    config
+  <a href="#generate-sdf-from-erb-template" class="md-nav__link">
+    Generate SDF from ERB template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    usage
+  <a href="#using-cmake" class="md-nav__link">
+    using cmake
   </a>
+  
+    <nav class="md-nav" aria-label="using cmake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demos" class="md-nav__link">
+    demos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmakelists" class="md-nav__link">
+    CMakeLists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -45996,23 +46075,90 @@
 
 
     
-    <div class="highlight"><span class="filename">install</span><pre><span></span><code>pip install --user tmuxp
+    <p>ERB is used templating language to generate text file with <code>Ruby</code> code</p>
+<h2 id="generate-sdf-from-erb-template">Generate SDF from ERB template<a class="headerlink" href="#generate-sdf-from-erb-template" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>erb model.sdf.erb &gt; model.sdf
 </code></pre></div>
-<h2 id="config">config<a class="headerlink" href="#config" title="Permanent link">#</a></h2>
+<h2 id="using-cmake">using cmake<a class="headerlink" href="#using-cmake" title="Permanent link">#</a></h2>
+<h3 id="project">project<a class="headerlink" href="#project" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>├── build
+├── CMakeLists.txt
+└── variable_and_math.sdf.erb
+└── loops_and_func.sdf.erb
+</code></pre></div>
+<h3 id="demos">demos<a class="headerlink" href="#demos" title="Permanent link">#</a></h3>
 <ul>
-<li>session_name</li>
-<li>list of <code>windows</code></li>
-<li>list of <code>panes</code> for every window in <code>windows</code></li>
+<li>declare variable</li>
+<li>using <code>Math</code> module</li>
 </ul>
-<div class="highlight"><span class="filename">config.yaml</span><pre><span></span><code><span class="nt">session_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2-pane-vertical</span><span class="w"></span>
-<span class="nt">windows</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">window_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my test window</span><span class="w"></span>
-<span class="w">    </span><span class="nt">panes</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo hello</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo hello</span><span class="w"></span>
+<div class="highlight"><span class="filename">variable_and_math.sdf.erb</span><pre><span></span><code>&lt;%
+x = 1
+%&gt;
+
+&lt;%=x%&gt;
+
+&lt;%
+pi=Math::PI
+%&gt;
+
+&lt;%=pi%&gt;
 </code></pre></div>
-<h2 id="usage">usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>tmuxp load config.yaml
+<hr />
+<ul>
+<li>loop example</li>
+<li>function and function call</li>
+</ul>
+<div class="highlight"><span class="filename">loops_and_func.sdf.erb</span><pre><span></span><code>&lt;% for i in 1..3 %&gt;
+hello no: &lt;%=i%&gt;
+&lt;% end %&gt;
+
+&lt;%
+def box(dx, dy, dz)
+    &#39;&lt;collision name=&quot;collision&quot;&gt;
+        &lt;geometry&gt;
+         &lt;box&gt;
+         &lt;size&gt; &#39; + dx.to_s + &#39; &#39; + dy.to_s + &#39; &#39; + dz.to_s + &#39; &lt;/size&gt;
+     &lt;/box&gt;
+        &lt;/geometry&gt;
+      &lt;/collision&gt;
+      &lt;visual name=&quot;visual&quot;&gt;
+        &lt;geometry&gt;
+          &lt;box&gt;
+         &lt;size&gt; &#39; + dx.to_s + &#39; &#39; + dy.to_s + &#39; &#39; + dz.to_s + &#39; &lt;/size&gt;
+     &lt;/box&gt;
+        &lt;/geometry&gt;
+      &lt;/visual&gt;&#39;
+
+end
+%&gt;
+
+&lt;%= box(10,20,30) %&gt;
+</code></pre></div>
+<hr />
+<h3 id="cmakelists">CMakeLists<a class="headerlink" href="#cmakelists" title="Permanent link">#</a></h3>
+<div class="highlight"><span class="filename">CMakeLists.txt</span><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.10</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">HELLO_ERB</span><span class="p">)</span>
+
+<span class="nb">find_program</span><span class="p">(</span><span class="s">ERB_EXE_PATH</span><span class="w"> </span><span class="s">erb</span><span class="p">)</span>
+<span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">ERB_EXE_PATH</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span><span class="w"> </span><span class="s2">&quot;Could not find the `erb` tool.  Try `sudo apt-get install ruby`&quot;</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">erb_files</span>
+<span class="w">  </span><span class="s">variable_and_math.sdf.erb</span>
+<span class="w">  </span><span class="s">loops_and_func.sdf.erb</span>
+<span class="p">)</span>
+
+<span class="nb">foreach</span><span class="p">(</span><span class="s">_erb</span><span class="w"> </span><span class="o">${</span><span class="nv">erb_files</span><span class="o">}</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">string</span><span class="p">(</span><span class="s">REGEX</span><span class="w"> </span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">&quot;.sdf.erb&quot;</span><span class="w"> </span><span class="s2">&quot;.sdf&quot;</span><span class="w"> </span><span class="s">_model</span><span class="w"> </span><span class="o">${</span><span class="nv">_erb</span><span class="o">}</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">_model</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">_model</span><span class="o">}</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">add_custom_command</span><span class="p">(</span><span class="s">OUTPUT</span><span class="w"> </span><span class="o">${</span><span class="nv">_model</span><span class="o">}</span>
+<span class="w">                     </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">ERB_EXE_PATH</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">_erb</span><span class="o">}</span><span class="w"> </span><span class="s">&gt;</span><span class="w"> </span><span class="o">${</span><span class="nv">_model</span><span class="o">}</span>
+<span class="w">                     </span><span class="s">WORKING_DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="p">)</span>
+
+<span class="w">  </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_files</span><span class="w"> </span><span class="o">${</span><span class="nv">_model</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">endforeach</span><span class="p">()</span>
+<span class="nb">add_custom_target</span><span class="p">(</span><span class="s">erb_generation</span><span class="w"> </span><span class="s">ALL</span><span class="w"> </span><span class="s">DEPENDS</span><span class="w"> </span><span class="o">${</span><span class="nv">_files</span><span class="o">}</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -46032,7 +46178,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../networking/udp/big_packet_and_mtu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: udp big packet and MTU" rel="prev">
+        <a href="../../embedded/jetson/nano/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Jetson Nano" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -46041,20 +46187,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              udp big packet and MTU
+              Jetson Nano
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../video/examples/" class="md-footer__link md-footer__link--next" aria-label="Next: FFMpeg and Gstreamer Examples" rel="next">
+        <a href="../xacro/" class="md-footer__link md-footer__link--next" aria-label="Next: xacro hello" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              FFMpeg and Gstreamer Examples
+              xacro hello
             </div>
           </div>
           <div class="md-footer__button md-icon">
