@@ -11,7 +11,7 @@ tags:
 
 ## Code demo
 ```python title="udp" linenums="1" hl_lines="1"
---8<-- examples/python/networking/udp/big_Sender.py
+--8<-- "examples/python/networking/udp/big_Sender.py"
 ```
 
 ## Test
