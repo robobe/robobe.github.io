@@ -31,17 +31,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Install jetson nano">
+        <meta name="description" content="pyhton namedtuple introduction">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/embedded/jetson/nano/">
+        <link rel="canonical" href="https://robobe.github.io/blog/Python/python/named_tuple/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Jetson Nano - Robots Inside</title>
+    <title>Python NamedTuple 101 - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +78,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jetson Nano - Robots Inside" />
-    <meta property="og:description" content="Install jetson nano - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/embedded/jetson/nano/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/embedded/jetson/nano/images/nano.png" />
+    <meta property="og:title" content="Python NamedTuple 101 - Robots Inside" />
+    <meta property="og:description" content="pyhton namedtuple introduction - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/Python/python/named_tuple/" />
+    <meta property="og:image" content="https://robobe.github.io/blog/Python/python/named_tuple/images/python.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jetson Nano - Robots Inside" />
-    <meta name="twitter:description" content="Install jetson nano - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/embedded/jetson/nano/images/nano.png" />
+    <meta name="twitter:title" content="Python NamedTuple 101 - Robots Inside" />
+    <meta name="twitter:description" content="pyhton namedtuple introduction - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/blog/Python/python/named_tuple/images/python.png" />
 
   </head>
   
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference" class="md-skip">
+        <a href="#basic-usage" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jetson Nano
+              Python NamedTuple 101
             
           </span>
         </div>
@@ -1286,12 +1286,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
@@ -1358,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/asyncio/future_demo/" class="md-nav__link">
+      <a href="../../asyncio/future_demo/" class="md-nav__link">
         future demo
       </a>
     </li>
@@ -1372,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -1423,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -1476,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/numpy/hello/" class="md-nav__link">
+      <a href="../../numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -1490,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/numpy/numpy_reshape/" class="md-nav__link">
+      <a href="../../numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
     </li>
@@ -1534,7 +1536,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../Python/project_template/">Project template</a>
+          <a href="../../project_template/">Project template</a>
           
             <label for="__nav_2_5_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1557,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
+      <a href="../../project_template/venv_pip_and_requirements/" class="md-nav__link">
         Python project template - venv
       </a>
     </li>
@@ -1571,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/project_template/project_unittest/" class="md-nav__link">
+      <a href="../../project_template/project_unittest/" class="md-nav__link">
         Python project template - unittest
       </a>
     </li>
@@ -1619,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/project_template/pylint/" class="md-nav__link">
+      <a href="../../project_template/pylint/" class="md-nav__link">
         Python project template - pylint
       </a>
     </li>
@@ -1633,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/project_template/mypy/" class="md-nav__link">
+      <a href="../../project_template/mypy/" class="md-nav__link">
         Mypy
       </a>
     </li>
@@ -1647,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Python/project_template/black/" class="md-nav__link">
+      <a href="../../project_template/black/" class="md-nav__link">
         Black
       </a>
     </li>
@@ -1673,12 +1675,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" checked>
       
       
       
@@ -1703,11 +1707,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../Python/python/named_tuple/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Python NamedTuple 101
       </a>
+      
     </li>
   
 
@@ -2355,14 +2369,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
@@ -2421,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cross-compiler/hello-cc/" class="md-nav__link">
+      <a href="../../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
         cross compiler hello
       </a>
     </li>
@@ -2440,14 +2452,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_2" type="checkbox" id="__nav_2_8_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_2" type="checkbox" id="__nav_2_8_2" >
       
       
       
@@ -2472,14 +2482,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_2_1" type="checkbox" id="__nav_2_8_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_2_1" type="checkbox" id="__nav_2_8_2_1" >
       
       
       
@@ -2492,8 +2500,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Nano</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../embedded/jetson/nano/">Nano</a>
           
         </div>
       
@@ -45697,7 +45705,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45711,7 +45719,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -45725,7 +45733,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -45739,7 +45747,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45753,7 +45761,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -45767,7 +45775,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -45781,7 +45789,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45795,7 +45803,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45809,7 +45817,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45823,7 +45831,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45837,7 +45845,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45851,7 +45859,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45865,7 +45873,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45879,7 +45887,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -45893,7 +45901,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45907,7 +45915,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45921,7 +45929,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45935,7 +45943,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45949,7 +45957,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45963,7 +45971,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -45977,7 +45985,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -45991,7 +45999,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46005,7 +46013,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46019,7 +46027,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46047,7 +46055,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46061,7 +46069,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -46075,7 +46083,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">disk image&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46089,7 +46097,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">boot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46103,7 +46111,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -46117,7 +46125,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46131,7 +46139,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46159,7 +46167,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -46173,7 +46181,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46187,7 +46195,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46201,7 +46209,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46215,7 +46223,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46229,7 +46237,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46243,7 +46251,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46271,7 +46279,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46285,7 +46293,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46299,7 +46307,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -46313,7 +46321,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -46327,7 +46335,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46341,7 +46349,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46355,7 +46363,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -46369,7 +46377,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46383,7 +46391,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46397,7 +46405,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46411,7 +46419,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46425,7 +46433,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46439,7 +46447,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46453,7 +46461,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46467,7 +46475,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46481,7 +46489,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46495,7 +46503,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46509,7 +46517,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46523,7 +46531,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -46537,7 +46545,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46551,7 +46559,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46565,7 +46573,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46593,7 +46601,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46607,7 +46615,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46621,7 +46629,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46635,7 +46643,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46649,7 +46657,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46663,7 +46671,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46677,7 +46685,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46705,7 +46713,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46719,7 +46727,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46747,7 +46755,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46761,7 +46769,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46775,7 +46783,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46789,7 +46797,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46803,7 +46811,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46817,7 +46825,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -46831,7 +46839,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46845,7 +46853,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -46859,7 +46867,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46873,7 +46881,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46887,7 +46895,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -46915,7 +46923,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46929,7 +46937,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -46943,7 +46951,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46957,7 +46965,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -46971,7 +46979,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46985,7 +46993,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -46999,7 +47007,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47013,7 +47021,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -47055,7 +47063,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47083,7 +47091,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47097,7 +47105,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47111,7 +47119,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47125,7 +47133,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47139,7 +47147,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -47218,13 +47226,13 @@
 <div class="cover">
     
     
-        <h1> Jetson Nano </h1>
+        <h1> Python NamedTuple 101 </h1>
     
 
     
     
         <p class="post-description">
-            Install jetson nano
+            pyhton namedtuple introduction
         </p>
     
 
@@ -47234,15 +47242,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#nvidia">
+                        <a class="tag" href="https://robobe.github.io/tags/#python">
                             <span class="tag-name">
-                                #nvidia &nbsp;
+                                #python &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#nano">
+                        <a class="tag" href="https://robobe.github.io/tags/#tuple">
                             <span class="tag-name">
-                                #nano &nbsp;
+                                #tuple &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#namedtuple">
+                            <span class="tag-name">
+                                #namedtuple &nbsp;
                             </span>
                         </a>
                     
@@ -47318,18 +47332,25 @@
 
 
     
-    <div class="highlight"><span class="filename">/ansible/roles/jetson/defaults/main.yaml</span><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">ubuntu_release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">focal</span><span class="w"></span>
+    <h1 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">#</a></h1>
+<div class="highlight"><span class="filename">NameTuple</span><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
 
-<span class="nt">new_user</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
-<span class="w">  </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/bash</span><span class="w"></span>
-<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">MyTuple</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">MyTuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">MyTuple</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">))</span>
+<span class="n">t3</span> <span class="o">=</span> <span class="n">MyTuple</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">})</span>
+<span class="n">t4</span> <span class="o">=</span> <span class="n">MyTuple</span><span class="o">.</span><span class="n">_make</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t4</span><span class="p">)</span>
 </code></pre></div>
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
-<ul>
-<li><a href="https://pythops.com/post/create-your-own-image-for-jetson-nano-board">Create your own image for jetson nano board</a></li>
-</ul>
 
 
             </article>
@@ -47348,7 +47369,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../cross-compiler/hello-cc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: cross compiler hello" rel="prev">
+        <a href="../../project_template/black/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Black" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -47357,20 +47378,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              cross compiler hello
+              Black
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../gazebo/erb/" class="md-footer__link md-footer__link--next" aria-label="Next: erb" rel="next">
+        <a href="../../../ROS2/colcon/" class="md-footer__link md-footer__link--next" aria-label="Next: Colcon build system" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              erb
+              Colcon build system
             </div>
           </div>
           <div class="md-footer__button md-icon">
