@@ -148,7 +148,7 @@ socat - UDP:localhost:11111
 # server
 socat UDP-RECV:11111 STDOUT
 # client
-socat STDIO UDP-SENDTO:127.0.0.1:11111
+socat STDIN UDP-SENDTO:127.0.0.1:11111
 
 
 # Server

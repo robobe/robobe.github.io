@@ -10,8 +10,15 @@ tags:
 
 # demo
 
-```
-socat udp-datagram:127.0.0.1:1234 open:/dev/ttyUSB0,raw,nonblock,waitlock=/tmp/s0.locak,echo=0,b115200,crnl
+```bash
+# server (udp-serial)
+socat -d -d -d udp-listen:1234 open:/dev/ttyUSB0,raw,nonblock,waitlock=/tmp/s0.lock,echo=0,b115200,crnl
+
+# client
+socat - UDP:127.0.0.1:1234
+
+
+socat -d -d -d UDP-RECVFROM:1234,fork open:/dev/ttyUSB0,raw,nonblock,waitlock=/tmp/s0.lock,echo=0,b115200,crnl
 ```
 
 ---
