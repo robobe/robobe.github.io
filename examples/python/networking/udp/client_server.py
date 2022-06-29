@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 class MyData(NamedTuple):
     id: int
     age: bytes
-    name: str
+    # name: str
 
 
 
@@ -23,9 +23,9 @@ def server():
 
     while True:
         message, address = server_socket.recvfrom(1024)
-        data = struct.unpack("IB4s", message)
-        data = MyData._make(data)
-        log.debug(data.name)
+        data = struct.unpack("IB", message)
+        data = MyData(*data)
+        log.debug(f"id: {data.id} age:{data.age}")
         server_socket.sendto(b"ack", address)
 
 
@@ -33,8 +33,8 @@ def client():
     for pings in range(10):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         client_socket.settimeout(1.0)
-        data = MyData(pings, pings, b"test")
-        data = struct.pack('IB4s', *data)
+        data = MyData(pings, pings)
+        data = struct.pack('IB', *data)
         
         message = data
         addr = ("127.0.0.1", 12000)
