@@ -496,6 +496,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/projects/ROS2%20Cookbook/gazebo/sdf_model/</loc>
+         <lastmod>2022-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/projects/ROS2%20Cookbook/gazebo/simple_world_plugin/</loc>
+         <lastmod>2022-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/projects/ROS2%20Cookbook/gazebo/urdf_spawn/</loc>
          <lastmod>2022-07-02</lastmod>
          <changefreq>daily</changefreq>
