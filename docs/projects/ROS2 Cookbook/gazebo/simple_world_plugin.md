@@ -52,7 +52,7 @@ rrbot_gazebo
 
 ---
 
-#### src
+#### plugin source
 ```cpp title="simple_world_plugin.cpp"
 #include <gazebo/common/Plugin.hh>
 #include <rclcpp/rclcpp.hpp>
@@ -138,7 +138,7 @@ ament_package()
 ```
 
 #### launch
-```python title="world_plug.launch.py"
+```python title="world_plug.launch.py" linenums="1" hl_lines="10 28 23" 
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -188,4 +188,7 @@ def generate_launch_description():
 ros2 launch rrbot_gazebo world_plug.launch.py
 ```
 
+- The first three log line came from gazebo log API
+- The Other three came from ROS log API
+  
 ![](images/simple_world_plugin.png)
