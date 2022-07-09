@@ -2,4 +2,4 @@
 title: Projects
 description: Projects and courses
 ---
-![](bicycle.png)
+[![](images/ros2.png)](ROS2 Cookbook/)

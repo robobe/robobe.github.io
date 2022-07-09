@@ -24,8 +24,12 @@ rrbot_description
 
 ```
 
+---
+
 ### robot_state_publisher
+
 robot_state_publisher uses the URDF specified by the parameter robot_description and the joint positions from the topic joint_states to calculate the forward kinematics of the robot and publish the results via tf.
+
 
 ```bash linenums="1" hl_lines="4 7"
 ros2 node info /robot_state_publisher
@@ -44,6 +48,7 @@ ros2 node info /robot_state_publisher
 ```
 
 ### joint_state_publisher
+
 The package publishing sensor_msgs/msg/JointState messages for a robot described with URDF. Given a URDF (either passed on the command-line or via the /robot_description topic).
 
 ```bash linenums="1" hl_lines="4 6"
@@ -54,7 +59,8 @@ ros2 node info /joint_state_publisher
     /robot_description: std_msgs/msg/String
   Publishers:
     /joint_states: sensor_msgs/msg/JointState
-```  
+```
+
 ---
 
 ## launch
@@ -112,7 +118,7 @@ def generate_launch_description():
   ])
 ```
 
-!!! note
+!!! note "launch urdf"
     passing robot_description as parameter
 
 
@@ -128,6 +134,25 @@ def generate_launch_description():
     )
     ```
      
+
+!!! note "launch xacro"
+
+    ```python
+    xacro_path = os.path.join(
+        get_package_share_directory(package_name),
+        "urdf",
+        "robot.xacro")
+
+    robot_desc = xacro.process_file(xacro_path).toxml()
+
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[{ 'robot_description': robot_desc}]
+    )
+    ```
+
 ---
 
 ## Run
