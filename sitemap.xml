@@ -536,6 +536,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/projects/ROS2%20Cookbook/gazebo/tips/</loc>
+         <lastmod>2022-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/projects/ROS2%20Cookbook/gazebo/urdf_spawn/</loc>
          <lastmod>2022-07-09</lastmod>
          <changefreq>daily</changefreq>
