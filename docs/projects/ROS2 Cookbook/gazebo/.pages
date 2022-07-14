@@ -3,3 +3,4 @@ nav:
     - xacro_spawn.md
     - sdf_model.md
     - simple_world_plugin.md
+    - tips.md

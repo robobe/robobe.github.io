@@ -1,9 +1,11 @@
 nav:
+    - xacro
     - rviz
     - tf
     - gazebo
     - control
     - launch.py
     - perception
+    - nav2
     - miscellaneous
     
