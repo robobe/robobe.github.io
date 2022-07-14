@@ -33,16 +33,35 @@ source venv/bin/activate
 ## Dependencies
 - Using pip to install project dependencies
 - Separate dependencies to two or more files
-  - dev
-  - prod (reference prod file from setup.py)
+  - dev packages
+  - prod packages(reference prod file from setup.py)
+  - project source reference
 
-### requirements files
-- , call prod file from dev using `-r` option
+### project
+- Install / Reference project from virtualenv
 
+```
+pip install -e .
+```
+
+!!! tip 
+    `pip install -e . ` require setup.py file
+
+---
+
+### requirements
+
+!!! tip
+    Call `prod` file from `dev` using `-r` option
+    ```
+    -r requirements.txt
+    ```
+#### prod
 ```txt title="requirements.txt"
 # Add project requirements here
 ```
 
+#### dev
 ```txt title="requirements-dev.txt"  hl_lines="1"
 -r requirements.txt
 black
@@ -54,6 +73,23 @@ isort
 pip install -r requirements-dev.txt
 ```
 
-### using setup.py
+---
+
+### setup.py
+
+```python title="minimal setup"
+from setuptools import setup, find_packages
+
+setup(
+    name='MyPackageName',
+    version='1.0.0',
+    url='https://github.com/mypackage.git',
+    author='Author Name',
+    author_email='author@gmail.com',
+    description='Description of my package',
+    packages=find_packages(),    
+    install_requires=[],
+)
+```
 
 

@@ -49,7 +49,7 @@ py_template/
 
 ---
 
-## git
+## GitHUB
 Set project as a Template
 ![](images/github_template.png)
 

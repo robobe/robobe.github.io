@@ -21,11 +21,12 @@ tags:
 - Run `pytest`
 
 ## demo
+demp_proj project 
 
 ```
 demo_proj/
 ├── .vscode
-├── src
+├── demo_proj
 |    └── demo.py
 ├── setup.cfg
 ├── setup.py
@@ -37,6 +38,16 @@ demo_proj/
 └── version.py
 
 ```
+
+
+
+
+```python title="test_demo.py"
+```
+
+```python title="demo.py"
+```
+
 ---
 
 ## VSCode
