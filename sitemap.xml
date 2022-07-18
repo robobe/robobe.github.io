@@ -386,6 +386,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/os/minimal_rootfs/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/video/examples/</loc>
          <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
