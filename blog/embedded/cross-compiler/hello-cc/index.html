@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cmake" class="md-skip">
+        <a href="#install-cross-compiler" class="md-skip">
           Skip to content
         </a>
       
@@ -2664,8 +2664,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cmake" class="md-nav__link">
-    cmake
+  <a href="#install-cross-compiler" class="md-nav__link">
+    install cross compiler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-setting-file" class="md-nav__link">
+    toolchain setting file
   </a>
   
 </li>
@@ -2698,9 +2705,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#make-and-check" class="md-nav__link">
-    make and check
+  <a href="#make-check-run" class="md-nav__link">
+    make, check, run
   </a>
+  
+    <nav class="md-nav" aria-label="make, check, run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -69616,7 +69650,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69630,7 +69664,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -69644,7 +69678,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -69658,7 +69692,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69672,7 +69706,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -69686,7 +69720,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -69700,7 +69734,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69714,7 +69748,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69728,7 +69762,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69742,7 +69776,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69756,7 +69790,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69770,7 +69804,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69784,7 +69818,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69798,7 +69832,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -69812,7 +69846,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69826,7 +69860,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69840,7 +69874,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69854,7 +69888,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOliveGreen;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69868,7 +69902,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69882,7 +69916,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69896,7 +69930,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69924,7 +69958,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69938,7 +69972,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69952,7 +69986,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -69966,7 +70000,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -69980,7 +70014,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -69994,7 +70028,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">disk image&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70008,7 +70042,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">boot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70022,7 +70056,7 @@
                     
                         font-size:1.9000000000000001rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">14</sup>-->
@@ -70036,7 +70070,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70064,7 +70098,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70078,7 +70112,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -70092,7 +70126,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70106,7 +70140,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70120,7 +70154,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70134,7 +70168,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70148,7 +70182,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70162,7 +70196,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70176,7 +70210,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70190,7 +70224,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70204,7 +70238,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -70218,7 +70252,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70232,7 +70266,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70246,7 +70280,7 @@
                     
                         font-size:1.8rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">13</sup>-->
@@ -70260,7 +70294,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -70274,7 +70308,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70288,7 +70322,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70302,7 +70336,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70316,7 +70350,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70330,7 +70364,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70344,7 +70378,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70358,7 +70392,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70372,7 +70406,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70386,7 +70420,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70400,7 +70434,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70414,7 +70448,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70428,7 +70462,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70442,7 +70476,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70456,7 +70490,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70470,7 +70504,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70484,7 +70518,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70498,7 +70532,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70526,7 +70560,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70540,7 +70574,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70554,7 +70588,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70568,7 +70602,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70582,7 +70616,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70596,7 +70630,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70610,7 +70644,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70624,7 +70658,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -70638,7 +70672,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70652,7 +70686,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70680,7 +70714,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70694,7 +70728,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">socat&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70708,7 +70742,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70722,7 +70756,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">serial&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70736,7 +70770,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -70750,7 +70784,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70764,7 +70798,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70778,7 +70812,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70792,7 +70826,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">select&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70806,7 +70840,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70820,7 +70854,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70834,7 +70868,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70848,7 +70882,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">embedded&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70862,7 +70896,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -70876,7 +70910,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -70890,7 +70924,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -70904,7 +70938,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70918,7 +70952,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70932,7 +70966,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -70946,7 +70980,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70960,7 +70994,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -70974,7 +71008,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGreen;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71002,7 +71036,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">schema&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71016,7 +71050,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -71030,7 +71064,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71044,7 +71078,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71058,7 +71092,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71072,7 +71106,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71086,7 +71120,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71100,7 +71134,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71114,7 +71148,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71128,7 +71162,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71142,7 +71176,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71156,7 +71190,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71170,7 +71204,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71184,7 +71218,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71198,7 +71232,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71212,7 +71246,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71226,7 +71260,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71240,7 +71274,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71254,7 +71288,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71268,7 +71302,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71282,7 +71316,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71296,7 +71330,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71310,7 +71344,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">tf2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71324,7 +71358,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71338,7 +71372,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71352,7 +71386,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71366,7 +71400,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71416,8 +71450,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cmake" class="md-nav__link">
-    cmake
+  <a href="#install-cross-compiler" class="md-nav__link">
+    install cross compiler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-setting-file" class="md-nav__link">
+    toolchain setting file
   </a>
   
 </li>
@@ -71450,9 +71491,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#make-and-check" class="md-nav__link">
-    make and check
+  <a href="#make-check-run" class="md-nav__link">
+    make, check, run
   </a>
+  
+    <nav class="md-nav" aria-label="make, check, run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -71606,8 +71674,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cmake" class="md-nav__link">
-    cmake
+  <a href="#install-cross-compiler" class="md-nav__link">
+    install cross compiler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-setting-file" class="md-nav__link">
+    toolchain setting file
   </a>
   
 </li>
@@ -71640,9 +71715,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#make-and-check" class="md-nav__link">
-    make and check
+  <a href="#make-check-run" class="md-nav__link">
+    make, check, run
   </a>
+  
+    <nav class="md-nav" aria-label="make, check, run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -71661,9 +71763,11 @@
 
 
     
-    <div class="highlight"><span class="filename">install crosscompiler tools</span><pre><span></span><code>sudo apt install crossbuild-essential-arm64
+    <p>A cross compiler is a compiler capable of creating executable code for a platform other than the one on which the compiler is running (wikipedia)</p>
+<h2 id="install-cross-compiler">install cross compiler<a class="headerlink" href="#install-cross-compiler" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">install crosscompiler tools</span><pre><span></span><code>sudo apt install crossbuild-essential-arm64
 </code></pre></div>
-<h2 id="cmake">cmake<a class="headerlink" href="#cmake" title="Permanent link">#</a></h2>
+<h2 id="toolchain-setting-file">toolchain setting file<a class="headerlink" href="#toolchain-setting-file" title="Permanent link">#</a></h2>
 <div class="highlight"><span class="filename">aarch64-linux-gnu-toolchain.cmake</span><pre><span></span><code><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_NAME</span><span class="w"> </span><span class="s">Linux</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s2">&quot;aarch64&quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_C_COMPILER</span><span class="w"> </span><span class="s">aarch64-linux-gnu-gcc</span><span class="p">)</span>
@@ -71693,10 +71797,18 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.15</span><span class="p">)</span>
+<span class="c"># Toolchain settings</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_TOOLCHAIN_FILE</span><span class="w"> </span><span class="s">aarch64-linux-gnu-toolchain.cmake</span><span class="p">)</span>
+
 <span class="nb">project</span><span class="p">(</span><span class="s">CrossCompiler_demo</span><span class="p">)</span>
 
 <span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cc</span><span class="w"> </span><span class="s">src/hello.cpp</span><span class="p">)</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is crucial to set the value of <strong>CMAKE_TOOLCHAIN_FILE</strong> before <code>project()</code> is invoked, because <code>project()</code> triggers <strong>toolchain detection and verification</strong>.</p>
+</div>
+<hr />
 <h2 id="cmake-gui">cmake gui<a class="headerlink" href="#cmake-gui" title="Permanent link">#</a></h2>
 <ul>
 <li>using cmake gui</li>
@@ -71704,19 +71816,30 @@
 <li><img alt="" src="../images/2022-06-03-16-33-44.png" /></li>
 </ul>
 <p><img alt="" src="../images/2022-06-03-16-35-01.png" /></p>
-<h2 id="make-and-check">make and check<a class="headerlink" href="#make-and-check" title="Permanent link">#</a></h2>
+<h2 id="make-check-run">make, check, run<a class="headerlink" href="#make-check-run" title="Permanent link">#</a></h2>
+<h3 id="make">make<a class="headerlink" href="#make" title="Permanent link">#</a></h3>
 <ul>
 <li>Run <code>make</code> from <code>build</code> folder</li>
 <li>Check executable arch with <code>file</code> command</li>
-<li>Copy to jetson or rpi and check</li>
+<li>Run with qemu or Copy to embedded device</li>
 </ul>
+<h3 id="check">check<a class="headerlink" href="#check" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> build
+<span class="c1"># Result</span>
 file hello_cc 
 hello_cc: ELF <span class="m">64</span>-bit LSB shared object, ARM aarch64, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID<span class="o">[</span>sha1<span class="o">]=</span>5425e3fd790ba1a6a07c4963f0606a58edf53aa7, <span class="k">for</span> GNU/Linux <span class="m">3</span>.7.0, not stripped
+</code></pre></div>
+<h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<p>Run ARM binary using <code>qemu</code></p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install qemu-user-static
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># from build folder</span>
+qemu-arm-static -L /usr/arm-linux-gnueabihf ./hello_cc
 </code></pre></div>
 <hr />
 <h1 id="ref">Ref<a class="headerlink" href="#ref" title="Permanent link">#</a></h1>
 <ul>
+<li><a href="https://kubasejdak.com/how-to-cross-compile-for-embedded-with-cmake-like-a-champ">How to cross-compile for embedded with CMake like a champ</a></li>
 <li><a href="https://medium.com/trueface-ai/how-to-cross-compile-opencv-and-mxnet-for-nvidia-jetson-aarch64-cuda-99d467958bce">How to Cross Compile OpenCV and MXNET for NVIDIA Jetson </a></li>
 </ul>
 
