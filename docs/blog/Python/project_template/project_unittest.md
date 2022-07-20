@@ -24,14 +24,14 @@ tags:
 demp_proj project 
 
 ```
-demo_proj/
+py_template/
 ├── .vscode
-├── demo_proj
-|    └── demo.py
+├── py_template
+|    └── example.py
 ├── setup.cfg
 ├── setup.py
 ├── tests
-|    └── test_demo.py
+|    └── test_example.py
 ├── venv
 ├── requirements.txt
 ├── requirements-dev.txt
@@ -42,19 +42,13 @@ demo_proj/
 
 
 
-```python title="test_demo.py"
+```python title="test_example.py"
+--8<-- "/home/user/projects/py_template/tests/test_example.py"
 ```
 
-```python title="demo.py"
+```python title="example.py"
+--8<-- "/home/user/projects/py_template/py_template/example.py"
 ```
 
 ---
 
-## VSCode
-### Test Explorer UI
-![](images/test_explorer.png)
-Run your tests in the Sidebar of Visual Studio Code
-
-### Test Adapter Converter
-![https://marketplace.visualstudio.com/items?itemName=ms-vscode.test-adapter-converter](images/test_adapter.png)
-Converter extension from the Test Adapter UI to native VS Code testing
