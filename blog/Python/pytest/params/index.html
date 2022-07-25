@@ -8,14 +8,10 @@
 
 
 
-    
 
 
 
 
-
-
-    
 
 
 
@@ -31,23 +27,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Camera world coordinate system">
+        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/CV/camera_world_coordinate/">
+        <link rel="canonical" href="https://robobe.github.io/blog/Python/pytest/params/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Camera world coordinate system - Robots Inside</title>
+    <title>pytest parameterize tests - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +62,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +74,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Camera world coordinate system - Robots Inside" />
-    <meta property="og:description" content="Camera world coordinate system - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/CV/camera_world_coordinate/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/CV/camera_world_coordinate/../images/camera.png" />
+    <meta property="og:title" content="pytest parameterize tests - Robots Inside" />
+    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/Python/pytest/params/" />
+    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Camera world coordinate system - Robots Inside" />
-    <meta name="twitter:description" content="Camera world coordinate system - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/CV/camera_world_coordinate/../images/camera.png" />
+    <meta name="twitter:title" content="pytest parameterize tests - Robots Inside" />
+    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
 
   </head>
   
@@ -109,6 +105,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fixture" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +120,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -138,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Camera world coordinate system
+              pytest parameterize tests
             
           </span>
         </div>
@@ -207,7 +208,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -224,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -240,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -256,7 +257,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -285,7 +286,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -304,7 +305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -366,7 +367,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -429,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/ai_start_here/" class="md-nav__link">
+      <a href="../../../AI/ai_start_here/" class="md-nav__link">
         AI Start here
       </a>
     </li>
@@ -443,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/must_dog_classification/" class="md-nav__link">
+      <a href="../../../AI/must_dog_classification/" class="md-nav__link">
         PyTorch simple classification
       </a>
     </li>
@@ -457,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pc_nvidia_install/" class="md-nav__link">
+      <a href="../../../AI/pc_nvidia_install/" class="md-nav__link">
         NVIDIA - install on ubuntu 20.04
       </a>
     </li>
@@ -471,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pytorch_install/" class="md-nav__link">
+      <a href="../../../AI/pytorch_install/" class="md-nav__link">
         PyTorch install
       </a>
     </li>
@@ -515,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/nvidia/tensorrt_step1/" class="md-nav__link">
+      <a href="../../../AI/nvidia/tensorrt_step1/" class="md-nav__link">
         TensorRT first step
       </a>
     </li>
@@ -566,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
+      <a href="../../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
         YOLOv5
       </a>
     </li>
@@ -592,14 +593,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -632,19 +631,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../CV/camera_world_coordinate/" class="md-nav__link">
         Camera world coordinate system
       </a>
-      
     </li>
   
 
@@ -686,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../matching/orb_matcher/" class="md-nav__link">
+      <a href="../../../CV/matching/orb_matcher/" class="md-nav__link">
         opencv feature matching
       </a>
     </li>
@@ -739,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../opencv/build_with_cuda_support/" class="md-nav__link">
+      <a href="../../../CV/opencv/build_with_cuda_support/" class="md-nav__link">
         Build OpenCV with CUDA
       </a>
     </li>
@@ -772,7 +763,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../opencv/image_trasformation/">Image trasformation</a>
+          <a href="../../../CV/opencv/image_trasformation/">Image trasformation</a>
           
             <label for="__nav_2_3_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -795,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../opencv/image_trasformation/homography/" class="md-nav__link">
+      <a href="../../../CV/opencv/image_trasformation/homography/" class="md-nav__link">
         Image Homography
       </a>
     </li>
@@ -855,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optical_flow/lk_sparse_demo/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
         opencv lk optical flow demo
       </a>
     </li>
@@ -869,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
         opencv lk optical flow
       </a>
     </li>
@@ -920,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trackers/siam_mask/" class="md-nav__link">
+      <a href="../../../CV/trackers/siam_mask/" class="md-nav__link">
         SiamMask
       </a>
     </li>
@@ -1033,7 +1024,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/Tools/Youtube_download/">Youtube download</a>
+          <a href="../../../Misl/Tools/Youtube_download/">Youtube download</a>
           
         </div>
       
@@ -1096,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/cmake/cmake_hello/" class="md-nav__link">
+      <a href="../../../Misl/cmake/cmake_hello/" class="md-nav__link">
         cmake 101
       </a>
     </li>
@@ -1149,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
         Install docker with nvidia support
       </a>
     </li>
@@ -1163,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_vscode/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_vscode/" class="md-nav__link">
         Docker VSCode integration
       </a>
     </li>
@@ -1214,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/github/github_pro_tips/" class="md-nav__link">
+      <a href="../../../Misl/github/github_pro_tips/" class="md-nav__link">
         github pro tips
       </a>
     </li>
@@ -1265,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/os/create_bootable_disk/" class="md-nav__link">
+      <a href="../../../Misl/os/create_bootable_disk/" class="md-nav__link">
         Create os USB bootable disk
       </a>
     </li>
@@ -1291,12 +1282,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
@@ -1365,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/future_demo/" class="md-nav__link">
+      <a href="../../asyncio/future_demo/" class="md-nav__link">
         future demo
       </a>
     </li>
@@ -1379,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -1430,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -1485,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/hello/" class="md-nav__link">
+      <a href="../../numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -1499,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/numpy_reshape/" class="md-nav__link">
+      <a href="../../numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
     </li>
@@ -1513,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/rotation3d/" class="md-nav__link">
+      <a href="../../numpy/rotation3d/" class="md-nav__link">
         Rotation3d
       </a>
     </li>
@@ -1559,7 +1552,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/project_template/">Project template</a>
+          <a href="../../project_template/">Project template</a>
           
             <label for="__nav_2_5_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1582,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
+      <a href="../../project_template/venv_pip_and_requirements/" class="md-nav__link">
         Python project template - venv
       </a>
     </li>
@@ -1596,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/project_unittest/" class="md-nav__link">
+      <a href="../../project_template/project_unittest/" class="md-nav__link">
         Python project template - unittest
       </a>
     </li>
@@ -1644,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/pylint/" class="md-nav__link">
+      <a href="../../project_template/pylint/" class="md-nav__link">
         Python project template - pylint
       </a>
     </li>
@@ -1658,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/mypy/" class="md-nav__link">
+      <a href="../../project_template/mypy/" class="md-nav__link">
         Mypy
       </a>
     </li>
@@ -1672,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/black/" class="md-nav__link">
+      <a href="../../project_template/black/" class="md-nav__link">
         Python project template - black and isort
       </a>
     </li>
@@ -1693,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/vscode/" class="md-nav__link">
+      <a href="../../project_template/vscode/" class="md-nav__link">
         Python project template - VSCode
       </a>
     </li>
@@ -1712,12 +1705,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" checked>
       
       
       
@@ -1748,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/fixture/" class="md-nav__link">
+      <a href="../fixture/" class="md-nav__link">
         Pytest fixture
       </a>
     </li>
@@ -1762,7 +1757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/conftest/" class="md-nav__link">
+      <a href="../conftest/" class="md-nav__link">
         Pytest conftest
       </a>
     </li>
@@ -1774,11 +1769,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Python/pytest/params/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          pytest parameterize tests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         pytest parameterize tests
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fixture" class="md-nav__link">
+    fixture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markerparametrize" class="md-nav__link">
+    marker.parametrize
+  </a>
+  
+    <nav class="md-nav" aria-label="marker.parametrize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-test" class="md-nav__link">
+    run test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1846,7 +1898,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/python/bytearray/">Bytearray</a>
+          <a href="../../python/bytearray/">Bytearray</a>
           
         </div>
       
@@ -1904,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/python/named_tuple/examples/" class="md-nav__link">
+      <a href="../../python/named_tuple/examples/" class="md-nav__link">
         Examples
       </a>
     </li>
@@ -1918,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/python/named_tuple/named_tuple/" class="md-nav__link">
+      <a href="../../python/named_tuple/named_tuple/" class="md-nav__link">
         Python NamedTuple 101
       </a>
     </li>
@@ -2008,7 +2060,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../../ROS2/colcon/">Colcon</a>
           
             <label for="__nav_2_6_1">
               <span class="md-nav__icon md-icon"></span>
@@ -2031,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../../ROS2/colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -2084,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -2098,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -2171,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -2185,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -2199,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -2213,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -2227,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -2241,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
         Package.xml hello
       </a>
     </li>
@@ -2255,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part10_managed_nodes/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part10_managed_nodes/" class="md-nav__link">
         ROS2 Managed Nodes
       </a>
     </li>
@@ -2269,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -2283,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -2297,7 +2349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -2311,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -2325,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part9_executers/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part9_executers/" class="md-nav__link">
         Part9 - executers
       </a>
     </li>
@@ -2382,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -2396,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -2410,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -2424,7 +2476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -2514,7 +2566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
+      <a href="../../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
         The Kalman Filter
       </a>
     </li>
@@ -2565,7 +2617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/pid/hello_pid/" class="md-nav__link">
+      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
         Hello PID
       </a>
     </li>
@@ -2655,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
+      <a href="../../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
         cross compiler hello
       </a>
     </li>
@@ -2723,7 +2775,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../embedded/jetson/nano/">Nano</a>
+          <a href="../../../embedded/jetson/nano/">Nano</a>
           
         </div>
       
@@ -2797,7 +2849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/erb/" class="md-nav__link">
+      <a href="../../../gazebo/erb/" class="md-nav__link">
         erb
       </a>
     </li>
@@ -2828,7 +2880,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gazebo/color_and_texture/">Color and texture</a>
+          <a href="../../../gazebo/color_and_texture/">Color and texture</a>
           
         </div>
       
@@ -2873,7 +2925,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gazebo/xacro/">Xacro</a>
+          <a href="../../../gazebo/xacro/">Xacro</a>
           
             <label for="__nav_2_9_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2896,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/xacro/build_check_view/" class="md-nav__link">
+      <a href="../../../gazebo/xacro/build_check_view/" class="md-nav__link">
         xacro build check and view
       </a>
     </li>
@@ -2956,7 +3008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -2970,7 +3022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/tips/" class="md-nav__link">
+      <a href="../../../mkdocs/tips/" class="md-nav__link">
         mkdocs tips
       </a>
     </li>
@@ -3046,7 +3098,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../networking/socat/">Socat</a>
+          <a href="../../../networking/socat/">Socat</a>
           
             <label for="__nav_2_11_1">
               <span class="md-nav__icon md-icon"></span>
@@ -3069,7 +3121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/socat/serial/" class="md-nav__link">
+      <a href="../../../networking/socat/serial/" class="md-nav__link">
         SOCAT serial
       </a>
     </li>
@@ -3083,7 +3135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/socat/udp/" class="md-nav__link">
+      <a href="../../../networking/socat/udp/" class="md-nav__link">
         SOCAT udp
       </a>
     </li>
@@ -3134,7 +3186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+      <a href="../../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
         Adding Latency and Limiting Bandwidth
       </a>
     </li>
@@ -3187,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/udp/big_packet_and_mtu/" class="md-nav__link">
+      <a href="../../../networking/udp/big_packet_and_mtu/" class="md-nav__link">
         udp big packet and MTU
       </a>
     </li>
@@ -3201,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/udp/multi_port_udp_server/" class="md-nav__link">
+      <a href="../../../networking/udp/multi_port_udp_server/" class="md-nav__link">
         multi port udp server
       </a>
     </li>
@@ -3261,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/hello_tmux/" class="md-nav__link">
+      <a href="../../../os/hello_tmux/" class="md-nav__link">
         Tmux and tmuxp
       </a>
     </li>
@@ -3275,7 +3327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/minimal_rootfs/" class="md-nav__link">
+      <a href="../../../os/minimal_rootfs/" class="md-nav__link">
         Create minimal rootfs for embedded device like jetson nano and rpi
       </a>
     </li>
@@ -3347,7 +3399,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -3390,7 +3442,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -3435,7 +3487,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
             <label for="__nav_2_13_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3494,7 +3546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
         Gstreamer python binding appsink pipe
       </a>
     </li>
@@ -3508,7 +3560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
         Gstreamer python binding appsrc pipe
       </a>
     </li>
@@ -3522,7 +3574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
         Gstreamer python binding basic pipe
       </a>
     </li>
@@ -3536,7 +3588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
         Gstreamer python binding
       </a>
     </li>
@@ -3609,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/dev_container/" class="md-nav__link">
+      <a href="../../../vscode/dev_container/" class="md-nav__link">
         VSCode dev-containers
       </a>
     </li>
@@ -3623,7 +3675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/extensions/" class="md-nav__link">
+      <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -3637,7 +3689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/tips/" class="md-nav__link">
+      <a href="../../../vscode/tips/" class="md-nav__link">
         VSCode tips
       </a>
     </li>
@@ -3651,7 +3703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -3665,7 +3717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/yaml_json_schema/" class="md-nav__link">
+      <a href="../../../vscode/yaml_json_schema/" class="md-nav__link">
         yaml json files and json-schema
       </a>
     </li>
@@ -3732,7 +3784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -3746,7 +3798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -3760,7 +3812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -3774,7 +3826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part4_add_ssh/" class="md-nav__link">
+      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -3788,7 +3840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part5-terminology/" class="md-nav__link">
+      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -3802,7 +3854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part6-tips/" class="md-nav__link">
+      <a href="../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -3816,7 +3868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part7-operators/" class="md-nav__link">
+      <a href="../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
     </li>
@@ -3830,7 +3882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/part8-custom_layer/" class="md-nav__link">
+      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -3844,7 +3896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../yocto/yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -3906,7 +3958,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3959,7 +4011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
+      <a href="../../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
         CAP_5415
       </a>
     </li>
@@ -4016,7 +4068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/Nav2/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/Nav2/" class="md-nav__link">
         Nav2
       </a>
     </li>
@@ -4060,7 +4112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
         Part1 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -4111,7 +4163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
         Part2 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -4162,7 +4214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/tf/tf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/tf/tf/" class="md-nav__link">
         Tf
       </a>
     </li>
@@ -4209,7 +4261,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/Pytorch/">Pytorch</a>
+          <a href="../../../../projects/Pytorch/">Pytorch</a>
           
             <label for="__nav_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -4262,7 +4314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
+      <a href="../../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
         Pytorchbasics
       </a>
     </li>
@@ -4366,7 +4418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/xacro/vscode_tips/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/xacro/vscode_tips/" class="md-nav__link">
         VSCode tips using in xacro files
       </a>
     </li>
@@ -4417,7 +4469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/rviz/launch_robot_in_rviz/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/rviz/launch_robot_in_rviz/" class="md-nav__link">
         rviz and launch
       </a>
     </li>
@@ -4457,7 +4509,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/tf/">Tf</a>
+          <a href="../../../../projects/ROS2%20Cookbook/tf/">Tf</a>
           
             <label for="__nav_3_5_3">
               <span class="md-nav__icon md-icon"></span>
@@ -4480,7 +4532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/tf/tf_tools/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/tf/tf_tools/" class="md-nav__link">
         tf tools
       </a>
     </li>
@@ -4539,7 +4591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/urdf_spawn/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/urdf_spawn/" class="md-nav__link">
         Spawn gazebo and with urdf
       </a>
     </li>
@@ -4553,7 +4605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/xacro_spawn/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/xacro_spawn/" class="md-nav__link">
         Spawn gazebo and with XACRO
       </a>
     </li>
@@ -4567,7 +4619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/sdf_model/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/sdf_model/" class="md-nav__link">
         Spawn gazebo world with SDF model
       </a>
     </li>
@@ -4581,7 +4633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/simple_world_plugin/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/simple_world_plugin/" class="md-nav__link">
         Simple world plugin
       </a>
     </li>
@@ -4595,7 +4647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/tips/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/tips/" class="md-nav__link">
         Gazebo ROS tips
       </a>
     </li>
@@ -4633,7 +4685,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/control/">Control</a>
+          <a href="../../../../projects/ROS2%20Cookbook/control/">Control</a>
           
         </div>
       
@@ -4689,7 +4741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/launch.py/simple_log/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/launch.py/simple_log/" class="md-nav__link">
         Simple launch file with log
       </a>
     </li>
@@ -4727,7 +4779,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/perception/">Perception</a>
+          <a href="../../../../projects/ROS2%20Cookbook/perception/">Perception</a>
           
         </div>
       
@@ -4770,7 +4822,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/nav2/">Nav2</a>
+          <a href="../../../../projects/ROS2%20Cookbook/nav2/">Nav2</a>
           
         </div>
       
@@ -4843,7 +4895,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/miscellaneous/mixed_cpp_pyhon_package.md/">Mixed cpp pyhon package.md</a>
+          <a href="../../../../projects/ROS2%20Cookbook/miscellaneous/mixed_cpp_pyhon_package.md/">Mixed cpp pyhon package.md</a>
           
         </div>
       
@@ -4915,7 +4967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
         TurtleBot3
       </a>
     </li>
@@ -4959,7 +5011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
         Turtlebot3 simulation
       </a>
     </li>
@@ -5019,7 +5071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
         Test
       </a>
     </li>
@@ -5063,7 +5115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -5138,7 +5190,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/vrx/buoyancy_plugin/">Buoyancy plugin</a>
+          <a href="../../../../projects/vrx/buoyancy_plugin/">Buoyancy plugin</a>
           
         </div>
       
@@ -5265,7 +5317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/add_roll_control/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/add_roll_control/" class="md-nav__link">
         simple gazebo gimbal with ROLL control
       </a>
     </li>
@@ -5279,7 +5331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/gimbal_small_2d/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/gimbal_small_2d/" class="md-nav__link">
         simple gazebo gimbal
       </a>
     </li>
@@ -5323,7 +5375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/source/tilt_control/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/source/tilt_control/" class="md-nav__link">
         Tilt control
       </a>
     </li>
@@ -5390,7 +5442,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -5414,31 +5466,9 @@
 
                 
                 
-            </div>
-        </div>
-    </div>
-
-
-
-    
-
-    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-        <div class="md-sidebar__scrollwrap">
-            <div class="md-sidebar__inner">
-                
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                
-
-                
-                
-                    <div class="tag-cloud-toc">
+                    <br>
+                    <br>
+                    <div class="tag-cloud-nav">
                         
 
 
@@ -71268,7 +71298,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71282,7 +71312,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -71296,7 +71326,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -71310,7 +71340,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71324,7 +71354,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71338,7 +71368,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -71352,7 +71382,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71366,7 +71396,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71380,7 +71410,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkMagenta;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71394,7 +71424,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71408,7 +71438,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71422,7 +71452,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71436,7 +71466,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71450,7 +71480,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71464,7 +71494,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71478,7 +71508,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71492,7 +71522,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71506,7 +71536,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71520,7 +71550,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71534,7 +71564,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71548,7 +71578,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71562,7 +71592,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71576,7 +71606,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71590,7 +71620,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71604,7 +71634,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71618,7 +71648,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71632,7 +71662,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -71646,7 +71676,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">disk image&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71660,7 +71690,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">boot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71674,7 +71704,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -71688,7 +71718,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71702,7 +71732,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71716,7 +71746,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71730,7 +71760,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -71744,7 +71774,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -71758,7 +71788,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71772,7 +71802,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71786,7 +71816,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71814,7 +71844,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71828,7 +71858,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71842,7 +71872,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71856,7 +71886,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -71870,7 +71900,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71884,7 +71914,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71898,7 +71928,7 @@
                     
                         font-size:1.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">13</sup>-->
@@ -71912,7 +71942,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -71926,7 +71956,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71940,7 +71970,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71954,7 +71984,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71968,7 +71998,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -71982,7 +72012,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71996,7 +72026,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72010,7 +72040,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72024,7 +72054,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72038,7 +72068,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72052,7 +72082,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72066,7 +72096,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72094,7 +72124,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72108,7 +72138,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72122,7 +72152,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72136,7 +72166,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72150,7 +72180,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72164,7 +72194,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72178,7 +72208,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72192,7 +72222,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72206,7 +72236,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72220,7 +72250,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72234,7 +72264,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72248,7 +72278,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72262,7 +72292,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72276,7 +72306,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -72290,7 +72320,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72304,7 +72334,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72318,7 +72348,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72332,7 +72362,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72346,7 +72376,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">socat&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72360,7 +72390,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72374,7 +72404,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">serial&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72388,7 +72418,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72402,7 +72432,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72416,7 +72446,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72430,7 +72460,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72444,7 +72474,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">select&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72458,7 +72488,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72472,7 +72502,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72486,7 +72516,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72500,7 +72530,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">embedded&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72514,7 +72544,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -72528,7 +72558,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72542,7 +72572,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -72556,7 +72586,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72584,7 +72614,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -72598,7 +72628,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">dev&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72612,7 +72642,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72626,7 +72656,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72640,7 +72670,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72654,7 +72684,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">yaml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72668,7 +72698,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">schema&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72682,7 +72712,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -72696,7 +72726,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72710,7 +72740,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72724,7 +72754,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72752,7 +72782,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72766,7 +72796,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72780,7 +72810,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72794,7 +72824,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72808,7 +72838,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72822,7 +72852,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72836,7 +72866,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72850,7 +72880,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72864,7 +72894,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72878,7 +72908,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72892,7 +72922,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72906,7 +72936,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72920,7 +72950,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72934,7 +72964,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72948,7 +72978,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72962,7 +72992,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72976,7 +73006,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">tf2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72990,7 +73020,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73004,7 +73034,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73018,7 +73048,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73032,7 +73062,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73046,7 +73076,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">gimbal&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -73055,6 +73085,65 @@
     
 </div>
                     </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fixture" class="md-nav__link">
+    fixture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markerparametrize" class="md-nav__link">
+    marker.parametrize
+  </a>
+  
+    <nav class="md-nav" aria-label="marker.parametrize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-test" class="md-nav__link">
+    run test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
+
+                
                 
             </div>
         </div>
@@ -73099,14 +73188,10 @@
 <div class="cover">
     
     
-        <h1> Camera world coordinate system </h1>
+        <h1> pytest parameterize tests </h1>
     
 
     
-    
-        <p class="post-description">
-            Camera world coordinate system
-        </p>
     
 
     
@@ -73115,15 +73200,21 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#camera">
+                        <a class="tag" href="https://robobe.github.io/tags/#pytest">
                             <span class="tag-name">
-                                #camera &nbsp;
+                                #pytest &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#coordinate system">
+                        <a class="tag" href="https://robobe.github.io/tags/#unittest">
                             <span class="tag-name">
-                                #coordinate system &nbsp;
+                                #unittest &nbsp;
+                            </span>
+                        </a>
+                    
+                        <a class="tag" href="https://robobe.github.io/tags/#python">
+                            <span class="tag-name">
+                                #python &nbsp;
                             </span>
                         </a>
                     
@@ -73191,44 +73282,107 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fixture" class="md-nav__link">
+    fixture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markerparametrize" class="md-nav__link">
+    marker.parametrize
+  </a>
+  
+    <nav class="md-nav" aria-label="marker.parametrize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-test" class="md-nav__link">
+    run test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
 </div>
 
 
 
     
-    <p><img alt="" src="../2022-06-08-19-15-41.png" /></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cx</td>
-<td>optical center</td>
-<td>width / 2</td>
-</tr>
-<tr>
-<td>cy</td>
-<td>optical center</td>
-<td>height / 2</td>
-</tr>
-<tr>
-<td>fx</td>
-<td>focal length</td>
-<td>fx=fy</td>
-</tr>
-<tr>
-<td>fy</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+    <h2 id="fixture">fixture<a class="headerlink" href="#fixture" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">test_with_params.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">_pytest.fixtures</span> <span class="kn">import</span> <span class="n">SubRequest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">demo_fixture</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">SubRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">run test with param: </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">param</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_with_fixture</span><span class="p">(</span><span class="n">demo_fixture</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;run test&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="kc">True</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>python -m pytest -s tests/test_with_params.py
+<span class="c1">#</span>
+tests/test_with_params.py 
+run <span class="nb">test</span> with param: <span class="m">10</span>
+run <span class="nb">test</span>
+.
+run <span class="nb">test</span> with param: <span class="m">20</span>
+run <span class="nb">test</span>
+.
+run <span class="nb">test</span> with param: <span class="m">30</span>
+run <span class="nb">test</span>
+.
+</code></pre></div>
+<hr />
+<h2 id="markerparametrize">marker.parametrize<a class="headerlink" href="#markerparametrize" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">_pytest.fixtures</span> <span class="kn">import</span> <span class="n">SubRequest</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;a, b, result&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="n">result</span>
+</code></pre></div>
+<h4 id="run-test">run test<a class="headerlink" href="#run-test" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>python -m pytest -s -v tests/test_with_params.py
+<span class="c1">#</span>
+tests/test_with_params.py::test_add<span class="o">[</span><span class="m">1</span>-2-3<span class="o">]</span> PASSED
+tests/test_with_params.py::test_add<span class="o">[</span><span class="m">5</span>-5-11<span class="o">]</span> FAILED
+tests/test_with_params.py::test_add<span class="o">[</span><span class="m">2</span>-2-4<span class="o">]</span> <span class="nv">PASSED</span>
+
+<span class="o">======================================================================</span> <span class="nv">FAILURES</span> <span class="o">=======================================================================</span>
+__________________________________________________________________ test_add<span class="o">[</span><span class="m">5</span>-5-11<span class="o">]</span> ___________________________________________________________________
+
+<span class="nv">a</span> <span class="o">=</span> <span class="m">5</span>, <span class="nv">b</span> <span class="o">=</span> <span class="m">5</span>, <span class="nv">result</span> <span class="o">=</span> <span class="m">11</span>
+
+    @pytest.mark.parametrize<span class="o">(</span><span class="s2">&quot;a, b, result&quot;</span>, <span class="o">[(</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">)</span>, <span class="o">(</span><span class="m">5</span>, <span class="m">5</span>, <span class="m">11</span><span class="o">)</span>, <span class="o">(</span><span class="m">2</span>, <span class="m">2</span>, <span class="m">4</span><span class="o">)])</span>
+    def test_add<span class="o">(</span>a: int, b: int, result: int<span class="o">)</span> -&gt; None:
+&gt;       assert a + <span class="nv">b</span> <span class="o">==</span> result
+E       assert <span class="nv">10</span> <span class="o">==</span> <span class="m">11</span>
+E         -10
+E         +11
+
+tests/test_with_params.py:18: <span class="nv">AssertionError</span>
+<span class="o">=========================================================</span> <span class="m">1</span> failed, <span class="m">2</span> passed <span class="k">in</span> <span class="m">0</span>.03 seconds
+</code></pre></div>
 
 
             </article>
@@ -73247,7 +73401,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../AI/yolo/YOLOv5_and_OpenCV/" class="md-footer__link md-footer__link--prev" aria-label="Previous: YOLOv5" rel="prev">
+        <a href="../conftest/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pytest conftest" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -73256,20 +73410,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              YOLOv5
+              Pytest conftest
             </div>
           </div>
         </a>
       
       
         
-        <a href="../matching/orb_matcher/" class="md-footer__link md-footer__link--next" aria-label="Next: opencv feature matching" rel="next">
+        <a href="../../python/bytearray/" class="md-footer__link md-footer__link--next" aria-label="Next: Bytearray" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              opencv feature matching
+              Bytearray
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -73299,20 +73453,20 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
