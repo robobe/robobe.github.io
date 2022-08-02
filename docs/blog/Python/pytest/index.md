@@ -55,3 +55,4 @@ for example if function under test not implement yet
 
 # Reference
 - [PyTest for Absolute Beginners](https://www.youtube.com/playlist?list=PLL34mf651faNqwhZEM91zU3c-dcc4dLF0)
+- [pytest IndianPythonista](https://www.youtube.com/c/IndianPythonista)
