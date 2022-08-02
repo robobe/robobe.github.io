@@ -8,14 +8,10 @@
 
 
 
-    
 
 
 
 
-
-
-    
 
 
 
@@ -31,17 +27,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Create boot able disk  from image">
+        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/Misl/os/create_bootable_disk/">
+        <link rel="canonical" href="https://robobe.github.io/blog/Misl/docker/snippets/">
       
       <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Create os USB bootable disk - Robots Inside</title>
+    <title>Dockerfile - snippets - Robots Inside</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
@@ -78,19 +74,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Create os USB bootable disk - Robots Inside" />
-    <meta property="og:description" content="Create boot able disk  from image - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/Misl/os/create_bootable_disk/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/Misl/os/create_bootable_disk/../images/logo.jpeg" />
+    <meta property="og:title" content="Dockerfile - snippets - Robots Inside" />
+    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/Misl/docker/snippets/" />
+    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Create os USB bootable disk - Robots Inside" />
-    <meta name="twitter:description" content="Create boot able disk  from image - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/Misl/os/create_bootable_disk/../images/logo.jpeg" />
+    <meta name="twitter:title" content="Dockerfile - snippets - Robots Inside" />
+    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
 
   </head>
   
@@ -110,7 +106,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rufus" class="md-skip">
+        <a href="#language" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create os USB bootable disk
+              Dockerfile - snippets
             
           </span>
         </div>
@@ -961,8 +957,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_2_4">
@@ -1112,15 +1106,21 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" type="checkbox" id="__nav_2_4_3" checked>
       
       
       
+        
+          
+        
+          
         
           
         
@@ -1146,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker_nvidia_install/" class="md-nav__link">
+      <a href="../docker_nvidia_install/" class="md-nav__link">
         Install docker with nvidia support
       </a>
     </li>
@@ -1160,9 +1160,155 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker_vscode/" class="md-nav__link">
+      <a href="../docker_vscode/" class="md-nav__link">
         Docker VSCode integration
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dockerfile - snippets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Dockerfile - snippets
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    language
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3_4" type="checkbox" id="__nav_2_4_3_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../tutorial/">Tutorial</a>
+          
+            <label for="__nav_2_4_3_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/create_new_image/" class="md-nav__link">
+        Docker - custom image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/hello_docker/" class="md-nav__link">
+        Hello docker - Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/volume_and/" class="md-nav__link">
+        Docker Volumes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1226,69 +1372,6 @@
 
             
           
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_5" type="checkbox" id="__nav_2_4_5" checked>
-      
-      
-      
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2_4_5">
-          Os
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Os" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_4_5">
-          <span class="md-nav__icon md-icon"></span>
-          Os
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Create os USB bootable disk
-      </a>
-      
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -1322,6 +1405,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_5">
@@ -1341,11 +1428,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../Python/snippets/" class="md-nav__link">
+        Python snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
       
       
       
@@ -1356,13 +1457,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_1">
+        <label class="md-nav__link" for="__nav_2_5_2">
           Asyncio
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Asyncio" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_1">
+        <label class="md-nav__title" for="__nav_2_5_2">
           <span class="md-nav__icon md-icon"></span>
           Asyncio
         </label>
@@ -1412,7 +1513,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" type="checkbox" id="__nav_2_5_3" >
       
       
       
@@ -1421,13 +1522,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_2">
+        <label class="md-nav__link" for="__nav_2_5_3">
           Jupyter
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Jupyter" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_2">
+        <label class="md-nav__title" for="__nav_2_5_3">
           <span class="md-nav__icon md-icon"></span>
           Jupyter
         </label>
@@ -1463,7 +1564,70 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" type="checkbox" id="__nav_2_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_4" type="checkbox" id="__nav_2_5_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Python/multithreading/">Multithreading</a>
+          
+            <label for="__nav_2_5_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Multithreading" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Multithreading
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/multithreading/barrier/" class="md-nav__link">
+        Multithreading - barrier
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" >
       
       
       
@@ -1476,13 +1640,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_3">
+        <label class="md-nav__link" for="__nav_2_5_5">
           Numpy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Numpy" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_3">
+        <label class="md-nav__title" for="__nav_2_5_5">
           <span class="md-nav__icon md-icon"></span>
           Numpy
         </label>
@@ -1546,7 +1710,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_4" type="checkbox" id="__nav_2_5_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6" type="checkbox" id="__nav_2_5_6" >
       
       
       
@@ -1570,14 +1734,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../Python/project_template/">Project template</a>
           
-            <label for="__nav_2_5_4">
+            <label for="__nav_2_5_6">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
       <nav class="md-nav" aria-label="Project template" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_4">
+        <label class="md-nav__title" for="__nav_2_5_6">
           <span class="md-nav__icon md-icon"></span>
           Project template
         </label>
@@ -1622,7 +1786,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_4_4" type="checkbox" id="__nav_2_5_4_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6_4" type="checkbox" id="__nav_2_5_6_4" >
       
       
       
@@ -1635,13 +1799,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_4_4">
+        <label class="md-nav__link" for="__nav_2_5_6_4">
           Tools
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tools" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_5_4_4">
+        <label class="md-nav__title" for="__nav_2_5_6_4">
           <span class="md-nav__icon md-icon"></span>
           Tools
         </label>
@@ -1726,7 +1890,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_5" type="checkbox" id="__nav_2_5_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_7" type="checkbox" id="__nav_2_5_7" >
       
       
       
@@ -1737,15 +1901,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_2_5_5">
+        <label class="md-nav__link" for="__nav_2_5_7">
           Pytest
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Pytest" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_5">
+        <label class="md-nav__title" for="__nav_2_5_7">
           <span class="md-nav__icon md-icon"></span>
           Pytest
         </label>
@@ -1793,6 +1959,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/pytest/mock/" class="md-nav__link">
+        PyTest - Mocking
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1809,7 +1989,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6" type="checkbox" id="__nav_2_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_8" type="checkbox" id="__nav_2_5_8" >
       
       
       
@@ -1820,13 +2000,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_6">
+        <label class="md-nav__link" for="__nav_2_5_8">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Python" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_5_6">
+        <label class="md-nav__title" for="__nav_2_5_8">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -1841,7 +2021,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6_1" type="checkbox" id="__nav_2_5_6_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_8_1" type="checkbox" id="__nav_2_5_8_1" >
       
       
       
@@ -1860,7 +2040,7 @@
         </div>
       
       <nav class="md-nav" aria-label="Bytearray" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_5_6_1">
+        <label class="md-nav__title" for="__nav_2_5_8_1">
           <span class="md-nav__icon md-icon"></span>
           Bytearray
         </label>
@@ -1884,7 +2064,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6_2" type="checkbox" id="__nav_2_5_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_8_2" type="checkbox" id="__nav_2_5_8_2" >
       
       
       
@@ -1895,13 +2075,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_5_6_2">
+        <label class="md-nav__link" for="__nav_2_5_8_2">
           Named tuple
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Named tuple" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_5_6_2">
+        <label class="md-nav__title" for="__nav_2_5_8_2">
           <span class="md-nav__icon md-icon"></span>
           Named tuple
         </label>
@@ -7950,10 +8130,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -8002,8 +8178,15 @@
         
         
         
+          
+        
       
+    
+  
+
+  
     
+    
       
         
         
@@ -8047,9 +8230,8 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
@@ -8087,6 +8269,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -8144,10 +8330,9 @@
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -8187,8 +8372,10 @@
         
           
           
+        
         
         
+          
         
       
     
@@ -8277,17 +8464,30 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
           
-        
         
+          
+          
         
           
+          
+        
         
+        
       
+    
+  
+
+  
+    
     
       
         
@@ -8370,6 +8570,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -8378,16 +8582,12 @@
           
           
         
+          
+          
         
         
-          
         
       
-    
-  
-
-  
-    
     
       
         
@@ -8480,13 +8680,20 @@
         
           
           
-        
+            
+            
+            
+          
         
         
-          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -8567,10 +8774,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -8583,18 +8791,18 @@
           
         
         
-        
-          
         
       
     
+  
+
+  
+    
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -8631,8 +8839,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -8685,28 +8894,15 @@
         
           
           
-        
         
         
-          
         
       
-    
-  
-
-  
-    
     
       
         
         
-        
-        
-          
-          
         
-          
-          
         
           
           
@@ -8745,9 +8941,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -8789,11 +8986,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -8807,15 +9000,9 @@
       
     
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -8856,10 +9043,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -8902,10 +9090,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -8915,13 +9099,9 @@
         
       
     
-  
-
   
 
   
-
-  
     
     
       
@@ -9016,33 +9196,16 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
-        
         
         
-        
-          
-          
         
-          
-          
         
           
           
@@ -9140,20 +9303,15 @@
         
       
     
-  
-
   
 
   
     
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -9240,10 +9398,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -9252,20 +9406,16 @@
           
           
         
-          
-          
         
         
+          
         
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -9368,12 +9518,7 @@
           
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -9466,11 +9611,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -9482,13 +9623,17 @@
           
           
         
-          
-          
         
         
+          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -9587,17 +9732,17 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
           
         
-          
           
-            
-            
-            
           
         
         
@@ -9705,25 +9850,33 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
           
-        
         
         
-          
         
       
+    
+  
+
+  
+
+  
+
+  
+    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -9832,6 +9985,13 @@
           
         
       
+    
+  
+
+  
+
+  
+    
     
       
         
@@ -9933,8 +10093,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -9945,27 +10106,15 @@
         
           
           
-        
         
         
-          
         
       
-    
-  
-
-  
-
-  
-    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -10051,11 +10200,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -10076,23 +10221,23 @@
           
           
         
-          
-          
         
         
+          
         
       
     
+  
+
+  
+
+  
+    
+    
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -10192,6 +10337,9 @@
             
             
             
+          
+        
+          
           
         
           
@@ -10316,26 +10464,26 @@
         
           
           
-            
-            
-            
-          
         
           
           
         
-          
-          
         
         
+          
         
       
     
-      
-        
+  
+
+  
+    
+    
+      
         
         
         
+        
           
           
         
@@ -10429,7 +10577,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -10446,10 +10598,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -10566,30 +10716,21 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
         
-        
-          
         
       
-    
-  
-
-  
     
-    
       
-        
         
         
         
-          
-          
         
           
           
@@ -10676,10 +10817,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -10706,10 +10843,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -10817,11 +10953,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -10836,10 +10968,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -10951,10 +11082,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -10970,9 +11097,18 @@
           
         
         
+        
+          
         
       
     
+  
+
+  
+
+  
+    
+    
       
         
         
@@ -11071,7 +11207,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -11095,17 +11235,13 @@
           
           
         
+          
+          
         
         
-          
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -11198,11 +11334,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -11223,7 +11355,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -11343,11 +11479,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -11359,7 +11491,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -11371,11 +11507,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -11471,10 +11602,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -11508,6 +11635,8 @@
         
         
         
+          
+        
       
     
       
@@ -11616,10 +11745,9 @@
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -11638,10 +11766,17 @@
         
           
           
+        
         
         
+          
         
       
+    
+  
+
+  
+    
     
       
         
@@ -11728,9 +11863,11 @@
         
           
           
-            
-            
-            
+        
+          
+          
+        
+          
           
         
           
@@ -11740,6 +11877,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -11775,12 +11916,7 @@
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -11894,7 +12030,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -11902,16 +12042,18 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
           
         
+          
+          
         
         
+        
       
     
       
@@ -12035,7 +12177,13 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -12141,10 +12289,12 @@
         
           
           
-            
-            
-            
+        
+          
+          
+        
           
+          
         
           
           
@@ -12175,8 +12325,10 @@
         
           
           
+        
         
         
+          
         
       
     
@@ -12283,7 +12435,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -12306,14 +12462,19 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -12322,9 +12483,6 @@
         
         
         
-        
-          
-          
         
           
           
@@ -12439,7 +12597,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -12450,11 +12620,22 @@
         
         
       
+    
+  
+
+  
+    
     
       
+        
+        
         
         
+          
+          
         
+          
+          
         
           
           
@@ -12580,14 +12761,12 @@
           
           
         
+          
+          
         
         
+        
       
-    
-  
-
-  
-    
     
       
         
@@ -12704,22 +12883,31 @@
         
           
           
+            
+            
+            
+          
         
           
           
         
           
           
-            
-            
-            
+        
           
+          
+        
+          
+          
         
           
           
         
+          
+          
         
         
+        
       
     
       
@@ -12805,7 +12993,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -12840,9 +13032,8 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
@@ -12851,10 +13042,21 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -12949,9 +13151,8 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
@@ -12984,15 +13185,20 @@
           
           
         
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -13114,10 +13320,1460 @@
         
           
           
-            
-            
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
+            
+            
+          
+        
           
+          
         
           
           
@@ -13127,9 +14783,18 @@
       
     
       
+        
+        
+        
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -13247,7 +14912,10 @@
             
             
             
+          
+        
           
+          
         
           
           
@@ -13260,9 +14928,15 @@
       
     
       
+        
         
         
+        
+          
+          
         
+          
+          
         
           
           
@@ -13356,7 +15030,13 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -13398,9 +15078,15 @@
     
     
       
+        
         
         
+        
+          
+          
         
+          
+          
         
           
           
@@ -13494,7 +15180,13 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -13538,9 +15230,15 @@
     
     
       
+        
         
         
+        
+          
+          
         
+          
+          
         
           
           
@@ -13634,7 +15332,13 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -13671,9 +15375,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -13802,9 +15518,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -13941,9 +15669,30 @@
     
     
       
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -14060,7 +15809,18 @@
           
         
           
+          
+        
+        
+        
           
+        
+      
+    
+      
+        
+        
+        
         
           
           
@@ -14071,16 +15831,8 @@
           
           
         
-        
-        
           
-        
-      
-    
-      
-        
-        
-        
+          
         
           
           
@@ -14223,9 +15975,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -14368,9 +16132,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -14516,9 +16292,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -14662,9 +16450,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -14823,6 +16623,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -14960,6 +16766,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -14970,9 +16782,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -15124,9 +16948,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -15278,9 +17114,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -15435,9 +17283,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -15592,9 +17452,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -15761,6 +17633,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -15901,6 +17779,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -15911,9 +17795,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -16068,9 +17964,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -16235,6 +18143,18 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -16388,9 +18308,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -16548,9 +18480,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -16711,9 +18655,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -16874,9 +18830,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -17049,6 +19017,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -17195,6 +19169,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -17205,9 +19185,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -17368,9 +19360,21 @@
       
     
       
+        
+        
         
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -17529,9 +19533,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -17705,7 +19721,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -17867,9 +19895,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -18036,9 +20076,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -18205,9 +20257,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -18374,9 +20438,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -18555,6 +20631,9 @@
             
             
             
+          
+        
+          
           
         
           
@@ -18707,8 +20786,17 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
         
+        
       
     
   
@@ -18717,9 +20805,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -18886,9 +20986,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -19065,7 +21177,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -19230,9 +21354,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -19402,9 +21538,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -19572,9 +21720,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -19759,7 +21919,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -19927,9 +22099,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -20102,9 +22286,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -20275,9 +22471,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -20463,7 +22671,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -20637,9 +22857,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -20818,9 +23050,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -20997,18 +23241,30 @@
       
     
       
+        
+        
+        
         
+          
+          
         
+          
+          
+            
+            
+            
+          
         
+          
+          
         
           
           
         
           
           
-            
-            
-            
+        
+          
           
         
           
@@ -21186,9 +23442,15 @@
     
     
       
+        
+        
         
         
+          
+          
         
+          
+          
         
           
           
@@ -21282,6 +23544,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -21370,9 +23638,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -21557,9 +23837,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -21744,9 +24036,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -21929,9 +24233,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -22129,6 +24445,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -22305,6 +24627,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -22315,9 +24643,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -22508,9 +24848,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -22699,9 +25051,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -22898,9 +25262,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -23095,9 +25471,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -23309,6 +25697,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -23494,6 +25888,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -23504,9 +25904,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -23706,9 +26118,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -23918,7 +26342,19 @@
             
             
             
+          
+        
           
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -24116,9 +26552,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -24321,9 +26769,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -24526,9 +26986,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -24736,9 +27208,33 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -24918,7 +27414,18 @@
           
         
           
+          
+        
+        
+        
           
+        
+      
+    
+      
+        
+        
+        
         
           
           
@@ -24932,17 +27439,6 @@
           
           
         
-        
-        
-          
-        
-      
-    
-      
-        
-        
-        
-        
           
           
         
@@ -25150,9 +27646,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -25359,9 +27867,21 @@
       
     
       
+        
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -25583,7 +28103,16 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
+        
+          
+          
         
           
           
@@ -25783,8 +28312,11 @@
           
           
         
+          
+          
         
         
+        
       
     
   
@@ -25793,9 +28325,18 @@
     
     
       
+        
         
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -26001,8 +28542,11 @@
           
           
         
+          
+          
         
         
+        
           
         
       
@@ -26034,7 +28578,16 @@
             
             
             
+          
+        
+          
+          
+        
           
+          
+        
+          
+          
         
           
           
@@ -26228,14 +28781,29 @@
           
           
         
+          
+          
         
         
+        
       
     
       
+        
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -26456,9 +29024,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -26677,9 +29257,18 @@
       
     
       
+        
         
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -26818,6 +29407,9 @@
         
           
           
+        
+          
+          
             
             
             
@@ -26908,9 +29500,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -27134,9 +29738,21 @@
       
     
       
+        
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -27363,9 +29979,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -27595,9 +30223,18 @@
     
     
       
+        
         
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -27817,6 +30454,9 @@
         
           
           
+        
+          
+          
             
             
             
@@ -27832,9 +30472,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -28062,9 +30714,21 @@
       
     
       
+        
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -28295,9 +30959,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -28536,9 +31212,18 @@
     
     
       
+        
         
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -28761,6 +31446,9 @@
         
           
           
+        
+          
+          
             
             
             
@@ -28777,9 +31465,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -29021,9 +31721,21 @@
     
     
       
+        
         
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -29263,9 +31975,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -29513,9 +32237,18 @@
     
     
       
+        
         
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -29750,6 +32483,9 @@
         
           
           
+        
+          
+          
             
             
             
@@ -29763,9 +32499,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -30016,9 +32764,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -30269,9 +33029,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -30525,9 +33297,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -30779,9 +33563,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -31038,9 +33834,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -31300,9 +34108,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -31562,9 +34382,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -31827,9 +34659,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -32092,9 +34936,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -32360,9 +35216,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -32626,9 +35494,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -32907,6 +35787,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -33164,6 +36050,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -33174,9 +36066,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -33446,9 +36350,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -33726,9 +36642,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -34004,9 +36932,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -34285,9 +37225,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -34569,9 +37521,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -34861,9 +37825,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -35153,9 +38129,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -35445,9 +38433,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -35740,9 +38740,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -36035,9 +39047,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -36351,7 +39375,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -36630,9 +39666,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -36925,9 +39973,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -37220,9 +40280,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -37518,9 +40590,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -37816,9 +40900,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -38114,9 +41210,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -38417,9 +41525,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -38715,9 +41835,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -39013,9 +42145,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -39316,9 +42460,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -39614,9 +42770,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -39912,9 +43080,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -40302,7 +43482,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -40513,9 +43705,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -40901,6 +44105,9 @@
             
             
             
+          
+        
+          
           
         
           
@@ -41110,14 +44317,35 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
         
+        
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -41416,9 +44644,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -41809,7 +45049,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -42023,9 +45275,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -42416,7 +45680,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
+        
+          
+          
         
           
           
@@ -42630,9 +45906,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -43224,7 +46512,19 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
+        
+        
         
           
         
@@ -43236,9 +46536,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -43542,8 +46854,20 @@
     
       
         
+        
+        
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -43849,9 +47173,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -44466,7 +47802,19 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
+        
+        
         
           
         
@@ -44560,6 +47908,18 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -44795,8 +48155,20 @@
     
       
         
+        
+        
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -45120,6 +48492,18 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -45741,6 +49125,18 @@
         
           
           
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
             
             
@@ -45751,9 +49147,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -46080,7 +49488,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
+        
+          
+          
         
           
           
@@ -46395,9 +49815,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -47030,7 +50462,19 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
+        
+        
         
           
         
@@ -47049,6 +50493,18 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -47368,8 +50824,20 @@
     
       
         
+        
+        
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -47692,9 +51160,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -48337,7 +51817,19 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
+        
+        
         
       
     
@@ -48347,9 +51839,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -48674,17 +52178,29 @@
       
         
         
+        
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
         
+          
+          
         
           
           
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -49002,9 +52518,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -49339,7 +52867,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -49657,9 +53197,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -49994,6 +53546,9 @@
             
             
             
+          
+        
+          
           
         
           
@@ -50302,8 +53857,17 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
         
+        
       
     
   
@@ -50312,9 +53876,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -50637,9 +54213,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -50967,9 +54555,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -51290,9 +54890,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -51625,9 +55237,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -51951,9 +55575,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -52287,9 +55923,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -52621,9 +56269,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -52953,9 +56613,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -53293,9 +56965,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -53633,9 +57317,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -53973,9 +57669,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -54313,9 +58021,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -54687,7 +58407,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -54994,9 +58726,30 @@
       
     
       
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -55317,7 +59070,18 @@
           
         
           
+          
+        
+        
+        
           
+        
+      
+    
+      
+        
+        
+        
         
           
           
@@ -55328,16 +59092,8 @@
           
           
         
-        
-        
           
-        
-      
-    
-      
-        
-        
-        
+          
         
           
           
@@ -55686,9 +59442,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -56048,6 +59816,18 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -56397,6 +60177,12 @@
             
             
             
+          
+        
+          
+          
+        
+          
           
         
           
@@ -56732,6 +60518,12 @@
           
           
         
+          
+          
+        
+          
+          
+        
         
         
       
@@ -56748,9 +60540,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -57105,9 +60909,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -57457,9 +61273,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -57812,9 +61640,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -58167,9 +62007,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -58522,9 +62374,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -58882,9 +62746,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -59237,9 +63113,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -59590,9 +63478,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -59951,9 +63851,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -60317,9 +64229,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -60678,9 +64602,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -61039,9 +64975,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -61405,9 +65353,21 @@
     
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -61766,9 +65726,21 @@
       
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -62127,9 +66099,21 @@
       
     
       
+        
+        
+        
+        
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -62493,9 +66477,21 @@
     
     
       
+        
+        
         
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
           
@@ -62854,9 +66850,21 @@
       
     
       
+        
+        
         
+        
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -63220,9 +67228,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -63579,9 +67599,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -63948,9 +67980,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -64317,9 +68361,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -64679,9 +68735,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -65049,9 +69117,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -65422,9 +69502,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -65793,9 +69885,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -66174,9 +70278,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -66553,9 +70669,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -66935,9 +71063,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -67404,7 +71544,19 @@
             
             
             
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
+          
         
           
           
@@ -67706,9 +71858,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -68088,9 +72252,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -68468,9 +72644,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -68860,9 +73048,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -69246,9 +73446,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -69640,9 +73852,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -70034,9 +74258,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -70431,9 +74667,21 @@
     
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -70828,9 +75076,21 @@
       
     
       
+        
+        
+        
         
+          
+          
+        
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -71255,7 +75515,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71269,7 +75529,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -71283,7 +75543,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOliveGreen;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -71297,7 +75557,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71311,7 +75571,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71325,7 +75585,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -71339,7 +75599,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71353,7 +75613,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71367,7 +75627,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71381,7 +75641,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71395,7 +75655,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71409,7 +75669,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71423,7 +75683,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71437,7 +75697,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71451,7 +75711,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71465,7 +75725,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71479,7 +75739,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71493,7 +75753,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71507,7 +75767,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71535,7 +75795,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71549,7 +75809,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71563,7 +75823,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71603,12 +75863,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#docker">
                 <span class="tag-name" style="
                     
-                        font-size:0.7rem;
+                        font-size:1.1rem;
                     
                     color:DarkBlue;
                 ">docker&nbsp;
                 </span>
-                <!--<sup class="tag-count">2</sup>-->
+                <!--<sup class="tag-count">6</sup>-->
             </a>
         
             
@@ -71619,7 +75879,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -71628,13 +75888,13 @@
             
             
             
-            <a class="tag" href="https://robobe.github.io/tags/#disk image">
+            <a class="tag" href="https://robobe.github.io/tags/#cheat sheet">
                 <span class="tag-name" style="
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
-                ">disk image&nbsp;
+                    color:DarkGoldenrod;
+                ">cheat sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -71642,13 +75902,41 @@
             
             
             
-            <a class="tag" href="https://robobe.github.io/tags/#boot">
+            <a class="tag" href="https://robobe.github.io/tags/#tutorial">
+                <span class="tag-name" style="
+                    
+                        font-size:0.7rem;
+                    
+                    color:DarkTurquoise;
+                ">tutorial&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#snippets">
                 <span class="tag-name" style="
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
-                ">boot&nbsp;
+                    color:DarkMagenta;
+                ">snippets&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#cheat Sheet">
+                <span class="tag-name" style="
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkCyan;
+                ">cheat Sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -71661,7 +75949,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -71675,7 +75963,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71689,8 +75977,22 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">future&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#multithreading">
+                <span class="tag-name" style="
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkOrchid;
+                ">multithreading&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -71703,7 +76005,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71717,7 +76019,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -71731,7 +76033,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -71745,7 +76047,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71759,7 +76061,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71773,7 +76075,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -71785,12 +76087,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#pytest">
                 <span class="tag-name" style="
                     
-                        font-size:1.0rem;
+                        font-size:1.1rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">pytest&nbsp;
                 </span>
-                <!--<sup class="tag-count">5</sup>-->
+                <!--<sup class="tag-count">6</sup>-->
             </a>
         
             
@@ -71801,8 +76103,22 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">pylint&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#mock">
+                <span class="tag-name" style="
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkGoldenrod;
+                ">mock&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -71815,7 +76131,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71829,7 +76145,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71843,7 +76159,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -71857,7 +76173,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71871,7 +76187,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71885,7 +76201,7 @@
                     
                         font-size:1.8rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">13</sup>-->
@@ -71899,7 +76215,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -71913,7 +76229,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkBlue;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71927,7 +76243,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71941,7 +76257,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71955,7 +76271,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -71969,7 +76285,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -71983,7 +76299,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -71997,7 +76313,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72011,7 +76327,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72039,7 +76355,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72053,7 +76369,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72067,7 +76383,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72081,7 +76397,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72095,7 +76411,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72109,7 +76425,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72137,7 +76453,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72151,7 +76467,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72165,7 +76481,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72179,7 +76495,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72193,7 +76509,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72207,7 +76523,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72221,7 +76537,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72235,7 +76551,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72249,7 +76565,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72263,7 +76579,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -72277,7 +76593,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72291,7 +76607,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72305,7 +76621,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72319,7 +76635,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72333,7 +76649,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">socat&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -72347,7 +76663,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72361,7 +76677,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">serial&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72389,7 +76705,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72403,7 +76719,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72417,7 +76733,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72431,7 +76747,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">select&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72445,7 +76761,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72459,7 +76775,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72473,7 +76789,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72487,7 +76803,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">embedded&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72501,7 +76817,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -72515,7 +76831,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72529,7 +76845,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -72543,7 +76859,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72557,7 +76873,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72571,7 +76887,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -72585,7 +76901,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">dev&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72599,7 +76915,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72613,7 +76929,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72627,7 +76943,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72641,7 +76957,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkBlue;
                 ">yaml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72655,7 +76971,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">schema&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72669,7 +76985,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -72683,7 +76999,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72697,7 +77013,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72711,7 +77027,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72725,7 +77041,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72739,7 +77055,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72753,7 +77069,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72767,7 +77083,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72781,7 +77097,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72795,7 +77111,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGreen;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72809,7 +77125,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72823,7 +77139,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72837,7 +77153,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -72851,7 +77167,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72865,7 +77181,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72879,7 +77195,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72893,7 +77209,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72907,7 +77223,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72921,7 +77237,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72935,7 +77251,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72949,7 +77265,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72963,7 +77279,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">tf2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72977,7 +77293,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -72991,7 +77307,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73005,7 +77321,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73019,7 +77335,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -73033,7 +77349,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">gimbal&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -73061,8 +77377,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    language
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                 
@@ -73112,14 +77441,10 @@
 <div class="cover">
     
     
-        <h1> Create os USB bootable disk </h1>
+        <h1> Dockerfile - snippets </h1>
     
 
     
-    
-        <p class="post-description">
-            Create boot able disk  from image
-        </p>
     
 
     
@@ -73128,15 +77453,9 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#disk image">
+                        <a class="tag" href="https://robobe.github.io/tags/#cheat sheet">
                             <span class="tag-name">
-                                #disk image &nbsp;
-                            </span>
-                        </a>
-                    
-                        <a class="tag" href="https://robobe.github.io/tags/#boot">
-                            <span class="tag-name">
-                                #boot &nbsp;
+                                #cheat sheet &nbsp;
                             </span>
                         </a>
                     
@@ -73203,8 +77522,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    language
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
 </div>
@@ -73212,9 +77544,14 @@
 
 
     
-    <h1 id="rufus">Rufus<a class="headerlink" href="#rufus" title="Permanent link">#</a></h1>
-<p><a href="https://rufus.ie/en/#">link</a></p>
-<p><img alt="" src="../images/2022-05-31-10-14-07.png" /></p>
+    <h2 id="language">language<a class="headerlink" href="#language" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>apt-get update <span class="o">&amp;&amp;</span> apt-get install -y <span class="se">\</span>
+  locales <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> locale-gen en_US.UTF-8 <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+<span class="k">ENV</span><span class="w"> </span>LANG en_US.UTF-8
+</code></pre></div>
 
 
             </article>
@@ -73233,7 +77570,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../github/github_pro_tips/" class="md-footer__link md-footer__link--prev" aria-label="Previous: github pro tips" rel="prev">
+        <a href="../docker_vscode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker VSCode integration" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -73242,20 +77579,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              github pro tips
+              Docker VSCode integration
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../Python/asyncio/future_demo/" class="md-footer__link md-footer__link--next" aria-label="Next: future demo" rel="next">
+        <a href="../tutorial/" class="md-footer__link md-footer__link--next" aria-label="Next: Hello docker - install" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              future demo
+              Hello docker - install
             </div>
           </div>
           <div class="md-footer__button md-icon">
