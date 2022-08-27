@@ -49,49 +49,83 @@ def test_add_mock(mock_get_number: MagicMock) -> None:
      
 ---
 
-### More complex demo
-```python title="demo.py"
-class Generator():
-    def build(self) -> int:
-        return 5
-
-def get_number() -> Generator:
-    gen = Generator()
-    return gen
-
-# function under test
-def add(a: int) -> int:
-    b = get_number().build()
-    return a + b
-```
-
-- mock get_number function
-- mock Generator class
-
-```python title="test_demo.py"
-from py_template import demo
-
-from unittest.mock import patch, MagicMock
-
-@patch("tutorial.demo.get_number")
-def test_add_mock(mock_get_number: MagicMock) -> None:
-    # mock Generator obj by create MagicMock
-    # mock build method 
-    mock_generator = MagicMock()
-    mock_generator.build.return_value = 2
-    # mock get_number function
-    mock_get_number.return_value = mock_generator
-    result = demo.add(1)
-    assert result == 3
-```
-
----
-
 ## MagicMock
 Provide a simple mocking interface that allow to mock partial real object that we wont to patch
 
-`return_value`  allows you to choose what the patched **callable** returns,
+#### return_value
+allows you to choose what the patched **callable** returns,
 usually  we return the same type of the real callable but controllable
+
+#### side_effect
+Change the behavior of the mock
+
+##### side_effect = Iterable
+yield the values from defined iterable on subsequent call
+
+```bash
+>>> from unittest.mock import MagicMock
+>>> m = MagicMock()
+>>> m.get_data.side_effect = [5, 10, 15]
+>>> m.get_data()
+5
+>>> m.get_data()
+10
+>>> m.get_data()
+15
+```
+
+```python
+from unittest.mock import patch
+
+def my_input() -> int:
+    return 1
+
+def method_to_test():
+    a = my_input()
+    b = my_input()
+    return a+b
+
+
+@patch("test_demo.my_input")
+def test_multiple(mock_my_input):
+    mock_my_input.side_effect = [1, 2]
+    result = method_to_test()
+    assert result == 3
+```
+
+##### side_effect = Exception
+
+```bash
+m.check.side_effect = Exception("custom exception")
+>>> m.check()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3.8/unittest/mock.py", 
+  ...
+    raise effect
+Exception: custom exception
+```
+
+##### ide_effect = callable
+
+The callable will be executed on each call with the parameters passed when calling the mocked method
+
+```bash
+>>> def call_me(name):
+...     print(name)
+... 
+>>> m.run_call.side_effect = call_me
+>>> m.run_call("a")
+a
+>>> m.run_call("b")
+b
+>>> m.run_call.call_count
+2
+>>> m.run_call("b")
+b
+>>> m.run_call.call_count
+3
+```
 
 
 ---
