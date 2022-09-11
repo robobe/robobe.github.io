@@ -8,14 +8,10 @@
 
 
 
-    
 
 
 
 
-
-
-    
 
 
 
@@ -31,23 +27,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Variables">
+        <meta name="description" content="Guides, notes and useful stuff for learning robotics systems.">
       
       
       
-        <link rel="canonical" href="https://robobe.github.io/blog/yocto/part7-operators/">
+        <link rel="canonical" href="https://robobe.github.io/blog/linux/systemd/minimal_service/">
       
-      <link rel="icon" href="../../../favicon.png">
+      <link rel="icon" href="../../../../favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
-    <title>Part7 - Operators - Robots Inside</title>
+    <title>Systemd minimal service - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -66,11 +62,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+      <link rel="stylesheet" href="../../../../assets/view-bigimg.css">
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,19 +74,19 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Part7 - Operators - Robots Inside" />
-    <meta property="og:description" content="Variables - Guides, notes and useful stuff for learning robotics systems." />
-    <meta property="og:url" content="https://robobe.github.io/blog/yocto/part7-operators/" />
-    <meta property="og:image" content="https://robobe.github.io/blog/yocto/part7-operators/../images/yocto.png" />
+    <meta property="og:title" content="Systemd minimal service - Robots Inside" />
+    <meta property="og:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta property="og:url" content="https://robobe.github.io/blog/linux/systemd/minimal_service/" />
+    <meta property="og:image" content="https://robobe.github.io/assets/banner.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Part7 - Operators - Robots Inside" />
-    <meta name="twitter:description" content="Variables - Guides, notes and useful stuff for learning robotics systems." />
-    <meta name="twitter:image" content="https://robobe.github.io/blog/yocto/part7-operators/../images/yocto.png" />
+    <meta name="twitter:title" content="Systemd minimal service - Robots Inside" />
+    <meta name="twitter:description" content=" - Guides, notes and useful stuff for learning robotics systems." />
+    <meta name="twitter:image" content="https://robobe.github.io/assets/banner.jpg" />
 
   </head>
   
@@ -110,7 +106,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variables" class="md-skip">
+        <a href="#reference" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +120,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -143,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part7 - Operators
+              Systemd minimal service
             
           </span>
         </div>
@@ -212,7 +208,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -229,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -245,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../projects/" class="md-tabs__link">
+      <a href="../../../../projects/" class="md-tabs__link">
         Projects
       </a>
     </li>
@@ -261,7 +257,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         Tags
       </a>
     </li>
@@ -290,7 +286,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
+    <a href="../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
@@ -309,7 +305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -373,7 +369,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Blog</a>
+          <a href="../../../">Blog</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -436,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/ai_start_here/" class="md-nav__link">
+      <a href="../../../AI/ai_start_here/" class="md-nav__link">
         AI Start here
       </a>
     </li>
@@ -450,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/must_dog_classification/" class="md-nav__link">
+      <a href="../../../AI/must_dog_classification/" class="md-nav__link">
         PyTorch simple classification
       </a>
     </li>
@@ -464,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pc_nvidia_install/" class="md-nav__link">
+      <a href="../../../AI/pc_nvidia_install/" class="md-nav__link">
         NVIDIA - install on ubuntu 20.04
       </a>
     </li>
@@ -478,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pytorch_install/" class="md-nav__link">
+      <a href="../../../AI/pytorch_install/" class="md-nav__link">
         PyTorch install
       </a>
     </li>
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/nvidia/tensorrt_step1/" class="md-nav__link">
+      <a href="../../../AI/nvidia/tensorrt_step1/" class="md-nav__link">
         TensorRT first step
       </a>
     </li>
@@ -573,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
+      <a href="../../../AI/yolo/YOLOv5_and_OpenCV/" class="md-nav__link">
         YOLOv5
       </a>
     </li>
@@ -639,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/camera_world_coordinate/" class="md-nav__link">
+      <a href="../../../CV/camera_world_coordinate/" class="md-nav__link">
         Camera world coordinate system
       </a>
     </li>
@@ -683,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/matching/orb_matcher/" class="md-nav__link">
+      <a href="../../../CV/matching/orb_matcher/" class="md-nav__link">
         opencv feature matching
       </a>
     </li>
@@ -736,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/opencv/build_with_cuda_support/" class="md-nav__link">
+      <a href="../../../CV/opencv/build_with_cuda_support/" class="md-nav__link">
         Build OpenCV with CUDA
       </a>
     </li>
@@ -769,7 +765,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CV/opencv/image_trasformation/">Image trasformation</a>
+          <a href="../../../CV/opencv/image_trasformation/">Image trasformation</a>
           
             <label for="__nav_2_3_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -792,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/opencv/image_trasformation/homography/" class="md-nav__link">
+      <a href="../../../CV/opencv/image_trasformation/homography/" class="md-nav__link">
         Image Homography
       </a>
     </li>
@@ -852,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/lk_sparse_demo/" class="md-nav__link">
         opencv lk optical flow demo
       </a>
     </li>
@@ -866,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
+      <a href="../../../CV/optical_flow/open_cv_optical_flow_lk_sparse/" class="md-nav__link">
         opencv lk optical flow
       </a>
     </li>
@@ -917,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/trackers/siam_mask/" class="md-nav__link">
+      <a href="../../../CV/trackers/siam_mask/" class="md-nav__link">
         SiamMask
       </a>
     </li>
@@ -1007,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DDS/cyclondds/python-bindings/" class="md-nav__link">
+      <a href="../../../DDS/cyclondds/python-bindings/" class="md-nav__link">
         Eclipse cyclonedds python bindings
       </a>
     </li>
@@ -1058,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DDS/eprosima/fastdds-hello/" class="md-nav__link">
+      <a href="../../../DDS/eprosima/fastdds-hello/" class="md-nav__link">
         eprosima fastdds hello
       </a>
     </li>
@@ -1175,7 +1171,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/Tools/Youtube_download/">Youtube download</a>
+          <a href="../../../Misl/Tools/Youtube_download/">Youtube download</a>
           
         </div>
       
@@ -1225,7 +1221,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/aptly/">Aptly</a>
+          <a href="../../../Misl/aptly/">Aptly</a>
           
         </div>
       
@@ -1281,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/cmake/cmake_hello/" class="md-nav__link">
+      <a href="../../../Misl/cmake/cmake_hello/" class="md-nav__link">
         cmake 101
       </a>
     </li>
@@ -1319,7 +1315,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/deb/">Deb</a>
+          <a href="../../../Misl/deb/">Deb</a>
           
         </div>
       
@@ -1370,7 +1366,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/docker/">Docker</a>
+          <a href="../../../Misl/docker/">Docker</a>
           
             <label for="__nav_2_5_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1393,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_nvidia_install/" class="md-nav__link">
         Install docker with nvidia support
       </a>
     </li>
@@ -1407,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/docker_vscode/" class="md-nav__link">
+      <a href="../../../Misl/docker/docker_vscode/" class="md-nav__link">
         Docker VSCode integration
       </a>
     </li>
@@ -1421,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/snippets/" class="md-nav__link">
+      <a href="../../../Misl/docker/snippets/" class="md-nav__link">
         Dockerfile - snippets
       </a>
     </li>
@@ -1458,7 +1454,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/docker/tutorial/">Tutorial</a>
+          <a href="../../../Misl/docker/tutorial/">Tutorial</a>
           
             <label for="__nav_2_5_5_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1481,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/tutorial/create_new_image/" class="md-nav__link">
+      <a href="../../../Misl/docker/tutorial/create_new_image/" class="md-nav__link">
         Docker - custom image
       </a>
     </li>
@@ -1495,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/tutorial/hello_docker/" class="md-nav__link">
+      <a href="../../../Misl/docker/tutorial/hello_docker/" class="md-nav__link">
         Hello docker - Network
       </a>
     </li>
@@ -1509,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/docker/tutorial/volume_and/" class="md-nav__link">
+      <a href="../../../Misl/docker/tutorial/volume_and/" class="md-nav__link">
         Docker Volumes
       </a>
     </li>
@@ -1567,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/github/github_pro_tips/" class="md-nav__link">
+      <a href="../../../Misl/github/github_pro_tips/" class="md-nav__link">
         github pro tips
       </a>
     </li>
@@ -1611,7 +1607,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Misl/lxd/">Lxd</a>
+          <a href="../../../Misl/lxd/">Lxd</a>
           
             <label for="__nav_2_5_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1634,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/lxd/container_configuration/" class="md-nav__link">
+      <a href="../../../Misl/lxd/container_configuration/" class="md-nav__link">
         LXD - Container configuration and profile
       </a>
     </li>
@@ -1648,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/lxd/lxd_with_x11/" class="md-nav__link">
+      <a href="../../../Misl/lxd/lxd_with_x11/" class="md-nav__link">
         LXD - Running GUI application
       </a>
     </li>
@@ -1662,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Misl/lxd/nvidia_gpu/" class="md-nav__link">
+      <a href="../../../Misl/lxd/nvidia_gpu/" class="md-nav__link">
         Nvida GPU inside LXD
       </a>
     </li>
@@ -1734,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/snippets/" class="md-nav__link">
+      <a href="../../../Python/snippets/" class="md-nav__link">
         Python snippets
       </a>
     </li>
@@ -1780,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/future_demo/" class="md-nav__link">
+      <a href="../../../Python/asyncio/future_demo/" class="md-nav__link">
         future demo
       </a>
     </li>
@@ -1794,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/asyncio/hello_asyncio/" class="md-nav__link">
+      <a href="../../../Python/asyncio/hello_asyncio/" class="md-nav__link">
         python asyncio
       </a>
     </li>
@@ -1845,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
+      <a href="../../../Python/jupyter/cheat_and_tips/" class="md-nav__link">
         Cheat and tips
       </a>
     </li>
@@ -1885,7 +1881,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/multithreading/">Multithreading</a>
+          <a href="../../../Python/multithreading/">Multithreading</a>
           
             <label for="__nav_2_6_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1908,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/multithreading/barrier/" class="md-nav__link">
+      <a href="../../../Python/multithreading/barrier/" class="md-nav__link">
         Multithreading - barrier
       </a>
     </li>
@@ -1963,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/hello/" class="md-nav__link">
+      <a href="../../../Python/numpy/hello/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -1977,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/numpy_reshape/" class="md-nav__link">
+      <a href="../../../Python/numpy/numpy_reshape/" class="md-nav__link">
         numpy reshape
       </a>
     </li>
@@ -1991,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/numpy/rotation3d/" class="md-nav__link">
+      <a href="../../../Python/numpy/rotation3d/" class="md-nav__link">
         Rotation3d
       </a>
     </li>
@@ -2037,7 +2033,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/project_template/">Project template</a>
+          <a href="../../../Python/project_template/">Project template</a>
           
             <label for="__nav_2_6_6">
               <span class="md-nav__icon md-icon"></span>
@@ -2060,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
+      <a href="../../../Python/project_template/venv_pip_and_requirements/" class="md-nav__link">
         Python project template - venv
       </a>
     </li>
@@ -2074,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/project_unittest/" class="md-nav__link">
+      <a href="../../../Python/project_template/project_unittest/" class="md-nav__link">
         Python project template - unittest
       </a>
     </li>
@@ -2122,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/pylint/" class="md-nav__link">
+      <a href="../../../Python/project_template/pylint/" class="md-nav__link">
         Python project template - pylint
       </a>
     </li>
@@ -2136,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/mypy/" class="md-nav__link">
+      <a href="../../../Python/project_template/mypy/" class="md-nav__link">
         Mypy
       </a>
     </li>
@@ -2150,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/black/" class="md-nav__link">
+      <a href="../../../Python/project_template/black/" class="md-nav__link">
         Python project template - black and isort
       </a>
     </li>
@@ -2171,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/project_template/vscode/" class="md-nav__link">
+      <a href="../../../Python/project_template/vscode/" class="md-nav__link">
         Python project template - VSCode
       </a>
     </li>
@@ -2228,7 +2224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/fixture/" class="md-nav__link">
+      <a href="../../../Python/pytest/fixture/" class="md-nav__link">
         Pytest fixture
       </a>
     </li>
@@ -2242,7 +2238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/conftest/" class="md-nav__link">
+      <a href="../../../Python/pytest/conftest/" class="md-nav__link">
         Pytest conftest
       </a>
     </li>
@@ -2256,7 +2252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/params/" class="md-nav__link">
+      <a href="../../../Python/pytest/params/" class="md-nav__link">
         pytest parameterize tests
       </a>
     </li>
@@ -2270,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/pytest/mock/" class="md-nav__link">
+      <a href="../../../Python/pytest/mock/" class="md-nav__link">
         PyTest - Mocking
       </a>
     </li>
@@ -2340,7 +2336,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Python/python/bytearray/">Bytearray</a>
+          <a href="../../../Python/python/bytearray/">Bytearray</a>
           
         </div>
       
@@ -2398,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/python/named_tuple/examples/" class="md-nav__link">
+      <a href="../../../Python/python/named_tuple/examples/" class="md-nav__link">
         Examples
       </a>
     </li>
@@ -2412,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/python/named_tuple/named_tuple/" class="md-nav__link">
+      <a href="../../../Python/python/named_tuple/named_tuple/" class="md-nav__link">
         Python NamedTuple 101
       </a>
     </li>
@@ -2502,7 +2498,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../ROS2/colcon/">Colcon</a>
+          <a href="../../../ROS2/colcon/">Colcon</a>
           
             <label for="__nav_2_7_1">
               <span class="md-nav__icon md-icon"></span>
@@ -2525,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/colcon/colcon_cd/" class="md-nav__link">
+      <a href="../../../ROS2/colcon/colcon_cd/" class="md-nav__link">
         Colcon_cd
       </a>
     </li>
@@ -2578,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/01-launch_gazebo/" class="md-nav__link">
         Part1 - launch gazebo
       </a>
     </li>
@@ -2592,7 +2588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/gazebo/02-spawn/" class="md-nav__link">
+      <a href="../../../ROS2/gazebo/02-spawn/" class="md-nav__link">
         Part2 - spawn
       </a>
     </li>
@@ -2665,7 +2661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/pub_sub/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/pub_sub/" class="md-nav__link">
         Part1 - Simple PUB / SUB
       </a>
     </li>
@@ -2679,7 +2675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/launch_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/launch_hello/" class="md-nav__link">
         Part2 - Launch file
       </a>
     </li>
@@ -2693,7 +2689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part2a-launch_name_ns/" class="md-nav__link">
         Part2a - Launch file part II
       </a>
     </li>
@@ -2707,7 +2703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part3-py_node_with_param/" class="md-nav__link">
         Part3 - Simple python Node with parameter
       </a>
     </li>
@@ -2721,7 +2717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part4-launch_with_arguments/" class="md-nav__link">
         Part4 - Launch with arguments
       </a>
     </li>
@@ -2735,7 +2731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/package_xml_hello/" class="md-nav__link">
         Package.xml hello
       </a>
     </li>
@@ -2749,7 +2745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part10_managed_nodes/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part10_managed_nodes/" class="md-nav__link">
         ROS2 Managed Nodes
       </a>
     </li>
@@ -2763,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part5_simple_service/" class="md-nav__link">
         Part5 - Simple Service
       </a>
     </li>
@@ -2777,7 +2773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part6_parameter_handler/" class="md-nav__link">
         Part6 - Simple parameter handler
       </a>
     </li>
@@ -2791,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part7_custom_msgs/" class="md-nav__link">
         Part7 - Custom msgs and srvs
       </a>
     </li>
@@ -2805,7 +2801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part8_qos/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part8_qos/" class="md-nav__link">
         Part8 - QoS
       </a>
     </li>
@@ -2819,7 +2815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/tutorial/part9_executers/" class="md-nav__link">
+      <a href="../../../ROS2/tutorial/part9_executers/" class="md-nav__link">
         Part9 - executers
       </a>
     </li>
@@ -2876,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/hello/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/hello/" class="md-nav__link">
         Part1 - Web interfcae
       </a>
     </li>
@@ -2890,7 +2886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part2_hello_vue/" class="md-nav__link">
         Part2 - hello vue
       </a>
     </li>
@@ -2904,7 +2900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part3_vue_handling/" class="md-nav__link">
         Part3 - vue user handling
       </a>
     </li>
@@ -2918,7 +2914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
+      <a href="../../../ROS2/web_interface/part5_roslib_vue/" class="md-nav__link">
         Part5 - ROS Web interface with vue
       </a>
     </li>
@@ -3008,7 +3004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
+      <a href="../../../control/kalman_filter/michel_van_biezen_course/" class="md-nav__link">
         The Kalman Filter
       </a>
     </li>
@@ -3059,7 +3055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/pid/hello_pid/" class="md-nav__link">
+      <a href="../../../control/pid/hello_pid/" class="md-nav__link">
         Hello PID
       </a>
     </li>
@@ -3149,7 +3145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
+      <a href="../../../embedded/cross-compiler/hello-cc/" class="md-nav__link">
         cross compiler hello
       </a>
     </li>
@@ -3217,7 +3213,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../embedded/jetson/nano/">Nano</a>
+          <a href="../../../embedded/jetson/nano/">Nano</a>
           
         </div>
       
@@ -3291,7 +3287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/erb/" class="md-nav__link">
+      <a href="../../../gazebo/erb/" class="md-nav__link">
         erb
       </a>
     </li>
@@ -3322,7 +3318,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gazebo/color_and_texture/">Color and texture</a>
+          <a href="../../../gazebo/color_and_texture/">Color and texture</a>
           
         </div>
       
@@ -3367,7 +3363,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gazebo/xacro/">Xacro</a>
+          <a href="../../../gazebo/xacro/">Xacro</a>
           
             <label for="__nav_2_10_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3390,7 +3386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gazebo/xacro/build_check_view/" class="md-nav__link">
+      <a href="../../../gazebo/xacro/build_check_view/" class="md-nav__link">
         xacro build check and view
       </a>
     </li>
@@ -3416,12 +3412,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" checked>
       
       
       
@@ -3456,7 +3454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/hello_tmux/" class="md-nav__link">
+      <a href="../../hello_tmux/" class="md-nav__link">
         Tmux and tmuxp
       </a>
     </li>
@@ -3470,7 +3468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/minimal_rootfs/" class="md-nav__link">
+      <a href="../../minimal_rootfs/" class="md-nav__link">
         Create minimal rootfs for embedded device like jetson nano and rpi
       </a>
     </li>
@@ -3514,7 +3512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/network_utils/ip_tools/" class="md-nav__link">
+      <a href="../../network_utils/ip_tools/" class="md-nav__link">
         ip
       </a>
     </li>
@@ -3565,7 +3563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/ssh/ssh_config/" class="md-nav__link">
+      <a href="../../ssh/ssh_config/" class="md-nav__link">
         ssh config file
       </a>
     </li>
@@ -3584,12 +3582,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11_5" type="checkbox" id="__nav_2_11_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11_5" type="checkbox" id="__nav_2_11_5" checked>
       
       
       
@@ -3614,11 +3614,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../linux/systemd/minimal_service/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Systemd minimal service
       </a>
+      
     </li>
   
 
@@ -3676,7 +3686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/plugins/" class="md-nav__link">
+      <a href="../../../mkdocs/plugins/" class="md-nav__link">
         mkdocs plugins
       </a>
     </li>
@@ -3690,7 +3700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs/tips/" class="md-nav__link">
+      <a href="../../../mkdocs/tips/" class="md-nav__link">
         mkdocs tips
       </a>
     </li>
@@ -3766,7 +3776,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../networking/socat/">Socat</a>
+          <a href="../../../networking/socat/">Socat</a>
           
             <label for="__nav_2_13_1">
               <span class="md-nav__icon md-icon"></span>
@@ -3789,7 +3799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/socat/serial/" class="md-nav__link">
+      <a href="../../../networking/socat/serial/" class="md-nav__link">
         SOCAT serial
       </a>
     </li>
@@ -3803,7 +3813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/socat/udp/" class="md-nav__link">
+      <a href="../../../networking/socat/udp/" class="md-nav__link">
         SOCAT udp
       </a>
     </li>
@@ -3854,7 +3864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
+      <a href="../../../networking/tc/adding_latency_and_limiting_bandwidth/" class="md-nav__link">
         Adding Latency and Limiting Bandwidth
       </a>
     </li>
@@ -3907,7 +3917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/udp/big_packet_and_mtu/" class="md-nav__link">
+      <a href="../../../networking/udp/big_packet_and_mtu/" class="md-nav__link">
         udp big packet and MTU
       </a>
     </li>
@@ -3921,7 +3931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/udp/multi_port_udp_server/" class="md-nav__link">
+      <a href="../../../networking/udp/multi_port_udp_server/" class="md-nav__link">
         multi port udp server
       </a>
     </li>
@@ -4000,7 +4010,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/examples/">Examples</a>
+          <a href="../../../video/examples/">Examples</a>
           
         </div>
       
@@ -4043,7 +4053,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/ffmpeg/">Ffmpeg</a>
+          <a href="../../../video/ffmpeg/">Ffmpeg</a>
           
         </div>
       
@@ -4088,7 +4098,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../video/gstreamer/">Gstreamer</a>
+          <a href="../../../video/gstreamer/">Gstreamer</a>
           
             <label for="__nav_2_14_3">
               <span class="md-nav__icon md-icon"></span>
@@ -4147,7 +4157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsink_demo/" class="md-nav__link">
         Gstreamer python binding appsink pipe
       </a>
     </li>
@@ -4161,7 +4171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_appsrc_demo/" class="md-nav__link">
         Gstreamer python binding appsrc pipe
       </a>
     </li>
@@ -4175,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/gst_simple_demo/" class="md-nav__link">
         Gstreamer python binding basic pipe
       </a>
     </li>
@@ -4189,7 +4199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
+      <a href="../../../video/gstreamer/python_binding/python_binding_hello/" class="md-nav__link">
         Gstreamer python binding
       </a>
     </li>
@@ -4262,7 +4272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/dev_container/" class="md-nav__link">
+      <a href="../../../vscode/dev_container/" class="md-nav__link">
         VSCode dev-containers
       </a>
     </li>
@@ -4276,7 +4286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/extensions/" class="md-nav__link">
+      <a href="../../../vscode/extensions/" class="md-nav__link">
         VSCode extensions
       </a>
     </li>
@@ -4290,7 +4300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/tips/" class="md-nav__link">
+      <a href="../../../vscode/tips/" class="md-nav__link">
         VSCode tips
       </a>
     </li>
@@ -4304,7 +4314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/todo/" class="md-nav__link">
+      <a href="../../../vscode/todo/" class="md-nav__link">
         todo.txt
       </a>
     </li>
@@ -4318,7 +4328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vscode/yaml_json_schema/" class="md-nav__link">
+      <a href="../../../vscode/yaml_json_schema/" class="md-nav__link">
         yaml json files and json-schema
       </a>
     </li>
@@ -4337,14 +4347,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" type="checkbox" id="__nav_2_16" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" type="checkbox" id="__nav_2_16" >
       
       
       
@@ -4387,7 +4395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part1_hello_yocto/" class="md-nav__link">
+      <a href="../../../yocto/part1_hello_yocto/" class="md-nav__link">
         Part1 - Yocto tutorial
       </a>
     </li>
@@ -4401,7 +4409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part2_hello_poky/" class="md-nav__link">
+      <a href="../../../yocto/part2_hello_poky/" class="md-nav__link">
         Part2 - Yocto tutorial
       </a>
     </li>
@@ -4415,7 +4423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part3_run_qemu/" class="md-nav__link">
+      <a href="../../../yocto/part3_run_qemu/" class="md-nav__link">
         Part3 - Yocto tutorial
       </a>
     </li>
@@ -4429,7 +4437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part4_add_ssh/" class="md-nav__link">
+      <a href="../../../yocto/part4_add_ssh/" class="md-nav__link">
         Part4 - Yocto tutorial
       </a>
     </li>
@@ -4443,7 +4451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part5-terminology/" class="md-nav__link">
+      <a href="../../../yocto/part5-terminology/" class="md-nav__link">
         Part5 - Yocto terminology
       </a>
     </li>
@@ -4457,7 +4465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part6-tips/" class="md-nav__link">
+      <a href="../../../yocto/part6-tips/" class="md-nav__link">
         Part6 - Tips
       </a>
     </li>
@@ -4469,66 +4477,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part7 - Operators
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../yocto/part7-operators/" class="md-nav__link">
         Part7 - Operators
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variable-soft-assignment-" class="md-nav__link">
-    Variable soft assignment (?=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weaker-default-value-" class="md-nav__link">
-    Weaker default value (??=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variable-expansion" class="md-nav__link">
-    Variable Expansion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4540,7 +4493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../part8-custom_layer/" class="md-nav__link">
+      <a href="../../../yocto/part8-custom_layer/" class="md-nav__link">
         Part8 - Custom layer
       </a>
     </li>
@@ -4554,7 +4507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../yocto-rpi-1/" class="md-nav__link">
+      <a href="../../../yocto/yocto-rpi-1/" class="md-nav__link">
         Yocto RPI part 1
       </a>
     </li>
@@ -4616,7 +4569,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/">Projects</a>
+          <a href="../../../../projects/">Projects</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -4669,7 +4622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
+      <a href="../../../../projects/CAP_5415/CAP_5415/" class="md-nav__link">
         CAP_5415
       </a>
     </li>
@@ -4726,7 +4679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/Nav2/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/Nav2/" class="md-nav__link">
         Nav2
       </a>
     </li>
@@ -4770,7 +4723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/basic_2wd/urdf/" class="md-nav__link">
         Part1 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -4821,7 +4774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/plugins/gazebo/" class="md-nav__link">
         Part2 - Nav2 basic two wheel robot
       </a>
     </li>
@@ -4872,7 +4825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Nav2/tf/tf/" class="md-nav__link">
+      <a href="../../../../projects/Nav2/tf/tf/" class="md-nav__link">
         Tf
       </a>
     </li>
@@ -4919,7 +4872,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/Pytorch/">Pytorch</a>
+          <a href="../../../../projects/Pytorch/">Pytorch</a>
           
             <label for="__nav_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -4972,7 +4925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
+      <a href="../../../../projects/Pytorch/DL_with_python/pytorchbasics/" class="md-nav__link">
         Pytorchbasics
       </a>
     </li>
@@ -5076,7 +5029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/xacro/vscode_tips/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/xacro/vscode_tips/" class="md-nav__link">
         VSCode tips using in xacro files
       </a>
     </li>
@@ -5127,7 +5080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/rviz/launch_robot_in_rviz/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/rviz/launch_robot_in_rviz/" class="md-nav__link">
         rviz and launch
       </a>
     </li>
@@ -5167,7 +5120,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/tf/">Tf</a>
+          <a href="../../../../projects/ROS2%20Cookbook/tf/">Tf</a>
           
             <label for="__nav_3_5_3">
               <span class="md-nav__icon md-icon"></span>
@@ -5190,7 +5143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/tf/tf_tools/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/tf/tf_tools/" class="md-nav__link">
         tf tools
       </a>
     </li>
@@ -5249,7 +5202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/urdf_spawn/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/urdf_spawn/" class="md-nav__link">
         Spawn gazebo and with urdf
       </a>
     </li>
@@ -5263,7 +5216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/xacro_spawn/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/xacro_spawn/" class="md-nav__link">
         Spawn gazebo and with XACRO
       </a>
     </li>
@@ -5277,7 +5230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/sdf_model/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/sdf_model/" class="md-nav__link">
         Spawn gazebo world with SDF model
       </a>
     </li>
@@ -5291,7 +5244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/simple_world_plugin/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/simple_world_plugin/" class="md-nav__link">
         Simple world plugin
       </a>
     </li>
@@ -5305,7 +5258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/gazebo/tips/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/gazebo/tips/" class="md-nav__link">
         Gazebo ROS tips
       </a>
     </li>
@@ -5343,7 +5296,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/control/">Control</a>
+          <a href="../../../../projects/ROS2%20Cookbook/control/">Control</a>
           
         </div>
       
@@ -5399,7 +5352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/ROS2%20Cookbook/launch.py/simple_log/" class="md-nav__link">
+      <a href="../../../../projects/ROS2%20Cookbook/launch.py/simple_log/" class="md-nav__link">
         Simple launch file with log
       </a>
     </li>
@@ -5437,7 +5390,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/perception/">Perception</a>
+          <a href="../../../../projects/ROS2%20Cookbook/perception/">Perception</a>
           
         </div>
       
@@ -5480,7 +5433,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/nav2/">Nav2</a>
+          <a href="../../../../projects/ROS2%20Cookbook/nav2/">Nav2</a>
           
         </div>
       
@@ -5553,7 +5506,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/ROS2%20Cookbook/miscellaneous/mixed_cpp_pyhon_package.md/">Mixed cpp pyhon package.md</a>
+          <a href="../../../../projects/ROS2%20Cookbook/miscellaneous/mixed_cpp_pyhon_package.md/">Mixed cpp pyhon package.md</a>
           
         </div>
       
@@ -5625,7 +5578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/TurtleBot3/" class="md-nav__link">
         TurtleBot3
       </a>
     </li>
@@ -5669,7 +5622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
+      <a href="../../../../projects/TurtleBot3/Simulation/simulation/" class="md-nav__link">
         Turtlebot3 simulation
       </a>
     </li>
@@ -5729,7 +5682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/test/" class="md-nav__link">
         Test
       </a>
     </li>
@@ -5773,7 +5726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
+      <a href="../../../../projects/udacity_Introduction_to_Computer_Vision/2A-L1/test/" class="md-nav__link">
         Hello
       </a>
     </li>
@@ -5848,7 +5801,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../projects/vrx/buoyancy_plugin/">Buoyancy plugin</a>
+          <a href="../../../../projects/vrx/buoyancy_plugin/">Buoyancy plugin</a>
           
         </div>
       
@@ -5975,7 +5928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/add_roll_control/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/add_roll_control/" class="md-nav__link">
         simple gazebo gimbal with ROLL control
       </a>
     </li>
@@ -5989,7 +5942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/gimbal_small_2d/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/gimbal_small_2d/" class="md-nav__link">
         simple gazebo gimbal
       </a>
     </li>
@@ -6033,7 +5986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/wasp/gimbal/gazebo/source/tilt_control/" class="md-nav__link">
+      <a href="../../../../projects/wasp/gimbal/gazebo/source/tilt_control/" class="md-nav__link">
         Tilt control
       </a>
     </li>
@@ -6100,7 +6053,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tags/">Tags</a>
+          <a href="../../../../tags/">Tags</a>
           
         </div>
       
@@ -91128,7 +91081,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91156,7 +91109,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -91170,7 +91123,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91184,7 +91137,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91212,7 +91165,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91226,7 +91179,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91240,7 +91193,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91254,7 +91207,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91268,7 +91221,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91282,7 +91235,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91296,7 +91249,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91310,7 +91263,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -91338,7 +91291,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91352,7 +91305,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91366,7 +91319,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91380,7 +91333,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91394,7 +91347,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91408,7 +91361,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91422,7 +91375,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91436,7 +91389,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">dds&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91450,7 +91403,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">cyclonedds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91478,7 +91431,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">fastdds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91492,7 +91445,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91506,7 +91459,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91520,7 +91473,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">aptly&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91534,7 +91487,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">apt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91548,7 +91501,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91562,7 +91515,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">deb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91576,7 +91529,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -91590,7 +91543,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -91604,7 +91557,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">cheat sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91618,7 +91571,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">tutorial&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91632,7 +91585,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">lxd&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -91646,7 +91599,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">container&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91660,7 +91613,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">lxc&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -91674,7 +91627,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">x11&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91688,7 +91641,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">profile&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91702,7 +91655,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">snippets&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91716,7 +91669,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">cheat Sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91730,7 +91683,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -91744,7 +91697,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91758,7 +91711,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91772,7 +91725,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">multithreading&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91786,7 +91739,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91800,7 +91753,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91814,7 +91767,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -91828,7 +91781,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91842,7 +91795,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91856,7 +91809,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -91870,7 +91823,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91884,7 +91837,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91898,7 +91851,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">mock&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91912,7 +91865,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91926,7 +91879,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91940,7 +91893,7 @@
                     
                         font-size:2.4000000000000004rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">ros2&nbsp;
                 </span>
                 <!--<sup class="tag-count">19</sup>-->
@@ -91954,7 +91907,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91968,7 +91921,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91982,7 +91935,7 @@
                     
                         font-size:1.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">13</sup>-->
@@ -91996,7 +91949,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -92010,7 +91963,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92038,7 +91991,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92052,7 +92005,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92066,7 +92019,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92080,7 +92033,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92094,7 +92047,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92108,7 +92061,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92122,7 +92075,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92136,7 +92089,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92150,7 +92103,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92164,7 +92117,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92178,7 +92131,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92192,7 +92145,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92206,7 +92159,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92220,7 +92173,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92234,7 +92187,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92248,7 +92201,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92276,7 +92229,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92290,7 +92243,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92304,7 +92257,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92318,7 +92271,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92346,7 +92299,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92360,7 +92313,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -92374,7 +92327,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGoldenrod;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92388,7 +92341,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92402,7 +92355,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92416,7 +92369,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">embedded&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92430,7 +92383,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">ip&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92444,7 +92397,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">ss&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92458,7 +92411,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">ssh&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92472,7 +92425,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">systemd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92486,7 +92439,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92500,7 +92453,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92514,7 +92467,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92528,7 +92481,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92542,7 +92495,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">socat&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92556,7 +92509,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92584,7 +92537,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92598,7 +92551,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92612,7 +92565,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92626,7 +92579,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92640,7 +92593,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">select&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92654,7 +92607,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -92682,7 +92635,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -92696,7 +92649,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92710,7 +92663,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92724,7 +92677,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -92738,7 +92691,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">dev&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92752,7 +92705,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92766,7 +92719,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92780,7 +92733,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92794,7 +92747,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">yaml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92808,7 +92761,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">schema&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92822,7 +92775,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -92836,7 +92789,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92850,7 +92803,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92864,7 +92817,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92878,7 +92831,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92892,7 +92845,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92906,7 +92859,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92920,7 +92873,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92962,7 +92915,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92976,7 +92929,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92990,7 +92943,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -93004,7 +92957,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93018,7 +92971,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93032,7 +92985,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkMagenta;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93046,7 +92999,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93060,7 +93013,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93074,7 +93027,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93088,7 +93041,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93102,7 +93055,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93116,7 +93069,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">tf2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93130,7 +93083,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93144,7 +93097,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93158,7 +93111,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93172,7 +93125,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93216,35 +93169,6 @@
   
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variable-soft-assignment-" class="md-nav__link">
-    Variable soft assignment (?=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weaker-default-value-" class="md-nav__link">
-    Weaker default value (??=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variable-expansion" class="md-nav__link">
-    Variable Expansion
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                 
@@ -93294,14 +93218,10 @@
 <div class="cover">
     
     
-        <h1> Part7 - Operators </h1>
+        <h1> Systemd minimal service </h1>
     
 
     
-    
-        <p class="post-description">
-            Variables
-        </p>
     
 
     
@@ -93310,15 +93230,15 @@
             
                 <p class="page-tags">
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#yocto">
+                        <a class="tag" href="https://robobe.github.io/tags/#systemd">
                             <span class="tag-name">
-                                #yocto &nbsp;
+                                #systemd &nbsp;
                             </span>
                         </a>
                     
-                        <a class="tag" href="https://robobe.github.io/tags/#101">
+                        <a class="tag" href="https://robobe.github.io/tags/#service">
                             <span class="tag-name">
-                                #101 &nbsp;
+                                #service &nbsp;
                             </span>
                         </a>
                     
@@ -93388,91 +93308,37 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variable-soft-assignment-" class="md-nav__link">
-    Variable soft assignment (?=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weaker-default-value-" class="md-nav__link">
-    Weaker default value (??=)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variable-expansion" class="md-nav__link">
-    Variable Expansion
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
 </div>
 
 
 
     
-    <h1 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h1>
-<p>Variables can assign in conf and recipe files</p>
-<div class="highlight"><pre><span></span><code>VARIABLE = &quot;value&quot;
+    <p>systemd service run by unprivileged user</p>
+<div class="highlight"><pre><span></span><code>mkdir -p  ~/.config/systemd/user
 </code></pre></div>
-<div class="highlight"><span class="filename">variable in conf</span><pre><span></span><code><span class="c1"># This command display variable value after config file are parsed</span>
-bitbake -e <span class="p">|</span> grep ^&lt;VARIABLENAME&gt;<span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span><span class="w"></span>
+<span class="na">Description</span><span class="o">=</span><span class="s">My new Service</span><span class="w"></span>
 
-<span class="c1"># Example</span>
-bitbake -e <span class="p">|</span> grep ^BBPATH<span class="o">=</span>
-<span class="c1"># Result</span>
-<span class="nv">BBPATH</span><span class="o">=</span><span class="s2">&quot;/home/user/yocto/poky/meta-poky:/home/user/yocto/poky/build:/home/user/yocto/poky/meta:/home/user/yocto/poky/meta-yocto-bsp:/home/user/yocto/meta-external/meta-openembedded/meta-oe:/home/user/yocto/meta-external/meta-openembedded/meta-python&quot;</span>
+<span class="k">[Service]</span><span class="w"></span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span><span class="w"></span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/bin/sh -c  &#39;echo &quot;hello service&quot; &gt;&gt; /tmp/my_service.log 2&gt;&amp;1&#39;</span><span class="w"></span>
 
-bitbake -e <span class="p">|</span> grep ^TOPDIR<span class="o">=</span>
-<span class="nv">TOPDIR</span><span class="o">=</span><span class="s2">&quot;/home/user/yocto/poky/build&quot;</span>
+<span class="k">[Install]</span><span class="w"></span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><span class="filename">variable from recipe</span><pre><span></span><code>bitbake -e &lt;recipe&gt;&lt;/recipe&gt; <span class="p">|</span> grep ^&lt;VARIABLE&gt;<span class="o">=</span>
+<div class="highlight"><pre><span></span><code>systemctl --user <span class="nb">enable</span> minimal.service 
 
-<span class="c1"># Example</span>
-bitbake -e dropbear <span class="p">|</span> grep ^DEPENDS<span class="o">=</span>
-<span class="nv">DEPENDS</span><span class="o">=</span><span class="s2">&quot;autoconf-native automake-native libtool-native libtool-cross  virtual/x86_64-poky-linux-gcc virtual/x86_64-poky-linux-compilerlibs virtual/libc zlib virtual/crypt  update-rc.d initscripts virtual/update-alternatives&quot;</span>
+Created symlink /home/user/.config/systemd/user/multi-user.target.wants/minimal.service → /home/user/.config/systemd/user/minimal.service.
 </code></pre></div>
-<h2 id="variable-soft-assignment-">Variable soft assignment (?=)<a class="headerlink" href="#variable-soft-assignment-" title="Permanent link">#</a></h2>
-<p>if variable assign as hard assignment the value is lost
-if no hard assignment this value are the default one</p>
-<div class="highlight"><pre><span></span><code>MACHINE ?= &quot;qemuarm&quot;
+<div class="highlight"><pre><span></span><code>systemctl --user daemon-reload
+systemctl --user start minimal.service
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>if ww have multiple soft assignment the <strong>first</strong> one is hold/assign</p>
-</div>
-<h2 id="weaker-default-value-">Weaker default value (??=)<a class="headerlink" href="#weaker-default-value-" title="Permanent link">#</a></h2>
-<p>Assignment is made at the end of the parsing process, rather then immediately</p>
-<p>if variable assign as hard assignment the weaker value is lost
-if variable assign as default assignment the weaker value is lost</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>if ww have multiple weak assignment the <strong>last</strong> one is hold/assign</p>
-</div>
 <hr />
-<h2 id="variable-expansion">Variable Expansion<a class="headerlink" href="#variable-expansion" title="Permanent link">#</a></h2>
-<p>Variable can reference the content of other variable using the <code>${variable_name}</code> syntax</p>
-<div class="highlight"><pre><span></span><code>A = &quot;${B} hello&quot;
-B = &quot;${C} world&quot;
-C = &quot;linux&quot;
-</code></pre></div>
-<div class="admonition waring">
-<p class="admonition-title">Waring</p>
-<p>if variable not declare no expansion will happen
-the string is keep as is</p>
-</div>
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://nts.strzibny.name/systemd-user-services/">systemd user services and systemctl &ndash;user</a></li>
+</ul>
 
 
             </article>
@@ -93491,7 +93357,7 @@ the string is keep as is</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../part6-tips/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part6 - Tips" rel="prev">
+        <a href="../../ssh/ssh_config/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ssh config file" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -93500,20 +93366,20 @@ the string is keep as is</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part6 - Tips
+              ssh config file
             </div>
           </div>
         </a>
       
       
         
-        <a href="../part8-custom_layer/" class="md-footer__link md-footer__link--next" aria-label="Next: Part8 - Custom layer" rel="next">
+        <a href="../../../mkdocs/plugins/" class="md-footer__link md-footer__link--next" aria-label="Next: mkdocs plugins" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part8 - Custom layer
+              mkdocs plugins
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -93543,20 +93409,20 @@ the string is keep as is</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../assets/mathjax.js"></script>
+        <script src="../../../../assets/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/view-bigimg.js"></script>
+        <script src="../../../../assets/view-bigimg.js"></script>
       
-        <script src="../../../assets/extra.js"></script>
+        <script src="../../../../assets/extra.js"></script>
       
     
   </body>
