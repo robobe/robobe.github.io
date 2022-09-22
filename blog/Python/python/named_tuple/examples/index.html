@@ -32,22 +32,24 @@
         <link rel="canonical" href="https://robobe.github.io/blog/Python/python/named_tuple/examples/">
       
       <link rel="icon" href="../../../../../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
     <title>Examples - Robots Inside</title>
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7a952b86.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#ffffff">
         
       
+      
+
     
     
     
@@ -64,10 +66,11 @@
     
       <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
     <!-- Open Graph -->
@@ -121,11 +124,11 @@
     <a href="../../../../.." title="Robots Inside" class="md-header__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -147,7 +150,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -155,17 +158,17 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -287,7 +290,7 @@
     <a href="../../../../.." title="Robots Inside" class="md-nav__button md-logo" aria-label="Robots Inside" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
 
     </a>
     Robots Inside
@@ -2521,6 +2524,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7">
@@ -2614,17 +2619,68 @@
         
           
         
+      
+      
+        <label class="md-nav__link" for="__nav_2_7_2">
+          Fastdds
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fastdds" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fastdds
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ROS2/fastdds/xml_profile/" class="md-nav__link">
+        ROS2 fastdds xml profile
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
+      
+      
+      
+        
+          
+        
           
         
       
       
-        <label class="md-nav__link" for="__nav_2_7_2">
+        <label class="md-nav__link" for="__nav_2_7_3">
           Gazebo
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Gazebo" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_2">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           Gazebo
         </label>
@@ -2674,7 +2730,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_4" type="checkbox" id="__nav_2_7_4" >
       
       
       
@@ -2705,13 +2761,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_7_3">
+        <label class="md-nav__link" for="__nav_2_7_4">
           Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tutorial" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_3">
+        <label class="md-nav__title" for="__nav_2_7_4">
           <span class="md-nav__icon md-icon"></span>
           Tutorial
         </label>
@@ -2901,7 +2957,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_4" type="checkbox" id="__nav_2_7_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_5" type="checkbox" id="__nav_2_7_5" >
       
       
       
@@ -2916,13 +2972,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_7_4">
+        <label class="md-nav__link" for="__nav_2_7_5">
           Web interface
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web interface" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_4">
+        <label class="md-nav__title" for="__nav_2_7_5">
           <span class="md-nav__icon md-icon"></span>
           Web interface
         </label>
@@ -21487,6 +21543,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -21550,17 +21610,12 @@
         
         
         
-          
-        
       
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -21759,11 +21814,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -21934,10 +21985,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -22147,16 +22199,11 @@
           
         
           
-          
-            
-            
-            
           
         
-          
-          
         
         
+          
         
       
     
@@ -22351,14 +22398,12 @@
           
           
         
-          
           
-            
-            
-            
           
+        
         
         
+          
         
       
     
@@ -22370,7 +22415,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -22556,9 +22605,10 @@
           
           
         
+          
+          
         
         
-          
         
       
     
@@ -22747,10 +22797,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -22763,6 +22809,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -22776,6 +22826,9 @@
         
         
         
+        
+          
+          
         
           
           
@@ -22968,9 +23021,6 @@
             
             
             
-          
-        
-          
           
         
         
@@ -22986,10 +23036,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -23180,6 +23226,8 @@
         
         
         
+          
+        
       
     
   
@@ -23371,7 +23419,10 @@
             
             
             
+          
+        
           
+          
         
           
           
@@ -23586,12 +23637,17 @@
           
           
         
+          
           
+            
+            
+            
           
         
+          
+          
         
         
-          
         
       
     
@@ -24221,12 +24277,7 @@
           
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -24235,7 +24286,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -24406,11 +24461,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -24437,6 +24488,11 @@
         
         
       
+    
+  
+
+  
+    
     
       
         
@@ -24618,6 +24674,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -24630,10 +24690,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -24658,10 +24714,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -24857,6 +24909,8 @@
           
         
         
+        
+          
         
       
     
@@ -25072,8 +25126,11 @@
           
           
         
+          
+          
         
         
+        
       
     
       
@@ -25270,7 +25327,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -25279,9 +25340,10 @@
           
           
         
+          
+          
         
         
-          
         
       
     
@@ -25294,6 +25356,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -25492,11 +25558,14 @@
           
         
         
-        
-          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -25505,11 +25574,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -25680,10 +25745,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -25713,11 +25779,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -25899,10 +25960,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -25929,10 +25986,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -26139,17 +26195,15 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
           
+        
         
         
+          
         
       
     
@@ -26161,7 +26215,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -26361,15 +26419,19 @@
         
           
           
-            
-            
-            
+        
+          
           
         
         
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -26549,7 +26611,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -26563,9 +26629,8 @@
         
           
           
-            
-            
-            
+        
+          
           
         
           
@@ -26597,10 +26662,9 @@
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -26794,7 +26858,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -26803,11 +26871,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -26990,10 +27053,9 @@
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -27019,7 +27081,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
         
@@ -27220,7 +27286,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -27235,9 +27305,10 @@
           
           
         
+          
+          
         
         
-          
         
       
     
@@ -27914,6 +27985,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -28108,10 +28183,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -28127,6 +28198,11 @@
         
       
     
+  
+
+  
+    
+    
       
         
         
@@ -28135,11 +28211,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -28310,7 +28382,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -28349,11 +28425,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -28535,10 +28606,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -28575,6 +28642,8 @@
           
         
         
+        
+          
         
       
     
@@ -28786,6 +28855,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -28793,9 +28866,10 @@
           
           
         
+          
+          
         
         
-          
         
       
     
@@ -28807,7 +28881,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -29016,12 +29094,15 @@
         
           
           
-        
         
         
-          
         
       
+    
+  
+
+  
+    
     
       
         
@@ -29032,10 +29113,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -29208,8 +29285,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -29251,12 +29329,7 @@
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -29436,11 +29509,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -29479,10 +29548,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -30085,10 +30153,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -30134,6 +30198,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -30371,6 +30439,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -30407,16 +30479,9 @@
           
         
         
-        
-          
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -30425,10 +30490,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -30597,10 +30663,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -30651,7 +30713,12 @@
         
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -30786,10 +30853,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -30881,20 +30949,12 @@
         
         
         
-          
-        
       
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -31120,20 +31180,18 @@
           
         
       
+    
+  
+
+  
     
+    
       
-        
         
         
         
-          
-          
         
           
-          
-            
-            
-            
           
         
           
@@ -31309,8 +31367,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -31361,19 +31420,11 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -31546,11 +31597,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -31601,10 +31648,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -31838,11 +31884,8 @@
           
           
         
-          
-          
         
         
-        
           
         
       
@@ -31855,10 +31898,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -32085,8 +32129,6 @@
         
         
         
-          
-        
       
     
   
@@ -32098,9 +32140,6 @@
         
         
         
-        
-          
-          
         
           
           
@@ -32276,10 +32315,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -32334,8 +32374,6 @@
           
         
         
-        
-          
         
       
     
@@ -32572,36 +32610,18 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
-        
         
         
         
-          
-          
         
           
-          
-            
-            
-            
           
         
           
@@ -32832,10 +32852,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -33083,14 +33102,9 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
         
+          
         
       
     
@@ -33327,7 +33341,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -33335,10 +33353,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -33355,9 +33371,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -33780,10 +33793,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -33845,8 +33854,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
         
@@ -34092,17 +34102,12 @@
           
           
         
-          
           
-            
-            
-            
           
         
-          
-          
         
         
+          
         
       
     
@@ -34115,6 +34120,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -34344,10 +34353,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -34544,6 +34549,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -34611,8 +34620,6 @@
         
         
         
-          
-        
       
     
       
@@ -34855,32 +34862,23 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
           
-        
         
         
-          
         
       
-    
-  
-
-  
-    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -35113,10 +35111,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -35126,24 +35125,18 @@
           
         
         
-        
-          
         
       
     
+  
+
+  
+    
+    
       
-        
-        
-        
         
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -35400,10 +35393,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -35643,17 +35632,10 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
   
@@ -35662,15 +35644,9 @@
     
     
       
-        
         
         
-        
-          
-          
         
-          
-          
         
           
           
@@ -35923,11 +35899,6 @@
           
         
       
-    
-  
-
-  
-    
     
       
         
@@ -35948,27 +35919,26 @@
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
-        
-          
           
         
           
@@ -36184,17 +36154,10 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
@@ -36205,10 +36168,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -36458,8 +36422,6 @@
           
         
         
-        
-          
         
       
     
@@ -36725,25 +36687,21 @@
           
           
         
-          
-          
-        
-          
-          
-        
         
         
           
         
       
+    
+  
+
+  
     
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -36758,9 +36716,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -36925,11 +36884,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -37010,11 +36965,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -37201,14 +37151,7 @@
           
           
         
-          
-          
-        
-          
           
-            
-            
-            
           
         
           
@@ -37283,20 +37226,21 @@
           
           
         
-          
-          
         
         
+          
         
       
+    
+  
+
+  
     
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -37561,12 +37505,7 @@
           
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -37758,10 +37697,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -37838,8 +37778,6 @@
         
         
         
-          
-        
       
     
   
@@ -37851,9 +37789,6 @@
         
         
         
-        
-          
-          
         
           
           
@@ -38041,10 +37976,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -38117,31 +38053,16 @@
           
         
           
-          
-            
-            
-            
           
         
         
         
       
-    
-  
-
-  
     
-    
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -38409,17 +38330,16 @@
           
         
       
+    
+  
+
+  
+    
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -38690,6 +38610,11 @@
           
         
       
+    
+  
+
+  
+    
     
       
         
@@ -38701,10 +38626,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -38964,13 +38885,11 @@
           
           
         
-          
-          
-        
-          
           
-        
           
+            
+            
+            
           
         
         
@@ -38985,13 +38904,7 @@
       
         
         
-        
-        
-          
-          
         
-          
-          
         
           
           
@@ -39267,15 +39180,9 @@
       
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -39553,26 +39460,19 @@
         
       
     
-  
-
-  
-    
-    
       
-        
         
         
         
-          
-          
         
           
           
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -39841,26 +39741,20 @@
         
           
           
-        
         
         
-          
         
       
+    
+  
+
+  
+    
     
       
         
-        
-        
-        
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -40140,25 +40034,11 @@
           
         
       
-    
-  
-
-  
-    
     
       
-        
-        
         
         
-          
-          
-        
-          
-          
         
-          
-          
         
           
           
@@ -40448,18 +40328,9 @@
     
     
       
-        
         
-        
-        
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -40956,10 +40827,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -41037,17 +40904,10 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
   
@@ -41056,15 +40916,9 @@
     
     
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -41356,17 +41210,16 @@
           
         
       
+    
+  
+
+  
+    
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -41663,33 +41516,9 @@
       
     
       
-        
-        
-        
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -41900,7 +41729,14 @@
         
           
           
-        
+            
+            
+            
+          
+        
+          
+          
+        
           
           
         
@@ -41964,10 +41800,23 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
         
+          
+          
         
           
+          
+        
         
+        
       
     
   
@@ -42271,20 +42120,9 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
-          
-          
         
-          
           
-        
-        
         
       
     
@@ -42587,33 +42425,16 @@
           
           
         
-          
-          
-        
-          
-          
-        
         
         
           
         
       
-    
-  
-
-  
     
-    
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -42917,14 +42738,16 @@
           
         
       
+    
+  
+
+  
+    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -43217,10 +43040,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -43230,16 +43054,9 @@
           
         
         
-        
-          
         
       
     
-  
-
-  
-    
-    
       
         
         
@@ -43545,33 +43362,21 @@
           
           
         
-          
-          
         
-          
-          
-            
-            
-            
-          
         
-          
           
-        
-        
         
       
     
+  
+
+  
+    
+    
       
-        
         
         
-        
-          
-          
         
-          
-          
         
           
           
@@ -43881,11 +43686,6 @@
           
         
       
-    
-  
-
-  
-    
     
       
         
@@ -44197,21 +43997,18 @@
         
           
           
-            
-            
-            
-          
         
-          
-          
-        
-          
-          
         
         
+          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -44520,10 +44317,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -44531,25 +44329,12 @@
         
         
         
-          
-        
       
-    
-  
-
-  
     
-    
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -44866,13 +44651,15 @@
         
       
     
+  
+
+  
+    
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -45190,23 +44977,14 @@
           
           
         
-          
-          
         
         
-        
       
     
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -45532,12 +45310,9 @@
     
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -45849,19 +45624,14 @@
           
         
           
-          
-            
-            
-            
           
         
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -46176,10 +45946,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -46193,22 +45964,12 @@
         
         
         
-          
-        
       
-    
-  
-
-  
     
-    
       
-        
         
         
         
-          
-          
         
           
           
@@ -46520,10 +46281,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -46532,12 +46289,16 @@
           
           
         
-          
-          
         
         
+          
         
       
+    
+  
+
+  
+    
     
       
         
@@ -46857,9 +46618,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -46867,28 +46629,15 @@
         
           
           
-        
         
         
-          
         
       
-    
-  
-
-  
-    
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -47217,13 +46966,15 @@
         
       
     
+  
+
+  
+    
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -47539,8 +47290,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -47551,26 +47303,15 @@
         
           
           
-        
         
         
-          
         
       
     
       
-        
         
         
         
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -47902,6 +47643,11 @@
         
       
     
+  
+
+  
+    
+    
       
         
         
@@ -48234,30 +47980,34 @@
           
           
         
-          
+        
+        
           
         
+      
+    
+      
+        
+        
+        
+        
           
           
         
           
           
-        
         
-        
           
-        
-      
-    
-  
-
-  
-    
-    
-      
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -48571,48 +48321,16 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-            
-            
-          
-        
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -48943,28 +48661,20 @@
         
           
           
-            
-            
-            
-          
         
           
           
         
-          
-          
         
         
+          
         
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -49650,10 +49360,7 @@
             
             
             
-          
-        
           
-          
         
           
           
@@ -49669,12 +49376,9 @@
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -50042,10 +49746,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -50371,10 +50071,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -51110,7 +50809,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -51439,10 +51142,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -51788,9 +51489,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -52160,11 +51858,8 @@
           
           
         
-          
-          
         
         
-        
       
     
       
@@ -52514,14 +52209,9 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
         
+          
         
       
     
@@ -54793,10 +54483,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -55025,6 +54711,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -55385,6 +55075,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -55397,16 +55091,9 @@
           
         
         
-        
-          
         
       
     
-  
-
-  
-    
-    
       
         
         
@@ -55511,11 +55198,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -55758,16 +55441,22 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
         
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -55872,10 +55561,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -56069,10 +55759,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -56432,10 +56118,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -56483,10 +56165,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -57155,17 +56836,17 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
           
         
           
-          
-            
-            
-            
           
         
           
@@ -57216,12 +56897,7 @@
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -57326,11 +57002,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -57528,7 +57200,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -57582,6 +57258,11 @@
         
         
       
+    
+  
+
+  
+    
     
       
         
@@ -57688,6 +57369,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -57938,8 +57623,6 @@
         
         
         
-          
-        
       
     
       
@@ -58248,9 +57931,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -58297,10 +57981,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -58310,12 +57992,9 @@
     
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -58418,8 +58097,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -58667,26 +58347,15 @@
         
           
           
-        
         
         
-          
         
       
     
       
-        
         
-        
-        
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -59398,33 +59067,21 @@
           
           
         
-          
-          
         
-          
-          
-            
-            
-            
-          
         
           
-          
-        
         
-        
       
+    
+  
+
+  
+    
     
       
         
         
-        
-        
-          
-          
         
-          
-          
         
           
           
@@ -59790,9 +59447,6 @@
         
         
         
-        
-          
-          
         
           
           
@@ -59890,11 +59544,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -60155,22 +59805,25 @@
           
           
         
-          
-          
         
         
+          
         
       
-    
-  
-
-  
     
-    
       
+        
+        
+        
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -60518,11 +60171,24 @@
           
         
           
+          
+            
+            
+            
           
         
           
           
+        
+        
         
+      
+    
+      
+        
+        
+        
+        
           
           
         
@@ -60535,56 +60201,32 @@
           
           
         
+          
+          
         
+          
+          
         
+          
           
         
-      
-    
-      
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -60907,23 +60549,11 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
-    
-  
-
-  
-    
     
       
         
@@ -61031,8 +60661,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -61293,24 +60924,22 @@
           
           
         
-          
           
-            
-            
-            
           
         
         
         
       
+    
+  
+
+  
+    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -61694,9 +61323,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -62443,20 +62069,14 @@
             
           
         
-          
-          
         
         
-        
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -62843,10 +62463,7 @@
             
             
             
-          
-        
           
-          
         
           
           
@@ -63593,9 +63210,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -63979,14 +63593,9 @@
           
           
         
-          
-          
-            
-            
-            
-          
         
         
+          
         
       
     
@@ -64773,11 +64382,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -65143,17 +64748,16 @@
           
           
         
+          
           
+            
+            
+            
           
         
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -65165,6 +64769,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -65524,10 +65132,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -65540,6 +65144,11 @@
         
       
     
+  
+
+  
+    
+    
       
         
         
@@ -65548,11 +65157,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -65912,7 +65517,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -65924,11 +65533,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -65939,6 +65543,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -66299,10 +65907,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -66314,6 +65918,11 @@
         
         
       
+    
+  
+
+  
+    
     
       
         
@@ -66324,10 +65933,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -66688,6 +66293,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -66699,12 +66308,7 @@
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -66713,7 +66317,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -67073,11 +66681,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -67089,6 +66693,11 @@
         
         
       
+    
+  
+
+  
+    
     
       
         
@@ -67307,10 +66916,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -67463,6 +67068,10 @@
           
         
           
+          
+            
+            
+            
           
         
           
@@ -67475,11 +67084,6 @@
         
       
     
-  
-
-  
-    
-    
       
         
         
@@ -67488,7 +67092,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -67856,12 +67464,15 @@
         
           
           
-        
         
         
-          
         
       
+    
+  
+
+  
+    
     
       
         
@@ -68244,19 +67855,9 @@
           
           
         
-          
-          
         
         
-        
       
-    
-  
-
-  
-
-  
-    
     
       
         
@@ -68477,9 +68078,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -68637,23 +68239,20 @@
         
           
           
-        
         
         
-          
         
       
+    
+  
+
+  
+    
     
       
-        
-        
         
         
-          
-          
         
-          
-          
         
           
           
@@ -69032,14 +68631,7 @@
           
         
       
-    
-  
-
-  
-
-  
     
-    
       
         
         
@@ -69219,11 +68811,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -69412,7 +69000,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -69423,21 +69015,43 @@
         
           
           
+        
+        
+        
+      
+    
+  
+
+  
+
+  
+    
+    
+      
         
+        
+        
+        
           
           
         
           
           
-        
         
+          
+          
         
-      
-    
-      
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -69793,49 +69407,16 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
         
-        
           
         
       
     
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -70221,6 +69802,8 @@
         
       
     
+  
+
   
 
   
@@ -70410,13 +69993,7 @@
             
             
             
-          
-        
-          
-          
-        
           
-          
         
           
           
@@ -70627,12 +70204,9 @@
       
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -71013,16 +70587,11 @@
           
         
           
-          
-            
-            
-            
           
         
-          
-          
         
         
+          
         
       
     
@@ -71214,11 +70783,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -71419,13 +70984,17 @@
           
           
         
-          
-          
         
         
+          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -71605,7 +71174,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -71817,10 +71390,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -71856,11 +71427,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -72214,10 +71781,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -72419,9 +71987,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -72621,23 +72190,15 @@
         
           
           
-        
         
         
-          
         
       
     
       
-        
         
         
-        
-          
-          
         
-          
-          
         
           
           
@@ -73031,21 +72592,11 @@
           
         
       
-    
-  
-
-  
-
-  
-    
     
       
         
         
         
-        
-          
-          
         
           
           
@@ -73074,10 +72625,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -73441,8 +72993,6 @@
           
         
         
-        
-          
         
       
     
@@ -73458,10 +73008,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -73845,32 +73391,18 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
-        
         
         
         
-          
-          
         
           
-          
-            
-            
-            
           
         
           
@@ -74263,10 +73795,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -74275,10 +73806,6 @@
   
 
   
-
-  
-
-  
     
     
       
@@ -74533,10 +74060,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -74686,17 +74209,11 @@
           
           
         
-          
-          
         
         
+          
         
       
-    
-  
-
-  
-    
     
       
         
@@ -74711,6 +74228,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -74887,10 +74408,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -75120,6 +74637,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -75516,13 +75037,17 @@
         
         
         
-          
-        
       
     
+  
+
   
 
   
+
+  
+
+  
     
     
       
@@ -75714,10 +75239,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -75782,8 +75303,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -75939,6 +75461,11 @@
         
         
       
+    
+  
+
+  
+    
     
       
         
@@ -76132,9 +75659,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -76344,11 +75872,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
         
@@ -76546,11 +76070,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -76763,10 +76283,9 @@
           
           
         
-          
-          
         
         
+          
         
       
     
@@ -76779,6 +76298,9 @@
         
         
         
+        
+          
+          
         
           
           
@@ -76968,9 +76490,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -77596,10 +77115,12 @@
         
           
           
-        
+            
+            
+            
+          
         
         
-          
         
       
     
@@ -77798,9 +77319,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -78012,10 +77534,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -78025,9 +77545,12 @@
     
     
       
+        
         
         
         
+          
+          
         
           
           
@@ -78214,6 +77737,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -78331,10 +77858,9 @@
         
           
           
-            
-            
-            
+        
           
+          
         
           
           
@@ -78428,7 +77954,16 @@
         
           
           
+        
+        
+        
+      
+    
+      
+        
         
+        
+        
           
           
         
@@ -78441,19 +77976,23 @@
           
           
         
+          
+          
         
+          
+          
         
-      
-    
-  
-
-  
-    
-    
-      
+          
+          
         
+          
+          
         
+          
+          
         
+          
+          
         
           
           
@@ -78640,33 +78179,8 @@
         
           
           
-            
-            
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
+        
           
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
@@ -78852,23 +78366,10 @@
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
       
@@ -79260,11 +78761,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -79285,13 +78782,17 @@
           
           
         
-          
-          
         
         
+          
         
       
+    
+  
+
+  
     
+    
       
         
         
@@ -79483,11 +78984,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -79601,7 +79098,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -79719,9 +79220,12 @@
     
     
       
+        
         
         
         
+          
+          
         
           
           
@@ -80132,11 +79636,8 @@
           
           
         
-          
-          
         
         
-        
       
     
       
@@ -80408,11 +79909,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -80532,7 +80029,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -80561,9 +80062,12 @@
       
     
       
+        
         
         
         
+          
+          
         
           
           
@@ -80756,10 +80260,7 @@
             
             
             
-          
-        
           
-          
         
           
           
@@ -80987,9 +80488,12 @@
     
     
       
+        
         
         
         
+          
+          
         
           
           
@@ -81400,11 +80904,8 @@
           
           
         
-          
-          
         
         
-        
       
     
       
@@ -81676,7 +81177,11 @@
           
           
         
+          
           
+            
+            
+            
           
         
           
@@ -81802,11 +81307,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -81827,11 +81328,6 @@
         
         
       
-    
-  
-
-  
-    
     
       
         
@@ -82029,6 +81525,10 @@
         
           
           
+            
+            
+            
+          
         
           
           
@@ -82248,10 +81748,13 @@
         
         
         
-          
-        
       
+    
+  
+
+  
     
+    
       
         
         
@@ -82448,9 +81951,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -82675,12 +82175,7 @@
         
         
       
-    
-  
-
-  
     
-    
       
         
         
@@ -82860,11 +82355,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -83080,10 +82571,11 @@
           
           
         
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -83523,11 +83015,8 @@
           
           
         
-          
-          
         
         
-        
           
         
       
@@ -83727,9 +83216,10 @@
           
         
           
-          
-        
           
+            
+            
+            
           
         
           
@@ -83950,10 +83440,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -83963,12 +83451,9 @@
     
     
       
-        
         
         
         
-          
-          
         
           
           
@@ -84146,8 +83631,9 @@
         
           
           
-        
-          
+            
+            
+            
           
         
           
@@ -84383,10 +83869,8 @@
         
           
           
-        
         
         
-          
         
       
     
@@ -84396,18 +83880,9 @@
     
     
       
-        
         
         
         
-          
-          
-        
-          
-          
-        
-          
-          
         
           
           
@@ -85019,10 +84494,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -85249,17 +84720,10 @@
           
           
         
-          
-          
         
-          
-          
         
           
-          
-        
         
-        
       
     
   
@@ -85268,15 +84732,9 @@
     
     
       
-        
         
         
         
-          
-          
-        
-          
-          
         
           
           
@@ -85707,15 +85165,9 @@
     
     
       
-        
         
         
-        
-          
-          
         
-          
-          
         
           
           
@@ -86142,11 +85594,6 @@
           
         
       
-    
-  
-
-  
-    
     
       
         
@@ -86342,13 +85789,11 @@
           
           
         
-          
-          
-        
-          
           
-        
           
+            
+            
+            
           
         
           
@@ -86418,10 +85863,6 @@
           
         
           
-          
-            
-            
-            
           
         
           
@@ -86590,13 +86031,15 @@
         
       
     
+  
+
+  
+    
+    
       
-        
         
         
         
-          
-          
         
           
           
@@ -86696,10 +86139,6 @@
         
           
           
-            
-            
-            
-          
         
           
           
@@ -87025,15 +86464,12 @@
           
           
         
-          
-          
         
         
+          
         
       
     
-  
-
   
 
   
@@ -87218,11 +86654,7 @@
           
           
         
-          
           
-            
-            
-            
           
         
           
@@ -87474,53 +86906,21 @@
           
           
         
-          
-          
         
         
+          
         
       
     
+  
+
+  
+    
+    
       
-        
-        
-        
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
         
-          
-          
         
-          
-          
         
           
           
@@ -87788,6 +87188,967 @@
         
           
           
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -87885,6 +88246,216 @@
           
           
         
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
           
         
@@ -87915,8 +88486,206 @@
           
           
         
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
         
+        
           
         
       
@@ -89274,9 +90043,12 @@
     
     
       
+        
         
         
         
+          
+          
         
           
           
@@ -89466,10 +90238,7 @@
             
             
             
-          
-        
           
-          
         
           
           
@@ -90188,6 +90957,9 @@
         
         
         
+        
+          
+          
         
           
           
@@ -90377,9 +91149,6 @@
             
             
             
-          
-        
-          
           
         
           
@@ -91129,7 +91898,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkOliveGreen;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91143,7 +91912,7 @@
                     
                         font-size:3.1rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">26</sup>-->
@@ -91157,7 +91926,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -91171,7 +91940,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkBlue;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91185,7 +91954,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91199,7 +91968,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -91213,7 +91982,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91227,7 +91996,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91241,7 +92010,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91255,7 +92024,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91283,7 +92052,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91297,7 +92066,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91311,7 +92080,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -91325,7 +92094,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91339,7 +92108,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91353,7 +92122,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOrchid;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91367,7 +92136,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91381,7 +92150,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91395,7 +92164,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91409,7 +92178,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91423,7 +92192,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91437,7 +92206,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">dds&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91451,7 +92220,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">cyclonedds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91465,7 +92234,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateBlue;
                 ">eprosima&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91479,7 +92248,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOliveGreen;
                 ">fastdds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91493,7 +92262,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91507,7 +92276,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91521,7 +92290,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">aptly&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91535,7 +92304,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">apt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91549,7 +92318,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">cmake&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91563,7 +92332,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">deb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91577,7 +92346,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -91591,7 +92360,7 @@
                     
                         font-size:1.3rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">vscode&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -91605,7 +92374,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">cheat sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91619,7 +92388,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">tutorial&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91633,7 +92402,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">lxd&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -91647,7 +92416,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">container&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91661,7 +92430,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">lxc&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -91675,7 +92444,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">x11&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91687,12 +92456,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#profile">
                 <span class="tag-name" style="
                     
-                        font-size:0.6rem;
+                        font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkRed;
                 ">profile&nbsp;
                 </span>
-                <!--<sup class="tag-count">1</sup>-->
+                <!--<sup class="tag-count">2</sup>-->
             </a>
         
             
@@ -91703,7 +92472,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">snippets&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91731,7 +92500,7 @@
                     
                         font-size:2.1rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">16</sup>-->
@@ -91745,7 +92514,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -91759,7 +92528,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91773,7 +92542,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">multithreading&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91787,7 +92556,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91801,7 +92570,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91815,7 +92584,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateBlue;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -91829,7 +92598,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkGoldenrod;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91843,7 +92612,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateGray;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91857,7 +92626,7 @@
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -91871,7 +92640,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOliveGreen;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -91885,7 +92654,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkTurquoise;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91899,7 +92668,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">mock&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91913,7 +92682,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkOrchid;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91939,12 +92708,12 @@
             <a class="tag" href="https://robobe.github.io/tags/#ros2">
                 <span class="tag-name" style="
                     
-                        font-size:2.4000000000000004rem;
+                        font-size:2.5rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">ros2&nbsp;
                 </span>
-                <!--<sup class="tag-count">19</sup>-->
+                <!--<sup class="tag-count">20</sup>-->
             </a>
         
             
@@ -91955,7 +92724,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">colcon&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -91969,10 +92738,24 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://robobe.github.io/tags/#qos">
+                <span class="tag-name" style="
+                    
+                        font-size:0.7rem;
+                    
+                    color:DarkCyan;
+                ">qos&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
             </a>
         
             
@@ -91983,7 +92766,7 @@
                     
                         font-size:1.8rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">13</sup>-->
@@ -91997,7 +92780,7 @@
                     
                         font-size:1.5rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -92011,7 +92794,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92025,7 +92808,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92039,7 +92822,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92053,7 +92836,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92067,7 +92850,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92081,7 +92864,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGreen;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92095,7 +92878,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92109,7 +92892,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92123,22 +92906,8 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">msgs&nbsp;
-                </span>
-                <!--<sup class="tag-count">1</sup>-->
-            </a>
-        
-            
-            
-            
-            <a class="tag" href="https://robobe.github.io/tags/#qos">
-                <span class="tag-name" style="
-                    
-                        font-size:0.6rem;
-                    
-                    color:DarkRed;
-                ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
             </a>
@@ -92151,7 +92920,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92165,7 +92934,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92179,7 +92948,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92193,7 +92962,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOrchid;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92207,7 +92976,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92221,7 +92990,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92235,7 +93004,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92249,7 +93018,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92263,7 +93032,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92277,7 +93046,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92291,7 +93060,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92305,7 +93074,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkTurquoise;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92319,7 +93088,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92333,7 +93102,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGreen;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92347,7 +93116,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92361,7 +93130,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -92375,7 +93144,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92389,7 +93158,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateGray;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92403,7 +93172,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkSlateGray;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92417,7 +93186,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">embedded&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92431,7 +93200,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">ip&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92445,7 +93214,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGoldenrod;
                 ">ss&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92459,7 +93228,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">ssh&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92473,7 +93242,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">systemd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92487,7 +93256,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92501,7 +93270,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92515,7 +93284,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkRed;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92529,7 +93298,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92557,7 +93326,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateGray;
                 ">networking&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92571,7 +93340,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">serial&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92585,7 +93354,7 @@
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -92599,7 +93368,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92613,7 +93382,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92627,7 +93396,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92655,7 +93424,7 @@
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -92669,7 +93438,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92683,7 +93452,7 @@
                     
                         font-size:1.1rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -92697,7 +93466,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateGray;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92711,7 +93480,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92725,7 +93494,7 @@
                     
                         font-size:0.9rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -92739,7 +93508,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">dev&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92753,7 +93522,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92767,7 +93536,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92781,7 +93550,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92795,7 +93564,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">yaml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92823,7 +93592,7 @@
                     
                         font-size:1.4rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -92837,7 +93606,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92851,7 +93620,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateBlue;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92865,7 +93634,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkOrchid;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92879,7 +93648,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92893,7 +93662,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92907,7 +93676,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkTurquoise;
                 ">Nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92921,7 +93690,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92935,7 +93704,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92949,7 +93718,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -92963,7 +93732,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">lidar&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92977,7 +93746,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -92991,7 +93760,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -93005,7 +93774,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93019,7 +93788,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkGoldenrod;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93033,7 +93802,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93047,7 +93816,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93061,7 +93830,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93075,7 +93844,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93089,7 +93858,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93103,7 +93872,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93117,7 +93886,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkTurquoise;
                 ">tf2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93131,7 +93900,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkViolet;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93159,7 +93928,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOliveGreen;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93173,7 +93942,7 @@
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -93187,7 +93956,7 @@
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">gimbal&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -93262,9 +94031,10 @@
     </div>
 
 
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
     
 
 
@@ -93608,6 +94378,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight-ipynb .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight-ipynb .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight-ipynb .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight-ipynb .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight-ipynb .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight-ipynb .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight-ipynb .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -94821,12 +95592,14 @@ p1._field_types
 
 
 
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </a>
         
@@ -94834,12 +95607,13 @@ p1._field_types
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../bytearray/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bytearray" rel="prev">
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
@@ -94863,7 +95637,7 @@ p1._field_types
             </div>
           </div>
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
           </div>
         </a>
       
@@ -94889,10 +95663,11 @@ p1._field_types
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
         <script src="../../../../../assets/mathjax.js"></script>
       
