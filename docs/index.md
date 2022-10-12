@@ -59,3 +59,22 @@ From hardware to applications. Step by step.
 
             [See projects](projects/index.md){.md-button}
 
+::: row cards
+
+    ::: col
+
+        ::: card
+
+            ## :material-book: ROS2
+
+
+            [Enter](blog/ROS2){.md-button}
+
+    ::: col
+
+        ::: card
+
+            ## :material-file-code: Igition
+
+
+            [Enter](blog/Ignition){.md-button}

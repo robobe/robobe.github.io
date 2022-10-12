@@ -4,6 +4,8 @@ tags:
     - ros_ign
 ---
 
+## ros ign bridge
+
 ros_ign contains packages that provide integration between ROS and Ignition:
 
 - ros_ign: Metapackage that provides all other software packages;
@@ -25,28 +27,9 @@ sudo apt install ros-humble-ros-gz
 ros2 launch ros_ign_gazebo ign_gazebo.launch.py gz_args:="-r camera_sensor.sdf"
 ```
 
-## custom launch
-
-- Run ignition
-- Run bridge
-- Run rviz
 
 
-```python
-# Bridge
-bridge = Node(
-    package='ros_ign_bridge',
-    executable='parameter_bridge',
-    arguments=['/model/vehicle_blue/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist',
-               '/model/vehicle_blue/battery/linear_battery/state@sensor_msgs/msg/BatteryState@ignition.msgs.BatteryState'],
-    output='screen'
-)
-```
+---
 
-!!! tip "copy launch files"
-     ```
-        install(DIRECTORY
-        launch
-        DESTINATION share/${PROJECT_NAME}
-        )
-     ```
+# Reference
+- [ROS + Gazebo Sim demos](https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_sim_demos)
