@@ -59,7 +59,7 @@ theme:
 #
 plugins:
   - search # must be included at the first place
-  - mkdocs-jupyter
+  # - mkdocs-jupyter
   - awesome-pages:
 #   
       # collapse_single_pages: true # replaced by navigation.indexes

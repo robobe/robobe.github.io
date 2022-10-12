@@ -7,6 +7,26 @@ tags:
     - mkdocs
     - tips
 ---
+## image size
+```
+![](images/mkdocs.png){width=50}
+![](images/mkdocs.png){width=150}
+```
+
+![](images/mkdocs.png){width=50}
+
+![](images/mkdocs.png){width=150}
+
+---
+
+## image as url link
+```
+[![](images/mkdocs.png){width=50}](plugins.md)
+```
+
+[![](images/mkdocs.png){width=50}](plugins.md)
+
+---
 
 ## Table cell with multiple line
 using HTML tag `<br>`
