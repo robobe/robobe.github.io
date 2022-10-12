@@ -361,16 +361,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robobe.github.io/blog/ROS2/colcon/</loc>
-         <lastmod>2022-10-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robobe.github.io/blog/ROS2/colcon/colcon_cd/</loc>
-         <lastmod>2022-10-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/</loc>
          <lastmod>2022-10-12</lastmod>
          <changefreq>daily</changefreq>
@@ -392,6 +382,36 @@
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/plugins/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/colcon/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/colcon/colcon_cd/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/cpp/ament_cmake_clang_format/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/python/ament_mypy/</loc>
          <lastmod>2022-10-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -462,6 +482,11 @@
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_ignition/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/launch/launch_node_with_arguments/</loc>
          <lastmod>2022-10-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
