@@ -1,0 +1,19 @@
+---
+parameters:
+  enabled_mavproxy: true
+windows:
+  - name: sitl
+    layout: tiled
+    splits:
+      - commands:
+        - echo "1"
+      - commands:
+        - echo "2"
+    
+  - name: mavproxy
+    if: enabled_mavproxy
+    layout: tiled
+    splits:
+      - commands:
+        - echo "1"
+      

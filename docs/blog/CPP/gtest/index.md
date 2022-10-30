@@ -6,6 +6,12 @@ tags:
     - cmake
 ---
 
+# LAB objective
+- Build cpp project with library using cmake
+- Create testing with GTest
+- Config VSCode
+
+
 ## install
 
 
@@ -33,7 +39,10 @@ sudo apt install libgtest-dev
 
 ---
 
-# lib
+## lib
+- header file (definition)
+- cpp file (declaration)
+- cmake file 
 
 ```cpp title="include/helper/helper.h"
 #pragma once
@@ -55,16 +64,21 @@ namespace helper
 }
 ```
 
-```cpp title="CMakeLists.txt"
+```c title="CMakeLists.txt"
 set (SOURCES
     src/helper.cpp
 )
 add_library(helper ${SOURCES})
 target_include_directories(helper PUBLIC include/helper)
+
 ```
+
 ---
 
 # app
+- cpp file
+- cmake file
+
 
 ```cpp title="app/src/main.cpp"
 #include <iostream>
@@ -87,8 +101,11 @@ target_link_libraries(main helper)
 ---
 
 # test
+- Test file example
+- cmake file
 
-```cpp title="tests/test_helper"
+
+```cpp title="test_helper"
 #include <gtest/gtest.h>
 #include <helper.h>
 
@@ -117,9 +134,16 @@ add_test(
     COMMAND ${EXECUTABLE_OUTPUT_PATH}/${TEST_BINARY}
 )
 ```
+
 ---
 
-# root
+## root
+- Root cmake file
+
+!!! note ""
+     root cmake must contain `enable_testing` cmake function
+     for testing
+
 ```cpp title="tests/CMakeList.txt"
 cmake_minimum_required(VERSION 3.10)
 project(demo)
@@ -130,9 +154,11 @@ add_subdirectory(helper)
 add_subdirectory(app)
 add_subdirectory(tests)
 ```
+
 ---
 
-# Run test
+## usage
+### command line
 
 ```bash
 ctest -VV
@@ -157,7 +183,9 @@ test 1
 1/1 Test #1: demo_test ........................   Passed    0.00 sec
 ```
 
-# VSCode
+---
+
+## VSCode
 [VSCode marketplace](https://marketplace.visualstudio.com/items?itemName=matepek.vscode-catch2-test-adapter)
 
 ![](../images/cmake_test_icon.png)

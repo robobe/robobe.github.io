@@ -72,6 +72,7 @@ Show information about ROS interfaces
 - package: Output a list of available interface types within one package
 - show: Output the interface definition
 
+
 ```bash
 ros2 interface  package rosmav_msgs 
 # Result
@@ -85,6 +86,7 @@ bool success   # indicate successful run of triggered service
 string message # informational, e.g. for error messages
 
 ```
+
 ---
 
 # References

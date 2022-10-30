@@ -21,6 +21,12 @@ project(HelloWorld)
 add_executable(hello_world hello_world.c)
 ```
 
+## Add compiler option
+
+```c
+add_compile_options(-Wall -Wextra -Wpedantic)
+```
+
 ---
 
 # Reference

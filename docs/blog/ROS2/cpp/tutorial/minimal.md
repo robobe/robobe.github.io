@@ -4,6 +4,11 @@ tags:
     - cpp
     - node
 ---
+## Create package
+```bash
+ros2 pkg create <package_name> --build-type ament_cmake --dependencies <package_dependencies>
+
+```
 
 ## Minimal Node
 
@@ -51,7 +56,30 @@ install(TARGETS
 ament_package()
 ```
 
+!!! tip "copy/install binaries"
+     ```
+    install(TARGETS
+      <binary name/target>
+    DESTINATION lib/${PROJECT_NAME}
+    )
+     ```
+
+
+!!! tip "copy/install folders"
+     ```
+    install(DIRECTORY
+      launch
+    DESTINATION share/${PROJECT_NAME}
+    )
+     ```
 ---
+
+### build
+
+```bash
+# from WS root folder
+colcon build --package-select <package name>
+```
 ### usage
 
 ```bash
