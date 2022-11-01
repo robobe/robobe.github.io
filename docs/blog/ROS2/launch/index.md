@@ -20,6 +20,32 @@ tags:
 ---
 
 # tips
+## Minimal launch file
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+from launch.actions import LogInfo
+
+def generate_launch_description():
+    ld = LaunchDescription()
+
+    sim_node =  Node(
+            package='turtlesim',
+            namespace='turtlesim1',
+            executable='turtlesim_node',
+            name='sim'
+        )
+
+    log_launch = LogInfo(msg="---- log launch file ------")
+
+    ld.add_action(log_launch)
+    ld.add_action(sim_node)
+    return ld
+```
+
+---
+
 ## copy launch folder
 ### cmake
 
@@ -44,7 +70,7 @@ setup(
     data_files=[
         # ... Other data files
         # Include all launch files.
-        (os.path.join('share', package_name), glob('launch/*launch.[pxy][yma]*'))
+        (os.path.join('share', package_name, 'launch'), glob('launch/*launch.[pxy][yma]*'))
     ]
 )
 ```
