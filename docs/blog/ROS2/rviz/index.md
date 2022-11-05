@@ -35,3 +35,9 @@ def generate_launch_description():
     ld.add_action(rviz_node)
     return ld
 ```
+
+---
+
+# Reference
+
+- [rviz marker](https://velog.io/@cjh1995-ros/ROS2-RVIZ-Marker)

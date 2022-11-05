@@ -4,9 +4,20 @@ tags:
     - ignition
     - ros2
     - bridge
+    - 
 ---
 
-## JointStatePublisher
+![](image/joint_state_robot_state.drawio.png)
+
+---
+
+## Robot_State_Publisher
+
+robot_state_publisher uses the URDF specified by the parameter robot_description and the joint positions from the topic `joint_states` to calculate the forward kinematics of the robot and publish the results via tf.
+
+---
+
+## Joint_State_Publisher
 The JointStatePub system publishes state information for a model. The published message type is ignition::msgs::Model, and the publication topic is `/world/<world_name>/model/<model_name>/state`.
 
 ```xml
@@ -15,6 +26,10 @@ The JointStatePub system publishes state information for a model. The published 
     name="ignition::gazebo::systems::JointStatePublisher">
 </plugin>
 ```
+
+
+
+---
 
 # Reference
 - [double_pendulum_model](https://github.com/gazebosim/ros_gz/blob/ros2/ros_gz_sim_demos/models/double_pendulum_model.sdf)
