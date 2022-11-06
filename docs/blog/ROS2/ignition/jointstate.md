@@ -13,7 +13,7 @@ tags:
 
 ## Robot_State_Publisher
 
-robot_state_publisher uses the URDF specified by the parameter robot_description and the joint positions from the topic `joint_states` to calculate the forward kinematics of the robot and publish the results via tf.
+robot_state_publisher uses the URDF specified by the parameter robot_description and the joint positions from the topic `joint_states`` to calculate the forward kinematics of the robot and publish the results via tf.
 
 ---
 
@@ -28,7 +28,9 @@ The JointStatePub system publishes state information for a model. The published 
 ```
 
 
-
+```
+ros2 topic pub  /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+```
 ---
 
 # Reference
