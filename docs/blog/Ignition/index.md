@@ -9,6 +9,27 @@ tags:
     Newer version `garden` for example move from `ign` to `gz` 
      
 
+# official site
+
+[gazebo sim](https://app.gazebosim.org/dashboard)
+
+
+|   |   |
+|---|---|
+| IGN_GAZEBO_RESOURCE_PATH  |   |
+| IGN_GAZEBO_SYSTEM_PLUGIN_PATH |  |
+
+```
+export IGN_GAZEBO_RESOURCE_PATH=~/projects/ign_tutorial/worlds:~/projects/ign_tutorial/models
+```
+
+```
+$ ign topic -t "/model/vehicle_blue/cmd_vel" -m ignition.msgs.Twist -p "linear: {x: 0.5}, angular: {z: 0.05}"
+```
+
+```
+/usr/share/ignition/ignition-gazebo6/worlds
+```
 ## Resource 
 [fortress LTS docs](https://gazebosim.org/docs/fortress)
 [gazebodoc](https://gazebosim.org/api/sim/6/resources.html)
