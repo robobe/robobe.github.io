@@ -5,7 +5,7 @@ tags:
 ---
 
 ## transformations
-Coordinate transformations are a a mathematical tool to convert/represent one set of coordinate to other.
+A transform specifies how data expressed in a frame can be transformed into a different frame
 
 
 ## tf
@@ -15,6 +15,8 @@ each frame is defined by **one** (and only one) transform from another frame, bu
 
 `tf2` library using topics `/tf` and `/tf_static` th handle communication, because the tf2 library pub/sub the messages we call it `broadcasting` and `listening`
 
+
+**tf_echo**:  returns the transforms between any connected frames
 ---
 
 ## install tf2 tools and helper libraries
