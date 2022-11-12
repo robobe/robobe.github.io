@@ -28,6 +28,18 @@ tags:
 
 ---
 
+## image align
+![](images/mkdocs.png){ align=left width=150}
+Text on right side<br>
+Text on right side<br>
+Text on right side<br>
+Text on right side<br>
+
+```
+![](images/mkdocs.png){ align=left width=150}
+```
+---
+
 ## Table cell with multiple line
 using HTML tag `<br>`
 

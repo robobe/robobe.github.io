@@ -1,35 +1,65 @@
 ---
-title: Ignition ROS2
+title: ROS2 Gazebo
 tags:
-    - ros_ign
+    - ign
+    - gz
+    - ros2
 ---
 
-## ros ign bridge
+## gz environment variables
+|   |   |
+|---|---|
+| IGN_GAZEBO_RESOURCE_PATH  |   |
+| IGN_GAZEBO_SYSTEM_PLUGIN_PATH |  |
 
-ros_ign contains packages that provide integration between ROS and Ignition:
 
-- ros_ign: Metapackage that provides all other software packages;
-- ros_ign_image: Use image_transport to transfer the image from Ignition to the one-way transmission bridge of ROS;
-- ros_ign_bridge: Two-way transmission bridge between Ignition and ROS;
-- ros_ign_gazebo: It is convenient to use the startup files and executable files of Ignition Gazebo and ROS;
-- ros_ign_gazebo_demos: Demos using ROS-Ignition integration;
-- ros_ign_point_cloud: A plug-in used to simulate publishing point clouds to ROS from Ignition Gazebo
+## dependencies
 
-### install
 ```
 sudo apt install ros-humble-ros-gz
 ```
 
----
+## copy folder to install folder
 
-## launch
-```bash
-ros2 launch ros_ign_gazebo ign_gazebo.launch.py gz_args:="-r camera_sensor.sdf"
+```c
+install(DIRECTORY
+    launch
+    models
+    world
+DESTINATION share/${PROJECT_NAME}
+)
 ```
 
-
-
 ---
 
-# Reference
-- [ROS + Gazebo Sim demos](https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_sim_demos)
+## minimum launch
+
+```python
+import os
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
+def generate_launch_description():
+    ld = LaunchDescription()
+
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+    pkg = get_package_share_directory('ign_tutorial')
+
+    resources = [
+        os.path.join(pkg, "worlds"),
+        os.path.join(pkg, "models")
+    ]
+    resource_env = SetEnvironmentVariable(name="IGN_GAZEBO_RESOURCE_PATH", value=":".join(resources))
+
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+            launch_arguments={'gz_args': '-r -v 2 empty.sdf'}.items(),
+    )
+
+    ld.add_action(resource_env)
+    ld.add_action(gazebo)
+    return ld
+```

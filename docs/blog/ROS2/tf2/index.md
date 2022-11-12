@@ -32,3 +32,4 @@ ros-humble-rqt-tf-tree
 
 # Reference
 - [Getting Ready for ROS Part 6: The Transform System (TF)](https://articulatedrobotics.xyz/ready-for-ros-6-tf/)
+- [ROS Transformations and frames](https://linklab-uva.github.io/autonomousracing/assets/files/L11-compressed.pdf)

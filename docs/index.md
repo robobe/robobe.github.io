@@ -77,4 +77,4 @@ From hardware to applications. Step by step.
             ## :material-file-code: Igition
 
 
-            [Enter](blog/Ignition){.md-button}
+            [Enter](blog/ROS2/ignition/){.md-button}
