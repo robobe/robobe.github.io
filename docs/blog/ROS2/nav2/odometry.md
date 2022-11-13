@@ -16,3 +16,4 @@ ROS used `odom` frame to mark the point in the world where the robot first start
 
 # Reference 
 - [Odometry in ROS 2](https://automaticaddison.com/set-up-the-odometry-for-a-simulated-mobile-robot-in-ros-2/)
+- [Sensor Fusion Using the Robot Localization Package](https://automaticaddison.com/sensor-fusion-using-the-robot-localization-package-ros-2/)
