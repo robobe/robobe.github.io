@@ -20,7 +20,7 @@ tags:
 
 ## model with camera
 
-- Based on vehicle model from [this post](joint_state_sdf_model.md)
+- Based on vehicle model from [this post](../joint_state_sdf_model.md)
 - Add this lines to exists model
 
 !!! tip "don't forget"

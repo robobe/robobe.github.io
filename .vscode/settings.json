@@ -4,6 +4,7 @@
     "plantuml.render": "Local",
     "cSpell.words": [
         "Turtlebot"
-    ]
+    ],
+    "ros.distro": "humble"
 
 }
