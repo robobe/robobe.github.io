@@ -1,2 +1,3 @@
 nav:
     - joint_state_sdf_model.md
+    - diff_drive_and_odometry.md
