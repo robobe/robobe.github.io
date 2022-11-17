@@ -6,7 +6,6 @@ banner: ../ros2.png
 tags:
     - ros2
     - launch
-    - 101
 ---
 
 ## launch source code
@@ -69,9 +68,6 @@ ros2 topic list
 /rosout
 ```
 
-!!! Node
-    - `/rosout`: ??
-    - `/parameter_event`: ??
 
 ### rqt_graph
 
