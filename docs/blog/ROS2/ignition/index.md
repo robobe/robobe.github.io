@@ -12,14 +12,11 @@ tags:
 | IGN_GAZEBO_RESOURCE_PATH  |   |
 | IGN_GAZEBO_SYSTEM_PLUGIN_PATH |  |
 
+---
 
-## dependencies
+# ROS2
 
-```
-sudo apt install ros-humble-ros-gz
-```
-
-## copy folder to install folder
+## ROS2 copy folder to install folder
 
 ```c
 install(DIRECTORY

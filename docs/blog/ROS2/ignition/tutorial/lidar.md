@@ -96,8 +96,11 @@ lidar_tf = Node(
 
 ![](images/lidar_ignition.png)
 
+### Point cloud
 ![](images/lidar_rviz_point_cloud.png)
 
+
+### laser scan
 ![](images/lidar_rviz_scan.png)
 
 

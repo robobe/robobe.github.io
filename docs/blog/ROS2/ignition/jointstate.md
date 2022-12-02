@@ -58,7 +58,8 @@ The JointStatePub system publishes state information for a model. The published 
 
 ### launch
 
-```python title="mobile.launch.py" linenums="1" hl_lines="1"
+
+```python title="mobile.launch.py" linenums="1" hl_lines="52-64"
 import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
@@ -144,6 +145,8 @@ def generate_launch_description():
 
 ```
 
+---
+
 ```bash
 ign topic --list
 /clock
@@ -165,10 +168,12 @@ Publishers [Address, Message Type]:
   tcp://172.18.0.1:46571, ignition.msgs.Model
 
 ```
+
 ---
 
 ### urdf
-```xml
+
+```xml title="basic_mobile_robot.urdf.xacro" linenums="1" hl_lines="186-189"
 <?xml version="1.0" ?>
 <robot name="basic_mobile_bot" xmlns:xacro="http://ros.org/wiki/xacro">
 

@@ -24,14 +24,17 @@ tags:
 - Add this lines to exists model
 
 !!! tip "don't forget"
-     World sdf must contain `sensors` plugin
+    World sdf must contain `sensors` plugin
 
-     ```xml
+    ```xml
      <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
       <render_engine>ogre</render_engine>
     </plugin>
-     ```
+    ```
 
+---
+
+### camera link and sensor
 ```xml
 <frame name="camera_frame" attached_to='chassis'>
     <pose>-0.8 0 1.5 0 0 0</pose>
@@ -87,7 +90,20 @@ tags:
 
 ```
 
-## launch
+
+### Cli
+
+```bash title="terminal2"
+ros2 run ros_gz_bridge parameter_bridge /gimbal/camera@sensor_msgs/msg/Image@ignition.msgs.Image
+
+```
+
+
+```bash title="terminal3"
+ros2 run rqt_image_view rqt_image_view
+```
+
+### launch
 
 ```python
 import os
