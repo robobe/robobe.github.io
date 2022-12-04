@@ -456,6 +456,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/ROS2/cli/action/</loc>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/</loc>
          <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
@@ -787,6 +792,21 @@
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/test_demo/</loc>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/python/action/action_client/</loc>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/python/action/action_server/</loc>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/ROS2/python/action/create_custom_action_msg/</loc>
          <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
