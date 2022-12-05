@@ -38,7 +38,7 @@ tags:
 
 # Extensions
 
-![](2022-11-12-07-57-17.png){ align=left }
+![](images/xml.png){ align=left }
 
 [xml red hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
 

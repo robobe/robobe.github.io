@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
 ```
 
-```python title=minimal_sta"
+```python title="minimal_sta"
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor
