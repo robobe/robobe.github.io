@@ -76,30 +76,25 @@ import os
 package_name = "skbot_gazebo"
 world_file = "empty.world"
 
-
 def generate_launch_description():
 
     ld = LaunchDescription()
 
     pkg_gazebo_ros = get_package_share_directory("gazebo_ros")
-    pkg_simulation = get_package_share_directory(package_name)
+    pkg = get_package_share_directory(package_name)
 
-    # launch Gazebo by including its definition
+    world = os.path.join(pkg, "worlds", world_file),
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, "launch", "gazebo.launch.py"),
-        )
+        ),
+        launch_arguments={'verbose': "true", 'world': world}.items()
     )
 
-    # load the world file
-    world_arg = DeclareLaunchArgument(
-        "world",
-        default_value=[os.path.join(pkg_simulation, "worlds", world_file), ""],
-        description="empty world",
-    )
-
+    
     ld.add_action(gazebo)
-    ld.add_action(world_arg)
+    
     return ld
 
 ```
