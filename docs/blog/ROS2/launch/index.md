@@ -12,14 +12,15 @@ tags:
 ---
 
 # Resources
+- [ROS2 launch files – All you need to know](https://roboticscasual.com/tutorial-ros2-launch-files-all-you-need-to-know/)
 - [Architecture of launch](https://github.com/ros2/launch/blob/humble/launch/doc/source/architecture.rst#id71)
-- [launch source guthub](https://github.com/ros2/launch/tree/humble/launch)
+- [launch source github](https://github.com/ros2/launch/tree/humble/launch)
 - [Creating a launch file tutorial](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Creating-Launch-Files.html)
 
 
 ---
 
-# tips
+# Tips
 ## Minimal launch file
 
 ```python
@@ -74,10 +75,3 @@ setup(
     ]
 )
 ```
-
-
-
----
-
-# Reference
-- [Architecture of launch](https://github.com/ros2/launch/blob/humble/launch/doc/source/architecture.rst)

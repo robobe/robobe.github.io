@@ -1,7 +1,0 @@
-nav:
-    - launch_with_arguments.md
-    - launch_node_with_arguments.md
-    - launch_ignition.md
-    - launch_with_include.md
-    - launch_node_respawn.md
-    - launch_node_respawn_event.md
