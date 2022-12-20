@@ -41,12 +41,23 @@
             ## :material-file-code: Ignition
 
             [![](images/ignition.png){width=50}](ignition/index.md)
+
+    ::: col
+
+        ::: card
+
+            ## :material-file-code: Gazebo
+
+            [![](images/gazebo.png){width=50}](gazebo/index.md)
             
 
 
 ## books
 - A Concise Introduction to Robot Programming with ROS2
 
+## good sites
+- [articulatedrobotics](https://articulatedrobotics.xyz)
+  
 ## packages to check
 - [YASMIN State machine](https://github.com/uleroboticsgroup/yasmin#python)
 - [gym-ignition](https://github.com/robotology/gym-ignition)

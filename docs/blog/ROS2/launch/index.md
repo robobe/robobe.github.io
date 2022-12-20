@@ -5,7 +5,10 @@ tags:
     - launch
 ---
 
-# Tutorials
+# My Tutorials
+- [Setup tutorial pkg](setup.md)
+
+
 - [Run launch file that include other launch files](launch_with_include.md)
 
 

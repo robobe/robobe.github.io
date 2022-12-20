@@ -40,12 +40,6 @@ orientation:{x: 0.0, y: 0.706825181105366, z: 0.0, w: 0.7073882691671998}}, \
 reference_frame: world}"
 ```
 
-
-```
-ros2 service call /set_entity_state gazebo_msgs/srv/SetEntityState "state: {name: landmark, \
-pose: {position:{x: 1.0, y: 0.0, z: 2.0}}, \
-reference_frame: world}"
-```
 ---
 
 # Reference

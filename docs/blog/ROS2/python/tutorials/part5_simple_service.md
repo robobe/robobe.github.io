@@ -15,18 +15,16 @@ tags:
 import rclpy
 from rclpy.node import Node
 from std_srvs.srv import SetBool
+from std_srvs.srv._set_bool import SetBool_Request, SetBool_Response
 
 class MinimalService(Node):
-
     def __init__(self):
         super().__init__('minimal_service')
         self.srv = self.create_service(SetBool, 'echo_service', self.echo_callback)
 
-    def echo_callback(self, request, response: SetBool.Response):
-        self.get_logger().info(str(type(request)))
-        self.get_logger().info(str(type(response)))
-        self.get_logger().info("Incoming request")
-        response.success = True
+    def echo_callback(self, request: SetBool_Request, response: SetBool_Response) -> SetBool_Response:
+        self.get_logger().info("Service callback")
+        response.success = request.data
         response.message = "success"
         return response
 
@@ -35,6 +33,7 @@ def main(args=None):
     rclpy.init(args=args)
     minimal_service = MinimalService()
     rclpy.spin(minimal_service)
+    minimal_service.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
