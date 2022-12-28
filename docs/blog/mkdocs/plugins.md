@@ -60,3 +60,25 @@ plugins:
 ```
 
 - The first h1 header (#) in your notebook will be used as the title.
+
+---
+
+# Video
+
+This plugin allows you to embed videos on the documentation pages using a simple Markdown syntax. [github](https://github.com/soulless-viewer/mkdocs-video)
+
+```bash title="install"
+pip install mkdocs-video
+```
+
+### config
+```yml title="mkdocs.yml"
+plugins:
+  - mkdocs-video
+```
+
+### usage
+
+```
+![type:video](https://www.youtube.com/embed/LXb3EKWsInQ)
+```
