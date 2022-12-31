@@ -30,14 +30,6 @@
 
         ::: card
 
-            ## :material-book: tutorials
-
-            [Read news](tutorials/index.md){.md-button}
-
-    ::: col
-
-        ::: card
-
             ## :material-file-code: Ignition
 
             [![](images/ignition.png){width=50}](ignition/index.md)

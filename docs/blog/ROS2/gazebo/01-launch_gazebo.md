@@ -2,42 +2,10 @@
 title: Part1 - launch gazebo
 description: launch gazebo simple example
 date: "2022-05-02"
-banner: ../ros2.png
 tags:
     - gazebo
     - launch
     - 101
----
-
-# project tree
-
-```
-skbot_description/
-├── CMakeLists.txt
-├── config
-├── launch
-├── meshes
-├── package.xml
-├── sdf
-└── urdf
-  ├── skbot.xacro
-  ├── macros.xacro
-  ├── gazebo.xacro
-  └── materials.xacro
-```
-
-```
-skbot_gazebo/
-├── CMakeLists.txt
-├── include
-├── launch
-├── models
-├── package.xml
-├── src
-└── worlds
-  └── empty.world
-```
-
 ---
 
 # gazebo_ros
@@ -46,10 +14,23 @@ Provides ROS plugins that offer message and service publishers for interfacing w
 ```bash
 sudo apt install ros-foxy-gazebo-ros
 ```
+---
+## project
+[my ros2_gazebo_tutorial](https://github.com/robobe/ros2_gazebo_tutorial)
+
+```
+├── CMakeLists.txt
+├── launch
+│   └── basic_gazebo.launch.py
+├── package.xml
+└── worlds
+    └── empty.world
+
+```
 
 ---
 
-## launch empty world
+## world
 
 ```xml title="empty.world"
 <?xml version='1.0'?>
@@ -65,60 +46,22 @@ sudo apt install ros-foxy-gazebo-ros
 </sdf>
 ```
 
-```python title="simple.launch.py"
-from ament_index_python.packages import get_package_share_directory
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.actions import IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-import os
+## launch
 
-package_name = "skbot_gazebo"
-world_file = "empty.world"
-
-def generate_launch_description():
-
-    ld = LaunchDescription()
-
-    pkg_gazebo_ros = get_package_share_directory("gazebo_ros")
-    pkg = get_package_share_directory(package_name)
-
-    world = os.path.join(pkg, "worlds", world_file),
-
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_gazebo_ros, "launch", "gazebo.launch.py"),
-        ),
-        launch_arguments={'verbose': "true", 'world': world}.items()
-    )
-
-    
-    ld.add_action(gazebo)
-    
-    return ld
-
+```python title="basic_gazebo.launch.py" linenums="1" hl_lines="25 31 35"
+--8<-- "/home/user/ros2_ws/src/ros2_gazebo_tutorial/launch/basic_gazebo.launch.py"
 ```
 
+## cmake
+- Copy launch and world folders 
+
+
 ```cmake title="CMakeLists.txt"
+# Add this line to CMakeLists.txt
+
 install(DIRECTORY
-  models
-  DESTINATION share/${PROJECT_NAME}/
-)
-install(DIRECTORY
+  launch
   worlds
   DESTINATION share/${PROJECT_NAME}/
 )
-install(DIRECTORY
-  media
-  DESTINATION share/${PROJECT_NAME}/
-)
-install(TARGETS
-  myPlugin
-  DESTINATION lib
-)
-```
-
-### usage
-```bash
-ros2 launch skbot_gazebo simple.launch.py
 ```
