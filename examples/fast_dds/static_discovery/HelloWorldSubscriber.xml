@@ -1,0 +1,13 @@
+<staticdiscovery>
+	<participant>
+		<name>HelloWorldSubscriber</name>
+		<reader>
+			<userId>103</userId>
+			<entityID>104</entityID>
+            <topicName>rt/chatter</topicName>
+			<topicDataType>std_msgs::msg::dds_::String_</topicDataType>
+			<topicKind>NO_KEY</topicKind>
+			<reliabilityQos>RELIABLE_RELIABILITY_QOS</reliabilityQos>
+		</reader>
+	</participant>
+</staticdiscovery>

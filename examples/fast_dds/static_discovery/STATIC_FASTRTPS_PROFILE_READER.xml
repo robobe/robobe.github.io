@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds>
+    <log>
+        <use_default>FALSE</use_default>
+        <consumer>
+            <class>FileConsumer</class>
+            <property>
+                <name>filename</name>
+                <value>fastdds_log_datareader.log</value>
+            </property>
+            <property>
+                <name>append</name>
+                <value>FALSE</value>
+            </property>
+        </consumer>
+    </log>
+
+    <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+        <participant profile_name="HelloWorldSubscriber" is_default_profile="true">
+            <rtps>
+                <name>HelloWorldSubscriber</name>
+                <builtin>
+                    <discovery_config>
+                        <EDP>STATIC</EDP>
+                        <!-- <static_edp_xml_config>file://./HelloWorldCombined.xml</static_edp_xml_config> -->
+                        <static_edp_xml_config>file://./HelloWorldPublisher.xml</static_edp_xml_config>
+
+                        <!-- <initialAnnouncements>
+                            <count>3</count>
+                            <period>
+                                <sec>1</sec>
+                            </period>
+                        </initialAnnouncements> -->
+                    </discovery_config>
+                </builtin>
+            </rtps>
+        </participant>
+
+        <!-- Publisher profile for topic helloworld -->
+        <data_reader profile_name="/chatter">
+            <!-- <userDefinedID>43</userDefinedID> -->
+            <userDefinedID>103</userDefinedID>
+            <entityID>104</entityID>
+        </data_reader>
+
+    </profiles>
+</dds>

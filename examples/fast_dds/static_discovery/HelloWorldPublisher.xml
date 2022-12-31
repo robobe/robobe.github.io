@@ -1,0 +1,13 @@
+<staticdiscovery>
+	<participant>
+		<name>HelloWorldPublisher</name>
+		<writer>
+			<userId>101</userId>
+			<entityID>102</entityID>
+            <topicName>rt/chatter</topicName>
+			<topicDataType>std_msgs::msg::dds_::String_</topicDataType>
+			<topicKind>NO_KEY</topicKind>
+			<reliabilityQos>RELIABLE_RELIABILITY_QOS</reliabilityQos>
+		</writer>
+	</participant>
+</staticdiscovery>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds>
+    <log>
+        <use_default>FALSE</use_default>
+        <consumer>
+            <class>FileConsumer</class>
+            <property>
+                <name>filename</name>
+                <value>fastdds_log_datawriter.log</value>
+            </property>
+            <property>
+                <name>append</name>
+                <value>FALSE</value>
+            </property>
+        </consumer>
+    </log>
+
+    <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+        <participant profile_name="HelloWorldPublisher" is_default_profile="true">
+            <rtps>
+                <name>HelloWorldPublisher</name>
+                <builtin>
+                    <discovery_config>
+                        <EDP>STATIC</EDP>
+                        <!-- <static_edp_xml_config>file://./HelloWorldCombined.xml</static_edp_xml_config> -->
+                        <static_edp_xml_config>file://./HelloWorldSubscriber.xml</static_edp_xml_config>
+                    </discovery_config>
+                </builtin>
+            </rtps>
+        </participant>
+
+        <!-- Publisher profile for topic helloworld -->
+        <data_writer profile_name="/chatter">
+            <!-- <userDefinedID>42</userDefinedID> -->
+            <userDefinedID>101</userDefinedID>
+            <entityID>102</entityID>
+        </data_writer>
+
+    </profiles>
+</dds>
