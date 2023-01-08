@@ -5479,282 +5479,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#launchultrasoniclaunchpyimport-osfrom-launch-import-launchdescriptionfrom-launchactions-import-appendenvironmentvariable-includelaunchdescription-declarelaunchargumentfrom-launchsubstitutions-import-launchconfigurationfrom-launchlaunch_description_sources-import-pythonlaunchdescriptionsourcefrom-ament_index_pythonpackages-import-get_package_share_directoryfrom-launch_rosactions-import-nodeimport-xacropackage_name--ros2_gazebo_tutorialworld--cameraworldmodel--ultrasonicsdf--modelsdfdef-generate_launch_description----pkg--get_package_share_directorypackage_name----pkg_gazebo_ros--get_package_share_directorygazebo_ros----model_sdf_full_path--ospathjoinpkg-models-model-modelsdf----sim_time--launchconfigurationsim_time----arg_sim_time--declarelaunchargumentsim_time-default_valuetrue----resources----------ospathjoinpkg-worlds------------resource_env--appendenvironmentvariablenamegazebo_resource_path-valuejoinresources----start_gazebo_server_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzserverlaunchpy--------launch_arguments------------verbose-true-------------world-worlditems----start_gazebo_client_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzclientlaunchpy----robot_description_path--ospathjoinpkg-models-model-sdf----doc--xacroparseopenrobot_description_path----xacroprocess_docdoc----robot_state_publisher--node--------packagerobot_state_publisher--------executablerobot_state_publisher--------parameters----------------------------use_sim_time-sim_time-----------------robot_description-doctoxml----------------------------spawn_entity_cmd--node--------packagegazebo_ros---------executablespawn_entitypy--------arguments-entity-robot_name_in_model----------file-model_sdf_full_path---------x-0---------y-0---------z-005--------outputscreen----rviz--node--------packagerviz2--------executablerviz2--------arguments-d-ospathjoinpkg-config-ultrasonicrviz--------link_tf--node--------packagetf2_ros--------executablestatic_transform_publisher--------namelink2world--------arguments--0-0-005-0-0-0-world-link--------ld--launchdescription----ldadd_actionarg_sim_time----ldadd_actionresource_env----ldadd_actionstart_gazebo_server_cmd----ldadd_actionstart_gazebo_client_cmd----ldadd_actionrobot_state_publisher----ldadd_actionspawn_entity_cmd----ldadd_actionrviz----ldadd_actionlink_tf----return-ld" class="md-nav__link">
-    launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-
-  </a>
-  
-    <nav class="md-nav" aria-label="launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#tf" class="md-nav__link">
     tf
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test-sensor-read" class="md-nav__link">
     Test sensor read
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#ultrasonic_demo_pyusrbinenv-python3import-rclpyfrom-rclpynode-import-nodefrom-sensor_msgsmsg-import-rangefrom-rclpyqos-import-qos_profile_sensor_datatopic_range--ultrasonic_sensor_1class-mynodenode----def-__init__self--------node_nameultrasonic_demo--------super__init__node_name--------selfcreate_subscriptionrange-topic_range-self__range_handler-qos_profileqos_profile_sensor_data--------selfget_loggerinfohello-ultrasonic----def-__range_handlerself-msg-range--------selfget_loggerinfostrmsgrangedef-mainargsnone----rclpyinitargsargs----node--mynode----rclpyspinnode----nodedestroy_node----rclpyshutdownif-__name__--__main__----main" class="md-nav__link">
-    ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-
-  </a>
-  
-    <nav class="md-nav" aria-label="ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#run" class="md-nav__link">
     run
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-again" class="md-nav__link">
     run again
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7684,6 +7432,8 @@ if __name__ == &#39;__main__&#39;:
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_10_19">
@@ -7706,6 +7456,20 @@ if __name__ == &#39;__main__&#39;:
     <li class="md-nav__item">
       <a href="../../../tutorials/custom_debian_package/" class="md-nav__link">
         Building a custom debian package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/logging/" class="md-nav__link">
+        ROS2 logging
       </a>
     </li>
   
@@ -167256,6 +167020,1589 @@ if __name__ == &#39;__main__&#39;:
         
       
     
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+      
+    
   
 
   
@@ -254677,7 +256024,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">ai&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -254691,7 +256038,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:3.0rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">101&nbsp;
                 </span>
                 <!--<sup class="tag-count">25</sup>-->
@@ -254705,7 +256052,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">pytorch&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -254719,7 +256066,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">classification&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254733,7 +256080,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.1rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkSlateGray;
                 ">nvidia&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -254747,7 +256094,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkTurquoise;
                 ">cuda&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -254761,7 +256108,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">install&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -254775,7 +256122,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">tensorrt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254789,7 +256136,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">yolo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254803,7 +256150,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">ardupilot&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -254817,7 +256164,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">None&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -254831,7 +256178,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">sitl&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -254845,7 +256192,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">plugin&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -254873,7 +256220,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkViolet;
                 ">gtest&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -254887,7 +256234,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">ctest&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254901,7 +256248,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.9000000000000001rem;
                     
-                    color:DarkCyan;
+                    color:DarkRed;
                 ">cpp&nbsp;
                 </span>
                 <!--<sup class="tag-count">14</sup>-->
@@ -254915,7 +256262,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">format&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254929,7 +256276,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">fmt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254957,7 +256304,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">spdlog&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -254971,7 +256318,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">camera&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -254985,7 +256332,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGreen;
                 ">coordinate system&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -254999,7 +256346,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">orb&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255013,7 +256360,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">matching&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255027,7 +256374,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.1rem;
                     
-                    color:DarkRed;
+                    color:DarkTurquoise;
                 ">opencv&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -255041,7 +256388,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOliveGreen;
                 ">build&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255055,7 +256402,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkMagenta;
                 ">transformation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255069,7 +256416,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">computer vision&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255083,7 +256430,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">homography&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255097,7 +256444,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">optical flow&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255111,7 +256458,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">of&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255125,7 +256472,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">trackers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255139,7 +256486,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">cv&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255153,7 +256500,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">dds&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -255167,7 +256514,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">cyclonedds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255181,7 +256528,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">eprosima&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255195,7 +256542,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">fastdds&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255209,7 +256556,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">simulation&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255223,7 +256570,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:3.2rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">gazebo&nbsp;
                 </span>
                 <!--<sup class="tag-count">27</sup>-->
@@ -255237,7 +256584,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkTurquoise;
                 ">config&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255249,12 +256596,12 @@ if __name__ == &#39;__main__&#39;:
             <a class="tag" href="https://robobe.github.io/tags/#ros2">
                 <span class="tag-name" style="
                     
-                        font-size:8.8rem;
+                        font-size:8.9rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">ros2&nbsp;
                 </span>
-                <!--<sup class="tag-count">83</sup>-->
+                <!--<sup class="tag-count">84</sup>-->
             </a>
         
             
@@ -255265,7 +256612,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.5rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">ignition&nbsp;
                 </span>
                 <!--<sup class="tag-count">10</sup>-->
@@ -255279,7 +256626,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -255293,7 +256640,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">sdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -255307,7 +256654,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.3rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">tips&nbsp;
                 </span>
                 <!--<sup class="tag-count">8</sup>-->
@@ -255321,7 +256668,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkRed;
                 ">ign-transport&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255335,7 +256682,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.1rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkMagenta;
                 ">sensors&nbsp;
                 </span>
                 <!--<sup class="tag-count">6</sup>-->
@@ -255363,7 +256710,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">tools&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255377,7 +256724,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">youtube&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255391,7 +256738,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkMagenta;
                 ">aptly&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255405,7 +256752,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">apt&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255419,7 +256766,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">deb&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -255433,7 +256780,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkCyan;
                 ">docker&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -255461,7 +256808,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">cheat sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255473,12 +256820,12 @@ if __name__ == &#39;__main__&#39;:
             <a class="tag" href="https://robobe.github.io/tags/#tutorial">
                 <span class="tag-name" style="
                     
-                        font-size:1.4rem;
+                        font-size:1.5rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkMagenta;
                 ">tutorial&nbsp;
                 </span>
-                <!--<sup class="tag-count">9</sup>-->
+                <!--<sup class="tag-count">10</sup>-->
             </a>
         
             
@@ -255489,7 +256836,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">lxd&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -255503,7 +256850,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">container&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255517,7 +256864,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">lxc&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -255531,7 +256878,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">x11&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255545,7 +256892,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkRed;
                 ">profile&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255559,7 +256906,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">video&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -255573,7 +256920,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">ffmpeg&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255587,7 +256934,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">gstreamer&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -255601,7 +256948,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">cheat-sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255615,7 +256962,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">sdp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255629,7 +256976,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkCyan;
                 ">gi&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -255643,7 +256990,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">snippets&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255657,7 +257004,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGreen;
                 ">cheat Sheet&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255671,7 +257018,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:3.4000000000000004rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">python&nbsp;
                 </span>
                 <!--<sup class="tag-count">29</sup>-->
@@ -255685,7 +257032,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkOrchid;
                 ">asyncio&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -255699,7 +257046,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">future&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255713,7 +257060,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">numpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255727,7 +257074,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">project&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -255741,7 +257088,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">template&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -255755,7 +257102,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">black&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255769,7 +257116,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">isort&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255783,7 +257130,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkViolet;
                 ">mypy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255797,7 +257144,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.0rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">unittest&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -255811,7 +257158,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">pytest&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -255825,7 +257172,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">pylint&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255839,7 +257186,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">mock&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255853,7 +257200,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">iterator&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255879,12 +257226,12 @@ if __name__ == &#39;__main__&#39;:
             <a class="tag" href="https://robobe.github.io/tags/#logging">
                 <span class="tag-name" style="
                     
-                        font-size:0.7rem;
+                        font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkBlue;
                 ">logging&nbsp;
                 </span>
-                <!--<sup class="tag-count">2</sup>-->
+                <!--<sup class="tag-count">3</sup>-->
             </a>
         
             
@@ -255895,7 +257242,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkCyan;
                 ">tuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255909,7 +257256,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">namedtuple&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255923,7 +257270,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">pyzmq&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255937,7 +257284,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkBlue;
                 ">zmq&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255951,7 +257298,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOrchid;
                 ">msgpack&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255965,7 +257312,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">action&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -255979,7 +257326,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">cli&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -255993,7 +257340,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">control2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256007,7 +257354,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkBlue;
                 ">gdb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256021,7 +257368,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">debug&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256035,7 +257382,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">qos&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256049,7 +257396,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateBlue;
                 ">tag&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256063,7 +257410,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkGreen;
                 ">plugins&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256077,7 +257424,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">msg&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256091,7 +257438,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">node&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256105,7 +257452,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">zero-copy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256119,7 +257466,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkViolet;
                 ">shm&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256133,7 +257480,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkCyan;
                 ">algorithm&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256147,7 +257494,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">calibration&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256161,7 +257508,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">diff&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256175,7 +257522,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkMagenta;
                 ">pid&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256189,7 +257536,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">dev&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256217,7 +257564,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">colcon_cd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256231,7 +257578,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkBlue;
                 ">linter&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256245,7 +257592,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">plot&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256259,7 +257606,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">visualization&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256273,7 +257620,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">debugging&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256301,7 +257648,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkCyan;
                 ">diagnostics&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256315,7 +257662,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOliveGreen;
                 ">tutorials&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256329,7 +257676,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkMagenta;
                 ">gst&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256343,7 +257690,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">math&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256357,7 +257704,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkSlateBlue;
                 ">apm&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256371,7 +257718,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">mavros&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256385,7 +257732,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkRed;
                 ">rat_runtime_monitor&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256399,7 +257746,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkMagenta;
+                    color:DarkBlue;
                 ">web&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256413,7 +257760,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateGray;
                 ">rosbridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256427,7 +257774,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">vue&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256441,7 +257788,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">binding&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256455,7 +257802,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">discovery&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256469,7 +257816,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">fast-dds&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256483,7 +257830,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkRed;
                 ">rmw&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256497,7 +257844,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">gazebo-classic&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256511,7 +257858,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:2.3rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">launch&nbsp;
                 </span>
                 <!--<sup class="tag-count">18</sup>-->
@@ -256525,7 +257872,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.0rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">spawn&nbsp;
                 </span>
                 <!--<sup class="tag-count">5</sup>-->
@@ -256539,7 +257886,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkBlue;
                 ">cook&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256553,7 +257900,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkRed;
+                    color:DarkGreen;
                 ">imu&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256567,7 +257914,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkTurquoise;
                 ">ultrasonic&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256581,7 +257928,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGoldenrod;
                 ">gazebo classic&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256609,7 +257956,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">ign&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -256623,7 +257970,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkBlue;
+                    color:DarkGoldenrod;
                 ">gz&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256637,7 +257984,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.2000000000000002rem;
                     
-                    color:DarkBlue;
+                    color:DarkViolet;
                 ">xacro&nbsp;
                 </span>
                 <!--<sup class="tag-count">7</sup>-->
@@ -256651,7 +257998,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">ros_ign&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256665,7 +258012,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">diff_drive&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256679,7 +258026,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">odometry&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256693,7 +258040,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">joint_state&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256707,7 +258054,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateGray;
                 ">argument&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256721,7 +258068,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkSlateGray;
                 ">tmux&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256735,7 +258082,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkGreen;
                 ">nav&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256749,7 +258096,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkBlue;
                 ">nav2&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256763,7 +258110,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkOrchid;
                 ">ros&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256777,7 +258124,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">urdf&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256791,7 +258138,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">test&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256805,7 +258152,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkViolet;
                 ">executor&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256819,7 +258166,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">param&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -256833,7 +258180,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkBlue;
                 ">rclpy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256847,7 +258194,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkBlue;
+                    color:DarkSlateBlue;
                 ">service&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -256861,7 +258208,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">client&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256875,7 +258222,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">package.xml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256889,7 +258236,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkSlateGray;
                 ">parameter&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256903,7 +258250,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">parameters&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256917,7 +258264,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkViolet;
                 ">custom&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -256931,7 +258278,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">msgs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256945,7 +258292,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">executers&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256959,7 +258306,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGreen;
                 ">pub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256973,7 +258320,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkOliveGreen;
                 ">sub&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -256987,7 +258334,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">rqt&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257001,7 +258348,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.9rem;
                     
-                    color:DarkOrchid;
+                    color:DarkSlateBlue;
                 ">rviz&nbsp;
                 </span>
                 <!--<sup class="tag-count">4</sup>-->
@@ -257015,7 +258362,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">rviz2&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257029,7 +258376,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateGray;
+                    color:DarkSlateBlue;
                 ">pose&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257043,7 +258390,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkTurquoise;
                 ">marker&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257071,7 +258418,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkOliveGreen;
                 ">rosdep&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257085,7 +258432,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">cross-compiler&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257099,7 +258446,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">nano&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257113,7 +258460,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkGreen;
                 ">erb&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257127,7 +258474,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkSlateBlue;
                 ">texture&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257141,7 +258488,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">tmuxp&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257155,7 +258502,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkMagenta;
                 ">rootfs&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257183,7 +258530,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">linux&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257197,7 +258544,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGoldenrod;
                 ">ubuntu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257211,7 +258558,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkGoldenrod;
                 ">ip&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257225,7 +258572,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkRed;
                 ">ss&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257239,7 +258586,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkGoldenrod;
                 ">network&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257253,7 +258600,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkCyan;
+                    color:DarkViolet;
                 ">netstat&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257267,7 +258614,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkRed;
                 ">ssh&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257281,7 +258628,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkOrchid;
                 ">systemd&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257295,7 +258642,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkRed;
+                    color:DarkCyan;
                 ">mkdocs&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257309,7 +258656,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">extensions&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257323,7 +258670,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkBlue;
+                    color:DarkCyan;
                 ">socat&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -257351,7 +258698,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkCyan;
                 ">serial&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257365,7 +258712,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.8rem;
                     
-                    color:DarkCyan;
+                    color:DarkGoldenrod;
                 ">udp&nbsp;
                 </span>
                 <!--<sup class="tag-count">3</sup>-->
@@ -257379,7 +258726,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkGreen;
                 ">tc&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257393,7 +258740,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkBlue;
                 ">mtu&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257407,7 +258754,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">select&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257435,7 +258782,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkSlateBlue;
                 ">kalman&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257449,7 +258796,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkViolet;
                 ">filter&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257463,7 +258810,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">control&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257477,7 +258824,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkOrchid;
                 ">todo&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257491,7 +258838,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkViolet;
+                    color:DarkOliveGreen;
                 ">vscode-ext&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257505,7 +258852,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkCyan;
+                    color:DarkMagenta;
                 ">json&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257519,7 +258866,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkRed;
                 ">yaml&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257533,7 +258880,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkRed;
+                    color:DarkMagenta;
                 ">schema&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257547,7 +258894,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:1.4rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkBlue;
                 ">yocto&nbsp;
                 </span>
                 <!--<sup class="tag-count">9</sup>-->
@@ -257561,7 +258908,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkCyan;
                 ">poky&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257575,7 +258922,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkViolet;
+                    color:DarkCyan;
                 ">qemu&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257589,7 +258936,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOrchid;
+                    color:DarkOliveGreen;
                 ">rpi&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257603,7 +258950,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkOrchid;
                 ">CV&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257617,7 +258964,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGreen;
+                    color:DarkSlateBlue;
                 ">courses&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257631,7 +258978,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkCyan;
                 ">DL&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257645,7 +258992,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkViolet;
                 ">world&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257659,7 +259006,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkGoldenrod;
+                    color:DarkRed;
                 ">log&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257673,7 +259020,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkGoldenrod;
                 ">navigation&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257687,7 +259034,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkSlateBlue;
+                    color:DarkSlateGray;
                 ">cv_bridge&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257701,7 +259048,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkMagenta;
+                    color:DarkTurquoise;
                 ">tf&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257715,7 +259062,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkBlue;
+                    color:DarkOrchid;
                 ">Turtlebot3&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257729,7 +259076,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkTurquoise;
+                    color:DarkViolet;
                 ">projects&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257743,7 +259090,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkTurquoise;
                 ">vrx&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257757,7 +259104,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.6rem;
                     
-                    color:DarkOliveGreen;
+                    color:DarkGreen;
                 ">buoyancy&nbsp;
                 </span>
                 <!--<sup class="tag-count">1</sup>-->
@@ -257771,7 +259118,7 @@ if __name__ == &#39;__main__&#39;:
                     
                         font-size:0.7rem;
                     
-                    color:DarkGreen;
+                    color:DarkMagenta;
                 ">gimbal&nbsp;
                 </span>
                 <!--<sup class="tag-count">2</sup>-->
@@ -257821,282 +259168,30 @@ if __name__ == &#39;__main__&#39;:
 </li>
       
         <li class="md-nav__item">
-  <a href="#launchultrasoniclaunchpyimport-osfrom-launch-import-launchdescriptionfrom-launchactions-import-appendenvironmentvariable-includelaunchdescription-declarelaunchargumentfrom-launchsubstitutions-import-launchconfigurationfrom-launchlaunch_description_sources-import-pythonlaunchdescriptionsourcefrom-ament_index_pythonpackages-import-get_package_share_directoryfrom-launch_rosactions-import-nodeimport-xacropackage_name--ros2_gazebo_tutorialworld--cameraworldmodel--ultrasonicsdf--modelsdfdef-generate_launch_description----pkg--get_package_share_directorypackage_name----pkg_gazebo_ros--get_package_share_directorygazebo_ros----model_sdf_full_path--ospathjoinpkg-models-model-modelsdf----sim_time--launchconfigurationsim_time----arg_sim_time--declarelaunchargumentsim_time-default_valuetrue----resources----------ospathjoinpkg-worlds------------resource_env--appendenvironmentvariablenamegazebo_resource_path-valuejoinresources----start_gazebo_server_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzserverlaunchpy--------launch_arguments------------verbose-true-------------world-worlditems----start_gazebo_client_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzclientlaunchpy----robot_description_path--ospathjoinpkg-models-model-sdf----doc--xacroparseopenrobot_description_path----xacroprocess_docdoc----robot_state_publisher--node--------packagerobot_state_publisher--------executablerobot_state_publisher--------parameters----------------------------use_sim_time-sim_time-----------------robot_description-doctoxml----------------------------spawn_entity_cmd--node--------packagegazebo_ros---------executablespawn_entitypy--------arguments-entity-robot_name_in_model----------file-model_sdf_full_path---------x-0---------y-0---------z-005--------outputscreen----rviz--node--------packagerviz2--------executablerviz2--------arguments-d-ospathjoinpkg-config-ultrasonicrviz--------link_tf--node--------packagetf2_ros--------executablestatic_transform_publisher--------namelink2world--------arguments--0-0-005-0-0-0-world-link--------ld--launchdescription----ldadd_actionarg_sim_time----ldadd_actionresource_env----ldadd_actionstart_gazebo_server_cmd----ldadd_actionstart_gazebo_client_cmd----ldadd_actionrobot_state_publisher----ldadd_actionspawn_entity_cmd----ldadd_actionrviz----ldadd_actionlink_tf----return-ld" class="md-nav__link">
-    launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-
-  </a>
-  
-    <nav class="md-nav" aria-label="launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#tf" class="md-nav__link">
     tf
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test-sensor-read" class="md-nav__link">
     Test sensor read
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#ultrasonic_demo_pyusrbinenv-python3import-rclpyfrom-rclpynode-import-nodefrom-sensor_msgsmsg-import-rangefrom-rclpyqos-import-qos_profile_sensor_datatopic_range--ultrasonic_sensor_1class-mynodenode----def-__init__self--------node_nameultrasonic_demo--------super__init__node_name--------selfcreate_subscriptionrange-topic_range-self__range_handler-qos_profileqos_profile_sensor_data--------selfget_loggerinfohello-ultrasonic----def-__range_handlerself-msg-range--------selfget_loggerinfostrmsgrangedef-mainargsnone----rclpyinitargsargs----node--mynode----rclpyspinnode----nodedestroy_node----rclpyshutdownif-__name__--__main__----main" class="md-nav__link">
-    ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-
-  </a>
-  
-    <nav class="md-nav" aria-label="ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#run" class="md-nav__link">
     run
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-again" class="md-nav__link">
     run again
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -258272,282 +259367,30 @@ if __name__ == &#39;__main__&#39;:
 </li>
       
         <li class="md-nav__item">
-  <a href="#launchultrasoniclaunchpyimport-osfrom-launch-import-launchdescriptionfrom-launchactions-import-appendenvironmentvariable-includelaunchdescription-declarelaunchargumentfrom-launchsubstitutions-import-launchconfigurationfrom-launchlaunch_description_sources-import-pythonlaunchdescriptionsourcefrom-ament_index_pythonpackages-import-get_package_share_directoryfrom-launch_rosactions-import-nodeimport-xacropackage_name--ros2_gazebo_tutorialworld--cameraworldmodel--ultrasonicsdf--modelsdfdef-generate_launch_description----pkg--get_package_share_directorypackage_name----pkg_gazebo_ros--get_package_share_directorygazebo_ros----model_sdf_full_path--ospathjoinpkg-models-model-modelsdf----sim_time--launchconfigurationsim_time----arg_sim_time--declarelaunchargumentsim_time-default_valuetrue----resources----------ospathjoinpkg-worlds------------resource_env--appendenvironmentvariablenamegazebo_resource_path-valuejoinresources----start_gazebo_server_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzserverlaunchpy--------launch_arguments------------verbose-true-------------world-worlditems----start_gazebo_client_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzclientlaunchpy----robot_description_path--ospathjoinpkg-models-model-sdf----doc--xacroparseopenrobot_description_path----xacroprocess_docdoc----robot_state_publisher--node--------packagerobot_state_publisher--------executablerobot_state_publisher--------parameters----------------------------use_sim_time-sim_time-----------------robot_description-doctoxml----------------------------spawn_entity_cmd--node--------packagegazebo_ros---------executablespawn_entitypy--------arguments-entity-robot_name_in_model----------file-model_sdf_full_path---------x-0---------y-0---------z-005--------outputscreen----rviz--node--------packagerviz2--------executablerviz2--------arguments-d-ospathjoinpkg-config-ultrasonicrviz--------link_tf--node--------packagetf2_ros--------executablestatic_transform_publisher--------namelink2world--------arguments--0-0-005-0-0-0-world-link--------ld--launchdescription----ldadd_actionarg_sim_time----ldadd_actionresource_env----ldadd_actionstart_gazebo_server_cmd----ldadd_actionstart_gazebo_client_cmd----ldadd_actionrobot_state_publisher----ldadd_actionspawn_entity_cmd----ldadd_actionrviz----ldadd_actionlink_tf----return-ld" class="md-nav__link">
-    launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-
-  </a>
-  
-    <nav class="md-nav" aria-label="launch/ultrasonic.launch.pyimport os
-from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, IncludeLaunchDescription, DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import xacro
-
-PACKAGE_NAME = &quot;ros2_gazebo_tutorial&quot;
-WORLD = &quot;camera.world&quot;
-MODEL = &quot;ultrasonic&quot;
-SDF = &quot;model.sdf&quot;
-
-def generate_launch_description():
-    pkg = get_package_share_directory(PACKAGE_NAME)
-    pkg_gazebo_ros = get_package_share_directory(&#39;gazebo_ros&#39;)
-    model_sdf_full_path = os.path.join(pkg, &quot;models&quot;, MODEL, &quot;model.sdf&quot;)
-
-    sim_time = LaunchConfiguration(&quot;sim_time&quot;)
-    arg_sim_time = DeclareLaunchArgument(&quot;sim_time&quot;, default_value=&quot;true&quot;)
-
-    resources = [
-        os.path.join(pkg, &quot;worlds&quot;)    
-    ]
-
-    resource_env = AppendEnvironmentVariable(name=&quot;GAZEBO_RESOURCE_PATH&quot;, value=&quot;:&quot;.join(resources))
-
-    start_gazebo_server_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzserver.launch.py&#39;)),
-        launch_arguments={
-            &quot;verbose&quot;: &quot;true&quot;, 
-            &#39;world&#39;: WORLD}.items())
-
-    start_gazebo_client_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, &#39;launch&#39;, &#39;gzclient.launch.py&#39;)))
-
-    robot_description_path = os.path.join(pkg, &quot;models&quot;, MODEL, SDF)
-    doc = xacro.parse(open(robot_description_path))
-    xacro.process_doc(doc)
-
-    robot_state_publisher = Node(
-        package=&#39;robot_state_publisher&#39;,
-        executable=&#39;robot_state_publisher&#39;,
-        parameters=[
-            {
-                &#39;use_sim_time&#39;: sim_time, 
-                &#39;robot_description&#39;: doc.toxml()
-            }
-        ]
-    )
-
-    spawn_entity_cmd = Node(
-        package=&quot;gazebo_ros&quot;, 
-        executable=&quot;spawn_entity.py&quot;,
-        arguments=[&#39;-entity&#39;, &quot;robot_name_in_model&quot;, 
-        &#39;-file&#39;, model_sdf_full_path,
-        &#39;-x&#39;, &quot;0&quot;,
-        &#39;-y&#39;, &quot;0&quot;,
-        &#39;-z&#39;, &quot;0.05&quot;],
-        output=&#39;screen&#39;)
-
-    rviz = Node(
-        package=&quot;rviz2&quot;,
-        executable=&quot;rviz2&quot;,
-        arguments=[&quot;-d&quot;, os.path.join(pkg, &quot;config&quot;, &quot;ultrasonic.rviz&quot;)],
-    )
-
-    link_tf = Node(
-        package=&#39;tf2_ros&#39;,
-        executable=&#39;static_transform_publisher&#39;,
-        name=&quot;link2world&quot;,
-        arguments = [&quot;0&quot;, &quot;0&quot;, &quot;0.05&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;world&quot;, &quot;link&quot;]
-    )
-
-    ld = LaunchDescription()
-    ld.add_action(arg_sim_time)
-    ld.add_action(resource_env)
-    ld.add_action(start_gazebo_server_cmd)
-    ld.add_action(start_gazebo_client_cmd)
-    ld.add_action(robot_state_publisher)
-    ld.add_action(spawn_entity_cmd)
-    ld.add_action(rviz)
-    ld.add_action(link_tf)
-    return ld
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#tf" class="md-nav__link">
     tf
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test-sensor-read" class="md-nav__link">
     Test sensor read
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#ultrasonic_demo_pyusrbinenv-python3import-rclpyfrom-rclpynode-import-nodefrom-sensor_msgsmsg-import-rangefrom-rclpyqos-import-qos_profile_sensor_datatopic_range--ultrasonic_sensor_1class-mynodenode----def-__init__self--------node_nameultrasonic_demo--------super__init__node_name--------selfcreate_subscriptionrange-topic_range-self__range_handler-qos_profileqos_profile_sensor_data--------selfget_loggerinfohello-ultrasonic----def-__range_handlerself-msg-range--------selfget_loggerinfostrmsgrangedef-mainargsnone----rclpyinitargsargs----node--mynode----rclpyspinnode----nodedestroy_node----rclpyshutdownif-__name__--__main__----main" class="md-nav__link">
-    ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-
-  </a>
-  
-    <nav class="md-nav" aria-label="ultrasonic_demo_.py#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Range
-from rclpy.qos import qos_profile_sensor_data
-
-TOPIC_RANGE = &quot;/ultrasonic_sensor_1&quot;
-
-class MyNode(Node):
-    def __init__(self):
-        node_name=&quot;ultrasonic_demo&quot;
-        super().__init__(node_name)
-        self.create_subscription(Range, TOPIC_RANGE, self.__range_handler, qos_profile=qos_profile_sensor_data)
-        self.get_logger().info(&quot;Hello ultrasonic&quot;)
-
-    def __range_handler(self, msg: Range):
-        self.get_logger().info(str(msg.range))
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == &#39;__main__&#39;:
-    main()
-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#run" class="md-nav__link">
     run
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-again" class="md-nav__link">
     run again
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -258638,7 +259481,7 @@ if __name__ == &#39;__main__&#39;:
 </code></pre></div>
 <hr />
 <h3 id="launch">launch<a class="headerlink" href="#launch" title="Permanent link">#</a></h3>
-<h2 id="launchultrasoniclaunchpyimport-osfrom-launch-import-launchdescriptionfrom-launchactions-import-appendenvironmentvariable-includelaunchdescription-declarelaunchargumentfrom-launchsubstitutions-import-launchconfigurationfrom-launchlaunch_description_sources-import-pythonlaunchdescriptionsourcefrom-ament_index_pythonpackages-import-get_package_share_directoryfrom-launch_rosactions-import-nodeimport-xacropackage_name--ros2_gazebo_tutorialworld--cameraworldmodel--ultrasonicsdf--modelsdfdef-generate_launch_description----pkg--get_package_share_directorypackage_name----pkg_gazebo_ros--get_package_share_directorygazebo_ros----model_sdf_full_path--ospathjoinpkg-models-model-modelsdf----sim_time--launchconfigurationsim_time----arg_sim_time--declarelaunchargumentsim_time-default_valuetrue----resources----------ospathjoinpkg-worlds------------resource_env--appendenvironmentvariablenamegazebo_resource_path-valuejoinresources----start_gazebo_server_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzserverlaunchpy--------launch_arguments------------verbose-true-------------world-worlditems----start_gazebo_client_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzclientlaunchpy----robot_description_path--ospathjoinpkg-models-model-sdf----doc--xacroparseopenrobot_description_path----xacroprocess_docdoc----robot_state_publisher--node--------packagerobot_state_publisher--------executablerobot_state_publisher--------parameters----------------------------use_sim_time-sim_time-----------------robot_description-doctoxml----------------------------spawn_entity_cmd--node--------packagegazebo_ros---------executablespawn_entitypy--------arguments-entity-robot_name_in_model----------file-model_sdf_full_path---------x-0---------y-0---------z-005--------outputscreen----rviz--node--------packagerviz2--------executablerviz2--------arguments-d-ospathjoinpkg-config-ultrasonicrviz--------link_tf--node--------packagetf2_ros--------executablestatic_transform_publisher--------namelink2world--------arguments--0-0-005-0-0-0-world-link--------ld--launchdescription----ldadd_actionarg_sim_time----ldadd_actionresource_env----ldadd_actionstart_gazebo_server_cmd----ldadd_actionstart_gazebo_client_cmd----ldadd_actionrobot_state_publisher----ldadd_actionspawn_entity_cmd----ldadd_actionrviz----ldadd_actionlink_tf----return-ld"><div class="highlight"><span class="filename">launch/ultrasonic.launch.py</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><span class="filename">launch/ultrasonic.launch.py</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="kn">import</span> <span class="nn">os</span>
 </span><span class="linenos" data-linenos=" 2 "></span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">AppendEnvironmentVariable</span><span class="p">,</span> <span class="n">IncludeLaunchDescription</span><span class="p">,</span> <span class="n">DeclareLaunchArgument</span>
 <span class="linenos" data-linenos=" 4 "></span><span class="kn">from</span> <span class="nn">launch.substitutions</span> <span class="kn">import</span> <span class="n">LaunchConfiguration</span>
@@ -258723,7 +259566,8 @@ if __name__ == &#39;__main__&#39;:
 <span class="linenos" data-linenos="83 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">rviz</span><span class="p">)</span>
 <span class="linenos" data-linenos="84 "></span>    <span class="n">ld</span><span class="o">.</span><span class="n">add_action</span><span class="p">(</span><span class="n">link_tf</span><span class="p">)</span>
 <span class="linenos" data-linenos="85 "></span>    <span class="k">return</span> <span class="n">ld</span>
-</code></pre></div><a class="headerlink" href="#launchultrasoniclaunchpyimport-osfrom-launch-import-launchdescriptionfrom-launchactions-import-appendenvironmentvariable-includelaunchdescription-declarelaunchargumentfrom-launchsubstitutions-import-launchconfigurationfrom-launchlaunch_description_sources-import-pythonlaunchdescriptionsourcefrom-ament_index_pythonpackages-import-get_package_share_directoryfrom-launch_rosactions-import-nodeimport-xacropackage_name--ros2_gazebo_tutorialworld--cameraworldmodel--ultrasonicsdf--modelsdfdef-generate_launch_description----pkg--get_package_share_directorypackage_name----pkg_gazebo_ros--get_package_share_directorygazebo_ros----model_sdf_full_path--ospathjoinpkg-models-model-modelsdf----sim_time--launchconfigurationsim_time----arg_sim_time--declarelaunchargumentsim_time-default_valuetrue----resources----------ospathjoinpkg-worlds------------resource_env--appendenvironmentvariablenamegazebo_resource_path-valuejoinresources----start_gazebo_server_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzserverlaunchpy--------launch_arguments------------verbose-true-------------world-worlditems----start_gazebo_client_cmd--includelaunchdescription--------pythonlaunchdescriptionsourceospathjoinpkg_gazebo_ros-launch-gzclientlaunchpy----robot_description_path--ospathjoinpkg-models-model-sdf----doc--xacroparseopenrobot_description_path----xacroprocess_docdoc----robot_state_publisher--node--------packagerobot_state_publisher--------executablerobot_state_publisher--------parameters----------------------------use_sim_time-sim_time-----------------robot_description-doctoxml----------------------------spawn_entity_cmd--node--------packagegazebo_ros---------executablespawn_entitypy--------arguments-entity-robot_name_in_model----------file-model_sdf_full_path---------x-0---------y-0---------z-005--------outputscreen----rviz--node--------packagerviz2--------executablerviz2--------arguments-d-ospathjoinpkg-config-ultrasonicrviz--------link_tf--node--------packagetf2_ros--------executablestatic_transform_publisher--------namelink2world--------arguments--0-0-005-0-0-0-world-link--------ld--launchdescription----ldadd_actionarg_sim_time----ldadd_actionresource_env----ldadd_actionstart_gazebo_server_cmd----ldadd_actionstart_gazebo_client_cmd----ldadd_actionrobot_state_publisher----ldadd_actionspawn_entity_cmd----ldadd_actionrviz----ldadd_actionlink_tf----return-ld" title="Permanent link">#</a></h2>
+</code></pre></div>
+<hr />
 <h3 id="tf">tf<a class="headerlink" href="#tf" title="Permanent link">#</a></h3>
 <ul>
 <li>Add static tf between world to link (model)</li>
@@ -258736,7 +259580,7 @@ if __name__ == &#39;__main__&#39;:
     <span class="p">)</span>
 </code></pre></div>
 <h3 id="test-sensor-read">Test sensor read<a class="headerlink" href="#test-sensor-read" title="Permanent link">#</a></h3>
-<h2 id="ultrasonic_demo_pyusrbinenv-python3import-rclpyfrom-rclpynode-import-nodefrom-sensor_msgsmsg-import-rangefrom-rclpyqos-import-qos_profile_sensor_datatopic_range--ultrasonic_sensor_1class-mynodenode----def-__init__self--------node_nameultrasonic_demo--------super__init__node_name--------selfcreate_subscriptionrange-topic_range-self__range_handler-qos_profileqos_profile_sensor_data--------selfget_loggerinfohello-ultrasonic----def-__range_handlerself-msg-range--------selfget_loggerinfostrmsgrangedef-mainargsnone----rclpyinitargsargs----node--mynode----rclpyspinnode----nodedestroy_node----rclpyshutdownif-__name__--__main__----main"><div class="highlight"><span class="filename">ultrasonic_demo_.py</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><span class="filename">ultrasonic_demo_.py</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="ch">#!/usr/bin/env python3</span>
 </span><span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="kn">import</span> <span class="nn">rclpy</span>
 <span class="linenos" data-linenos=" 4 "></span><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
@@ -258764,17 +259608,18 @@ if __name__ == &#39;__main__&#39;:
 <span class="linenos" data-linenos="26 "></span>
 <span class="linenos" data-linenos="27 "></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 <span class="linenos" data-linenos="28 "></span>    <span class="n">main</span><span class="p">()</span>
-</code></pre></div><a class="headerlink" href="#ultrasonic_demo_pyusrbinenv-python3import-rclpyfrom-rclpynode-import-nodefrom-sensor_msgsmsg-import-rangefrom-rclpyqos-import-qos_profile_sensor_datatopic_range--ultrasonic_sensor_1class-mynodenode----def-__init__self--------node_nameultrasonic_demo--------super__init__node_name--------selfcreate_subscriptionrange-topic_range-self__range_handler-qos_profileqos_profile_sensor_data--------selfget_loggerinfohello-ultrasonic----def-__range_handlerself-msg-range--------selfget_loggerinfostrmsgrangedef-mainargsnone----rclpyinitargsargs----node--mynode----rclpyspinnode----nodedestroy_node----rclpyshutdownif-__name__--__main__----main" title="Permanent link">#</a></h2>
+</code></pre></div>
+<hr />
 <h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
 <p><img alt="" src="../images/ultrasonic.png" /></p>
 <hr />
 <h3 id="run-again">run again<a class="headerlink" href="#run-again" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">out of range reading</p>
-<p>When sensor reading is out of range:
-- The visual marker turn brighter
-- Rviz stop show marker
-- BUG: subscriber stop read data from topic</p>
+<p>When sensor reading is out of range:<br />
+- The visual marker turn brighter<br />
+- Rviz stop show marker<br />
+- BUG: subscriber stop read data from   topic (for output_type <code>sensor_msgs/Range</code>)</p>
 </div>
 <div class="highlight"><span class="filename">echo topic</span><pre><span></span><code>ros2 topic <span class="nb">echo</span> /ultrasonic_sensor_1 
 Unable to convert call argument to Python object <span class="o">(</span>compile <span class="k">in</span> debug mode <span class="k">for</span> details<span class="o">)</span>
