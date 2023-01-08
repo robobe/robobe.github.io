@@ -48,3 +48,22 @@ link_tf = Node(
 ### run
 
 ![](images/ultrasonic.png)
+
+---
+
+### run again
+
+!!! warning "out of range reading"
+    When sensor reading is out of range:
+    - The visual marker turn brighter
+    - Rviz stop show marker
+    - BUG: subscriber stop read data from topic
+     
+
+```bash title="echo topic"
+ros2 topic echo /ultrasonic_sensor_1 
+Unable to convert call argument to Python object (compile in debug mode for details)
+```
+
+
+![](images/ultrasonic_out_of_range.png)
