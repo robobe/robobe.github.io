@@ -35,7 +35,7 @@ link_tf = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
         name="link2world",
-        arguments = ["0", "0", "0", "0", "0", "0", "world", "link"]
+        arguments = ["0", "0", "0.05", "0", "0", "0", "world", "link"]
     )
 ```
 
@@ -57,7 +57,7 @@ link_tf = Node(
     When sensor reading is out of range:
     - The visual marker turn brighter
     - Rviz stop show marker
-    - BUG: subscriber stop read data from topic
+    - BUG: subscriber stop read data from topic (for output_type `sensor_msgs/Range`)
      
 
 ```bash title="echo topic"
