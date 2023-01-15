@@ -43,7 +43,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 ### Usage
 Run image with `user` context set `hostname` and `workdir`
 #### cli
-```bash title="usage"
+```bash
 docker run -it \
 --rm \
 --user user \
@@ -55,7 +55,8 @@ ubuntu:user \
 
 
 #### docker-compose
-```yaml title="docker-compose.yaml"
+
+```yml
 version: "3.0"
 services:
   ubuntu:
@@ -64,5 +65,6 @@ services:
     user: user
     working_dir: /home/user
 ```
+
 ---
 

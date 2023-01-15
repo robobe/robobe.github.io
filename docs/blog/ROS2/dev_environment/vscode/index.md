@@ -38,13 +38,7 @@ tags:
 
 # Extensions
 
-![](images/xml.png){ align=left }
 
-[xml red hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
-
-```
-ext install redhat.vscode-xml
-```
 
 
 

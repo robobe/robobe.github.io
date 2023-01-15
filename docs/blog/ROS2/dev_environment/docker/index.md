@@ -8,21 +8,22 @@ tags:
 !!! note ""
      Docker file base on [Allison Thackston ](https://github.com/athackst/dockerfiles) work
 
-# LAB
+## Objective
 - Create ROS2 humble docker image
 - Run image and share simple workspace with simple pkg that contain minimal pub sub
     - Run from cli
     - Run with docker-compose
 
-# CLI
+## Usage
 - Run docker from cli
 
 !!! note "shm"
     Share `/dev/shm` between host and container
      
-```python title="run command" linenums="1" hl_lines="7"
+### cli
+```python title="run command" linenums="1" hl_lines="9"
 docker run --rm -it \
---env DISPLAY \
+-e DISPLAY=$DISPLAY \ \
 --user user \
 --workdir /home/user \
 --hostname dev \
@@ -34,7 +35,8 @@ humble:dev \
 bash
 ```
 
-```
+### docker-compose
+``` linenums="1" hl_lines="15"
 version: "3.0"
 services:
   pub:
@@ -51,5 +53,4 @@ services:
       - /home/user/ros2_ws:/home/user/ros2_ws
       - /dev/shm:/dev/shm
     network_mode: host
-    command: cd ros2_ws; source install/setup.bash; ros2 run pkg_python_tutorial pub
 ```
