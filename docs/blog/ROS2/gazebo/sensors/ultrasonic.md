@@ -21,9 +21,11 @@ tags:
 ---
 
 ### launch
+
 ```python title="launch/ultrasonic.launch.py" linenums="1" hl_lines="1"
 --8<-- "/home/user/ros2_ws/src/ros2_gazebo_tutorial/launch/ultrasonic.launch.py"
 ```
+
 ---
 
 ### tf
@@ -40,9 +42,11 @@ link_tf = Node(
 ```
 
 ### Test sensor read
+
 ```python title="ultrasonic_demo_.py" linenums="1" hl_lines="1"
 --8<-- "/home/user/ros2_ws/src/ros2_gazebo_tutorial/ros2_gazebo_tutorial/ultrasonic_demo.py"
 ```
+
 ---
 
 ### run
@@ -54,10 +58,10 @@ link_tf = Node(
 ### run again
 
 !!! warning "out of range reading"
-    When sensor reading is out of range:
-    - The visual marker turn brighter
-    - Rviz stop show marker
-    - BUG: subscriber stop read data from topic (for output_type `sensor_msgs/Range`)
+    When sensor reading is out of range:  
+    - The visual marker turn brighter  
+    - Rviz stop show marker  
+    - BUG: subscriber stop read data from   topic (for output_type `sensor_msgs/Range`)
      
 
 ```bash title="echo topic"

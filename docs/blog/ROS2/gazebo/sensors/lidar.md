@@ -4,12 +4,22 @@ tags:
     - gazebo
     - ros2
     - sensors
-    - cook
+    - ray
 ---
+
+ROS2 using new plug `gazebo_ros_ray_sensor` to simulate `PointCloud`, `LaserScan` and `Range` output message control by `<output_type>` tag
+
+
+sensor_msgs/PointCloud2: 3D cloud of points (default)
+sensor_msgs/PointCloud: 3D cloud of points
+sensor_msgs/LaserScan: 2D scan, uses center vertical ray if there are multiple
+sensor_msgs/Range: Single distance value, minimum of all ray ranges of parent sensor
+
+
 
 # SDF
 
-```xml title="mode" linenums="1" hl_lines="1"
+
 <?xml version="1.0"?>
 <sdf version="1.5">
     <model name="lidar_demo">
@@ -68,3 +78,7 @@ tags:
 
 ![](images/lidar.png)
 
+---
+
+# Reference
+- [ROS 2 Migration: Ray sensors](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Ray-sensors#gazebo_ros_range)
