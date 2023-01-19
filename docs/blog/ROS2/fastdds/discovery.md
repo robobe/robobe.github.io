@@ -1,5 +1,5 @@
 ---
-title: DDS Discovery
+title: DDS Discovery and discovery server
 tags:
     - ros2
     - dds
