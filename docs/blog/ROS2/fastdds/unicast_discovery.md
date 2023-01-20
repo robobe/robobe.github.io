@@ -103,7 +103,7 @@ To disabled Node/Participant we need to tale the node where to find the other pe
 ![](images/domain_0_participant_20.png)
 
 
-```xml title="STATIC_PROFILE_W.xml"
+```xml title="UNICAST_PROFILE_W.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
     <participant profile_name="disable_multicast" is_default_profile="true">
@@ -129,7 +129,7 @@ To disabled Node/Participant we need to tale the node where to find the other pe
 
 ```bash title="terminal1"
 source /opt/ros/humble/setup.bash
-export FASTRTPS_DEFAULT_PROFILES_FILE="$(pwd)/STATIC_PROFILE_W.xml"
+export FASTRTPS_DEFAULT_PROFILES_FILE="$(pwd)/UNICAST_PROFILE_W.xml"
 ros2 run demo_nodes_cpp talker
 ```
 
@@ -147,7 +147,7 @@ talker    881133            user   12u  IPv4 72808686      0t0  UDP *:56018
 
 ```bash title="terminal2"
 source /opt/ros/humble/setup.bash
-export FASTRTPS_DEFAULT_PROFILES_FILE="$(pwd)/STATIC_PROFILE_R.xml"
+export FASTRTPS_DEFAULT_PROFILES_FILE="$(pwd)/UNICAST_PROFILE_R.xml"
 ros2 run demo_nodes_cpp listener
 ```
 
@@ -181,7 +181,7 @@ listener  881878            user   13u  IPv4 72822588      0t0  UDP 192.168.1.22
 ### Profiles
 #### Publisher/Talker
 
-```xml title="STATIC_PROFILE_W.xml"
+```xml title="UNICAST_PROFILE_W.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
     <participant profile_name="disable_multicast" is_default_profile="true">
@@ -208,7 +208,7 @@ listener  881878            user   13u  IPv4 72822588      0t0  UDP 192.168.1.22
 
 #### Subscriber/Listener
 
-```xml title="STATIC_PROFILE_R.xml"
+```xml title="UNICAST_PROFILE_R.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
     <participant profile_name="disable_multicast" is_default_profile="true">
