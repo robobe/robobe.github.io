@@ -6,6 +6,10 @@ tags:
     - rclpy
 ---
 
+- [Parameters basic examples](basic_example.md)
+- [Parameter management using topic and services](parameters_control.md)
+- [Parameter validation using Descriptors and add_on_set_parameters_callback](parameter_update_node_event.md)
+
 # my examples
 [ros2 python tutorial params](https://github.com/robobe/ros2_python_tutorial/tree/master/pkg_python_tutorial/parameters)
 
