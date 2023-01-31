@@ -2,11 +2,8 @@
 title: github pro tips
 description: github tips
 date: "2022-05-27"
-banner: ../images/logo.jpeg
 tags:
-    - orb
-    - matching
-    - opencv
+    - github
 ---
 
 ## Fuzzy file finder
