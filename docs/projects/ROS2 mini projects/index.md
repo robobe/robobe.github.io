@@ -1,1 +1,0 @@
-[![gazebo](images/gazebo.png)](gazebo)

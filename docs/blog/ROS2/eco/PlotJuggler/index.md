@@ -6,6 +6,8 @@ tags:
     - visualization
     - debugging
 ---
+[PlotJuggler](https://www.plotjuggler.io/) Fast, intuitive and extensible
+time series visualization tool.
 
 ### install
 
@@ -13,7 +15,22 @@ tags:
 sudo apt install ros-humble-plotjuggler-ros
 ```
 
-#### github
+### usage
+#### launch
+
+```python
+plotjuggler = Node(
+        name="kf_plot",
+        package="plotjuggler",
+        executable="plotjuggler",
+        arguments=['-l', os.path.join(pkg, "config", "plot.xml")],
+        output="screen"
+    )
 ```
-https://github.com/facontidavide/PlotJuggler
-```
+
+---
+
+# Reference
+- [guide](https://facontidavide.github.io/PlotJuggler/visualization_howto/index.html#main-concepts)
+- [github](https://github.com/facontidavide/PlotJuggler)
+
