@@ -7,13 +7,15 @@ tags:
 ---
 
 Module plugin minimal template show how to
+  
 - subscribe message from ROS
 - publish message to ROS
 - logging
 
 The minimal project include two projects
-- Plugin (demo_gazebo_plugin)
-- Tester (demo_gazebo_plugin_sim)
+
+  - Plugin (demo_gazebo_plugin)
+  - Tester (demo_gazebo_plugin_sim)
 
 ## Projects
 
@@ -49,9 +51,12 @@ demo_gazebo_plugin_sim/
 ## Plugin
 
 ```
-ros2 pkg create demo_gazebo_plugin --build-type ament_cmake --dependencies rclcpp std_msgs gazebo_ros
+ros2 pkg create demo_gazebo_plugin \
+--build-type ament_cmake \
+--dependencies rclcpp std_msgs gazebo_ros
 ```
 
+### header
 ```cpp title="demo_gazebo_plugin.hpp"
 #ifndef DEMO_GAZEBO_PLUGIN_HPP
 #define DEMO_GAZEBO_PLUGIN_HPP
@@ -80,6 +85,7 @@ namespace demo_gazebo_plugin
 #endif
 ```
 
+### plugin
 ```cpp title="demo_gazebo_plugin.cpp"
 #include "demo_gazebo_plugin/demo_gazebo_plugin.hpp"
 #include <gazebo_ros/node.hpp>
@@ -124,6 +130,7 @@ GZ_REGISTER_MODEL_PLUGIN(DemoGazeboPlugin)
 }
 ```
 
+### CmakeLists.txt
 ```c title="CMakeLists.txt"
 cmake_minimum_required(VERSION 3.8)
 project(demo_gazebo_plugin)
@@ -161,7 +168,9 @@ ament_package()
 
 ## Test Project
 ```
-ros2 pkg create demo_gazebo_plugin --build-type ament_cmake --dependencies demo_gazebo_plugin
+ros2 pkg create demo_gazebo_plugin \
+--build-type ament_cmake \
+--dependencies demo_gazebo_plugin
 ```
 
 - Add plugin to model
@@ -254,6 +263,7 @@ def generate_launch_description():
     return ld
 ```
 
+### CMakeLists.txt
 ```c title="CMakeLists.txt"
 cmake_minimum_required(VERSION 3.8)
 project(demo_gazebo_plugin_sim)
@@ -300,3 +310,8 @@ data: hello_echo
 ---
 
 ```
+
+---
+
+# Reference
+- [Debugging ROS2 Gazebo Plugins With VSCode](https://medium.com/@arshad.mehmood/debugging-ros2-gazebo-plugins-with-vscode-14de44d58cc9)
