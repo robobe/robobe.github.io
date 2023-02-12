@@ -7,7 +7,7 @@ tags:
 ---
 
 Module plugin minimal template show how to
-  
+
 - subscribe message from ROS
 - publish message to ROS
 - logging
@@ -314,4 +314,5 @@ data: hello_echo
 ---
 
 # Reference
+- [BoldBot gazebo plugin](https://gitlab.com/boldhearts/ros2_boldbot/-/tree/humble/)
 - [Debugging ROS2 Gazebo Plugins With VSCode](https://medium.com/@arshad.mehmood/debugging-ros2-gazebo-plugins-with-vscode-14de44d58cc9)

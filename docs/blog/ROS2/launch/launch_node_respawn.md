@@ -26,4 +26,3 @@ ros2 launch launch_node_respawn.launch.py
 
 - Close the window
 - After 4 sec ROS2 launch the node
-- To Stop: exit from terminal
