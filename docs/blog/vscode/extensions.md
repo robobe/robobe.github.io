@@ -8,6 +8,15 @@ tags:
     - plugins
     - extensions
 ---
+
+Extensions to check
+- [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+
+# Tabout
+![https://marketplace.visualstudio.com/items?itemName=albert.TabOut](images/tabout.png){ align=left width=150 }
+
+Tab out of quotes, brackets, etc
 # DrawIO
 ![https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio](images/drawio.png){ align=left width=150 }
 This unofficial extension integrates Draw.io into VS Code.
@@ -21,18 +30,6 @@ just create new file named `my_image.drawio.png` or `my_image.drawio.svg`
 
 ---
 
-# Luna Paint
-
-![](images/luna-paint.png){ align=left width=150}
-Luna Paint is a VS Code extension that lets you edit raster images from within the editor, just open an image from the explorer and start editing like any other file.
-
-[VSCode marketplace](https://marketplace.visualstudio.com/items?itemName=Tyriar.luna-paint)
-
-<br>
-<br>
-<br>
-
----
 
 # PlantUML
 ![VSCode marketplace](images/PlantUML.png){ align=left width=150 }

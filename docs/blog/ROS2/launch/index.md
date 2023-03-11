@@ -13,6 +13,7 @@ tags:
 | RegisterEventHandler | |
 | TimerAction | |
 | ExecuteProcess | |
+| RewrittenYaml | from nav2_common.launch import RewrittenYaml |
 
 
 

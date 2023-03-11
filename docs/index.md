@@ -34,7 +34,12 @@ hide:
 # Robots Inside 
 
 First steps in robotics Systems.\
-From hardware to applications. Step by step.
+From hardware to applications
+
+## Last action
+- Move to zsh
+- Start dev in .devcontainers
+- Learn Behavior Trees
 
 
 ::: row cards

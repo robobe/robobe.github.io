@@ -5,6 +5,16 @@ tags:
     - test
 ---
 
+unit test without ROS: unittest/pytest
+unit test with ROS: launch_test + unittest
+Integration Testing:  launch_test + unittest
+
+!!! tip Run tests
+    All test run with `colcon test`
+
+
+     
+
 ## Minimal project structure
 ```
 py_tutorial_pkg/

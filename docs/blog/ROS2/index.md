@@ -57,3 +57,6 @@
 ## workshop to do
 - [ROS 2 Executor: How to make it efficient,
 real-time and deterministic?](https://www.apex.ai/roscon-21)
+
+## Video to watch
+- [KR Autonomous Flight: An Open Source Flight Stack for GPS-denied UAVs](https://vimeo.com/showcase/9954564/video/767164793)

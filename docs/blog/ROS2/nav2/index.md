@@ -60,6 +60,71 @@ ros2 launch slam_toolbox online_async_launch.py params_file:=./src/basic_mobile_
 
      
 
+## AMCL
+### map server
+```bash
+ros2 run \
+nav2_map_server \
+map_server --ros-args \
+-p yaml_filename:=my_map.yaml 
+-p use_sim_time:=true
+
+# Activate
+ros2 run nav2_util \
+lifecycle_bringup map_server
+
+# test
+ros2 service call /map_server/load_map nav2_msgs/srv/LoadMap "{map_url: /home/user/nav2_ws/new_map2.yaml }"
+```
+
+### amcl
+```bash
+ros2 run nav2_amcl amcl --ros-args -p use_sim_time:=true
+
+# Activate
+ros2 run nav2_util lifecycle_bringup amcl
+```
+
+```
+[WARN] [1676219701.288565313] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+
+```
+
+
+### launch file
+
+#### map server
+```python
+Node(
+    package='nav2_map_server',
+    executable='map_server',
+    name='map_server',
+    output='screen',
+    parameters=[
+        {'use_sim_time': True},
+        {'yaml_filename':map_file}]
+    )
+```
+
+#### lifecycle_manager
+```python
+Node(
+    package='nav2_lifecycle_manager',
+    executable='lifecycle_manager',
+    name='lifecycle_manager',
+    output='screen',
+    parameters=[
+        {'autostart': True},
+        {'node_names': [
+            'map_server',
+            'amcl']
+        }
+    ]
+)
+```
+
+![](images/amcl.drawio.png)
+
 ---
 
 # Reference
