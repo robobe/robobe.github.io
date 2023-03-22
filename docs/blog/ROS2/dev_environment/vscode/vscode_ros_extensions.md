@@ -39,7 +39,45 @@ ext install redhat.vscode-xml
 ext install deitry.colcon-helper
 ```
 
-#### settings
+## AutoSnippet
+![](images/auto-snippet.png){ align=left }
+[Auto Snippet](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.auto-snippet)
+
+```
+https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.auto-snippet
 ```
 
+This extension automatically inserts a predefined snippet when a file is created, or an empty file is opened.
+
+### Demo
+Create Template for sdf `model.config` file
+
+```json
+"autoSnippet.snippets": [
+    {
+        "pattern": "**/model.config",
+        "snippet": "gazebo_model_config"
+    }
+]
+```
+
+```json title="sdf model config"
+"gazebo_model_config": {
+    "prefix": "sdf_model_config",
+    "body": [
+        "<?xml version=\"1.0\"?>",
+        "<model>",
+        "  <name>${1}</name>",
+        "  <version>1.0</version>",
+        "  <sdf version=\"${2|1.5,1.6|}\">${3:${1}}.sdf</sdf>",
+        "  <author>",
+        "    <name></name>",
+        "    <email></email>",
+        "  </author>",
+        "  <description>",
+        "  </description>",
+        "</model>"
+    ],
+    "description": "gazebo model config file template"
+}
 ```

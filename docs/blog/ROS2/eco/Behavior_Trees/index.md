@@ -41,3 +41,4 @@ Conditions are Action that
 
 # Reference
 - [Behavior Trees in Robotics](https://youtu.be/kRp3eA09JkM)
+- [Introduction to behavior trees](https://robohub.org/introduction-to-behavior-trees/)
