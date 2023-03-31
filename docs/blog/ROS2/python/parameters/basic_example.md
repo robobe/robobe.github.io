@@ -1,11 +1,12 @@
 ---
-title: ROS2 Params basic example
+title: 
 tags:
     - ros2
     - param
 ---
-
-Simple node with param
+## ROS2 Params basic example
+Simple node with params, run the node from cli and launch file, control the parameters from cli or yaml file  
+### node
 
 ```python
 import rclpy

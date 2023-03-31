@@ -5,6 +5,18 @@ tags:
     - vscode
 ---
 
+- Language
+  - python
+  - cpp
+  - cmake
+- [XML](#xml)
+- [yaml](#yaml)
+- [dev goodies](#dev-goodies)
+  - [auto snippets](#autosnippet)
+  - [tabout](#tabout)
+
+---
+
 ## yaml
 
 ![](images/yaml.png){ align=left }
@@ -39,7 +51,21 @@ ext install redhat.vscode-xml
 ext install deitry.colcon-helper
 ```
 
-## AutoSnippet
+---
+
+## Dev goodies
+### Tabout
+![](images/tabout.png){ align=left }
+[TabOut](https://marketplace.visualstudio.com/items?itemName=albert.TabOut)  
+Tab out of quotes, brackets, etc for Visual Studio Code.
+
+### Snippets
+![](images/snippets.png){ align=left }
+[Snippets](https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets)
+
+
+
+### AutoSnippet
 ![](images/auto-snippet.png){ align=left }
 [Auto Snippet](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.auto-snippet)
 

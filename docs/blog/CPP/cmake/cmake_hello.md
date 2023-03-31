@@ -1,6 +1,4 @@
 ---
-title: cmake 101
-description: cmake 101
 date: "2022-06-04"
 banner: images/cmake.jpeg
 tags:
@@ -8,10 +6,11 @@ tags:
     - 101
 ---
 
-build system is a software tools that is used to facilitate the build process
+# CMAKE beginner step
+`build system` is a set of programs that build a software codebase -> producing a final products from source code: executable files, share object (.so) files, static libraries (.a)
+for example: [Ninja](https://ninja-build.org/), [Make](https://www.gnu.org/software/make/)
 
-build is the process of “translating” source code files into executable binary code files
-
+cma
 
 ## cmake hello
 

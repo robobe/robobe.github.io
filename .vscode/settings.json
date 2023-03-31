@@ -6,7 +6,7 @@
         "Turtlebot"
     ],
     "ros.distro": "humble",
-    "python.linting.mypyEnabled": true,
+    // "python.linting.mypyEnabled": true,
     "python.linting.enabled": true
 
 }

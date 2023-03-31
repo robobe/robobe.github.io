@@ -21,9 +21,13 @@ class MyNode(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = MyNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        print("User exit")
+    finally:
+        node.destroy_node()
+        rclpy.try_shutdown()
 
 if __name__ == '__main__':
     main()

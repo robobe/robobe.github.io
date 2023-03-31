@@ -1,42 +1,15 @@
 ---
-title: ROS2 VSCode settings, Extensions and tips
+title: ROS2 VSCode settings, Extensions Settings and tips
 tags:
     - ros2
     - vscode
+    - settings
 ---
 
-## files.associations
+- [settings](settings.md)
+- [extensions](vscode_ros_extensions.md)
+- [tips](tips.md)
 
-```json
-"files.associations": {
-        "*.xacro": "xml",
-        "model.config": "xml",
-        "*.world": "xml",
-        "*.sdf": "xml",
-        "*.gazebo": "xml"
-    }
-```
-
----
-
-# keyboard settings
-
-```json title=".config/Code/User/keybindings.json"
-{
-    "key": "ctrl+n",
-    "command": "explorer.newFile",
-    "when": "explorerViewletFocus"
-},
-{
-    "key": "ctrl+shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-}
-```
-
----
-
-# Extensions
 
 
 
