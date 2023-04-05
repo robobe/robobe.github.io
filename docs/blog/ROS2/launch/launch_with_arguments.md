@@ -1,11 +1,18 @@
 ---
-title: launch with arguments
 tags:
     - launch
     - argument
     - ros2
+    - DeclareLaunchArgument
+    - LaunchConfiguration
 ---
+# launch with arguments
+Control launch with argument from outside  
 
+
+**DeclareLaunchArgument** is used to define the launch argument that can be passed from the above launch file or from the console.
+
+**LaunchConfiguration** substitutions allow us to acquire the value of the launch argument in any part of the launch description.
 
 ```python
 from launch import LaunchDescription
@@ -15,40 +22,44 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     ld = LaunchDescription()
-    arg_cmd = DeclareLaunchArgument(
-        "msg", default_value="hello world", description="msg simple description"
+    arg1 = LaunchConfiguration("arg1")
+    arg1_arg = DeclareLaunchArgument(
+        name = "arg1",
+        default_value="arg1 default value", 
+        description="arg1 description"
     )
 
-    ld.add_action(arg_cmd)
-    ld.add_action(LogInfo(msg=LaunchConfiguration("msg")))
+    log_action = LogInfo(msg=arg1)
+    ld.add_action(arg1_arg)
+    ld.add_action(log_action)
     return ld
+
 ```
 
 ## usage
+### launch without arguments
+```bash 
+ros2 launch pkg_launch_tutorial minimal_arg.launch.py 
 
-```bash title="show arguments"
-# -s, --show-args, --show-arguments                        Show arguments that may be given to the launch file.
-ros2 launch launch_tutorials args.launch.py -s
+...
+[INFO] [launch.user]: arg1 default value
 
+```
+### check for arguments
+```bash
+ros2 launch pkg_launch_tutorial minimal_arg.launch.py -s
 Arguments (pass arguments as '<name>:=<value>'):
 
-    'msg':
-        msg simple description
-        (default: 'hello world')
+    'arg1':
+        arg1 description
+        (default: 'arg1 default value')
 
 ```
-
-```bash title="default argument"
-ros2 launch cpp_tutrial_pkg basic_launch.launch.py
-[INFO] [launch]: All log files can be found below /home/user/.ros/log/2022-10-12-07-20-56-408482-lap2-3896306
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [launch.user]: hello world
-
-```
-
-```bash title="with argument"
-ros2 launch cpp_tutrial_pkg basic_launch.launch.py msg:="hello launch"
+### launch with arguments
+```bash title="show arguments"
+ros2 launch pkg_launch_tutorial minimal_arg.launch.py arg1:="new arg from cli"
 ...
-[INFO] [launch.user]: hello launch
+[INFO] [launch.user]: new arg from cli
+
 
 ```

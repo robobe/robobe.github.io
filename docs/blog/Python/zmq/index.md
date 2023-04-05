@@ -2,7 +2,9 @@
 title: PyZmq
 tags:
     - pyzmq
+    - zmq
 ---
+
 
 
 # Cookbook

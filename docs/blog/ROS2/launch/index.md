@@ -1,31 +1,26 @@
 ---
-title: ROS2 launch system
+
 tags:
     - ros2
     - launch
 ---
+# ROS2 launch 
+ROS2 launch file run/launch multiple nodes and allow to add logic to our startup sequence.
+
+Launch file has many features to control the launch sequence 
+
+- Actions
+- Event handlers
+- substitutions
+- conditions
 
 ---
 
-|   |   |
-|---|---|
-| OnProcessExit  |   |
-| RegisterEventHandler | |
-| TimerAction | |
-| ExecuteProcess | |
-| RewrittenYaml | from nav2_common.launch import RewrittenYaml |
-
-
-
----
-
-## Tips
-### Template: Minimal launch file
+## Demo: Minimal launch file
 
 ```python
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import LogInfo
 
 def generate_launch_description():
     ld = LaunchDescription()
@@ -37,9 +32,6 @@ def generate_launch_description():
             name='sim'
         )
 
-    log_launch = LogInfo(msg="---- log launch file ------")
-
-    ld.add_action(log_launch)
     ld.add_action(sim_node)
     return ld
 ```
@@ -75,8 +67,16 @@ setup(
 )
 ```
 
+---
+## Examples and more
 
-# Resources
+- [launch with arguments](launch_with_arguments.md)
+
+
+---
+
+## Resources
+- [Design ROS 2 Launch System](https://design.ros2.org/articles/roslaunch.html)
 - [ROS2 launch files – All you need to know](https://roboticscasual.com/tutorial-ros2-launch-files-all-you-need-to-know/)
 - [Architecture of launch](https://github.com/ros2/launch/blob/humble/launch/doc/source/architecture.rst#id71)
 - [launch source github](https://github.com/ros2/launch/tree/humble/launch)

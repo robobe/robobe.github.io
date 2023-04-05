@@ -1,9 +1,11 @@
 ---
-title: Add test to your package
 tags:
     - pytest
     - test
+    - ros2
+    - rclpy
 ---
+# Add test to your package
 
 unit test without ROS: unittest/pytest
 unit test with ROS: launch_test + unittest
@@ -58,10 +60,26 @@ colcon test --packages-select py_tutorial_pkg \
 ```
 
 - Run specific test
+
+
 ```bash
 # colcon test --packages-select <name-of-pkg> --pytest-args -k name_of_the_test_function
 
 colcon test --packages-select py_tutorial_pkg \
 --pytest-args -k test_math \
 --event-handler=console_direct+ 
- ```
+```
+
+!!! note "colcon event-handler"
+    The event handler used to generate any kind of output base on the progress of the invocation  
+      
+    use `+` sign to enable handler and `-` to disabled
+
+!!! note "event-handler"
+    - **console_direct**: Pass output directly to `stdout`, `stderror` 
+    - console_cohesion: Pass job output at once after it has finish
+
+### check result
+```
+colcon test-result --all
+```
