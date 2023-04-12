@@ -1,5 +1,5 @@
 ---
-title: Python project template
+
 description: Python project template
 date: "2022-24-05"
 banner: images/python.png
@@ -7,6 +7,8 @@ tags:
     - python
     - project
 ---
+# Python project template
+
 This post explain project structure and how to create github template repository
 
 Other post show how to config virtual environment install package unittest and tools usage
@@ -15,7 +17,9 @@ Other post show how to config virtual environment install package unittest and t
 - part 2: [venv and pip](venv_pip_and_requirements)
 - part 3: [unitest using pytest](project_unittest)
 - Tools:
-    * part 4: [pylint](pylint)
+    * part 4: [pylint](pylint.md)
+    * part 5: [flake8](flake8.md)
+    * [config isort, black, mypy and pylint with pre-commit hook](pre_commit.md)
 
 
 

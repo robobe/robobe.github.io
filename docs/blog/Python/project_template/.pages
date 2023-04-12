@@ -5,6 +5,8 @@ nav:
     - project_unittest.md
     - Tools:
       - pylint.md
+      - flake8.md
       - mypy.md
       - black.md
+      - pre_commit.md
     - vscode.md

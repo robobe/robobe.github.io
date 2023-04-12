@@ -1,13 +1,13 @@
 ---
-title: GPS
 tags:
     - ros2
     - gazebo
     - gps
     - sensors
 ---
+# Gazebo GPS Sensor
 
-Add GPS sensor add ROS2 plugin
+Add GPS sensor and ROS2 plugin
 
 !!! note 
     GPS gazebo is a sensor plugin
@@ -31,9 +31,10 @@ sdf_lab
     └── empty_gps.world
 ```
 
-Project files
-- model: Simple link with gps sensor and ros2 plugin
-- world: Init gps coordinates
+Project files: 
+
+- model: Simple link with gps sensor and ros2 plugin  
+- world: Init gps coordinates  
 - launch: Run gazebo with world and spawn model
 
 ### model
