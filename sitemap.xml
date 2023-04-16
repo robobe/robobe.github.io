@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/Ardupilot/system_time/</loc>
+         <lastmod>2023-04-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/Ardupilot/timesync/</loc>
          <lastmod>2023-04-16</lastmod>
          <changefreq>daily</changefreq>
