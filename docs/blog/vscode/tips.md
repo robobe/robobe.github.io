@@ -1,12 +1,29 @@
 ---
-title: VSCode tips
-description: VSCode tips
-date: "2022-04-30"
 banner: ../images/vscode.jpeg
 tags:
     - vscode
     - tips
 ---
+# VSCode tips and settings
+
+## editor
+### XML Region
+```
+<!-- #region -->
+...
+<!-- #endregion -->
+```
+
+---
+
+## tasks
+### Global tasks
+Place task file at `~/.config/Code/User/tasks.json`
+
+
+--- 
+
+# XML Region
 
 # Wrap selection
 using snippet
@@ -40,9 +57,3 @@ Add mkdocs text highlight on selection
 
 ---
 
-# XML Region
-```
-<!-- #region -->
-...
-<!-- #endregion -->
-```

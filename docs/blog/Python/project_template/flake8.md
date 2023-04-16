@@ -24,6 +24,7 @@ Flake8 supports storing its configuration in your project in one of `setup.cfg`,
 ```ini title=".flake8"
 [flake8]
 extend-ignore = E121
+max-line-length = 120
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
 
 ```
@@ -52,6 +53,7 @@ pylint_demo.py:3:9: F841 local variable 'x' is assigned to but never used
 [flake8]
 extend-ignore = F841
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+max-line-length = 120
 ```
 
      

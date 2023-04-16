@@ -52,3 +52,7 @@ Load VSCode Tasks into Status Bar.
     - [task Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
     - [for task bar icons](https://code.visualstudio.com/api/references/icons-in-labels)
      
+
+!!! tip "global tasks.json"
+    Place task file at `~/.config/Code/User/tasks.json`
+     

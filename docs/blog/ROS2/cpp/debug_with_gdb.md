@@ -1,9 +1,11 @@
 ---
-title: Debug ROS2 Node with GDB
 tags:
     - gdb
     - debug
+    - ros2
+    - cpp
 ---
+# Debug ROS2 Node with GDB
 
 Debug ROS2 cpp node with gdb and gdbserver and vscode
 

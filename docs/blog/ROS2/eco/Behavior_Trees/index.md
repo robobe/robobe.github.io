@@ -4,7 +4,7 @@ tags:
     - ros2
     - behavior
 ---
-## Behavior Trees
+# Behavior Trees
 Is a Task Switching Structure
 "What to do next?"
 
@@ -14,6 +14,11 @@ Each action needs to know
 ![](images/bt.drawio.png)
 
 The Ancestors decide "What to do next"
+
+## Behaviours
+- check / condition
+- action
+
 
 ### Actions
 [check](https://youtu.be/KeShMInMjro?list=PLFQdM4LOGDr_vYJuo8YTRcmv3FrwczdKg&t=104)

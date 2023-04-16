@@ -1,9 +1,10 @@
 ---
-title: Build binary deb package
 tags:
     - deb
     - ubuntu
+    - package
 ---
+# Build binary deb package
 A deb is a standard Unix ar archive that contains your application and other utility files.
 
 
@@ -18,7 +19,10 @@ deb package files follow a specific naming convention
 
 ## Tutorial
 
-```cpp
+Build deb package for cpp application
+ 
+
+```cpp title="app"
 #include <iostream>
 
 int main(int argc, char** argv){
@@ -27,13 +31,13 @@ int main(int argc, char** argv){
 }
 ```
 
-```bash tile="build"
+```bash title="build"
 g++ hello.cpp -o hello
 ```
 
 ### Create temporary working directory
 
-```
+```bash 
 mkdir hello_1.0_1_amd64
 mkdir -p hello_1.0_1_amd64/usr/local/bin
 cp hello hello_1.0_1_amd64/usr/local/bin/
@@ -62,6 +66,7 @@ Description: A program that greets you.
 # dpkg-deb --build --root-owner-group <package-dir>
 dpkg-deb --build --root-owner-group hello hello_1.0_1_amd64
 ```
+
 ---
 
 ### Test
@@ -107,6 +112,7 @@ Add dependencies to `Depends` section
 
 dpkg-shlibdeps -O path/to/binary/file
 ```
+
 ---
 
 # Reference

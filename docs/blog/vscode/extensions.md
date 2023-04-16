@@ -1,6 +1,4 @@
 ---
-description: VSCode plugins and extensions that i used
-date: "2022-04-18"
 tags:
     - vscode
     - extensions

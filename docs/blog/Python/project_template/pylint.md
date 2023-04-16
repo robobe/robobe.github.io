@@ -53,6 +53,14 @@ pylint --generate-rcfile > pylintrc
 !!! warning "pylintrc"
      pre-commit git hook not found the pylintrc file if we prefix it with dot (`.pylintrc`)
 
+!!! note "VSCode file mapping"
+    map `pylintrc` file to ini type
+    ```
+    "files.associations": {
+        "pylintrc": "ini"
+    },
+    ```
+
 ### Demo
 
 ![](images/pylint_demo.png)
@@ -144,6 +152,26 @@ Your code has been rated at 6.67/10 (previous run: 10.00/10, -3.33)
 
 
 [INFO] Restored changes from /home/user/.cache/pre-commit/patch1681097484-36170.
+```
+
+---
+
+## pylintrc template
+
+```ini
+[MASTER]
+disable=
+    C0114, # (missing-module-docstring)
+    C0115, # (missing-class-docstring)
+    C0116, # (missing-function-docstring)
+   
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length=120
+
+[BASIC]
+# Good variable names which should always be accepted, separated by a comma
+good-names=x,y
 ```
 
 ---
