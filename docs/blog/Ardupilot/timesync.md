@@ -2,7 +2,6 @@
 tags:
     - ardupilot
     - timesync
-    - system_time
 ---
 
 # Clock/Time Synchronized

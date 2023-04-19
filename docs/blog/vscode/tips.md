@@ -1,5 +1,4 @@
 ---
-banner: ../images/vscode.jpeg
 tags:
     - vscode
     - tips
@@ -57,3 +56,11 @@ Add mkdocs text highlight on selection
 
 ---
 
+# Extensions
+
+### ignore recommendation
+Stop VSCode to check and suggest recommendation ext.
+
+```json
+"extensions.ignoreRecommendations": true
+```
