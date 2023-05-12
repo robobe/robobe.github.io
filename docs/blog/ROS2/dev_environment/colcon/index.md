@@ -1,5 +1,4 @@
 ---
-title: Colcon build system
 description: Command line tool to build sets of software packages
 date: "2022-03-29"
 banner: colcon.png
@@ -7,7 +6,7 @@ tags:
     - ros2
     - colcon
 ---
-## Colcon
+# Colcon build system
 colcon is a command line tool to improve the workflow of building, testing and using multiple software packages. It automates the process, handles the ordering and sets up the environment to use the packages.
 
 ## Build tools
@@ -40,6 +39,16 @@ sudo apt install python3-colcon-common-extensions
 ## Usage
 **In the root of the workspace** run `colcon build`
 
+## extension
+### clean
+
+```bash title="install"
+sudo apt install python3-colcon-clean 
+```
+
+```bash title="clean workspace"
+colcon clean workspace
+```
 
 ## References
 - [ROS2 foxy Using colcon to build packages](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon)

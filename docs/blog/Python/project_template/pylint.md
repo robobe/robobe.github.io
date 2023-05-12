@@ -176,5 +176,23 @@ good-names=x,y
 
 ---
 
+## Tips
+
+#### line disable
+```python
+import config.logging_settings # pylint: disable=unused-import
+```
+
+#### function scope disable
+```python
+def test():
+    # Disable all the no-member violations in this function
+    # pylint: disable=no-member
+    ...
+    # pylint: enable=no-member
+
+```
+---
+
 ## Reference
 - [pyline error codes](https://vald-phoenix.github.io/pylint-errors/)

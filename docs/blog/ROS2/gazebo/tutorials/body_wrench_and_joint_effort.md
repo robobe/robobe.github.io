@@ -1,9 +1,14 @@
 ---
-title: Body wrench and Joint Effort
+
 tags:
-    - gazebo
+    - gazebo classic
     - tutorial
+    - ros2
+    - wrench
+    - effort
 ---
+# Body wrench and Joint Effort
+[ROS 2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Body-Wrench-and-Joint-Effort)
 
 
 # Link Wrench
@@ -79,3 +84,4 @@ TODO:
 # Reference
 
 - [gazebo plugin worlds](/opt/ros/humble/share/gazebo_plugins/worlds)
+- [ROS Communication](https://classic.gazebosim.org/tutorials?tut=ros_comm)

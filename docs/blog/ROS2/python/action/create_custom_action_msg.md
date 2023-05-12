@@ -4,11 +4,25 @@ tags:
     - ros2
     - python
     - action
+    - custom messages
 ---
 
-Actions are defined in `.action` locate in `action` sub folder
+Actions are defined as `.action` file locate in `action` sub folder
+The best practice is to create a package dedicated to ROS2 custom messages.
+The package type is `cmake_ament` and 
+naming the package with `_interface` suffix so it' clear that the package is an interface package.
 
-Action files defined in this structure
+```bash
+ros2 pkg create custom_interfaces
+rm -rf include
+rm -rf src
+mkdir msg srv action
+```
+
+- Remove from the package the `src` and `include` folders
+- Create folders for `msg`, `srv`, `action` sub folders/
+- Add `action file` for example name it `Counter.action`
+- Action files defined in this structure
 
 ```
 # Request
@@ -18,9 +32,8 @@ Action files defined in this structure
 # Feedback
 ```
 
-## Demo
 ### Action Definition
-```title="action/MyAction.action"
+```title="action/Counter.action"
 int32 count
 ---
 int32 total
@@ -45,29 +58,35 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/MyAction.action"
 )
+ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()
 ```
 
 !!! tip "CMakeLists"
-     Keep each action in new line
+     Keep each action,srv or msg in new line
 
 
 ### Package.xml
 ```xml title="Add to package.xml"
-<buildtool_depend>rosidl_default_generators</buildtool_depend>
-<depend>action_msgs</depend>
-<member_of_group>rosidl_interface_packages</member_of_group>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
 ```
 
 ### build and test
-
+#### build
 ```bash
 colcon build --packages-select action_tutorial_interfaces 
 ```
 
+#### test
+```bash
+ros2 interface list | grep Counter
+```
+
 ```bash title="check"
-ros2 interface show action_tutorial_interfaces/action/MyAction 
+ros2 interface show custom_interfaces/action/Counter
 
 #
 
@@ -78,7 +97,8 @@ int32 total
 int32 current
 
 ```
+
 ---
 
-# Resources
+## Resources
 - [Creating an action](https://docs.ros.org/en/humble/Tutorials/Intermediate/Creating-an-Action.html)

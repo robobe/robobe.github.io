@@ -1,12 +1,24 @@
+---
+tags:
+    - ros2
+    - python
+    - action
+    - action client
+---
+# Action client
+Call/Run action on action server 
+
+- Run callback for each `feedback`
+- Run callback when server return `response`
 
 
-```python
+```python  linenums="1" hl_lines="25 27"
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
 import threading
 
-from action_tutorial_interfaces.action import MyAction
+from custom_interfaces.action import Counter  # pylint: disable=E0401
 
 TOPIC = "my_action_demo"
 

@@ -1,5 +1,4 @@
 ---
-
 description: Python project template
 date: "2022-24-05"
 banner: images/python.png
@@ -17,9 +16,12 @@ Other post show how to config virtual environment install package unittest and t
 - part 2: [venv and pip](venv_pip_and_requirements)
 - part 3: [unitest using pytest](project_unittest)
 - Tools:
-    * part 4: [pylint](pylint.md)
-    * part 5: [flake8](flake8.md)
+    * [pylint](pylint.md)
+    * [flake8](flake8.md)
+    * [mypy](mypy.md)
     * [config isort, black, mypy and pylint with pre-commit hook](pre_commit.md)
+- Demo: [Crate project](use_case.md)
+- [Add projects documentation](docs.md)
 
 
 
