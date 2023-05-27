@@ -7,7 +7,39 @@ tags:
 # Action server
 Create `action server` that use `Counter.action` custom message declare at [custom_interfaces](create_custom_action_msg.md) 
 
+Action server create 3 service
+and 2 topics
 
+![](images/action_overview.png)
+
+
+!!! tip "Action topics and services"
+    use `--include-hidden-topics` arg
+
+    ```bash
+    ros2 topic list --include-hidden-topics 
+    #
+    /action_demo/_action/feedback
+    /action_demo/_action/status
+    /parameter_events
+    /rosout
+    ```
+
+    use `include-hidden-services` on service list
+    
+    ```bash
+    ros2 service  list --include-hidden-services 
+    /action_demo/_action/cancel_goal
+    /action_demo/_action/get_result
+    /action_demo/_action/send_goal
+    ```  
+---
+
+## Action sequence
+![](images/basic_sequence.png)
+
+
+## Code time
 !!! tip "VSCode action intellisense"
     Add path to search to `python.analysis.extraPaths` list
     in settings.json
@@ -20,7 +52,7 @@ Create `action server` that use `Counter.action` custom message declare at [cust
     }
     ```
      
-## demo
+### demo
 
 ```python title="action_tutorial/my_server.py"
 import rclpy
@@ -71,13 +103,13 @@ if __name__ == "__main__":
     main()
 ```
 
-## package.xml
+### package.xml
 ```xml
 <!-- Add dependency to custom_interfaces package -->
 <depend>custom_interfaces</depend>
 ```
 
-### Test
+## Test
 
 Use ROS cli to run action
 ```bash
@@ -88,6 +120,12 @@ int32 total
 ---
 int32 current
 
+```
+
+```bash title="check for actions"
+ros2 action list
+#
+/my_action_demo
 ```
 
 ```bash
@@ -101,7 +139,8 @@ ros2 action send_goal -f /my_action_demo custom_interfaces/action/Counter "{coun
      
 
 ```bash title="send_goal" linenums="1" hl_lines="3 4 8 23 26"
-ros2 action send_goal -f /my_action_demo action_tutorial_interfaces/action/MyAction "{count: 5}"
+ros2 action send_goal -f /my_action_demo custom_interfaces/action/Counter "{count: 5}"
+#
 Waiting for an action server to become available...
 Sending goal:
      count: 5
@@ -129,3 +168,20 @@ Result:
 Goal finished with status: SUCCEEDED
 
 ```
+
+---
+
+## Goal States
+
+
+
+- **ACCEPTED (1)**: The goal has been accepted and wait for execute.
+- **EXECUTING (2)**: The goal is currently running by action server
+- **CANCELING (3)**: The client request the server to cancel current goal (cancel accepted)
+- **SUCCEEDED (4)**: The goal was successfully by the action server
+- **CANCELED (5)**: The goal canceled by the client or external event
+- **ABORTED (6)**: The goal terminated by the action server
+
+### action server state service
+- **send_goal**: New goal request send to the server, if `accepted` start the server state machine
+- **cancel_goal**: Request server to stop processing current goal.

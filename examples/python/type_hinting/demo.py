@@ -1,17 +1,11 @@
-from typing import List
-from typing import Union
-from typing import Dict
+from dataclasses import dataclass
 
-number = Union[int, float]
+@dataclass
+class Animal:
+    name: str
 
-def get_list(item: number) -> List[number]:
-    list = [1, 2, item]
-    return list
+def func(animal: Animal) -> None:
+    return None
 
-
-def build_map() -> Dict[str, number]:
-    return {
-        1: "a",
-        "a": 1
-    }
-print(get_list(1))
+a = Animal(name="12345")
+func(a)

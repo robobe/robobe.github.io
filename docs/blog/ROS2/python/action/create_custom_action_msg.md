@@ -25,12 +25,18 @@ mkdir msg srv action
 - Action files defined in this structure
 
 ```
-# Request
+# Goal
 ---
 # Result
 ---
 # Feedback
 ```
+
+1. Goal: Describe what the action should achieve, It send to the action server when client requested to execute an action
+2. Result: Describe the outcome of an action
+3. Feedback: Describe the progress towards completing an action.
+  
+
 
 ### Action Definition
 ```title="action/Counter.action"
