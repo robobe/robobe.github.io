@@ -7,6 +7,35 @@
     ],
     "ros.distro": "humble",
     // "python.linting.mypyEnabled": true,
-    "python.linting.enabled": true
-
+    "python.linting.enabled": true,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/*/**"
+    ],
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "CUSTOM"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "CUSTOM": {
+            "iconColour": "#00ff00",
+            "type": "line",
+            "foreground": "#00ff00"
+        },
+        "FIXME": {
+            "iconColour": "#fff200",
+            "gutterIcon": true
+        },
+        "BUG": {
+            "iconColour": "#ff0000",
+            "gutterIcon": true,
+            "foreground": "#ff0000",
+            "type": "line"
+        }
+    }
 }

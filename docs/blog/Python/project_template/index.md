@@ -67,5 +67,6 @@ Set project as a Template
 
 
 # Reference
+- [Modern python developers toolkit](https://pycon.switowski.com/0-introduction/)
 - [template example](https://github.com/overfitted-cat/from-pybase)
 - [Python Dev Environment](https://dev.to/bowmanjd/python-dev-environment-part-3-dependencies-with-installrequires-and-requirements-txt-kk3)

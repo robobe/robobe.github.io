@@ -184,7 +184,7 @@ ros2 topic echo /mavros/rangefinder_pub
         id: 0
         frame_id: "lidar"
         #orientation: PITCH_270 # sended by FCU
-        field_of_view: 0.0  # XXX TODO
+        field_of_view: 0.0  
         send_tf: false
         sensor_position: {x:  0.0, y:  0.0, z:  -0.1}
       rangefinder_sub:

@@ -38,3 +38,67 @@ For python , C++ and dev helper
 | dev-container      |          |                                                                              |
 
 
+## todo tree
+[todo-tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
+![](images/todo-tree.png)
+
+### Settings
+- **todo-tree.filtering.excludeGlobs**: Exclude files or folder from search
+- **todo-tree.general.tags**: Add custom tags
+- **todo-tree.highlights.customHighlight**: Set tags settings
+  - type: line : highlights the entire line containing the tag
+  - foreground: 
+  - gutterIcon: Set icon in gutter ruler
+  - iconColour: Set the colour of the icon in the tree
+
+
+```json title="settings.json"
+   "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/*/**"
+    ],
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "CUSTOM"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "CUSTOM": {
+            "iconColour": "#00ff00",
+            "type": "line",
+            "foreground": "#00ff00"
+        },
+        "FIXME": {
+            "iconColour": "#fff200",
+            "gutterIcon": true
+        },
+        "BUG": {
+            "iconColour": "#ff0000",
+            "gutterIcon": true,
+            "foreground": "#ff0000",
+            "type": "line"
+        }
+    }
+```
+
+#### demo
+```
+"""python
+TODO: todo line
+- [ ]: check
+- [x]: done check
+- FIXME: fixme line
+BUG: bug to fix
+XXX:
+CUSTOM: 
+"""
+def hello_todo():
+
+    print("hello todo")
+
+```

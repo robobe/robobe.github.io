@@ -28,9 +28,6 @@ apt install ros-humble-rqt-runtime-monitor
   {
     using mavlink::minimal::MAV_MODE_FLAG;
 
-    // XXX(vooon): i assume that UAS not interested in HBs from non-target system.
-
-    // Store generic info of all heartbeats seen
     auto it = find_or_create_vehicle_info(msg->sysid, msg->compid);
 
     auto vehicle_mode = uas->str_mode_v10(hb.base_mode, hb.custom_mode);
