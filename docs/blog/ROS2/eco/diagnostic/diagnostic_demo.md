@@ -1,12 +1,12 @@
 ---
-title: simple diagnostics demo
+
 tags:
     - ros2
     - diagnostics
     - tutorials
 ---
-
-# LAB
+# Simple diagnostics demo
+## LAB
 - Write simple node
   - Add diagnostic task to monitor node state
 - Add diagnostic updater and bind the task
@@ -17,64 +17,83 @@ tags:
 ![](images/dia_blocks.drawio.png)
 
 
-## Node 
-- 
-```python title="gps_node" linenums="1" hl_lines="1"
-import threading
+### Node 
+
+```python title="task_demo" linenums="1" hl_lines="1"
 import rclpy
-from rclpy.node import Node
-from diagnostic_updater import (Updater,
-    DiagnosticTask
-)
 from diagnostic_msgs.msg import DiagnosticStatus
+from diagnostic_updater import DiagnosticStatusWrapper, DiagnosticTask, Updater
+from rclpy.node import Node
 
-TIMER_INTERVAL = 2
 
-class StateTask(DiagnosticTask):
-    def __init__(self, name):
-        super().__init__(name)
-        self.state = False
+class SimpleDiagnosticsUpdater(Updater):
+    def __init__(self, node):
+        period = 1
+        super().__init__(node, period)
+        self.setHardwareID("simple hw")
 
-    def run(self, stat):
-        if self.state:
-            level = DiagnosticStatus.OK
-            msg = "RUNNING"
-        else:
-            level = DiagnosticStatus.ERROR
-            msg = "BROKEN"
-        
-        stat.summary(level, msg)
+
+class DummyTask(DiagnosticTask):
+    def __init__(self):
+        super().__init__("dummy task")
+        self.__monitor_data: int = 0
+
+    def set_data(self, value: int) -> None:
+        self.__monitor_data = value
+
+    def run(self, stat: DiagnosticStatusWrapper) -> DiagnosticStatusWrapper:
+        status: DiagnosticStatus = DiagnosticStatus.OK
+        msg: str = "task ok"
+        if (self.__monitor_data % 5) == 0:
+            status = DiagnosticStatus.WARN
+            msg = "task warning"
+        if (self.__monitor_data % 10) == 0:
+            status = DiagnosticStatus.ERROR
+            msg = "task error"
+        stat.summary(status, msg)
         return stat
 
-class GpsNode(Node):
-    def __init__(self):
-        super().__init__("GPS_NODE")
-        self.diag_updater = Updater(self)
-        self.diag_updater.setHardwareID("gps")
-        self.state_task = StateTask("GPS_TASK")
-        self.diag_updater.add(self.state_task)
-        self.create_timer(TIMER_INTERVAL, self.timer_handler)
 
-    def timer_handler(self):
-        self.state_task.state = not self.state_task.state
+class MyNode(Node):
+    def __init__(self):
+        node_name = "simple"
+        super().__init__(node_name)
+        self.__init_diagnostics()
+        self.__data_to_monitor = 0
+        self.create_timer(1.0, self.__timer_handler)
+        self.get_logger().info("Hello ROS2")
+
+    def __init_diagnostics(self) -> None:
+        self.diagnostics_updater = SimpleDiagnosticsUpdater(self)
+        self.dummy_task = DummyTask()
+        self.diagnostics_updater.add(self.dummy_task)
+
+    def __timer_handler(self):
+        self.__data_to_monitor += 1
+        self.dummy_task.set_data(self.__data_to_monitor)
+        self.diagnostics_updater.update()
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node = GpsNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    node = MyNode()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        print("User exit")
+    finally:
+        node.destroy_node()
+        rclpy.try_shutdown()
+
+
 if __name__ == "__main__":
     main()
-
-
 ``` 
 
 ---
 
-## Aggregator config
-```python title="qrt_runtime_monitor config" linenums="1" hl_lines="1"
+### Aggregator config
+```python title="diagnostics_aggregator_config" linenums="1" hl_lines="1"
 analyzers:
   ros__parameters:
     path: Sensors
@@ -84,33 +103,34 @@ analyzers:
       analyzers:
         primary:
           type: 'diagnostic_aggregator/GenericAnalyzer'
-          path: gps
-          startswith: [ 'GPS' ]
+          path: simple_path_demo
+          contains: ["dummy task"]
 ```
 
 ---
 
-## launch
-```python title="launch"
+### launch
+```python title="demo.launch.py"
 import os
-from launch import LaunchDescription
+
 from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
+from launch import LaunchDescription
 from launch.actions import ExecuteProcess
+from launch_ros.actions import Node
+
+PACKAGE = "diagnostics_tutorial"
+
 
 def generate_launch_description():
     ld = LaunchDescription()
 
     config = os.path.join(
-        get_package_share_directory('pkg_python_tutorial'),
-        'config',
-        'group_diag.yaml'
-        )
-
-    gps_node = Node(
-        package="pkg_python_tutorial",
-        executable="gps_node"
+        get_package_share_directory(PACKAGE),
+        "config",
+        "diagnostics_aggregator_config.yaml",
     )
+
+    simple_node = Node(package=PACKAGE, executable="task")
 
     agg_node = ExecuteProcess(
         cmd=[
@@ -120,32 +140,36 @@ def generate_launch_description():
             "aggregator_node",
             "--ros-args",
             "--params-file",
-            config
-            ],
-        name='aggregator_node',
+            config,
+        ],
+        name="aggregator_node",
         emulate_tty=True,
-        output='screen')
-
-    robot_monitor = Node(
-        package="rqt_robot_monitor",
-        executable="rqt_robot_monitor"
+        output="screen",
     )
+
+    robot_monitor = Node(package="rqt_robot_monitor", executable="rqt_robot_monitor")
 
     runtime_monitor = Node(
-        package="rqt_runtime_monitor",
-        executable="rqt_runtime_monitor"
+        package="rqt_runtime_monitor", executable="rqt_runtime_monitor"
     )
 
-    ld.add_action(gps_node)
+    ld.add_action(simple_node)
     ld.add_action(agg_node)
     ld.add_action(robot_monitor)
     ld.add_action(runtime_monitor)
     return ld
+
 ```
 
-Show Diagnostics with
+### Show Diagnostics
 - rqt_runtime_monitor (right)
 - rqt_robot_monitor (left)
+
+
+![](images/config_with_monitor_viewer.png)
+
+!!!
+    messages show in Tree view by `path` attribute in each level
 
 
 ![type:video](images/diagnostics_monitor.webm)

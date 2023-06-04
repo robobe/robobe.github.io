@@ -14,3 +14,7 @@ tags:
 
 ### cmake
 - [CMake basics](https://nu-msr.github.io/navigation_site/lectures/cmake_basics.html)
+
+
+### git project to check
+- [rviz_2d_overlay_plugins](https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins)

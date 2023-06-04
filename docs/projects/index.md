@@ -1,5 +1,8 @@
 ---
-title: Projects
-description: Projects and courses
+tags:
+    - projects
+    - courses to follow
 ---
-[](ROS2 Cookbook/)
+
+### Courses
+- [Visual Navigation for Flying Robots](https://cvg.cit.tum.de/teaching/ss2013/visnav2013)
