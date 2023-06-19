@@ -36,4 +36,18 @@ pytest
 !!! tip "jinja remove empty line"
     Add `-` after `%` to remove jinja empty lines
     for `variable` settings `if` and `for` loops
+
+---
+
+## cookiecutter privates
+
+### _copy_without_render
+list of file/ directories to copy without render
+
+```json title="cookiecutter.json"
+{
+    "_copy_without_render": [
+        "README.md"
+    ]
+}
      

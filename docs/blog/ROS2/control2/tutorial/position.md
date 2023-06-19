@@ -1,9 +1,9 @@
 ---
-title: ROS2 control, simple tutorial base on one continues joint
 tags:
     - ros2
     - ros2_control
 ---
+# ROS2 control, simple tutorial base on one continues joint
 
 # Objective
 - Create simple `urdf` with two links and one continues joint
@@ -119,28 +119,37 @@ controller_manager:
 position_controller:
   ros__parameters:
     joints:
-      - base_to_second_joint
+      - camera2base
     interface_name: position
     command_interfaces:
       - position
     state_interfaces:
       - position
       - velocity
+
+joint_state_broadcaster:
+  ros__parameters:
+      joints:
+        - camera2base
 ```
 
 ### usage
 
-```bash load controllers
+```bash title="load controllers"
 # joint_state
 ros2 run controller_manager spawner joint_state_broadcaster
 
 # position controller
 ros2 run controller_manager spawner position_controller
+```
 
+```bash title="topics" linenums="1" hl_lines="5 10"
 # topics
 ros2 topic list
 
 /clock
+/dynamic_joint_states
+/joint_state_broadcaster/transition_event
 /joint_states
 /parameter_events
 /performance_metrics
@@ -153,6 +162,34 @@ ros2 topic list
 
 ```
 
-```bash title="pub position command
-ros2 topic pub /position_controller/commands  std_msgs/msg/Float64MultiArray "{data: [340]}"
+#### position command
+```bash title="pub position command"
+ros2 topic pub --once \
+/position_controller/commands \
+std_msgs/msg/Float64MultiArray "{data: [1.575]}"
+```
+
+#### state
+```bash
+ros2 topic echo /dynamic_joint_states
+# 
+---
+header:
+  stamp:
+    sec: 108
+    nanosec: 430000000
+  frame_id: ''
+joint_names:
+- camera2base
+interface_values:
+- interface_names:
+  - position
+  - velocity
+  - effort
+  values:
+  - 1.5750000000000002
+  - -2.7191856406436335e-23
+  - 0.0
+---
+
 ```
