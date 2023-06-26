@@ -1,10 +1,11 @@
 ---
-title: VSCode dev containers
 tags:
     - vscode
     - dev
     - docker
+    - dev container
 ---
+# VSCode dev containers
 
 [devcontainer for python project](python_project.md)
 
@@ -39,7 +40,13 @@ WORKDIR /home/$USERNAME
 ```json
 "remoteUser": "nonroot"
 ```
+
+```json
+"containerUser": "nonroot"
+```
+
 ---
 
 # Reference
+- [Use a Docker container as a development environment with Visual Studio Code](https://learn.microsoft.com/en-us/training/modules/use-docker-container-dev-env-vs-code/)
 - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/)

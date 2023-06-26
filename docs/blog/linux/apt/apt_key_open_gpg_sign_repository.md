@@ -54,3 +54,4 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] htt
 
 ## Reference
 - [apt-key Is Deprecated. ...](https://www.linuxuprising.com/2021/01/apt-key-is-deprecated-how-to-add.html)
+- [apt-key Is Deprecated MUST read ](https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key)
