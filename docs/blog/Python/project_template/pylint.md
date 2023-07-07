@@ -193,6 +193,24 @@ def test():
 
 ```
 
+## Tips
+
+```
+E1101:Module 'pygame' has no 'init' member
+```
+
+```json
+"python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=extensionname" // comma separated
+]
+
+// or
+
+"python.linting.pylintArgs": [
+    "--unsafe-load-any-extension=y"
+]
+```
+
 ---
 
 ## Reference
