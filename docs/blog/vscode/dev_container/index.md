@@ -48,5 +48,6 @@ WORKDIR /home/$USERNAME
 ---
 
 # Reference
-- [Use a Docker container as a development environment with Visual Studio Code](https://learn.microsoft.com/en-us/training/modules/use-docker-container-dev-env-vs-code/)
 - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/)
+- [Use a Docker container as a development environment with Visual Studio Code](https://learn.microsoft.com/en-us/training/modules/use-docker-container-dev-env-vs-code/)
+- [install devcontainer vscode server](https://stackoverflow.com/questions/56671520/how-can-i-install-vscode-server-in-linux-offline)

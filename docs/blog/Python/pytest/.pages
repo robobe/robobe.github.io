@@ -1,5 +1,0 @@
-nav:
-    - fixture.md
-    - conftest.md
-    - params.md
-    - mock.md

@@ -7,12 +7,41 @@ tags:
 ---
 
 # Test
+
+## Tests structure
 - Arrange (setup)
 - Act (object/method under test)
 - Assert
 - Cleanup
 
 
+## simple demo
+
+!!! note
+    pytest search all module that naming start with `test` prefix and method start with `test` prefix
+    
+     
+```python title="test_demo.py"
+def test_func():
+    assert 1 == 1
+
+def test_func_fail():
+    assert 1 == 2
+```
+
+```bash
+# from project root folder run
+# run all tests
+pytest
+
+# run module tests
+pytest test_demo.py
+
+# run specific test from module
+pytest test_demo.py::test_func
+```
+
+## 
 # Groping Tests
 ## Custom markers
 - Using `pytest.mark` decorator we can group tests 

@@ -1,9 +1,11 @@
 ---
-title: PyTest - Mocking
+
 tags:
     - pytest
     - mock
+    - unittest
 ---
+# PyTest - Mocking
 
 !!! note "mocking"
     A mock object is a simulated object that mimics the behavior of the smallest testable parts of an application in controlled ways. It's replace of one or more function or objects calls
@@ -11,6 +13,40 @@ tags:
     A mock function call return a predefined value immediately without doing any work
 
 In Python mocking implement by `unittest.mock` module
+
+
+## demo1
+[How To Mock Patch A Function](https://youtu.be/ClAdw7ZJf5E?list=PLJsmaNFr5mNqSeuNepT3IaMrgzRMm9lQR)
+
+```python title="demo.py"
+from random import randint
+
+def func_under_test():
+    r = randint(1, 8)
+    return r
+```
+
+```python title="test_demo.py"
+from demo import func_under_test
+from unittest import mock
+
+@mock.patch("demo.randint", return_value=7, autospec=True)
+def test_with_mock(mock_randint):
+    r = func_under_test()
+    assert r == 7
+```
+
+!!! tip "patch"
+    Patch `the thing` where it used 
+    not where it's import
+    In the above example we patch `demo.randint` and not `random.randint`
+     
+
+!!! tip "autospec"
+    [autospec](https://stackoverflow.com/questions/35915703/when-using-unittest-mock-patch-why-is-autospec-not-true-by-default)
+
+    
+---
 
 ### Simple demo
 
