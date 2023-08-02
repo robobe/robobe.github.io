@@ -39,13 +39,13 @@ def test_with_mock(mock_randint):
 !!! tip "patch"
     Patch `the thing` where it used 
     not where it's import
-    In the above example we patch `demo.randint` and not `random.randint`
+    In the above example we patch `demo.randint` and **not** `random.randint`
      
 
 !!! tip "autospec"
     [autospec](https://stackoverflow.com/questions/35915703/when-using-unittest-mock-patch-why-is-autospec-not-true-by-default)
 
-    
+
 ---
 
 ### Simple demo
@@ -83,6 +83,43 @@ def test_add_mock(mock_get_number: MagicMock) -> None:
 !!! warning
     `@path` full name of the function or class to patch `module_name.func_name` for example to path `get_number` function in `demo` module. `@patch("demo.get_number")`
      
+
+---
+
+## Mock with parametrize
+- Set mock **return_value** from parameter
+
+
+```python title="demo.py"
+from random import randint
+
+def get_random():
+    return randint(1, 10)
+
+
+def good_random():
+    r = get_random()
+    if r > 7:
+        return "win"
+    else:
+        return "lose"
+```
+
+```python title="test_demo.py"
+import pytest
+from unittest import mock
+from demo import good_random
+
+
+@pytest.mark.parametrize("_input, expected", [(8, "win"), (5, "lose")])
+@mock.patch("demo.get_random")
+def test_good_random(mock_get_random, _input, expected):
+    mock_get_random.return_value = _input
+    result = good_random()
+    assert result == expected
+
+```
+
 ---
 
 ## MagicMock

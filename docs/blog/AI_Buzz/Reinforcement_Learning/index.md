@@ -16,6 +16,7 @@ A - Agent
 [Python Reinforcement Learning using Gymnasium – Full Course](https://youtu.be/vufTSJbzKGU)
 
 
+[matlab tech talks](https://youtu.be/pc-H4vyg2L4)
 
 ## ---
 

@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        VERSION: 0.1
+    user: user
+    hostname: dev
+    container_name: python_dev
+    stdin_open: true 
+    tty: true
+  server:
+    image: py_dev:latest
