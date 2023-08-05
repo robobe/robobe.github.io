@@ -7,28 +7,60 @@ tags:
 ---
 
 # Python project using VSCode devcontainer
+Create python project using devcontainer
 
-## Multistage
+
+```bash title="basic project"
+├── .devcontainer
+│   ├── devcontainer.json
+│   ├── docker-compose.yaml
+│   ├── Dockerfile
+│   └── postCreateCommand.sh
+├── .dockerignore
+├── .flake8
+├── .gitignore
+├── py_devcontainer_demo
+│   ├── __init__.py
+│   ├── main.py
+│   └── utils.py
+├── pyproject.toml
+├── README.md
+├── requirements-dev.txt
+├── requirements.txt
+├── scripts
+│   └── clean.sh
+├── setup.py
+├── tests
+│   ├── __init__.py
+│   └── test_demo.py
+└── .vscode
+    ├── settings.json
+    └── tasks.json
+
+```
+
+## Docker multistage
 - Create multistage docker
     - base
     - dev
 - Set devcontainer `target` attribute to requested target
 
-```Dockerfile
+```Dockerfile title="Dockerfile"
 FROM ubuntu:22.04 as python_base
 ...
-FROM python_base as python_dev
+FROM python_base as development
 ...
 
 ```
 
-```json
+
+```json title="devcontainer.json" linenums="1" hl_lines="6"
 {
     "name": "python-dev",
     "build": {
         "dockerfile": "Dockerfile",
         "context": "..",
-        "target": "python_dev"
+        "target": "development"
     }
 }
 ```
@@ -37,7 +69,10 @@ FROM python_base as python_dev
     ```bash
     docker build --target development
     ```
-     
+#### files     
+- [Dockerfile](.devcontainer/Dockerfile)
+- [devcontainer.json](.devcontainer/devcontainer.json)
+
 
 ---
 
@@ -60,8 +95,10 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && rm -rf /var/lib/apt/lists/* 
 ```
 
-```json title="devcontainer.json
-"remoteUser": "user",
+```json title="devcontainer.json"
+{
+    "remoteUser": "user",
+}
 ```
 
 !!! note "remoteUser vs containerUser"
@@ -73,7 +110,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 ## requirements
 There at lest two option to install `requirement.txt`
 
-- **Option 1**: Install `requirement.txt` using `devcontainer.json` property like `postCreateCommand`
+- **Option 1**: Install `requirement.txt` using  `devcontainer.json` property like `postCreateCommand`
 
 ```json title="devcontainer.json"
 {
@@ -97,6 +134,7 @@ RUN pip install --no-`cache-dir --upgrade -r /home/user/requirements-dev.txt
 ```bash
 pip install --prefix=~/.local -e .
 ```
+
 ---
 
 ## build wheel and deb
@@ -137,7 +175,12 @@ RUN apt-get update && \
     - **deb**: deb_dist folder
     - **wheel**: dist folder
      
+
+
+
+
 ---
+
 
 ## Testing
 - Install pytest (requirements-dev.txt)
@@ -184,7 +227,11 @@ find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
     ```bash
     bash -x scripts/clean.sh
     ```
-     
+
+#### files
+- [vscode tasks](.vscode/tasks.json)
+- [script](scripts/clean.sh)
+       
 ---
 
 ## python tools
@@ -213,14 +260,63 @@ Load VSCode Tasks into Status Bar.
 
 ---
 
-### TODO
-#### docker-compose
+## GUI
+### tk
+- install python3-tk
+- Add x11 support to docker execution
+
+```dockerfile
+RUN apt-get update && apt-get install -y \
+    tk \
+    python3-tk \
+```
+
+```json title="devcontainer.json"
+{
+    "runArgs": [
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+    ],
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}"
+    },
+}
+```
+
+```python title="main.py"
+import tkinter as tk
+
+# Tkinter Window
+root_window = tk.Tk()
+
+# Window Settings
+root_window.title("Application Title")
+root_window.geometry("300x100")
+root_window.configure(background="#353535")
+
+# Text
+tk.Label(root_window, text="Hello World", fg="White", bg="#353535").pack()
+
+# Exit Button
+tk.Button(root_window, text="Exit", width=10, command=root_window.destroy).pack()
+
+# Main loop
+root_window.mainloop()
 
 ```
+
+---
+## TODO
+#### docker-compose
+- Add docker-compose to devcontainer.json
+- Launch dev and other services
+
+
+```json title="devcontainer.json"
 "dockerComposeFile": "docker-compose.yaml",
 "service": "app",
 "workspaceFolder": "/workspace",
 ```
+
 ---
 
 ## References
