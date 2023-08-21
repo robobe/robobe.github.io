@@ -621,6 +621,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/Python/typing/protocol/</loc>
+         <lastmod>2023-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/Python/typing/self_annotetion/</loc>
          <lastmod>2023-08-21</lastmod>
          <changefreq>daily</changefreq>
