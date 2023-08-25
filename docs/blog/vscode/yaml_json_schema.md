@@ -146,17 +146,25 @@ VSCode manage json schema by set `json.schemas` in settings.json
 }
 ```
 
-## VSCode
-- Install [YAML red hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+---
+
+## YAML and json schema
+Using [YAML red hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+we can config yaml file to validate against json schema
+
 
 ### settings
 
 ```json
 "yaml.schemas": {
   "<shema file location>.json": "<file useage by schema>.yaml",
-  "<shema file location>.json": "<file useage by schema>.json"
 },
 ```
+
+### Demo
+- Simple schema withou
+
+---
 
 # References
 - [How to create your own auto-completion for JSON and YAML files on VS Code with the help of JSON Schema](https://dev.to/brpaz/how-to-create-your-own-auto-completion-for-json-and-yaml-files-on-vs-code-with-the-help-of-json-schema-k1i)

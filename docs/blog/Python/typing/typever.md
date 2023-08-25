@@ -1,9 +1,21 @@
 ---
 tags:
     - typing
-    - typever
+    - typevar
     - python
 ---
+
+Type variables allow you to link several types together.
+
+```python
+from typing import TypeVar
+
+T = TypeVar("T")
+
+def foo(arg: T) -> T:
+    return arg
+```
+
 
 # TypeVar
 

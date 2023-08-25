@@ -7,148 +7,143 @@ tags:
 ---
 
 # Docker Python application
-base on [Dockerize a Python web app](https://github.com/patrickloeber/python-docker-tutorial/tree/main/example2)
+Using `pysimplegui` to build simple python GUI application
 
+Using Docker as production, development and test environment
+Using VSCode devcontainer as development setup
 
-## Project
-```bash
-├── app
-│   └── main.py
-├── .devcontainer
-│   ├── devcontainer.json
-│   └── Dockerfile
-├── README.md
-└── requirements.txt
-```
-
-```bash title="requirements.txt"
-uvicorn
-fastapi
-```
-
-```Dockerfile title="Dockerfile"
-FROM python:3.8.12-slim as app_base
-
-WORKDIR /code
-
-COPY ./requirements.txt /code/requirements.txt
-
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-COPY ./app /code/app
-
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
-```
+## Dockerfile
+Build from four stage:
+1. **python_base**: base on ubuntu 22.04 that add user and install python
+2. **deploy**: Add python application dependencies install by **apt** and **pip** (without the application it self)
+3. **prod**: Install the application using whl build by **development**
+4. **development**: Add all packages need by the development and build system
 
 ---
 
-### Build
-from .devcontainer folder run
+## Helper scripts
+### Deploy
+Check that the application can installed and run
 
-```
-docker build -t fastapi-image -f Dockerfile ..
-```
+- Deploy container include all package needed by the application for running (apt and pip)
+- Run docker container with **user** permission and **x11** support
+- Create share from `<project>`/dist folder to install the application on docker container
+- Install run by the user from `/dist`  folder using `pip`
 
-### Run
 
-```
-docker run -p 8000:80 fastapi-image
-```
-
-### Usage
-
-![](images/web-fastapi.png)
-
----
-
-## Using ubuntu as base image
-Using ubuntu 22.04 as base image add user uid 1000 and install support packages  
-In this example we use python tkinter basic application
-
-```bash
-.
-├── app
-│   └── main.py
-├── .devcontainer
-│   ├── devcontainer.json
-│   ├── Dockerfile.python
-│   └── Dockerfile.ubuntu
-├── README.md
-└── requirements.txt
-```
-
-```dockerfile title="Dockerfile.ubuntu" linenums="1" hl_lines="3-4 13"
-FROM ubuntu:22.04 as base
-
-ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=Etc/UTC
-
-ARG USERNAME=user
-ARG USER_UID=1000
-ARG USER_GID=1000
-
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && apt-get update \
-    && apt-get install -y sudo tzdata \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
-    && chmod 0440 /etc/sudoers.d/$USERNAME \
-    && rm -rf /var/lib/apt/lists/* 
-
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    python3-tk \
-    && apt-get -y clean && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-COPY ./requirements.txt /app/requirements.txt
-
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
-
-COPY ./app/main.py .
-
-CMD ["main.py"]  
-ENTRYPOINT ["python3"]
-```
-
-```python title="main.py"
-import tkinter as tk
-
-# Tkinter Window
-root_window = tk.Tk()
-
-# Window Settings
-root_window.title('Application Title')
-root_window.geometry('300x100')
-root_window.configure(background = '#353535')
-
-# Text
-tk.Label(root_window, text='Hello World', fg='White', bg='#353535').pack()
-
-# Exit Button
-tk.Button(root_window, text='Exit', width=10, command=root_window.destroy).pack()
-
-# Main loop
-root_window.mainloop()
-```
-
-### Build
-
-```bash
-docker -t app:ubuntu -f Dockerfile.ubuntu ..
-```
-
-### Run
-With gui
-
-```bash
-docker run  \
+```bash title="run_deploy_container.sh"
+docker run -it --rm \
+    --name py_deploy \
+    --hostname deploy \
     -u=$(id -u $USER):$(id -g $USER) \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-    --rm \
-    app:ubuntu
+    -v $(pwd)/dist:/dist \
+    py_gui_demo:deploy \
+    /bin/bash
+```
 
+### Prod
+Create docker container that run the application
+
+- Base on **prod** stage that install all application package dependencies
+- Get the application version to build from outside (vscode task, command line)
+- Set `entrypoint`
+
+!!! note "PATH"
+    The application entry point installed in `<user home>/.local/bin`
+
+    The docker add this environment variable with **ENV** command
+    ```
+    ENV PATH=${PATH}:/home/user/.local/bin
+    ```
+     
+```Dockerfile title="production stage"
+# ###################      production     #############################
+
+FROM deploy as prod
+ARG APP_VER=0
+USER user
+WORKDIR /home/user
+RUN echo ${APP_VER}
+COPY ./dist/py_gui_demo-${APP_VER}-py3-none-any.whl /tmp
+RUN pip install /tmp/py_gui_demo-${APP_VER}-py3-none-any.whl
+ENTRYPOINT ["my_app"]
+```
+
+```bash title="run_prod_container.sh"
+docker run -it --rm \
+    --name py_prod \
+    --hostname prod \
+    -u=$(id -u $USER):$(id -g $USER) \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    py_gui_demo:prod
+```
+
+### Base
+Create docker container that include only the ubuntu base with python and pip install without all application package dependencies, use to check **whl** and **deb** installation 
+
+- Container with user context and x11 support
+- Share `dist` and `deb_dist` folder from host
+
+
+```bash title="run_base_container.sh"
+docker run -it --rm \
+    --name py_base \
+    --hostname base \
+    -u=$(id -u $USER):$(id -g $USER) \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    -v $(pwd)/dist:/dist \
+    -v $(pwd)/deb_dist:/deb_dist \
+    py_gui_demo:base \
+    /bin/bash
+
+```
+
+
+
+---
+
+
+## VSCode
+### devcontainer
+
+### tasks
+- Add task build each dockerfile stage
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build deploy container",
+            "type": "shell",
+            "command": "docker build --target deploy -t ${workspaceFolderBasename}:deploy -f .devcontainer/Dockerfile .",
+            "problemMatcher": []
+        },
+        {
+            "label": "build base container",
+            "type": "shell",
+            "command": "docker build --target python_base -t ${workspaceFolderBasename}:base -f .devcontainer/Dockerfile .",
+            "problemMatcher": []
+        },
+        {
+            "label": "build prod container",
+            "type": "shell",
+            "command": "docker build --target prod -t ${workspaceFolderBasename}:prod -f .devcontainer/Dockerfile --build-arg APP_VER=${input:app_version} .",
+            "problemMatcher": []
+        }
+
+    ],
+    "inputs": [
+        {
+            "id": "app_version",
+            "description": "app_version",
+            "options": ["0.0.1", "0.0.2"],
+            "type": "pickString"
+        },
+    ]
+}
 ```

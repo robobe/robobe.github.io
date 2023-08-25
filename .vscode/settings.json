@@ -38,5 +38,7 @@
             "type": "line"
         }
     },
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "python.linting.mypyEnabled": true
+
 }
