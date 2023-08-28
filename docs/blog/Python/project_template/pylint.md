@@ -7,8 +7,7 @@ tags:
     - linter
     - git-hook
 ---
-# Python project template - pylint
-
+# pylint
 Linting is the automated source code checking for programmatic and stylistic errors.   
 A lint tool is a basic static code analyzer
 
@@ -21,7 +20,7 @@ pip install pylint
 ```
 
 ## VSCode
-### Setings
+### Settings
 
 ```json title="vscode settings"
 "python.linting.pylintEnabled": true

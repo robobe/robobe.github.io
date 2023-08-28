@@ -54,5 +54,31 @@ pytest -s test_demo.py::test_func
 - [logging](logging.md)
 ---
 
+## VSCode config
+
+!!! note pytest.ini
+    pytest configuration file that allows changing the default behavior
+
+    for example: add logging support
+
+    ```ini
+    [pytest]
+    log_cli = True
+    log_cli_format = %(asctime)s %(levelname)s %(message)s
+    log_cli_level = DEBUG
+    ```
+     
+
+```json
+"python.testing.pytestEnabled": true,
+"python.testing.pytestArgs": [
+        "-c",
+        "/path/to/your/pytest.ini"
+    ],
+```
+
+---
+
 ## Reference
-- [Unit Testing in Python with pytest](https://www.youtube.com/playlist?list=PLyb_C2HpOQSBWGekd7PfhHnb9GnqDgrxS)
+- [Python Testing with pytest
+(by Brian Okken)](https://medium.com/@pragprog/table-of-contents-86377afafc57)

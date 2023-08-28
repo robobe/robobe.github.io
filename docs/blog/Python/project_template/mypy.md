@@ -1,14 +1,12 @@
 ---
-title: Python project template - mypy
-description: using mypy
-date: "2022-24-05"
-banner: images/python.png
 tags:
+    - mypy
     - python
     - project
     - template
-    - mypy
 ---
+# mypy
+from [mypy](https://mypy-lang.org/) Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing. Mypy combines the expressive power and convenience of Python with a powerful type system and compile-time type checking.
 
 ## install
 ```
@@ -54,3 +52,19 @@ strict = true
 ```
 
 ![](images/mypy_vscode.png)
+
+---
+
+## Tips
+
+### ignore line
+
+![](images/before_mypy_ignore_line.png)
+!!! note
+     Add two spaces between end line and the hash (#)
+
+
+```python
+def add(n1, n2):  # type: ignore
+    return n1 + n2
+```

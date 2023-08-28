@@ -3,6 +3,7 @@ tags:
     - pytest
     - unittest
     - python
+    - fixture
 ---
 # Pytest fixture
 

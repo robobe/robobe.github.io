@@ -19,7 +19,7 @@ Other post show how to config virtual environment install package unittest and t
     * [pylint](pylint.md)
     * [flake8](flake8.md)
     * [mypy](mypy.md)
-    * [config isort, black, mypy and pylint with pre-commit hook](pre_commit.md)
+    * [pre-commit hook](pre_commit.md)
 - Demo: [Crate project](use_case.md)
 - [Add projects documentation](docs.md)
 
