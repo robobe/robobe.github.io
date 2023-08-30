@@ -1,5 +1,14 @@
 
-# Computer Graphics, Fall 2009 (UC Davis Academics)
+---
+tags:
+    - matrix
+    - graphics
+---
+
+
+# Computer Graphics
+
+Fall 2009 (UC Davis Academics)
 [Youtube playlist](https://www.youtube.com/playlist?list=PL_w_qWAQZtAZhtzPI5pkAtcUVgmzdAP8g)
 
 
