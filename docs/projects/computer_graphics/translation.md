@@ -9,11 +9,11 @@ tags:
 
 ## Point in 2d
 
-$
+$$
 p = x\vec{u} + y\vec{v} + o
-$
+$$
 
-$
+$$
 p = \begin{bmatrix}
 x & y & 1
 \end{bmatrix}\begin{bmatrix}
@@ -21,13 +21,13 @@ x & y & 1
 \vec{u} \\ 
 o
 \end{bmatrix}
-$
+$$
 
 ---
 
 ## Translation
 
-$
+$$
 p = \begin{bmatrix}
 x & y & 1
 \end{bmatrix}
@@ -35,11 +35,11 @@ x & y & 1
 \begin{bmatrix}
 x+a & y+b & 1
 \end{bmatrix}
-$
+$$
 
 ---
 
-$
+$$
 \begin{bmatrix}
     x & y & 1
 \end{bmatrix}
@@ -51,7 +51,7 @@ $
 \begin{bmatrix}
     x+a & y+b & 1
 \end{bmatrix}
-$
+$$
 
 
 
@@ -59,7 +59,7 @@ $
 
 ## Scaleing
 
-$
+$$
 \begin{bmatrix}
     x & y & 1
 \end{bmatrix}
@@ -67,9 +67,9 @@ $
 \begin{bmatrix}
     ax & by & 1
 \end{bmatrix}
-$
+$$
 
-$
+$$
 \begin{bmatrix}
     x & y & 1
 \end{bmatrix}
@@ -81,7 +81,7 @@ a & 0 & 0 \\
 \begin{bmatrix}
 ax & by & 1
 \end{bmatrix}
-$
+$$
 
 
 ## TST
@@ -89,7 +89,7 @@ $
 - Scale
 - Translate back
 
-$
+$$
 \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
@@ -105,4 +105,4 @@ $
     0 & 1 & 0 \\
     -a & -b & 1
 \end{bmatrix}
-$
+$$
