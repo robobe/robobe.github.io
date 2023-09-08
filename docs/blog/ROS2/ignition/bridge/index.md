@@ -22,64 +22,54 @@ sudo apt install ros-humble-ros-gz
 
 ---
 
-### usage
+### Demo
+Pub keypress from gazebo to ROS2 using bridge
+- Load bridge with mapping
+- Open Terminal with `ROS` echo command
+- For testing open anther Terminal with `ign` echo command
+- Run gazebo with `key press` plugin
+- Press anywhere on gazebo , both subscriber window show the keypress code
 
-- launch file that run node for each mapping
-- The launch file included by parent launch file that run ignition and spawn the robot
-
-```bash title="project" linenums="1" hl_lines="5-7"
-├── CMakeLists.txt
-├── config
-│   ├── ekf.yaml
-│   └── nav2_params.yaml
-├── launch
-│   ├── display.launch.py
-│   └── sam_bridge.launch.py
-├── package.xml
-├── README.md
-├── rviz
-│   └── urdf_config.rviz
-├── src
-│   └── description
-│       └── sam_bot_description.urdf
-└── world
-    ├── ign_world.sdf
-    └── my_world.sdf
-
+```bash title="run bridge"
+# <topic name>@<ros2 type>@<gz type>
+ros2 run ros_gz_bridge parameter_bridge \
+/keyboard/keypress@std_msgs/msg/Int32@ignition.msgs.Int32
 ```
 
-```python title="gazebo, spawn, bridge"
-# Gazebo Sim
-gazebo = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(
-        os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
-    ),
-    launch_arguments={'gz_args': f'-r {world_path}'}.items(),
-)
-
-#spawn
-spawn_entity = Node(
-    package='ros_gz_sim',
-    executable='create',
-    arguments=[
-        '-name', 'sam_bot',
-        '-topic', 'robot_description',
-        '-z', '0.5'
-    ],
-    output='screen',
-)
-
-#bridge
-ign_bridge = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(
-        os.path.join(pkg_share, 'launch', BRIDGE_FILE_NAME),
-    ),
-    launch_arguments={
-        'use_sim_time': "True"}.items()
-)
+```bash title="ros subscriber"
+ros2 topic echo /keyboard/keypress
 ```
 
----
+```bash title="ign echo (subscriber)"
+ign topic -e --topic /keyboard/keypress
+```
 
-# Reference
-- [ROS + Gazebo Sim demos](https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_sim_demos)
+```bash
+ign gazebo empty.sdf
+```
+
+![](images/key_press_plugin.png)
+#### using yaml config
+
+```yaml title="ign2ros_bridge.yaml"
+- topic_name: /keyboard/keypress
+  ros_type_name: std_msgs/msg/Int32
+  ign_type_name: ignition.msgs.Int32
+  direction: BIDIRECTIONAL
+```
+
+```bash name="Terminal1: Run bridge
+ros2 run ros_gz_bridge \
+bridge_node \
+--ros-args \
+-p config_file:=$PWD/src/gz_demos/config/ign2ros_bridge.yaml
+```
+
+```bash title="Terminal2 ROS echo"
+ros2 topic echo /keyboard/keypress
+```
+
+```bash title="Terminal3 ign pub"
+ign topic  -t /keyboard/keypress --msgtype ignition.msgs.Int32 -p "data: 102"
+
+```

@@ -62,6 +62,8 @@ def generate_launch_description():
 (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
 ```
 
+---
+
 ### build and run
 ```bash
 # From w.s root folder
