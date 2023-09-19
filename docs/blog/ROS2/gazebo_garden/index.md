@@ -9,69 +9,84 @@ tags:
 [gazebosim doc](https://gazebosim.org/docs/garden/install_ubuntu)
 
 
-## ROS2
-[ros_gz](https://github.com/gazebosim/ros_gz)
+## ROS2 Bridge
 ### install
-```
-sudo apt install ros-humble-ros-gz
-```
+#### build from source
+[github ros_gz](https://github.com/gazebosim/ros_gz/tree/humble)
 
-### ros-gz packages
-- ros_gz: Metapackage which provides all the other packages.
-- ros_gz_image: Unidirectional transport bridge for images from Gazebo Transport to ROS using image_transport.
-- ros_gz_bridge: Bidirectional transport bridge between Gazebo Transport and ROS.
-- ros_gz_sim: Convenient launch files and executables for using Gazebo Sim with ROS.
-- ros_gz_sim_demos: Demos using the ROS-Gazebo integration.
-- ros_gz_point_cloud: Plugins for publishing point clouds to ROS from Gazebo Sim simulations.
+**Install steps from github instruction**
 
----
+![](images/build_from_source.png)
 
-## Demo
-Basic ROS2 launch file
-- Create package ``
-- Add launch folder
-
-
-```python title="simple.launch.py"
-import os
-from ament_index_python.packages import get_package_share_directory
-from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-
-
-def generate_launch_description():
-    ld = LaunchDescription()
-
-    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
-
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-            launch_arguments={'gz_args': '-r -v 2 empty.sdf'}.items(),
-    )
-
-    ld.add_action(gazebo)
-    return ld
-
+```bash title="very important"
+export GZ_VERSION=garden
 ```
 
-```python title="setup.py"
-# Add to data_files
+```bash title="clone humble branch"
+# Setup the workspace
+mkdir -p ~/ws/src
+cd ~/ws/src
 
-(os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
+# Download needed software
+git clone https://github.com/gazebosim/ros_gz.git -b humble
 ```
 
----
+```bash title="prepared and build"
+cd ~/ws
+rosdep install -r --from-paths src -i -y --rosdistro humble
 
-### build and run
-```bash
-# From w.s root folder
+source /opt/ros/humble/setup.zsh
+
+cd ~/ws
 colcon build
-
-# source
-source install/setup.zsh
-
-# launch
-ros2 launch gz_demos simple.launch.py
 ```
+
+!!! warning "actuator_msgs"
+    if the build process or running bridge failed with this message
+    `error while loading shared libraries: libactuator_msgs__rosidl_typesupport_cpp.so`
+    check github [install](https://github.com/gazebosim/ros_gz/tree/humble)
+     
+---
+
+### Demo
+Run Bridge with simple topic contain Int32 msg
+
+!!! Tip source workspace
+    ```
+    cd ~/ws
+    source install/setup.zsh
+    ```
+
+- Send msgs from ros to gz
+- Send msgs from gz to ros
+
+
+```bash title="run bridge"
+ros2 run ros_gz_bridge parameter_bridge \
+/keyboard/keypress@std_msgs/msg/Int32@gz.msgs.Int32
+```
+
+#### Ros as publisher
+```bash title="ros pub"
+ros2 topic pub /keyboard/keypress std_msgs/msg/Int32 "{data: 100}"
+```
+
+```bash title="gz echo (subscriber)"
+gz topic -e -t /keyboard/keypress
+```
+
+#### ROS as subscriber
+
+```
+ros2 topic echo /keyboard/keypress
+```
+
+```bash title="gz as publisher"
+gz topic \
+-t /keyboard/keypress \
+-m gz.msgs.Int32 \
+-p 'data: 200'
+```
+
+!!! warning check why pub publish only once
+     

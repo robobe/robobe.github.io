@@ -18,3 +18,6 @@ tags:
 
 ### git project to check
 - [rviz_2d_overlay_plugins](https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins)
+
+### Gazebo
+- [ros_gz_project_template](https://github.com/gazebosim/ros_gz_project_template)
