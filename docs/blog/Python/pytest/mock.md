@@ -111,7 +111,11 @@ from unittest import mock
 from demo import good_random
 
 
-@pytest.mark.parametrize("_input, expected", [(8, "win"), (5, "lose")])
+@pytest.mark.parametrize("_input, expected", 
+    [
+        (8, "win"),
+        (5, "lose")
+    ])
 @mock.patch("demo.get_random")
 def test_good_random(mock_get_random, _input, expected):
     mock_get_random.return_value = _input

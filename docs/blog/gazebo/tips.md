@@ -3,10 +3,23 @@ title: SDF specification and tools
 tags:
     - sdf
     - tips
+    - gazebo
 ---
 
-## validate / check sdf file
+## Using schema 
+Using VSCode XML Redhat extension schema validate and use intellisense.
 
+```xml
+<sdf version="1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://sdformat.org/schemas/root.xsd">
 ```
-ign sdf -k <sdf.file>
+
+
+---
+
+## Using VSCode region
+
+```xml
+<!-- #region gui -->
+<!-- #endregion -->
 ```

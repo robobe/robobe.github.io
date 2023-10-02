@@ -10,6 +10,14 @@ tags:
 - [Run X11 app on docker image](docker_gui_tester.md)
 - [Docker with nvida support](docker_nvidia_install.md)
 
+
+## Tips
+
+```bash title="remove none images"
+docker rmi $(docker images -f "dangling=true" -q)
+```
+
+
 ---
 
 # Reference

@@ -2,6 +2,7 @@
 tags:
     - docker
     - tutorial
+    - tips
 ---
 
 # Docker usage
