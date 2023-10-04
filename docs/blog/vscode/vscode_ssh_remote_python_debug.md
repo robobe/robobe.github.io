@@ -17,18 +17,27 @@ Using [ssh remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode
 Using ssh remote to debug python app run on docker
 
 - Create docker image base on ubuntu with python and openssh-server
-- Add user `user` to docker with password user
+- Add user `user` to docker with password `user`
 
-```Dockerfile
-FROM ubuntu:22.04 as python_base
+
+```
+├── .devcontainer
+│   ├── devcontainer.json
+│   ├── Dockerfile
+│   └── id_ed25519.pub
+└── .vscode
+    └── settings.json
+```
+
+!!! note
+    Using devcontainer folder for feature usage
+     
+
+```Dockerfile linenums="1" hl_lines="23 37-39"
+FROM ubuntu:22.04
 ARG version
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
-
-# Set the locale
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
 
 ARG USERNAME=user
 ARG USER_UID=1000
@@ -37,11 +46,18 @@ ARG USER_GID=1000
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && apt-get update \
-    && apt-get install -y sudo tzdata \
+    && apt-get install -y sudo tzdata locales \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && rm -rf /var/lib/apt/lists/* 
 
+# Set the locale
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+
+# Set user password
 RUN echo 'user:user' | chpasswd
 
 RUN apt-get update && apt-get install -y \
@@ -56,8 +72,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV PATH=${PATH}:/home/user/.local/bin
 
-# Add ssh keys check 
-COPY dockers/id_ed25519.pub /home/user/.ssh/authorized_keys
+COPY .devcontainer/id_ed25519.pub /home/user/.ssh/authorized_keys
 RUN chown user:user /home/user/.ssh/authorized_keys && chmod 600 /home/user/.ssh/authorized_keys
 
 EXPOSE 22
@@ -65,7 +80,8 @@ CMD ["/usr/sbin/sshd", "-D"]
 ```
 
 ```bash title="build image"
-docker build -t ubuntu:python -f Dockerfile .
+# from project root
+docker build -t ubuntu:python -f .devcontainer/Dockerfile .
 ```
 
 ```bash title="run docker"
@@ -87,6 +103,8 @@ ubuntu:python \
 pip install debugpy
 ```
 
+---
+
 #### connect using ssh remote
 
 ##### Connect
@@ -103,6 +121,8 @@ Install python extension on remote
 ![](images/remote_extension.png)
 
 ![](images/install_python_ext_on_remote.png)
+
+---
 
 ##### Debug
 Open remote application in VSCode and
@@ -138,6 +158,7 @@ Set break point and
     ]
 ```
 
+---
 
 #### Run debugger
 
@@ -149,3 +170,37 @@ python3 -m debugpy --listen 0.0.0.0:5678 --wait-for-client hello.py
 Press `F5` or launch selected configuration
 
 ![](images/ssh_remote_debug.png)
+
+
+---
+
+### Tips
+
+#### Download vscode-server
+By default, the Remote - SSH will attempt to download on the remote host, but if you enable `remote.SSH.allowLocalServerDownload`, the extension will fall back to downloading VS Code Server locally and transferring it remotely once a connection is established.
+
+#### Extensions
+
+!!! note "place settings in User settings scope"
+
+```json
+"remote.SSH.defaultExtensions": [
+    "ms-python.python",
+    "mutantdino.resourcemonitor"
+]
+```
+
+!!! tip "Resource Monitor"
+    Check resource monitor extension in Remote usage
+
+---
+
+## TODO:
+Check rsync to sync with local host
+
+---
+
+## Reference
+- [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh)
+- [SSH into Docker Container or Use Docker Exec?](https://goteleport.com/blog/shell-access-docker-container-with-ssh-and-docker-exec/)
+- [How To Set Up SSH Keys](https://goteleport.com/blog/how-to-set-up-ssh-keys/)

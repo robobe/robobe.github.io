@@ -40,6 +40,9 @@
         }
     },
     "cmake.configureOnOpen": false,
-    "python.linting.mypyEnabled": true
+    "python.linting.mypyEnabled": true,
+    "docker.environment": {
+        "DOCKER_HOST": "ssh://ubuntu@rpi4"
+    }
 
 }
