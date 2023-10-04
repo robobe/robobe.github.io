@@ -471,6 +471,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/Python/open3d/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/Python/project_template/</loc>
          <lastmod>2023-10-04</lastmod>
          <changefreq>daily</changefreq>
@@ -1922,6 +1927,11 @@
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/translation/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/projects/first_principles_of_computer_vision/</loc>
          <lastmod>2023-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
