@@ -33,7 +33,7 @@ Using ssh remote to debug python app run on docker
     Using devcontainer folder for feature usage
      
 
-```Dockerfile linenums="1" hl_lines="23 37-39"
+```Dockerfile linenums="1" hl_lines="25 39-40"
 FROM ubuntu:22.04
 ARG version
 ARG DEBIAN_FRONTEND=noninteractive
