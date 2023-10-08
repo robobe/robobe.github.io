@@ -1091,6 +1091,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/ros2_bridge/</loc>
+         <lastmod>2023-10-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/</loc>
          <lastmod>2023-10-08</lastmod>
          <changefreq>daily</changefreq>
@@ -1592,11 +1597,6 @@
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/material/</loc>
-         <lastmod>2023-10-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robobe.github.io/blog/gazebo/moving_robot_ex/</loc>
          <lastmod>2023-10-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
