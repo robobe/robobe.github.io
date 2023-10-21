@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robobe.github.io/blog/Ardupilot/ardupilot_lua_script/</loc>
+         <lastmod>2023-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ardupilot_sitl_ignition/</loc>
          <lastmod>2023-10-21</lastmod>
          <changefreq>daily</changefreq>
