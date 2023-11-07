@@ -1,8 +1,14 @@
 import cv2
 
-cap = cv2.VideoCapture("videotestsrc ! video/x-raw,width=640,height=480,framerate=10/1 ! videoconvert ! timeoverlay ! appsink")
-out_pipe = "appsrc ! video/x-raw,width=640,height=480,framerate=10/1 ! videoconvert ! timeoverlay xpad=100 ypad=100 ! autovideosink sync=false"
-out = cv2.VideoWriter(out_pipe, 0, 10.0, (640,480))
+
+FPS = 10
+SIZE = (640, 480)
+# FourCC is a 4-byte code used to specify the video codec
+FOURCC = 0 # uncompressed
+
+cap = cv2.VideoCapture(f"videotestsrc ! video/x-raw,width=640,height=480,framerate={FPS}/1 ! videoconvert ! timeoverlay ! appsink")
+out_pipe = f"appsrc ! video/x-raw,width=640,height=480,framerate={FPS}/1 ! videoconvert ! timeoverlay xpad=100 ypad=100 ! autovideosink sync=false"
+out = cv2.VideoWriter(out_pipe, FOURCC, FPS, SIZE)
 
 while True:
     ret, frame = cap.read()
