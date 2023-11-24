@@ -32,27 +32,30 @@ pip3 install PyGObject
 ---
 
 # Simple example
+[example from gstreamer site](https://gstreamer.freedesktop.org/documentation/tutorials/basic/hello-world.html?gi-language=python)
 
-```python title="gst" linenums="1" hl_lines="2"
+
+```python title="gst" linenums="1" hl_lines="11"
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import Gst, GLib
-import sys
-import traceback
+from gi.repository import Gst, GObject, GLib
 
-Gst.init(sys.argv)
-command = "videotestsrc ! autovideosink"
-pipeline = Gst.parse_launch(command)
+Gst.init(None)
+
+pipeline = Gst.parse_launch("videotestsrc name=src ! autovideosink")
 pipeline.set_state(Gst.State.PLAYING)
-loop = GLib.MainLoop()
- 
-try:
-    loop.run()
-except:
-    traceback.print_exc()
+
+# wait until EOS or error
+bus = pipeline.get_bus()
+msg = bus.timed_pop_filtered(
+    Gst.CLOCK_TIME_NONE,
+    Gst.MessageType.ERROR | Gst.MessageType.EOS
+)
+
+# free resources
+pipeline.set_state(Gst.State.NULL)
 ```
+
 
 ---
 
-# Reference
-- [demo to check](https://ittone.ma/ittone/python-how-to-create-gstreamer-rtsp-server-with-variable-frame-rate/)

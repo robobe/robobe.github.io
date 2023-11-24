@@ -1,38 +1,59 @@
 ---
-title: git bundle
 tags:
     - git
     - bundle
+    - backup
 ---
+# Git bundle
+
 Git bundle is a utility that allow you to pack repository, branch, specific commit to signal file and expend them easily.
 
-## Demo: Bundle Range of commits
-### bundle
-```bash title="view commits"
-git log --oneline origin/master..master
+## Demo
+- Share commits between two repositories that has the same **history**
+
+```bash title="create repo with two commits"
+# create folder and init git
+mkdir repo1
+git init
+
+# Add commit on file test.txt
+echo line1 > test.txt
+git add .
+git commit -m "line1"
+
+# Add another commit on file test.txt
+echo line2 >> test.txt
+git add .
+git commit -m "line2"
+
+# show history
+git --no-pager log --oneline  
 ```
 
-```bash title="bundle commits"
-git bundle create patch.bundle origin/master..master
+```bash
+
+# git bundle create <bundle name> <commot1> <commot2> <branch>
+git bundle create two_commits.bundle 8aab30e 78d350b master
 ```
 
-### Unbundling
+### use bundle
+```bash title="create new repo and unbundle
+mkdir repo2
+git init
 
-```bash title=""
-git branch temp
+# unbundle to new branch
+## unbundle to new branch, new branch should be merge and delete
+git fetch two_commits.bundle master:feature
 
-git switch temp
+```
 
-git fetch -u patch.bundle master:temp
+#### check if bundle can apply to repository
+```bash
+git bundle verify <bundle name> 
 
-git switch master
-
-git merge temp
-
-git branch --delete temp
 ```
 
 ---
 
-# Reference
-- [A Guide for Bundling Git Repos](https://initialcommit.com/blog/git-bundle)
+## Reference
+- [git bundle](https://youtu.be/AVYlKbbA77M)
