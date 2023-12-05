@@ -36,3 +36,8 @@ plt.show()
 
 ![](../images/basic_3d.png)
 
+
+---
+
+## Reference
+- [3D plotting in Python using matplotlib](https://likegeeks.com/3d-plotting-in-python/)

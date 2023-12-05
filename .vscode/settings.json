@@ -4,6 +4,7 @@
     "plantuml.render": "Local",
     "cSpell.words": [
         "Ardupilot",
+        "ipywidgets",
         "Turtlebot"
     ],
     "ros.distro": "humble",
