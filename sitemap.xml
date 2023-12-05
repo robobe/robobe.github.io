@@ -2,2192 +2,2202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://robobe.github.io/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ardupilot_dds/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ardupilot_lua_script/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ardupilot_sitl_ignition/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/debug_sitl/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/precise_landing/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/rangefinder/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/system_time/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/timesync/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ardurover/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/lua/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/lua/lua_quick/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/mission_planner/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ros_and_gazebo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Ardupilot/ros_and_gazebo/sitl_gazebo_garden/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/cpp_vscode/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/cmake/cmake_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/gtest/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/learn/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/learn/macros/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/learn/pointer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/learn/ref/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/casting/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/filesystem_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/fmt_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/move_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/modern/smart_pointer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/multithreading/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/multithreading/async_future_promise/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/spdlog/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/CPP/spdlog/log_to_file/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/DDS/cyclondds/python-bindings/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/DDS/eprosima/fastdds-hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/aptly/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/aptly/custom_repo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/aptly/mirror/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/aptly/mirror_ros2_repostory/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/aptly/mirror_with_filter_and_dependecies/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/crypt/veracrypt/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_arm/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_container_state/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_gui_tester/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_networking/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_none_root_user/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_nvidia_install/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_python_app/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_python_gui/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_usage/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_volume/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/multistage_docker/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/docker/docker_compose/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/dotnet/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/git/git_bundle/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/git/git_submodules/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/git/github_pro_tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/git/pre_commit/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/lxd/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/lxd/container_configuration/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/lxd/lxd_with_x11/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/lxd/nvidia_gpu/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/marp/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/mkdocs/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/regex/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/examples/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/ffmpeg/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/gstreamer_opencv/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/opencv_build/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/va-api-hardware-acceleration/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/virtual_camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/examples/compositor/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/examples/compositor_II/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/examples/multi_pipe/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/examples/tee_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/examples/udp_stream/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/python_binding/gst_appsink_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/python_binding/gst_appsrc_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/python_binding/gst_simple_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Misl/video/gstreamer/python_binding/python_binding_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Others/Geo_spatial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Others/Geo_spatial/calc_kml_polygon_area/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Others/Geo_spatial/GDAL/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/snippets/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_event/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_future/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_gather/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_run_task_from_another_thread/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_task/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/asyncio_task_wait/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/asyncio/hello_asyncio/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/canbus/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/click/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/cupy/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/dataclasses_demo/dc_and_dc_slots/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/dev_container/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/fastapi/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/from_project_to_deb/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/from_project_to_deb/minimal_script/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/from_project_to_deb/use_devcontainer_to_create_deb_package/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/Python/jupyter/interactive/interactive_plot_jupyter/</loc>
+         <lastmod>2023-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robobe.github.io/blog/Python/jupyter/interactive/interactive_widgets_in_jupyter/</loc>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/matplotlib/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/matplotlib/3d_basic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/matplotlib/subplot_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/multithreading/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/multithreading/barrier/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/numpy/numpy_reshape/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/open3d/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/black/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/cookiecutter/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/docs/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/flake8/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/mypy/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/pre_commit/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/project_unittest/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/pylint/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/use_case/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/venv_pip_and_requirements/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/project_template/vscode/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/conftest/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/fixture/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/fixture_scope/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/logging/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/mock/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/pytest/params/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/enum_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/iterator_and_generator/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/python_yaml_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/bytearray/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/logging/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/logging/color_log_by_level/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/logging/custom_level/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/python/named_tuple/named_tuple/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/generic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/literal/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/protocol/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/self_annotetion/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/typedict/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/typing/typever/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/zmq/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/zmq/pub_image_over_zmq/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Python/zmq/req_rep_msgpack/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/to_read/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/SLAM/Cartographer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/SLAM/slam_toolbox/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cli/action/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cli/ros2_command_line_interface/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cli/run_simple_node/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/control2/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/control2/tutorial/diff_drive/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/control2/tutorial/effort/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/control2/tutorial/position/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/control2/tutorial/velocity/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/debug_with_gdb/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/qos/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/gtest/hello_gtest/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/intra-process/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/plugins/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/tutorial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/tutorial/custom_msg/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/tutorial/minimal/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/cpp/zero-copy/zero_copy_shm_fastdds/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/mix_pkg_cpp_py/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/articubot_one/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/bug0/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/camera_calibration/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/diff_drive/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/demos/pid/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/colcon/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/colcon/colcon_cd/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/docker/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/cpp/ament_cmake_clang_format/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/linters/python/ament_mypy/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/ros2_python_package/ros2_code_to_deploy/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/vscode/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/vscode/settings/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/vscode/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/dev_environment/vscode/vscode_ros_extensions/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/Behavior_Trees/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/Behavior_Trees/py_trees/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/Behavior_Trees/py_trees/sub2_blackboard_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/PlotJuggler/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/diagnostic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/diagnostic/diagnostic_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/foxglove/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/images_and_video/gstreamer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/linear_algebra/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/mavros_ardupilot_minimal/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/mavros_ardupilot_python/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/mavros_ardupilot_sitl_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/mavros_diagnostic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/mavros/mavros_mavlink_stream/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/pluginlib/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/rosbags/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/rosbags/rosbag_tools/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/web_interface/hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/web_interface/part2_hello_vue/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/web_interface/part3_vue_handling/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/eco/web_interface/part5_roslib_vue/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/fastdds/discovery/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/fastdds/static_discovery/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/fastdds/unicast_discovery/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/moving_object/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/spawn_urdf/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/plugins/model_plugin_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/depth_camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/gps/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/imu/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/lidar/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/sensors/ultrasonic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo/tutorials/body_wrench_and_joint_effort/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/camea/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/first_world/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/joint_position_controller/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/project_template_and_basic_launch/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/gazebo_garden/ros2_bridge/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/jointstate/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/spawn_xacro/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/bridge/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/bridge/camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/spawn/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/spawn/spawn_fom_param/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/spawn/spawn_from_topic/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/spawn/spawn_with_rviz_and_bridge/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tutorial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tutorial/diff_drive_and_odometry/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tutorial/imu_and_magnetometer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tutorial/joint_state_sdf_model/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/ignition/tutorial/lidar/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_node_respawn/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_node_respawn_event/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_node_with_arguments/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_opaquefunction/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_with_arguments/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/launch_with_include/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/launch/catmux/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/nav2/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/nav2/nav2_turtlebot_tutorial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/nav2/odometry/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/nav2/slam/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/perception/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/perception/cv_bridge/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/pub_sub_ns_remapping/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/test_demo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_abort_goal/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_cancel_goal/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_client/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_server/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_server_api/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/action_server_multiple_executer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/action/create_custom_action_msg/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/executor/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/lifecycle/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/basic_example/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/dynamic_reconfigure/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/parameter_client/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/parameter_update_node_event/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/parameters/parameters_control/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/services/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/services/sync_client/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/setup/copy_folder_with_subfolders_to_package_insall/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/launch_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/package_xml_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part10_managed_nodes/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part2a-launch_name_ns/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part3-py_node_with_param/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part4-launch_with_arguments/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part5_simple_service/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part6_parameter_handler/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part7_custom_msgs/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part8_qos/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/part9_executers/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/python/tutorials/pub_sub/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/rqt/custom_plugin/step1/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/rviz/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/rviz/2d_goal_pose/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/rviz/marker_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/sdf/meshes/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/sdf/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tf2/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tf2/static_tf/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tf2/tf2_cpp_broadcaster/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tf2/tutorials/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tf2/tutorials/turtlesim_tf2/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/custom_debian_package/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/local_setup_vs_setup/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/logging/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/package_xml/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/rep/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/rosdep_tutorial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/udp_domain_id/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/vcstool/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/tutorials/what_is_ros2_daemon/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/urdf/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/urdf/gazebo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/urdf/joint/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/urdf/link/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/xacro/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/xacro/tutorial/pass_arg_to_xacro/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/zenoh/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/zenoh/zenoh_minimiz_dds_discovery/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/zenoh/zenoh_python_pub_sub_hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/ROS2/zenoh/zenoh_webinar/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/Linear_Regression/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/Reinforcement_Learning/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/Reinforcement_Learning/gym/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/deep-sort/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/opencv/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/opencv/build_open_cv_from_source/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/opencv/build_opencv_python_wheel/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/opencv/build_opencv_with_cuda_support/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/siam-mask/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/Vision/yolov8/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/canbus/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/cross-compiler/hello-cc/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/esp32/microros/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/jetson/nano/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/jetson/nano/nano-adafruit-8x8-matrix/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/jetson/nano/nano-arduino-i2c/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/jetson/nano/nano-i2c-mb1202/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/jetson/nano/nano-uart-tfmini/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/rpi/rpi_connect_multiple_spi_camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/rpi/rpi_servo_pwm/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/teensy/teensy_microros/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/teensy/canbus/canbus/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/embedded/teensy/micropython/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/gui-control/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/hello/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/material/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/physics/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/run_from_docker/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/guide/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/guide/config_and_settings/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/sdf/model_link_joint_pose/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/sensors/camera/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo/sensors/lidar/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/apps/gazebo_pub_img_using_gstreamer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/color_and_texture/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/plugins/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/plugins/joint_velocity_tutorial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/plugins/joint_velocity_tutorial/method1/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/sdf/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/sdf/joints/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/gazebo-classic/xacro/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/hello_tmux/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/loop_device/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/minimal_rootfs/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/move_to_zsh/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/safe-rm/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/sudo_sudoers/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/udev/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/apt/apt_key_open_gpg_sign_repository/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/command_and_utils/update-alternative/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/deb/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/deb/build_binary_deb_file/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/network_utils/ip_tools/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/network_utils/ss_vs_netstat_cheat/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/snap/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/snap/deploy_python_application_with_snap/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/ssh/ssh_config/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/linux/systemd/minimal_service/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/socat/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/socat/serial/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/socat/udp/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/tc/adding_latency_and_limiting_bandwidth/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/udp/big_packet_and_mtu/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/networking/udp/multi_port_udp_server/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/presentation/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/presentation/ros4manager/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/presentation/family_course/networking/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/presentation/family_course/linux_intro/linux_intro/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/trajectory_and_path_planning/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/Sensors/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/Sensors/lidar/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/control/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/control/kalman_filter/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/control/kalman_filter/michel_van_biezen_course/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/robotics/control/pid/hello_pid/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/my_extension_list/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/remote_docker_host/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/vscode_ssh_remote_python_debug/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/yaml_json_schema/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/dev_container/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/vscode/dev_container/dev_container_docker_compose/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part1_hello_yocto/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part2_hello_poky/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part3_run_qemu/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part4_add_ssh/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part5-terminology/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part6-tips/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part7-operators/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/part8-custom_layer/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/blog/yocto/yocto-rpi-1/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/2d_rotation/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/3d_rotation/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/3d_translation/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/computer_graphics/translation/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/first_principles_of_computer_vision/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/follow_the_line/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_project_from_dev_to_prod/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_project_from_dev_to_prod/create_deb_package/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_project_from_dev_to_prod/make_docker/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_project_from_dev_to_prod/minimal_python_package/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_project_from_dev_to_prod/run_with_docker_compose/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_uav/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/ros2_uav/desgin/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/projects/vrx/buoyancy_plugin/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robobe.github.io/tags/</loc>
-         <lastmod>2023-11-29</lastmod>
+         <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
