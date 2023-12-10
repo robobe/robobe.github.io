@@ -6,6 +6,14 @@ tags:
 # VSCode tips and settings
 
 ## editor
+### Highlight selected file
+
+```
+"workbench.colorCustomizations": {
+        "tab.activeBorder": "#ff0000"
+    },
+```
+
 ### XML Region
 ```
 <!-- #region -->
@@ -53,6 +61,7 @@ Add mkdocs text highlight on selection
     }
 }
 ```
+
 
 ---
 
