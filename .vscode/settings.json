@@ -5,6 +5,8 @@
     "cSpell.words": [
         "Ardupilot",
         "ipywidgets",
+        "mavlink",
+        "Odometry",
         "Turtlebot"
     ],
     "ros.distro": "humble",

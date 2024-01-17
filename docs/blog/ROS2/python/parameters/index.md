@@ -1,9 +1,10 @@
 ---
 title: ROS2 Parameters
 tags:
-    - param
     - ros2
-    - rclpy
+    - parameter
+    - param
+    - python
 ---
 
 - [Parameters basic examples](basic_example.md)

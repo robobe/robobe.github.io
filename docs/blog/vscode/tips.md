@@ -73,3 +73,9 @@ Stop VSCode to check and suggest recommendation ext.
 ```json
 "extensions.ignoreRecommendations": true
 ```
+
+### extensions.json
+Control `recommendations` and `unwantedRecommendations` extensions
+
+- form command pallet select to open `extensions.json`
+![](images/configure_recommand_ext.png)

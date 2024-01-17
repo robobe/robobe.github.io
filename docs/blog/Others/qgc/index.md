@@ -5,24 +5,25 @@ tags:
 ---
 
 # Qgroundcontol dev environment
-- ubuntu 22.04
-- qgc v 4.3.0 (current stable)
+- Ubuntu 22.04
+- qgc v 4.3.0 (current stable) clone from tag
 
 !!! note "qgc version"
-    Current stable version v 4.3.0 use Qt version 5.12.2
-    For support the Qt version we need QtCreate version 4.12
+    - QGC Current stable version v 4.3.0
+    - Qt version 5.15.2
+    - For support the Qt version we need QtCreate version 4.12
     download qt creator from `https://download.qt.io/archive/qtcreator/4.12/4.12.4/`
      
 
-## clone from github
+## Clone from github
 
 ```bash
 # git clone --depth 1 --branch <tag_name> <repo_url>
-git clone --depth --branch v4.3.0 https://github.com/mavlink/qgroundcontrol.git
+git clone --depth 1 --branch v4.3.0 https://github.com/mavlink/qgroundcontrol.git
 git submodule update --init --recursive
 ```
 
-## docker
+## Docker
 - build docker image from `deploy/deckerDockerfile-build-linux` docker file
 - Create build folder
 - Run docker image
@@ -43,17 +44,20 @@ docker run --rm -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-lin
 ---
 
 ## Build on host
-- Download qt 5.12.2
-- Download qtcreator version 4.12
+- Download Qt 5.15.2
+- Download QtCreator version 4.12
 
 ### Qt
+Download the [Qt online installer](https://www.qt.io/download-open-source)
+Run and select the describe checkbox
+
 ![](images/qt_installer.png)
 
 
 ### Qtcreator
 [Download installer](https://download.qt.io/archive/qtcreator/4.12/4.12.4/)
 
-
+![](images/Qtcreator_download.png)
 
 ---
 

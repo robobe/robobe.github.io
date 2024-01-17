@@ -1,12 +1,12 @@
 ---
-title: Colcon_cd
-description: A shell function for colcon-core to change the current working directory
-date: "2022-04-30"
-banner: colcon.png
 tags:
     - ros2
+    - colcon
     - colcon_cd
 ---
+
+# colcon_cd
+
 A shell function for colcon-core to change the current working directory
 
 !!! Note
