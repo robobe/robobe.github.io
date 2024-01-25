@@ -178,6 +178,10 @@ material wood/light
 }
 ```
 
+!!! tip "GAZEBO_RESOURCE_PATH"
+    Use `GAZEBO_RESOURCE_PATH` as a base path for module script and texture
+     
+
 ```xml
 <visual name="visual">
     <geometry>
@@ -187,8 +191,8 @@ material wood/light
     </geometry>
     <material>
         <script>
-            <uri>file:///home/user/dev_ws/src/rrbot/rrbot_description/models/simple_box/materials/scripts</uri>
-            <uri>file:///home/user/dev_ws/src/rrbot/rrbot_description/models/simple_box/materials/textures</uri>
+            <uri>file://models/simple_box/materials/scripts</uri>
+            <uri>file://models/simple_box/materials/textures</uri>
             <name>wood/light</name>
         </script>
     </material>

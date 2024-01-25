@@ -31,20 +31,125 @@ package root
     ```
     <name>_<version>-<revision>_<architecture>.deb
     ```
-     
-## Demo
-Pack python application
+---
+
+## Simple demo
+- Pack bash script
+- Use docker for installation test
+
+```
+├── Dockerfile
+├── install
+│   ├── simple_pkg
+│   │   ├── DEBIAN
+│   │   │   ├── control
+│   │   │   └── postinst
+│   │   └── usr
+│   │       └── local
+│   │           └── bin
+│   │               └── hello.sh
+│   └── simple_pkg.deb
+├── README.md
+└── scripts
+    └── hello.sh
+```
+
+- Copy `script/hello.sh` to `install/simple_pkg/usr/local/bin`
+- Use `postinst` to add execute permission
+- Run `dpkg-deb --build simple_pkg` from install folder
+- Build docker
+- Run Docker , install and test
+
+```bash title="DEBIAN/control"
+Package: simple-pkg
+Version: 0.0.1
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: robobe <test@test.com>
+Description: simple pkg with bash script
+```
+
+```bash title="postinst"
+chmod +x /usr/local/bin/hello.sh
+```
+
+```dockerfile title="Dockerfile"
+FROM ubuntu:22.04 AS base
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+ARG USERNAME=user
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create a non-root user
+RUN groupadd --gid $USER_GID $USERNAME \
+  && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+  # [Optional] Add sudo support for the non-root user
+  && apt-get update \
+  && apt-get install -y sudo \
+  && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
+  && chmod 0440 /etc/sudoers.d/$USERNAME \
+  # Cleanup
+  && rm -rf /var/lib/apt/lists/* \
+  && echo 'export PS1="🐳 \u@\h: \w\a\ # "' > /home/$USERNAME/.bashrc
+```
+
+```bash title="build docker image"
+docker build -t helloworld:base --target base .
+```
+
+```bash title="docker run"
+docker run -it --rm \
+--name simple \
+--hostname base \
+--user user \
+-w /home/user \
+-v $PWD/install/simple_pkg.deb:/home/user/simple_pkg.deb \
+simple_pkg:base \
+/bin/bash
+```
+
+### install pkg inside docker
+
+```bash title="install pkg"
+sudo dpkg -i simple_pkg.deb
+```
+
+```bash title="check"
+/usr/local/bin/hello.sh
+```
+
+---
+## Demo package python script
+Pack python application for offline install
+
+### Use case
+- Install `cherrypy web framework` and all it dependencies
+
+#### 1. Create debian `root` folder
 
 ```bash
-deb
-└── build
-    └── test_0.0.1_amd64.deb
-       ├── DEBIAN
-       │   ├── control
-       │   ├── postinst
-       │   └── preinst
-       └── tmp
-           └── py_gui_demo-0.0.1-py3-none-any.whl
+.
+└── simple_pkg
+   ├── DEBIAN
+   │   ├── control
+   │   └── postinst
+   ├── opt
+   │   └── simple_pkg
+   │       └── lib
+   │           └── python3.10
+   │               └── site-packages
+   └── tmp
+```
+
+#### 2. Download whl's
+- download cherrypy and all dependencies to deb tmp folder
+
+#### 3. Update postinst
+
+```
 ```
 
 ```bash title="DEBIAN/control"
