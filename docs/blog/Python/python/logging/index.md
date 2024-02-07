@@ -21,7 +21,18 @@ The logging module provides four main components:
 - [Add Custom level](custom_level.md)
 - [Color log](color_log_by_level.md)
 
-## using json to create logging config
+## Demo
+### Using json to create logging config
+
+```
+├── setup.py
+├── test_py
+│   ├── app.py
+│   ├── __init__.py
+│   ├── logging.json
+└── venv
+
+```
 
 ```json title="logging.json"
 {
@@ -61,7 +72,10 @@ with open(config_file, "r", encoding="utf-8") as f:
 logging.config.dictConfig(logging_config)
 ```
 
-```python title="demo.py"
+```python title="app.py"
+import test_py  # load code from __init__
+import logging
+
 logger = logging.getLogger(__name__)
 
 logger.debug("This is a debug message")
@@ -69,6 +83,28 @@ logger.info("This is an info message")
 logger.warning("This is a warning message")
 logger.error("This is an error message")
 logger.critical("This is a critical message")
+```
+
+```python title="setup.py"
+from setuptools import setup, find_packages
+
+setup(
+    name='test_logger',
+    version="1.0",
+    author='robobe',
+    author_email='robobe2020@gmail.com',
+    description='test logger init from json',
+    packages=find_packages(),
+    install_requires=[],
+    include_package_data=True,
+    entry_points={
+        "console_scripts": [
+            "app=test_py.app:main"
+        ]
+    }
+)
+
+
 ```
 
 ---

@@ -13,11 +13,7 @@ An extension for colcon-core to clean package workspaces
 ## install
 
 ```
-mkdir -p ~/ws/src && cd ~/ws
-wget https://raw.githubusercontent.com/colcon/colcon.readthedocs.org/main/colcon.repos
-vcs import src < colcon.repos
-colcon build
-colcon test
+sudo apt install python3-colcon-clean
 ```
 
 ## usage

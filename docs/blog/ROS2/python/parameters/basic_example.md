@@ -61,6 +61,12 @@ ros2 run pkg_python_tutorial param_basic --ros-args -p my_int:=20 -p my_str:="he
 ```
 
 #### load from yaml file
+```yaml title="param file structure"
+<node name>:
+    ros__parameters:
+        <param_name>: <param_value>
+```
+
 ```yaml title="basic.yaml"
 basic_param:
   ros__parameters:
@@ -80,8 +86,14 @@ basic_param:
 
 ```bash title="init from yaml file"
 ros2 run pkg_python_tutorial param_basic --ros-args  --params-file  config/basic.yaml
-    
+```
 
+```bash title="mix yaml and param"
+# the last setting 
+ros2 run pkg_python_tutorial param_basic --ros-args  --params-file  config/basic.yaml -p my_int:=10
+
+# if the param cli set the value after the param yaml file , the value from the parameter is set
+# if the param is set before the yaml file, the value from the yaml file is set
 ```
 
 ---
@@ -151,6 +163,27 @@ basic:
 !!! tip "node /yaml name"
     The node name in yaml file need to be the same name we set in the launch file `Node.name` property
      
+
+#### load param from yaml with override by local launch params
+
+```python title=""  linenums="1" hl_lines="6,8,9"
+sim_node =  Node(
+            package='simples',
+            namespace='',
+            executable='param_basic',
+            name='basic_param',
+            parameters=[config, 
+                {
+                    "my_str": "override",
+                    "my_int": 1
+                }            
+            ]
+        )
+
+```
+
+
+---
 
 ### rqt
 

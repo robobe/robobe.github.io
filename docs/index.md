@@ -36,10 +36,10 @@ hide:
 First steps in robotics Systems.\
 From hardware to applications
 
-## Last action
-- Move to zsh
-- Start dev in .devcontainers
-- Learn Behavior Trees
+## Things to do and watch
+- [C++ course](https://courses.mshah.io/courses/cpp-programming-language)
+- [TinyML and Efficient Deep Learning Computing](https://hanlab.mit.edu/courses/2023-fall-65940)
+- [Managed (Lifecycle) Nodes in ROS 2 (Concept + Cpp Code Demo)](https://www.youtube.com/watch?v=axraRVgFRec)
 
 
 ::: row cards

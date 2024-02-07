@@ -3,7 +3,11 @@ title: Minimal ROS2 Node
 tags:
     - cpp
     - node
+    - logging
 ---
+
+Create minimal node with logging
+
 ## Create package
 ```bash
 ros2 pkg create <package_name> --build-type ament_cmake --dependencies <package_dependencies>
@@ -12,15 +16,26 @@ ros2 pkg create <package_name> --build-type ament_cmake --dependencies <package_
 
 ## Minimal Node
 
+!!! note "logger"
+  - node level log: get the node name as logger source
+  - rclcpp level log: user set the logger name
+     
 ```cpp title="minimal.cpp"
 #include "rclcpp/rclcpp.hpp"
+
+rclcpp::Logger mlog = rclcpp::get_logger("simple_pub");
 
 class Minimal : rclcpp::Node
 {
 public:
-  Minimal():Node("Minimal")
+  Minimal() : public Node("Minimal")
   {
-    RCLCPP_INFO(this->get_logger(), "hello minimal node");
+    RCLCPP_INFO(this->get_logger(), "hello ros2 cpp node");
+    RCLCPP_WARN(rclcpp::get_logger("my_logger"), "logging from rclcpp");
+    RCLCPP_ERROR(mlog, "error logging");
+    RCLCPP_INFO_STREAM(mlog, "a"
+                                 << "b"
+                                 << "c");
   }
 };
 

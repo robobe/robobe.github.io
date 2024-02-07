@@ -7,7 +7,8 @@
         "ipywidgets",
         "mavlink",
         "Odometry",
-        "Turtlebot"
+        "Turtlebot",
+        "yasmin"
     ],
     "ros.distro": "humble",
     // "python.linting.mypyEnabled": true,
