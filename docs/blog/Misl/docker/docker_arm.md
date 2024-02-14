@@ -2,7 +2,15 @@
 tags:
     - docker
     - arm
+    - qemu
+    - python
+    - vscode
+    - devcontainer
 ---
+# Run docker ARM container on x86 machine
+Run docker arm container on x86 using qemu
+
+- 
 ## Install docker on ARM
 
 ```bash
@@ -26,7 +34,7 @@ sudo usermod -aG docker ${USER}
 
 ---
 
-## Build image on X86 machine
+## Qemu
 Build ARM docker image on x86 machine
 
 ```bash
@@ -35,6 +43,7 @@ update-binfmts --enable qemu-arm
 update-binfmts --display qemu-arm
 ```
 
+---
 
 ## docker
 pull ubuntu for ARM
@@ -58,6 +67,28 @@ arm64v8/ubuntu \
 
 Build ARM64 docker image base on ubuntu with python and none root user
 
+!!! note ssh key
+    Create ssh key for none password session
+
+    ```bash
+    ssh-keygen -t ed25519 -b 4096
+
+    # copy pub key to .devcontainer folder
+
+    cp ~/.ssh/id_ed25529.pub <project>/.devcontainer
+    ```
+
+    Add dockerfile commands
+    - Set `user` password
+    - Copy key into container 
+    - Set user permission
+
+    ```Docker
+    RUN echo 'user:user' | chpasswd 
+    COPY .devcontainer/id_ed25519.pub /home/user/.ssh/authorized_keys
+    RUN chown user:user /home/user/.ssh/authorized_keys && chmod 600 /home/user/.ssh/authorized_keys
+    ```
+     
 ```Dockerfile
 FROM ubuntu:22.04
 ARG version
@@ -123,3 +154,7 @@ ubuntu/arm:python \
 
     `DOCKER_BUILDKIT=0` 
      
+
+## Demo
+Using vscode devcontainer to develop on docker container
+

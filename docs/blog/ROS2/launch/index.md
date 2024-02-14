@@ -76,6 +76,8 @@ setup(
 ---
 
 ## Resources
+- [ROS2 Launch File Migrator](https://github.com/aws-robotics/ros2-launch-file-migrator/tree/master)
+- [rosetta_launch](https://github.com/MetroRobots/rosetta_launch)
 - [Design ROS 2 Launch System](https://design.ros2.org/articles/roslaunch.html)
 - [ROS2 launch files – All you need to know](https://roboticscasual.com/tutorial-ros2-launch-files-all-you-need-to-know/)
 - [Architecture of launch](https://github.com/ros2/launch/blob/humble/launch/doc/source/architecture.rst#id71)
