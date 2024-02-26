@@ -5,7 +5,9 @@ tags:
     - debconf
     - dpkg
 ---
+# defconf
 
+[manual](https://manpages.debian.org/testing/debconf-doc/debconf-devel.7.en.html)
 
 ## Demo
 Simple DEB file that install nothing
