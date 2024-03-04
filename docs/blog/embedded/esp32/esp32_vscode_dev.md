@@ -64,7 +64,8 @@ RUN echo "source /opt/esp/idf/export.sh" >> /root/.bashrc
             "extensions": [
                 "espressif.esp-idf-extension",
                 "ms-vscode.cmake-tools",
-                "ms-vscode.cpptools"
+                "ms-vscode.cpptools",
+                "albert.tabout"
             ]
         }
     },
