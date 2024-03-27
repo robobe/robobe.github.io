@@ -148,15 +148,16 @@ tags:
 
 ### Texture
 
+use `GAZEBO_RESOURCE_PATH` and set project folder named `resources` for example
 ```
-└── simple_box
-    ├── materials
-    │   ├── scripts
-    │   │   └── simple_box.material
-    │   └── textures
-    │       └── seamless_texture.png
-    ├── model.config
-    └── model.sdf
+resources
+  └── simple_box
+    └── materials
+       ├── scripts
+       │   └── simple_box.material
+       └── textures
+           └── seamless_texture.png
+  
 ```
 
 ```c title="simple_box.material"
@@ -191,8 +192,8 @@ material wood/light
     </geometry>
     <material>
         <script>
-            <uri>file://models/simple_box/materials/scripts</uri>
-            <uri>file://models/simple_box/materials/textures</uri>
+            <uri>file://simple_box/materials/scripts</uri>
+            <uri>file://simple_box/materials/textures</uri>
             <name>wood/light</name>
         </script>
     </material>
@@ -201,7 +202,8 @@ material wood/light
 
 !!! note "uri"
     use `model uri` and set `GAZEBO_MODEL_PATH`  
-    or use `file://` to set absolute path
+    or use `file://` to set relative or absolute path
+    relative name is relative to path's set by `GAZEBO_RESOURCE_PATH`
      
 
 ![](images/wood.png)

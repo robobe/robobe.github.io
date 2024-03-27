@@ -10,6 +10,12 @@ tags:
 
 Add Ros2 communication to control joint position
 
+```bash
+sudo apt install ros-humble-gazebo-ros-pkgs
+```
+
+---
+
 ## Demo
 - Add ROS2 `Node` and `subscriber`
 - Add Subscriber handler to set joint position

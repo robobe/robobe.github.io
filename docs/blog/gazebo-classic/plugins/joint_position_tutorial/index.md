@@ -8,8 +8,11 @@ tags:
     - ros
 ---
 
-Create gazebo model plugin in to control joint position using ros service
+Create gazebo model plugin in to control joint position using ROS2
 
+- Basic plugin
+- [Add ROS interface](ros_interface.md)
+- [PID and Force](pid_and_set_force.md)
 
 # project setup
 
