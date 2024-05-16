@@ -3,6 +3,9 @@ title: Minimal Pub/Sub with namespace and remapping topics
 tags:
     - python
     - ros2
+    - namespace
+    - name
+    - remap
 ---
 
 # LAB

@@ -2,6 +2,8 @@
 title: Docker with none ROOT user
 tags:
     - docker
+    - template
+    - 
 ---
 
 Create docker image base on ubuntu 22.04  

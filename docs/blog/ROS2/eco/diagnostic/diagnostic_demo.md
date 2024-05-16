@@ -5,6 +5,7 @@ tags:
     - diagnostics
     - tutorials
 ---
+
 # Simple diagnostics demo
 ## LAB
 - Write simple node

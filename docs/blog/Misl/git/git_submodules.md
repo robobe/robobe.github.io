@@ -28,6 +28,15 @@ to download all submodules
 git submodule update --init --recursive
 ```
 
+### Add submodule from local repository
+
+```bash
+# submodule add
+git -c protocol.file.allow=always submodule add <sorce path> <dest path>
+
+# submodules pull
+git  -c protocol.file.allow=always submodule foreach git pull
+```
 ---
 
 ## Reference

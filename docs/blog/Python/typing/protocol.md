@@ -15,12 +15,97 @@ The Python type system supports two ways of deciding whether two objects are com
 
 ## Demo
 
-![](images/protocol_typing.png)
+- FastRate not implement the `IRate` protocol
+
+```python title="protocol_demo.py"
+from typing import Protocol
+
+class IRate(Protocol):
+    def update(self):
+        ...
 
 
-```title="mypy error message"
-mypy error: Incompatible types in assignment (expression has type "ResourceWithoutClose", variable has type "SupportClose")
+class SlowRate():
+    def update(self):
+        ...
+
+class FastRate():
+    def no_update(self):
+        ...
+
+
+def calc_rate(rate: IRate):
+    rate.update()
+
+calc_rate(SlowRate())
+calc_rate(FastRate())
 ```
+
+```bash title="mypy checking"
+mypy protocol_demo.py
+
+#
+error: Argument 1 to "calc_rate" has incompatible type "FastRate"; expected "IRate"
+```
+
+### Another example
+
+```python title="another_protocol_demo.py"
+from typing import Protocol
+
+
+class IRate(Protocol):
+    def update(self): ...
+
+
+class SlowRate:
+    def update(self): ...
+
+
+class FastRate:
+    def no_update(self): ...
+
+
+slow_rate: IRate = SlowRate()
+fast_rate: IRate = FastRate()
+```
+
+```bash title="mypy checking"
+mypy protocol_demo.py
+
+#
+ error: Incompatible types in assignment (expression has type "FastRate", variable has type "IRate")
+```
+
+---
+
+### Demo: Run time check
+Using runtime_checkable decorator we can check if type implement the protocol
+
+
+```python title="runtime_protocol_demo.py"
+from typing import Protocol, runtime_checkable
+
+@runtime_checkable
+class IRate(Protocol):
+    def update(self): ...
+
+
+class SlowRate:
+    def update(self): ...
+
+
+class FastRate:
+    def no_update(self): ...
+
+
+assert isinstance(SlowRate(), IRate)
+assert isinstance(FastRate(), IRate)
+
+```
+
+
+---
 
 
 !!! tip "VSCode mypy config"

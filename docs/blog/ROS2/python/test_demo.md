@@ -4,11 +4,21 @@ tags:
     - test
     - ros2
     - rclpy
+    - python
 ---
-# Add test to your package
+# ROS2 Test using pytest
+- Unit Test
+- Integration Test
+- E2E Tests
 
+## Unit Test
+Using python pytest/ unittest framework
 unit test without ROS: unittest/pytest
 unit test with ROS: launch_test + unittest
+
+## Integration Test
+Test multiple node at once using by implement `launch_test + unittest` and run it using `colcon test`
+
 Integration Testing:  launch_test + unittest
 
 !!! tip Run tests
@@ -35,7 +45,7 @@ py_tutorial_pkg/
 tests_require=['pytest'],
 ```
 
-```python title="py_tutorial_pkg/demo.py
+```python title="py_tutorial_pkg/demo.py"
 def func_under_test(a, b):
     return a+b
 ```
@@ -51,21 +61,33 @@ def test_math():
 ---
 
 ## usage
+- Run package tests
+- Check results
+- Run selected test
+
 
 ```bash
-# Run test in verbose mode
-
-colcon test --packages-select py_tutorial_pkg \
---event-handler=console_direct+ 
+# build package
+colcon build --symlink-install --packages-select py_tutorial_pkg
+# Test package
+colcon test --packages-select  py_tutorial_pkg
 ```
 
-- Run specific test
+### Check
+
+```bash
+# Check summary
+colcon test-result --all
+
+# Verbose result
+colcon test-result --all --verbose
+```
 
 
 ```bash
 # colcon test --packages-select <name-of-pkg> --pytest-args -k name_of_the_test_function
 
-colcon test --packages-select py_tutorial_pkg \
+colcon test --packages-select simples \
 --pytest-args -k test_math \
 --event-handler=console_direct+ 
 ```
@@ -78,8 +100,10 @@ colcon test --packages-select py_tutorial_pkg \
 !!! note "event-handler"
     - **console_direct**: Pass output directly to `stdout`, `stderror` 
     - console_cohesion: Pass job output at once after it has finish
-
-### check result
+ test-result --all
 ```
-colcon test-result --all
+
+---
+
+```
 ```
