@@ -58,6 +58,8 @@ sudo apt install ros-humble-rqt-runtime-monitor
 - [Simple demo](diagnostic_task_demo.md)
 - [Builtin tasks](diagnostic_builtin_demo.md)
 - [Remove task](diagnostic_remove_task_demo.md)
+- [Composite task](diagnostic_composite.md)
+- 
 ---
 # Reference
 - [REP-107 Diagnostic System for Robots Running ROS](https://www.ros.org/reps/rep-0107.html)
