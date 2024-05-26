@@ -54,7 +54,7 @@ ros2 pkg create rqt_demo --build-type ament_python --dependencies rqt_gui rqt_gu
 ```python title="rqt_demo/demo.py"
 from qt_gui.plugin import Plugin
 
-class Demo(Plugin):
+class DemoPlugin(Plugin):
     def __init__(self, context):
         super(Demo, self).__init__(context)
 

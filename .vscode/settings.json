@@ -4,8 +4,12 @@
     "plantuml.render": "Local",
     "cSpell.words": [
         "Ardupilot",
+        "BLDC",
         "ipywidgets",
         "mavlink",
+        "Mbed",
+        "microcontroller",
+        "nucleo",
         "Odometry",
         "Turtlebot",
         "yasmin"
