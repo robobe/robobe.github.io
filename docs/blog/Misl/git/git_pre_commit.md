@@ -5,11 +5,23 @@ tags:
     - pre-commit
 ---
 # git pre-commit
+
+
 All Git **hooks** are ordinary scripts that Git executes when certain events occur in the repository
+like:
+- pre-commit
+- post-commit
+- update
+- post-merge
+- pre-push
+- [full list and more](https://githooks.com/)
 
 git hooks locate in `.git/hooks` folder
 
-`pre-commit` is a library that help us manage the `pre-commit` hook
+
+# pre-commit
+
+`pre-commit` A framework for managing and maintaining multi-language **pre-commit hooks**.
 
 
 ## Install
@@ -20,10 +32,8 @@ python -m pip install pre-commit
 python pre-commit-#.#.#.pyz
 ```
 
-## pre-commit
-pre-commit is a tool that help us config and install git hook for pre-commit event.
+
 ### usage
-- Install
 - Create config file at project root folder
 - Add hooks
 - Install hooks
@@ -60,10 +70,23 @@ pre-commit run -a
 
 ```
 
-### Tips
-Action order
-1. config modify action hooks
-2. config check action hooks 
+---
+
+## Custom script demo
+
+run shell script
+
+```yaml
+repos:
+- repo: local
+  hooks:
+    - id: shell_script
+      name: shell_script
+      entry: path_to_shell_script.sh
+      language: script
+```
+
+---
 
 ## References
 - [pre-commit](https://pre-commit.com/)

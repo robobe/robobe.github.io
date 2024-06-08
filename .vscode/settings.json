@@ -11,6 +11,7 @@
         "microcontroller",
         "nucleo",
         "Odometry",
+        "platformio",
         "Turtlebot",
         "yasmin"
     ],
