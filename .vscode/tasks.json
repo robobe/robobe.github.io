@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Do some project",
+        "type": "process",
+        "command": "echo",
+        "args": [
+          "${input:selectProject.path}",
+          "${input:selectProject.name}",
+          "${input:selectProject.link}",
+          "${input:selectProject.anyOther}"
+        ],
+        "problemMatcher": []
+      }
+    ],
+    "inputs": [
+      {
+        "id": "selectProject.path",
+        "type": "command",
+        "command": "extension.commandvariable.pickStringRemember",
+        "args": {
+          "key": "path",
+          "options": [
+            ["project1", {"path":"p1","name":"n1","link":"lnk1","anyOther":"any1"}],
+            ["project2", {"path":"p2","name":"n2","link":"lnk2","anyOther":"any2"}]
+           ],
+          "description": "Pick a project"
+        }
+      },
+      {
+        "id": "selectProject.name",
+        "type": "command",
+        "command": "extension.commandvariable.remember",
+        "args": { "key": "name" }
+      },
+      {
+        "id": "selectProject.link",
+        "type": "command",
+        "command": "extension.commandvariable.remember",
+        "args": { "key": "link" }
+      },
+      {
+        "id": "selectProject.anyOther",
+        "type": "command",
+        "command": "extension.commandvariable.remember",
+        "args": { "key": "anyOther" }
+      }
+    ]
+  }
+  

@@ -182,4 +182,19 @@ docker inspect dev
 
 ```
 
-[more info](https://docs.docker.com/storage/bind-mounts/)
+---
+
+## Backup / Restore
+
+```bash title="backup"
+docker run --rm --volumes-from <container id> \
+-v $(pwd):/backup \
+busybox tar cvf /backup/vscode.tar <volume name>
+```
+
+```bash title="restore"
+docker run --rm --volumes-from <container> \
+-v $(pwd):/backup busybox \
+sh -c "cd <volume name> \
+&& tar xvf /backup/backup.tar --strip 1"
+```

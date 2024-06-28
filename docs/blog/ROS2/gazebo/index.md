@@ -6,6 +6,7 @@ tags:
     - gazebo
 ---
 # Ros2 gazebo classic
+launch gazebo form launch file
 
 ```bash
 sudo apt install ros-humble-gazebo-ros-pkgs
@@ -18,14 +19,16 @@ Using launch file from `gazebo-ros` package
 ros2 launch gazebo_ros gazebo.launch.py
 ```
 
-!!! tip ""
-    Run Gazebo Server and client `launches` for more control
 
-    - gzclient.launch.py  
-    - gzserver.launch.py
+Run Gazebo **Server** and **client** `launches` for `gazebo_ros` package to get more control
+
+- `gzclient.launch.py`
+- `gzserver.launch.py`
      
-    from `gzserver.launch.py` for example we can control pause verbose and other argument
 
+
+!!! tip ""
+    Show launch arguments
     ```
     ros2 launch gazebo_ros gzserver.launch.py -s
     ```
@@ -33,31 +36,18 @@ ros2 launch gazebo_ros gazebo.launch.py
 ## launch
 
 ```python
-import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, AppendEnvironmentVariable
+from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
-from launch_ros.actions import Node
 from pathlib import Path
 
 
 def generate_launch_description():
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
-
-    package_name = "bot_description"  # <--- CHANGE ME
-    pkg_description = get_package_share_directory(package_name)
     pkg_gazebo = get_package_share_directory("gazebo_ros")
-    
-    resources = [os.path.join(pkg_description, "worlds")]
-    resource_env = AppendEnvironmentVariable(
-        name="GAZEBO_RESOURCE_PATH", value=":".join(resources)
-    )
 
-    # Include the Gazebo launch file, provided by the gazebo_ros package
+    # GzServer
     gz_server_launch = (
         Path(pkg_gazebo).joinpath("launch", "gzserver.launch.py").as_posix()
     )
@@ -65,11 +55,11 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([gz_server_launch]),
         launch_arguments={
             "pause": "false",
-            "verbose": "true",
-            "world": "playground.sdf"
+            "verbose": "true"
         }.items(),
     )
 
+    #GzClient
     gz_client_launch = (
         Path(pkg_gazebo).joinpath("launch", "gzclient.launch.py").as_posix()
     )
@@ -77,18 +67,18 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([gz_client_launch])
     )
 
-
-    # Launch them all!
     return LaunchDescription(
         [
-            resource_env,
             gz_server,
             gz_client
         ]
     )
 ```
 
+---
 
+## gazebo environment variables
+[](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Gazebo-ROS-Paths)
 
 ---
 

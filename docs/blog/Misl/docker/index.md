@@ -69,3 +69,4 @@ docker rmi $(docker images -f "dangling=true" -q)
 
 # Reference
 - [Docker Build: A Beginner’s Guide to Building Docker Images](https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/)
+- [docker cheat-sheet](https://github.com/ChristianLempa/cheat-sheets/blob/main/tools/docker.md)
