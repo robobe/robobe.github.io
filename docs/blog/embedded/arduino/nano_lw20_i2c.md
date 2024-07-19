@@ -14,13 +14,15 @@ tags:
 
 ![alt text](images/arduino_nano_pinout.png)
 
+![alt text](images/lw20_i2c_pinout.png)
+
 
 | Arduino nano  | lw20 i2c  |
 |---|---|
 | 5v  | vcc  |
 | GND | gnd  |
-| SCL (13/A5) | vcc  |
-| SDA (12/A4) | vcc  |
+| SCL (13/A5) | white  |
+| SDA (12/A4) | yellow  |
 
 
 ## Code
@@ -68,3 +70,7 @@ void loop()
 ## Convert to PWM using Servo library
 
 ![alt text](image.png)
+
+---
+
+

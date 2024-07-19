@@ -3,39 +3,17 @@ tags:
     - docker
     - arm
     - qemu
-    - python
-    - vscode
-    - devcontainer
 ---
 # Run docker ARM container on x86 machine
-Run docker arm container on x86 using qemu
 
-- 
-## Install docker on ARM
+Run ARM docker container on x86 using qemu
 
-```bash
-sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-sudo apt update
-
-sudo apt-get -y install docker-ce
-
-```
-
-### Add user to docker group
-
-```bash
-sudo usermod -aG docker ${USER}
-```
 
 ---
 
 ## Qemu
-Build ARM docker image on x86 machine
+QEMU is a machine emulator, **qemu-user-static** utilizes QEMU's ability to perform dynamic binary translation. This means it can interpret the instructions of one CPU architecture and translate them into instructions that another CPU architecture can understand.
+**binfmt** tells the Linux kernel how to execute binaries of foreign architectures using QEMU's static interpreters.
 
 ```bash
 sudo apt install qemu-user-static binfmt-support
@@ -61,39 +39,24 @@ arm64v8/ubuntu \
 
 ```
 
+```bash title=""
+uname -a
+#
+Linux arm 6.5.0-41-generic #41~22.04.2-Ubuntu SMP PREEMPT_DYNAMIC Mon Jun  3 11:32:55 UTC 2 aarch64 aarch64 aarch64 GNU/Linux
+
+```
+
 ---
 
 ## Demo
+Build ARM docker image on x64 machine using buildx
 
-Build ARM64 docker image base on ubuntu with python and none root user
+```
+sudo apt install docker-buildx
+```
 
-!!! note ssh key
-    Create ssh key for none password session
-
-    ```bash
-    ssh-keygen -t ed25519 -b 4096
-
-    # copy pub key to .devcontainer folder
-
-    cp ~/.ssh/id_ed25529.pub <project>/.devcontainer
-    ```
-
-    Add dockerfile commands
-    - Set `user` password
-    - Copy key into container 
-    - Set user permission
-
-    ```Docker
-    RUN echo 'user:user' | chpasswd 
-    COPY .devcontainer/id_ed25519.pub /home/user/.ssh/authorized_keys
-    RUN chown user:user /home/user/.ssh/authorized_keys && chmod 600 /home/user/.ssh/authorized_keys
-    ```
-     
 ```Dockerfile
-FROM ubuntu:22.04
-ARG version
-ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=Etc/UTC
+FROM arm64v8/ubuntu
 
 ARG USERNAME=user
 ARG USER_UID=1000
@@ -107,54 +70,20 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && rm -rf /var/lib/apt/lists/* 
 
-# Set the locale
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-
-# Set user password
-RUN echo 'user:user' | chpasswd
-
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    vim \
-    iputils-ping \
-    net-tools \
-    openssh-server \
-    && apt-get -y clean && rm -rf /var/lib/apt/lists/*
-
-
-ENV PATH=${PATH}:/home/user/.local/bin
-
-COPY .devcontainer/id_ed25519.pub /home/user/.ssh/authorized_keys
-RUN chown user:user /home/user/.ssh/authorized_keys && chmod 600 /home/user/.ssh/authorized_keys
-
 ```
-#### Build
+
 ```bash
-docker build -t ubuntu/arm:python -f Dockerfile .
-
+docker buildx build \
+  --platform "linux/arm64" \
+  --tag arm:test \
+  .
 ```
 
-#### Run 
 ```bash
 docker run -it --rm \
 --name arm \
 --hostname arm \
 --user user \
-ubuntu/arm:python \
+arm:test \
 /bin/bash
 ```
-
-
-!!! tip ""
-    Disabled BuilderX
-
-    `DOCKER_BUILDKIT=0` 
-     
-
-## Demo
-Using vscode devcontainer to develop on docker container
-

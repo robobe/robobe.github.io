@@ -3,6 +3,7 @@ title: ROS2 Python
 tags:
     - ros2
     - python
+    - setup.py
 ---
 
 ## Minimal Node
@@ -43,6 +44,7 @@ if __name__ == '__main__':
 
 
 ### copy none python files
+
 ```python
 data_files=[
         ('share/ament_index/resource_index/packages',['resource/' + package_name]),
@@ -92,11 +94,7 @@ entry_points={
 
 ---
 
-# Tutorials
+## Tutorials
 - [pub sub namespace and remapping](pub_sub_ns_remapping.md)
 
----
 
-## TO Read:
-- [Including a Python module in a ROS2 package](https://answers.ros.org/question/367793/including-a-python-module-in-a-ros2-package/)
-- [How to Add a Python ROS2 Node to a C++ ROS 2 Package](https://automaticaddison.com/how-to-add-a-python-ros2-node-to-a-c-ros-2-package/)
