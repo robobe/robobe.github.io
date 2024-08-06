@@ -8,7 +8,7 @@ tags:
 # Alpine.js interval function
 
 
-```html title="" linenums="1" hl_lines="7,14"
+```html
 <html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.7.3/alpine.js"></script>
