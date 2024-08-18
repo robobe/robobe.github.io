@@ -55,7 +55,11 @@ cmake \
 -D BUILD_EXAMPLES=OFF \
 -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
+-D WITH_QT=OFF \
+-D WITH_GTK=OFF \
+-D WITH_VTK=OFF \
 -D CPACK_BINARY_DEB=ON ..
+
 
 make -j$(nproc)
 ```
@@ -88,3 +92,12 @@ import cv2
 1
 
 ```
+
+---
+
+## Pack
+
+```bash
+make package ..
+```
+
