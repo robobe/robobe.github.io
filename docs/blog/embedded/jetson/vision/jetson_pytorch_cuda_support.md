@@ -35,6 +35,8 @@ python3 -m pip install --no-cache torch-2.3.0-cp310-cp310-linux_aarch64.whl
 
 ```bash
 >>> import torch
+>>> torch.__version__
+'2.3.0'
 >>> torch.cuda.is_available()
 True
 >>> torch.cuda.device_count()
@@ -45,5 +47,20 @@ True
 <torch.cuda.device object at 0xffff9aedc0d0>
 >>> torch.cuda.get_device_name(0)
 'Orin'
+
+```
+
+---
+
+### TorchVision
+
+```
+python3 -m pip install --no-cache torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
+```
+
+```bash
+>>> import torchvision
+>>> print("PyTorch: "+torchvision.__version__)
+PyTorch: 0.18.0a0+6043bc2
 
 ```
