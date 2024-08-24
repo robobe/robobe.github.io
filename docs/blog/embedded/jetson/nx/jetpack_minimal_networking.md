@@ -36,7 +36,6 @@ sudo systemctl disable NetworkManager
 sudo systemctl mask NetworkManager
 ```
 
-```
 ## netplan
 
 ```
@@ -60,6 +59,8 @@ network:
                     password: "**********"
 ```
 
+edit `/etc/netplan/config.yaml` file
+
 ```yaml title="static"
 network: 
   version: 2
@@ -77,7 +78,12 @@ network:
        addresses: [8.8.8.8,8.8.4.4]
 ```
 
+#### check and apply
+
 ```bash title="apply configuration"
+# set permission
+sudo chmod 600 /etc/netplan/config.yaml
+# apply
 sudo netplan apply
 ```
 ```bash

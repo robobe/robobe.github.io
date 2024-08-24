@@ -4,12 +4,14 @@ tags:
     - nvidia
     - sdkmanager
     - orin
+    - rootfs
 ---
 
-# Jetpack on orin nx
-Using SDKManager and minimal rootfs
+# Jetpack 6.0 on orin nx
+Using SDKManager to config and install minimal rootfs
 
 ---
+
 
 ## sdkmanager
 using sdkmanager to download and extract
@@ -21,6 +23,14 @@ using sdkmanager to download and extract
 ---
 
 ## flash from cli
+## Recovery mode
+
+```
+lsusb
+#
+Bus 003 Device 012: ID 0955:7323 NVIDIA Corp. APX
+
+```
 
 !!! tip "Jetson modules"
     NX and Nano configure are same with name `jetson-orin-nano-devkit`
