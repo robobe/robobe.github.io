@@ -1,24 +1,28 @@
 ---
-title: ROS2 VSCode settings, Extensions Settings and tips
 tags:
     - ros2
     - vscode
-    - settings
-    - devcontainer
 ---
 
-- [settings](settings.md)
-- [extensions](vscode_ros_extensions.md)
-- [tips](tips.md)
+# ROS2 and VSCode
+[ROS 2 and VSCode](https://picknik.ai/vscode/docker/ros2/2024/01/23/ROS2-and-VSCode.html)
 
 
----
+## Python
 
-## Reference
-- [If you're not developing with this, you're wasting your time](https://youtu.be/dihfA7Ol6Mw?list=RDCMUCx9vSJTSZGFrErfPtut5GNQ)
-
-
-
-
-
-
+```json
+{
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages",
+    "/my_project/build/package1",
+    "/my_project/build/package2"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages",
+    "/my_project/build/package1",
+    "/my_project/build/package2"
+  ]
+}
+```

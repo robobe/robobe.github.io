@@ -7,7 +7,8 @@ tags:
 ---
 # VSCode dev containers
 
-[devcontainer for python project](python_project.md)
+- [Multiple devcontainer](dev_container_multiple.md)
+- [devcontainer for python project](python_project.md)
 
 ---
 

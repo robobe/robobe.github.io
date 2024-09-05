@@ -1,6 +1,6 @@
 ---
 tags:
-    - dev container
+    - devcontainer
     - vscode
     - docker
     - docker compose
