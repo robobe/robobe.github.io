@@ -122,7 +122,7 @@ gazebo:11 \
         "--privileged",
         "--network=host",
         "--hostname=gz",
-        "--device=/dev/dri:/dev/dri "
+        "--device=/dev/dri:/dev/dri" # intel acceleration
     ],
     //"postStartCommand": "source /workspaces/gazebo_tutorial/.devcontainer/post_start_script.sh",
     "containerEnv": {
@@ -149,3 +149,8 @@ gazebo:11 \
     }  
 }
 ```
+
+---
+
+## Reference
+- [Gazebo Simulator : 5 Ways to Speedup Simulations](https://www.blackcoffeerobotics.com/blog/gazebo-simulator-5-ways-to-speedup-simulations)
