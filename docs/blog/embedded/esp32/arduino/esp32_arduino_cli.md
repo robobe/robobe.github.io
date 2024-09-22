@@ -234,6 +234,11 @@ void loop() {
                 "showReuseMessage": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "monitor",
+            "type": "shell",
+            "command": "arduino-cli monitor -p /dev/ttyUSB0 -b esp32:esp32:esp32 --config 115200",
         }
     ]
 }
