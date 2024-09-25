@@ -71,17 +71,18 @@ sudo apt install ros-humble-rqt-runtime-monitor
 ---
 
 ## Demos
-- [Simple demo](diagnostic_task_demo.md)
-- [Builtin tasks](diagnostic_builtin_demo.md)
+- [Diagnostic status function](diagnostic_status_function.md)
+- [DiagnosticTask class](diagnostic_task_demo.md)
+- [Builtin tasks (FrequencyStatus)](diagnostic_builtin_demo.md)
 - [Remove task](diagnostic_remove_task_demo.md)
 - [Composite task](diagnostic_composite.md)
-- 
+
 ---
 # Reference
 - [REP-107 Diagnostic System for Robots Running ROS](https://www.ros.org/reps/rep-0107.html)
 - [ros diagnostic](https://nlamprian.me/blog/software/ros/2018/03/21/ros-diagnostics/)
 - [wiki](https://wiki.ros.org/diagnostics)
-- [python example](http://docs.ros.org/en/jade/api/diagnostic_updater/html/example_8py_source.html)
+- [python example](https://github.com/ros/diagnostics/blob/ros2/diagnostic_updater/diagnostic_updater/example.py)
 ### projects to check
 - [rviz_2d_overlay_plugins](https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins))
 
