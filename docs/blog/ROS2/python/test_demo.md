@@ -100,10 +100,52 @@ colcon test --packages-select simples \
 !!! note "event-handler"
     - **console_direct**: Pass output directly to `stdout`, `stderror` 
     - console_cohesion: Pass job output at once after it has finish
- test-result --all
+    test-result --all
+
+
+---
+
+## Using ament_cmake_pytest
+
+### Add to package.xml
+```xml
+<test_depend>ament_cmake_pytest</test_depend>
+```
+
+### CMakeLists
+```c title="CMakeLists.txt"
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  set(_pytest_tests
+    tests/test_a.py
+    tests/test_b.py
+    # Add other test files here
+  )
+  foreach(_test_path ${_pytest_tests})
+    get_filename_component(_test_name ${_test_path} NAME_WE)
+    ament_add_pytest_test(${_test_name} ${_test_path}
+      APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_BINARY_DIR}
+      TIMEOUT 60
+      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+  endforeach()
+endif()
+```
+
+### usage
+
+```bash
+colcon test --packages-select <package_name> 
+
+# specific test
+colcon test --packages-select <package_name> --pytest-args -k name_of_the_test_function
+
+# verbose mode
+colcon test --packages-select <package_name> --merge-install --event-handlers console_cohesion+
 ```
 
 ---
 
-```
-```
+## Reference
+- [Writing Basic Tests with Python](https://docs.ros.org/en/humble/Tutorials/Intermediate/Testing/Python.html)
+- [ament_cmake_python user documentation](https://docs.ros.org/en/humble/How-To-Guides/Ament-CMake-Python-Documentation.html#using-ament-cmake-pytest)

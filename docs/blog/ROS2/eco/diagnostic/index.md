@@ -30,6 +30,22 @@ DiagnosticsTask subclass by
 - Heartbeat
 - TimeStampStatus
 
+### diagnostics_msg
+
+- [DiagnosticStatus.msg](https://docs.ros2.org/foxy/api/diagnostic_msgs/msg/DiagnosticStatus.html)
+- [DiagnosticArray](https://docs.ros2.org/foxy/api/diagnostic_msgs/msg/DiagnosticArray.html)
+
+```
+octet OK=0
+octet WARN=1
+octet ERROR=2
+octet STALE=3
+octet level
+string name
+string message
+string hardware_id
+diagnostic_msgs/msg/KeyValue[] values
+```
 
 ### diagnostic_aggregator
 Aggregator is a node that subscribes to `/diagnostics`, processes it and republishes aggregated data on `/diagnostics_agg`.

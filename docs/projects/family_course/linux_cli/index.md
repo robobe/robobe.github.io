@@ -31,20 +31,38 @@ Ctrl-Alt-T
 
 ### File system commands
 
-[Linux Directory Commands |mkdir, rmdir, pwd, ls, cd](https://youtu.be/U34fDRaxgx0)
+[Linux Directory Commands |mkdir, rm, pwd, ls, cd](https://youtu.be/U34fDRaxgx0)
 
 ---
 
 ## Summary
 
 - Open terminal
-- pwd
 - stdin stdout stderr
-- cat
 - redirect
 - pipe
+- 
+- pwd
+- cat
 - echo
 - cd
-- rmdir
+- rm
 - mkdir
 - ls
+- mv
+- cp
+- head
+- tail
+- less
+
+
+#### Editors
+- vim
+- nano
+
+#### apt
+- apt
+- dpkg
+
+
+#### git
