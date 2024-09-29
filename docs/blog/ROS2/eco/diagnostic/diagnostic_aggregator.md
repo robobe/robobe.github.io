@@ -4,70 +4,178 @@ tags:
     - diagnostic
     - aggregator
 ---
+# diagnostic_agg
 
+In ROS 2, the **diagnostic_agg** package is used to aggregate and analyze diagnostic messages published by various nodes in the system
+
+### Install
+
+```
+sudo apt install ros-humble-diagnostic-aggregator
+```
+
+!!! note "DiagnosticStatus"
+    - level: "\0"
+    name: 'node_name: Heartbeat'
+    message: Alive
+    hardware_id: hwid
+    values: []
+
+
+!!! tip "GenericAnalyzer"
+    All Filter/Matching Fields can be array of strings
+
+
+    - type: This is the class name of the analyzer, used to load the correct plugin type.
+    - path: All diagnostic items analyzed by the Analyzer will be under "Base Path/My Path".
+    - contains Any item that contains these values
+    - startswith Item name must start with this value
+    - ?? name Exact name match ??
+    - ?? expected Exact name match, will warn if not present??
+    - regex Regular expression (regex) match against name 
+
+    
 ```yaml
 analyzers:
   ros__parameters:
     path: Aggregation
-    arms:
-      type: diagnostic_aggregator/DiscardAnalyzer
-      path: hb_data
-      startswith: [ '/hb' ]
+    message_staleness:
+      type: diagnostic_aggregator/GenericAnalyzer
+      path: heartbeat
+      startswith: [ 'node_name: Heartbeat' ]
 ```
 
+### Usage
 ```bash
-ros2 run diagnostic_aggregator aggregator_node --ros-args --params-file /workspaces/rome_ws/src/rome_demos_py/config/analyzer.yaml
+#ros2 run diagnostic_aggregator diagnostic_aggregator --ros-args --params-file path/to/agg_config.yaml
+ros2 run diagnostic_aggregator aggregator_node --ros-args --params-file config/analyzer.yaml
 ```
 
-```python
+---
+
+## Demo
+Config aggregation to alert if diagnosticStatus missing
+
+```python title="node with heartbeat diagnostic"
 #!/usr/bin/env python3
 
-from random import random
-
-from diagnostic_msgs.msg import DiagnosticArray
-from diagnostic_msgs.msg import DiagnosticStatus
 import rclpy
-from rclpy.clock import ROSClock
 from rclpy.node import Node
-from rclpy.qos import qos_profile_system_default
+from diagnostic_updater import Heartbeat, Updater
 
-PKG = 'diagnostic_aggregator'
-
-
-class DiagnosticTalker(Node):
-
+class MyNode(Node):
     def __init__(self):
-        super().__init__('diagnostic_talker')
-        self.pub = self.create_publisher(DiagnosticArray,
-                                         '/diagnostics',
-                                         qos_profile_system_default)
-        timer_period = 1.0
-        self.tmr = self.create_timer(timer_period, self.timer_callback)
+        node_name="node_name"
+        super().__init__(node_name)
+        updater = Updater(self)
+        updater.hwid = "hwid"
+        self.task = Heartbeat()
+        updater.add(self.task)
+        self.get_logger().info("Hello ROS2")
 
-        self.array = DiagnosticArray()
-        self.array.status = [
-            # Motors
-            DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/hb', message='OK'),
-        ]
-
-    def timer_callback(self):
-        self.array.header.stamp = ROSClock().now().to_msg()
-        self.pub.publish(self.array)
+    
 
 def main(args=None):
     rclpy.init(args=args)
-
-    node = DiagnosticTalker()
+    node = MyNode()
     rclpy.spin(node)
-
     node.destroy_node()
-    rclpy.try_shutdown()
-
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
 ```
+
+```yaml title="/diagnostic"
+header:
+  stamp:
+    sec: 1727325239
+    nanosec: 655198037
+  frame_id: ''
+status:
+- level: "\0"
+  name: 'node_name: Heartbeat'
+  message: Alive
+  hardware_id: hwid
+  values: []
+```
+
+### aggregator configuration
+
+```yaml
+analyzers:
+  ros__parameters:
+    node_hb:
+      type: diagnostic_aggregator/GenericAnalyzer
+      path: master_caution
+      startswith: [ 'node_name: Heartbeat' ]
+```
+
+#### aggregator output
+- group status
+- item with group prefix
+
+aggregator output when HB ok
+
+```yaml title="diagnostic_agg"
+header:
+  stamp:
+    sec: 1727325395
+    nanosec: 533586972
+  frame_id: ''
+status:
+- level: "\0"
+  name: /master_caution
+  message: OK
+  hardware_id: ''
+  values:
+  - key: 'node_name: Heartbeat'
+    value: Alive
+- level: "\0"
+  name: '/master_caution/node_name: Heartbeat'
+  message: Alive
+  hardware_id: hwid
+  values: []
+```
+
+aggregator output when no HB 
+- `master_caution` group alert with error
+- message `Stale` meaning that some group item missing
+- the hb status itself switch to error
+- default timeout: 5sec
+```yaml
+header:
+  stamp:
+    sec: 1727325557
+    nanosec: 534785208
+  frame_id: ''
+status:
+- level: "\x03"
+  name: /master_caution
+  message: Stale
+  hardware_id: ''
+  values:
+  - key: 'node_name: Heartbeat'
+    value: Alive
+- level: "\x03"
+  name: '/master_caution/node_name: Heartbeat'
+  message: Alive
+  hardware_id: hwid
+  values: []
+```
+
+!!! tip "timeout"
+    Add **timeout** to yaml file
+    ```yaml
+    analyzers:
+        ros__parameters:
+            node_hb:
+            type: diagnostic_aggregator/GenericAnalyzer
+            path: master_caution
+            startswith: [ 'node_name: Heartbeat' ]
+            timeout: 1.0
+    ```
+     
 
 --- 
 
