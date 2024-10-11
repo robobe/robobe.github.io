@@ -2,9 +2,17 @@
 tags:
     - navigation
     - localization
-    - odom
+    - odometry
+    - ros2
 ---
 
+
+## Odometry
+Process of using motion sensors to detect change in position
+- encoders
+- visual
+- Distance
+- 
 
 ### Map frame
 - Global frame, fixed reference frame 

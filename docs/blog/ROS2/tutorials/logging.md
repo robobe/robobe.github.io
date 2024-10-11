@@ -1,7 +1,6 @@
 ---
 tags:
     - ros2
-    - tutorial
     - logging
 ---
 # ROS2 logging
@@ -18,13 +17,13 @@ ROS2 logging control and config
 - RCUTILS_CONSOLE_OUTPUT_FORMAT
 
 
-###  RCUTILS_CONSOLE_OUTPUT_FORMAT
+#####  RCUTILS_CONSOLE_OUTPUT_FORMAT
 ```
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"
 ```
 
 
-### RCUTILS_COLORIZED_OUTPUT
+##### RCUTILS_COLORIZED_OUTPUT
 !!! note "colorize logging"
     Add environment variable to `.bashrc`
     ```
@@ -56,13 +55,65 @@ node.get_logger().info(f'log only once', skip_first=True)
 - Set logging format
   
 ```python title="very simple node with logging"
---8<-- "/home/user/ros2_ws/src/pkg_launch_tutorial/pkg_launch_tutorial/minimal_node.py"
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+
+class LogDemo(Node):
+
+    def __init__(self):
+        super().__init__('log_demo')
+        self.get_logger().debug("------- debug")
+        self.get_logger().info("------- info")
+        self.get_logger().warn("------- warn")
+        self.get_logger().error("------- error")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = LogDemo()
+    rclpy.spin_once(node, timeout_sec=1)
+
+    node.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
 ```
 
-```python title="node.launch.py" linenums="1" hl_lines="3 6"
---8<-- "/home/user/ros2_ws/src/pkg_launch_tutorial/launch/node.launch.py"
+```bash title="control log level"
+ros2 run rome_demos_py log_demo.py --ros-args --log-level ERROR
 ```
 
+#### launch file
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+from launch.actions import LogInfo
+from launch.substitutions import EnvironmentVariable
+
+def generate_launch_description():
+    ld = LaunchDescription()
+
+    log_level = EnvironmentVariable("LOG_LEVEL", default_value="INFO")
+
+    tracker =  Node(
+            package='rome_demos_py',
+            namespace='',
+            executable='log_demo.py',
+            output='screen',
+            arguments=['--ros-args', '--log-level', log_level],
+            respawn=True
+        )
+    
+    log = LogInfo(msg=["----------", log_level])
+
+    ld.add_action(log)
+    ld.add_action(tracker)
+    return ld
+```
 
 ---
 

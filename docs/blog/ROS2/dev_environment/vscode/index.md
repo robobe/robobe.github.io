@@ -80,7 +80,7 @@ RUN apt-get update \
     "customizations": {
         "vscode": {
             "extensions": [
-
+                
             ],
             "settings": [
 

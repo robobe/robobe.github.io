@@ -14,6 +14,7 @@ tags:
 - [yolo cli](#yolo-cli)
   - [predict](#predict)
 - [yolo python simple](#yolo-python-simple)
+- [yolo and opencv](#yolo-and-opencv)
 
 
 ## Docker
@@ -190,3 +191,32 @@ model.predict(
     name='custom_run'
 )
 ```
+
+## yolo and opencv
+
+```python
+from ultralytics import YOLO
+import cv2
+model = YOLO("models/yolov8n.pt")
+
+img = cv2.imread('images/bus.jpg')
+results = model.predict(source=img, conf=0.25, imgsz=640)
+for result in results:
+    annotated_frame = results[0].plot()
+
+    cv2.imshow('YOLOv8 Detection', annotated_frame)
+    k = cv2.waitKey(0)
+    if k==27:
+        break
+
+cv2.destroyAllWindows()
+```
+
+!!! tip using gpu
+
+    ```python
+    results = model.predict(source=img, conf=0.25, imgsz=640, device="cuda")
+    device = model.device  # This will return either 'cuda' or 'cpu'
+    print(f"YOLOv8 is using: {device}")
+    ```
+     
