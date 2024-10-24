@@ -4,8 +4,11 @@ tags:
     - ros2
     - control2
 ---
+# Ros2_control
 
-```
+## install
+
+```bash
 sudo apt install ros-humble-ros2-control
 sudo apt install ros-humble-ros2-controllers
 sudo apt install ros-humble-gazebo-ros2-control
@@ -38,6 +41,30 @@ The Controller Manager using `yaml` config file to load and config the controlle
 !!! note ""
     Two controller can't use the same resource for command interface
     It can use states interface because it R.O 
+
+---
+
+## Controller manager
+
+```
+controller_manager/ros2_control_node
+```
+
+controller_manager need
+- controller config yaml file
+- urdf
+
+---
+
+## Gazebo
+The urdf contain two parts
+- hardware interface
+- gazebo plugin
+
+The `gazebo plugins` responsibility
+- Talk to hardware
+- load and run `controller manager`
+
 
 ---
 

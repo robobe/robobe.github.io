@@ -42,6 +42,7 @@ Odometry is the use of data from motion sensors to estimate change in position o
 ---
 
 # Reference
+- [slam course Claus Brenner](https://youtu.be/B2qzYCeT9oQ?list=PLpUPoM7Rgzi_7YWn14Va2FODh7LzADBSm)
 - [Understanding SLAM Using Pose Graph Optimization ](https://youtu.be/saVZtgPyyJQ)
 
 - [CH1 SLAM for Robotics - Introduction to Mapping](https://youtu.be/hC4glg71SfE)
