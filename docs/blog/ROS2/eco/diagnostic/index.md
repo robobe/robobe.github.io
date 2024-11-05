@@ -71,8 +71,8 @@ sudo apt install ros-humble-rqt-runtime-monitor
 ---
 
 ## Demos
-- [Diagnostic status function](diagnostic_status_function.md)
-- [DiagnosticTask class](diagnostic_task_demo.md)
+- [Diagnostic status function - - minimal implementation as diagnostic function](diagnostic_status_function.md)
+- [DiagnosticTask class - minimal implementation as diagnostic task class](diagnostic_task_demo.md)
 - [Builtin tasks (FrequencyStatus)](diagnostic_builtin_demo.md)
 - [Remove task](diagnostic_remove_task_demo.md)
 - [Composite task](diagnostic_composite.md)
