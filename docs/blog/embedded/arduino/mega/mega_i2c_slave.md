@@ -173,3 +173,52 @@ framework = arduino
 upload_port = /dev/ttyACM0
 monitor_port = /dev/ttyACM0
 ```
+
+---
+
+## Event sequence
+On Arduino mega when we ask for i2cget `i2cget -y 16 0x3a 0x1 w`
+
+```cpp
+#include <Arduino.h>
+#include <Wire.h>
+
+void requestEvent();
+void receiveEvent(int howMany);
+
+char reg = 0;
+void setup() {
+    Wire.begin(0x3a);
+    Wire.onRequest(requestEvent);
+    Wire.onReceive(receiveEvent);
+    Serial.begin(9600);
+    Serial.println("--start--");
+}
+
+void loop() {
+    delay(100);
+    
+}
+
+void receiveEvent(int howMany){
+  Serial.println("receiveEvent");
+ 
+}
+void requestEvent() {
+  Serial.println("requestEvent");
+}
+```
+
+```bash
+i2cget -y 16 0x3a 0x1 w
+```
+
+```bash
+--- Terminal on /dev/ttyACM0 | 9600 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+--start--
+receiveEvent
+requestEvent
+```
