@@ -277,6 +277,98 @@ gst-launch-1.0 uvch264src device=/dev/video4 name=src auto-start=true src.vidsrc
 
 ---
 
+### Demo: Boson camera capture for ROS2
+Using GSCAM package to capture boson640
+
+```bash
+v4l2-ctl -d /dev/video4 --list-formats
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+	[0]: 'YU12' (Planar YUV 4:2:0)
+	[1]: 'Y16 ' (16-bit Greyscale)
+	[2]: 'NV12' (Y/UV 4:2:0)
+```
+
+#### Gstreamer simple pipes
+
+```bash
+#i420
+gst-launch-1.0 -vv v4l2src device=/dev/video4 ! videoconvert ! autovideosink
+
+```
+
+```bash
+v4l2-ctl -d /dev/video4 --list-formats-ext
+#
+[0]: 'YU12' (Planar YUV 4:2:0)
+		Size: Discrete 640x512
+			Interval: Discrete 0.111s (9.000 fps)
+			Interval: Discrete 0.133s (7.500 fps)
+	[1]: 'Y16 ' (16-bit Greyscale)
+		Size: Discrete 640x512
+			Interval: Discrete 0.111s (9.000 fps)
+			Interval: Discrete 0.133s (7.500 fps)
+	[2]: 'NV12' (Y/UV 4:2:0)
+		Size: Discrete 640x512
+			Interval: Discrete 0.111s (9.000 fps)
+			Interval: Discrete 0.133s (7.500 fps)
+
+```
+
+#### pipes for every pixel format
+```bash
+#YU12 / I420
+gst-launch-1.0 v4l2src device=/dev/video4 \
+! video/x-raw, width=640,height=512,format=I420, framerate=9/1 \
+! videoconvert \
+! autovideosink
+
+#NV12
+gst-launch-1.0 v4l2src device=/dev/video4 \
+! video/x-raw, width=640,height=512,format=NV12, framerate=9/1 \
+! videoconvert \
+! autovideosink
+
+
+
+#Y16
+gst-launch-1.0 v4l2src device=/dev/video4 \
+! video/x-raw, width=640,height=512,format=GRAY16_LE, framerate=9/1 \
+! videoconvert \
+! autovideosink
+
+```
+
+### gscam
+
+```bash
+ros2 run gscam gscam_node --ros-args \
+-p gscam_config:="v4l2src device=/dev/video4 ! videoconvert"
+```
+
+```bash
+ros2 topic echo --once /camera/image_raw --field encoding
+#
+rgb8
+
+```
+
+```bash
+ros2 run gscam gscam_node --ros-args \
+-p gscam_config:="v4l2src device=/dev/video4 ! video/x-raw, width=640,height=512,format=I420, framerate=9/1 ! videoconvert" \
+-p image_encoding:="mono8"
+
+```
+
+```bash
+ros2 topic echo --once /camera/image_raw --field encoding
+#
+mono8
+```
+
+---
+
 ## Reference
 - [BosonUSB](https://github.com/FLIR/BosonUSB)
 - [Boson calibration](https://github.com/FLIR/flir_adk_ethernet/tree/master/example_calibrations)
