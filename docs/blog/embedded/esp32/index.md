@@ -54,3 +54,7 @@ DevKit
 
 ### RTOS
 - [Introduction to RTOS Part 1 - What is a Real-Time Operating System (RTOS)? | Digi-Key Electronics](https://youtu.be/F321087yYy4)
+
+
+### Projects to check
+- [ESP32CAM-RTSP](https://github.com/rzeldent/esp32cam-rtsp)

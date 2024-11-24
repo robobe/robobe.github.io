@@ -69,6 +69,27 @@ gst-launch-1.0 udpsrc port=5000 \
 ! autovideosink
 ```
 
+### H264 gray scale
+```bash title="send"
+gst-launch-1.0 videotestsrc \
+! video/x-raw, width=640, height=480, framerate=10/1, format=GRAY8 \
+! videoconvert \
+! video/x-raw, format=I420 \
+! x264enc \
+! rtph264pay \
+! udpsink host=127.0.0.1 port=5000
+```
+
+```bash title="receiver"
+gst-launch-1.0 udpsrc port=5000 \
+! 'application/x-rtp, encoding-name=H264, payload=96' \
+! queue \
+! rtph264depay \
+! avdec_h264 \
+! videoconvert \
+! autovideosink
+```
+
 ## h265
 
 ```bash title="send"
@@ -96,5 +117,27 @@ gst-launch-1.0 udpsrc port=5000 \
 ! h265parse \
 ! queue \
 ! avdec_h265 \
+! autovideosink
+```
+
+## VP9
+### Gray scale
+
+```bash
+gst-launch-1.0 videotestsrc \
+! video/x-raw,format=GRAY8,width=640,height=480,framerate=30/1 \
+! videoconvert \
+! video/x-raw,format=I420 \
+! vp9enc  threads=4  \
+! rtpvp9pay \
+! udpsink host=127.0.0.1 port=5000
+```
+
+```bash
+gst-launch-1.0 udpsrc port=5000 caps="application/x-rtp,media=video,encoding-name=VP9,payload=96" \
+! rtpvp9depay \
+! queue \
+! vp9dec \
+! videoconvert \
 ! autovideosink
 ```

@@ -4,6 +4,7 @@ tags:
     - joystick
     - docker
 ---
+# Joystick
 
 How linux map joystick hardware to file interface
 
@@ -38,8 +39,21 @@ B: EV=1b
     each of them handle the data in different way
 
 ---     
+## jstest-gtk
+joystick testing and configuration tool
 
-## jtest
+```bash
+sudo apt install jstest-gtk
+```
+
+```
+jstest-gtk
+```
+
+![alt text](images/jstest-gtk.png)
+
+![alt text](images/jstest-gtk-properties.png)
+## jstest
 
 ```bash
 sudo apt install joystick

@@ -61,8 +61,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ## Tips
 
 ```bash title="remove none images"
-docker rmi $(docker images -f "dangling=true" -q)
-```
+x```
 
 
 ---
