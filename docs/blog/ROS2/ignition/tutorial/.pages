@@ -1,5 +1,0 @@
-nav:
-    - joint_state_sdf_model.md
-    - diff_drive_and_odometry.md
-    - imu_and_magnetometer.md
-    - lidar.md
