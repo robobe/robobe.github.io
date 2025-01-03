@@ -46,6 +46,20 @@ WORKDIR /home/$USERNAME
 "containerUser": "nonroot"
 ```
 
+## source file when open terminal
+
+```json
+"terminal.integrated.profiles.linux": {
+      "bash": {
+          "path": "bash",
+          "icon": "terminal-bash",
+          "args": ["--rcfile", "/workspaces/pov_ws/env.sh"]
+      }
+  }
+```
+
+- rcfile: specify an alternative initialization file (RC file) to source when starting a new bash session
+
 ---
 
 # Reference

@@ -71,3 +71,29 @@ SDK can install as full version that include all toolchain or as minimal and ins
 ## Reference
 - [Zephyr Workbench](https://zephyr-workbench.com/)
 - [Zephyr-rtos-tutorial](https://github.com/maksimdrachov/zephyr-rtos-tutorial/tree/main)
+
+---
+
+
+
+```
+export ZEPHYR_BASE=`pwd`/external/zephyr
+```
+
+```
+west packages pip --install
+west sdk install
+```
+
+```
+west build -b esp_wrover_kit .
+```
+
+```
+west build -b native_sim samples/hello_world/
+west build -b native_sim --build-dir /tmp/3 samples/hello_world/
+
+#binary found 
+# /tmp/3/zephyr/zephyr.exe
+```
+
