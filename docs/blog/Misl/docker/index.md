@@ -61,7 +61,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ## Tips
 
 ```bash title="remove none images"
-x```
+docker images prune
+```
 
 
 ---

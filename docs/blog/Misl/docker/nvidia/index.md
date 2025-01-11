@@ -2,6 +2,7 @@
 tags:
     - docker
     - nvidia
+    - container-toolkit
 ---
 # NVIDIA docker
 NVidia container toolkit enables GPU acceleration in docker container

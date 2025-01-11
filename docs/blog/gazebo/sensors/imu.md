@@ -3,13 +3,18 @@ tags:
     - gazebo
     - imu
     - gz
+    - sensor
     - simulation
+    - harmonic
 ---
 
 # IMU Sensor
-- Add sensor to link
-- Add Sensor and imu plugin
+- Add sensor to **link**
+- Add Sensor IMU plugin to **world**
   
+
+
+       
 ```xml
 <sensor name="imu_sensor" type="imu">
     <always_on>1</always_on>
@@ -24,24 +29,33 @@ tags:
     filename="gz-sim-imu-system"
     name="gz::sim::systems::Imu">
 </plugin>
-<plugin
-    filename="gz-sim-sensors-system"
-    name="gz::sim::systems::Sensors">
-    <render_engine>ogre2</render_engine>
-</plugin>
+
 ```
 
 !!! note "gz::sim::system:Sensors"
     The gz::sim::systems::Sensors class is a system plugin that allows interaction with sensors within a simulation environment. It provides functionality for:
 
-    Accessing sensor data.
-    Updating sensor readings.
-    Handling sensor events.
-    Enabling and disabling sensors.
      
 
 ### More control
-- Add Noise
+#### Control topic and reference frame
+
+- topic
+- gz_frame_id
+
+```
+<sensor name="imu_sensor" type="imu">
+    <pose degrees="true">0 0 0 180 0 0</pose>
+    <always_on>1</always_on>
+    <update_rate>1000</update_rate>
+    <topic>imu</topic>
+    <gz_frame_id>vehicle_blue/chassis</gz_frame_id>
+</sensor>
+```
+
+#### Add Noise
+- angular_velocity
+- linear_acceleration
 
 ```xml
 <sensor name="imu_sensor" type="imu">
@@ -51,13 +65,42 @@ tags:
     <imu>
         <!-- Noise settings for angular velocity (X, Y, Z axes) -->
         <angular_velocity>
-            <noise>
-            <type>gaussian</type>      <!-- Gaussian noise model -->
-            <mean>0.0</mean>           <!-- Mean of the noise -->
-            <stddev>0.01</stddev>      <!-- Standard deviation (noise level) -->
-            </noise>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.009</stddev>
+                <bias_mean>0.00075</bias_mean>
+                <bias_stddev>0.005</bias_stddev>
+                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                <precision>0.00025</precision>
+              </noise>
+            </x>
         </angular_velocity>
+        <linear_acceleration>
+        </linear_acceleration>
     </imu>
+</sensor>
+```
+
+#### orientation_reference_frame
+- NED
+- ENU
+- Custom
+
+[more](https://github.com/gazebosim/gz-sim/blob/gz-sim9/test/worlds/imu_heading_deg.sdf)
+
+```xml
+<sensor name='imu_sensor_NED' type='imu'>
+    <topic>imu_test_NED</topic>
+    <update_rate>1</update_rate>
+    <imu>
+    <orientation_reference_frame>
+        <localization>NED</localization>
+    </orientation_reference_frame>
+    </imu>
+    <always_on>1</always_on>
+    <visualize>true</visualize>
 </sensor>
 ```
 
@@ -65,6 +108,8 @@ tags:
 
 ## Demo
 
+- [imu sensor](https://github.com/gazebosim/gz-sim/blob/gz-sim9/test/worlds/imu.sdf)
+- [imu sensor with orientation control (ned,enu,..)](https://github.com/gazebosim/gz-sim/blob/gz-sim9/test/worlds/imu_heading_deg.sdf)
 ```xml
 <?xml version="1.0"?>
 <sdf version="1.7">

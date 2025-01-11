@@ -1,7 +1,0 @@
-version: "3.0"
-services:
-  ubuntu:
-    image: ubuntu:user
-    hostname: dev
-    user: user
-    working_dir: /home/user
